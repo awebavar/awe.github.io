@@ -45,6 +45,7 @@ header {
     color: var(--light-color); /* استفاده از متغیر رنگ */
     padding: 2rem 0; /* padding بیشتر برای فضای بهتر */
     text-align: center;
+    position: relative; /* برای قرارگیری لوگو */
 }
 
 header h1 {
@@ -74,6 +75,18 @@ nav ul li a {
 nav ul li a:hover {
     color: var(--accent-color); /* تغییر رنگ در حالت hover */
 }
+
+/* لوگو */
+.logo {
+    max-height: 70px; /* حداکثر ارتفاع لوگو */
+    max-width: 150px; /* حداکثر عرض لوگو */
+    height: auto; /* ارتفاع خودکار برای حفظ نسبت تصویر */
+    position: absolute; /* موقعیت مطلق در هدر */
+    top: 50%; /* وسط عمودی */
+    right: 2rem; /* فاصله از راست */
+    transform: translateY(-50%); /* تنظیم دقیق وسط عمودی */
+}
+
 
 /* بخش اصلی */
 section {
@@ -213,7 +226,7 @@ footer {
     background-color: var(--dark-color); /* استفاده از متغیر رنگ */
     color: var(--light-color); /* استفاده از متغیر رنگ */
     font-size: 0.9rem; /* اندازه فونت کوچکتر */
-    position: fixed; /* ثابت در پایین صفحه */
+    /* position: fixed;  ثابت در پایین صفحه - کامنت شد */
     bottom: 0; /* چسبیده به پایین صفحه */
     width: 100%; /* عرض کامل */
 }
