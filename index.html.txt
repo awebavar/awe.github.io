@@ -1,0 +1,94 @@
+<!DOCTYPE html>
+<html lang="fa">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>AWE - کتابی برای دگرگونی باورها</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Vazirmatn:wght@400;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="style.css">
+</head>
+<body dir="rtl">
+    <header>
+        <nav>
+            <ul>
+                <li><a href="#author-bio">درباره نویسنده</a></li>
+                <li><a href="#store">فروشگاه</a></li>
+                <li><a href="#email-signup">خبرنامه</a></li>
+                <li><a href="#comments">نظرات</a></li>
+                <li><a href="#rules">قوانین سایت</a></li>
+                <li><a href="#contact">تماس</a></li>
+            </ul>
+        </nav>
+        <h1>AWE</h1>
+    </header>
+
+    <main>
+        <section id="author-bio">
+            <img src="author-image.jpg" alt="تصویر نویسنده AWE" class="author-image">
+            <h2>درباره نویسنده</h2>
+            <p>من، نویسنده کتاب "AWE"، سال‌ها به دنبال کشف عمیق‌ترین لایه‌های ذهن و باورهای شکل‌دهنده زندگی بوده‌ام. این سفر شخصی، که با چالش‌ها و دگرگونی‌های فراوانی همراه بود، من را به درک عمیقی از قدرت باورها و چگونگی تغییر آن‌ها رساند.</p>
+            <p>کتاب "AWE" نه صرفاً یک تئوری، بلکه چکیده‌ای از تجربیات عملی و تمرین‌هایی است که شخصاً برای رهایی از باورهای محدودکننده و دستیابی به پتانسیل‌های درونی‌ام به کار گرفته‌ام. در این کتاب، شما را با گام‌های عملی و موثر همراهی می‌کنم تا بتوانید باورهای خود را شناسایی، ارزیابی و در جهت بهبود زندگی‌تان متحول کنید.</p>
+            <p>هدف من از نوشتن "AWE"، به اشتراک گذاشتن این دانش و تجربه با شماست. باور دارم که هر فردی توانایی دگرگونی زندگی خود را دارد و امیدوارم این کتاب چراغ راهی باشد در مسیر خودشناسی و تحول شخصی شما.</p>
+        </section>
+
+        <section id="store">
+            <h2>فروشگاه کتاب AWE</h2>
+            <p><strong>"AWE" فقط یک کتاب نیست، بلکه یک راهنمای عملی برای متحول کردن زندگی است.</strong> این کتاب به شما کمک می‌کند تا:</p>
+            <ul>
+                <li>باورهای پنهان و ناخودآگاه خود را شناسایی کنید.</li>
+                <li>ریشه‌های باورهای محدودکننده را درک کنید.</li>
+                <li>با تکنیک‌های عملی، باورهای منفی را تغییر دهید.</li>
+                <li>پتانسیل‌های واقعی خود را شکوفا کنید.</li>
+                <li>زندگی‌ای سرشار از موفقیت، آرامش و رضایت را تجربه کنید.</li>
+            </ul>
+            <p>همین امروز سفر تحول‌آفرین خود را با "AWE" آغاز کنید!</p>
+
+            <div class="payment-details">
+                <h3>جزئیات پرداخت</h3>
+                <p>برای تهیه نسخه الکترونیکی کتاب "AWE" به مبلغ 9,890,000 ریال، لطفاً مبلغ را به شماره کارت زیر واریز نمایید:</p>
+                <p><strong>شماره کارت:</strong> [شماره کارت بانکی شما - اینجا جایگزین کنید]</p>
+                <p>پس از واریز وجه، لطفاً تصویر رسید پرداخت و شناسه تلگرام خود را به آدرس ایمیل <a href="mailto:awebavar@gmail.com">awebavar@gmail.com</a> ارسال نمایید.  فایل کتاب در اسرع وقت برای شما ارسال خواهد شد.</p>
+            </div>
+        </section>
+
+        <section id="email-signup">
+            <h2>عضویت در خبرنامه</h2>
+            <p>با عضویت در خبرنامه AWE، از آخرین مقالات، اخبار و پیشنهادات ویژه مربوط به خودشناسی و تحول فردی مطلع شوید.</p>
+            <form id="newsletter-form">
+                <input type="email" id="newsletter-email" name="email" placeholder="ایمیل خود را وارد کنید" required>
+                <button type="submit">عضویت در خبرنامه</button>
+            </form>
+        </section>
+
+        <section id="comments">
+            <h2>نظرات کاربران</h2>
+            <p>دیدگاه شما برای ما ارزشمند است! نظرات و تجربیات خود را درباره کتاب "AWE" با ما و دیگر خوانندگان به اشتراک بگذارید.</p>
+            <form id="user-comment-form">
+                <textarea id="comment-text" name="comment" placeholder="نظر خود را بنویسید..." required></textarea>
+                <button type="submit">ارسال نظر</button>
+            </form>
+            <p class="comment-guideline">نظرات شما پس از بررسی و تایید، از طریق ایمیل به شما اطلاع داده شده و سپس در سایت منتشر خواهند شد.</p>
+        </section>
+
+        <section id="rules">
+            <h2>قوانین سایت</h2>
+            <ul>
+                <li>ساعات کاری پشتیبانی سایت: 8:00 تا 22:00</li>
+                <li>حداکثر زمان ارسال فایل کتاب پس از پرداخت در ساعات کاری: 4 ساعت</li>
+            </ul>
+        </section>
+
+        <section id="contact">
+            <h2>تماس با ما</h2>
+            <p>برای هرگونه پرسش، پیشنهاد یا انتقاد، می‌توانید از طریق ایمیل زیر با ما در ارتباط باشید:</p>
+            <p><strong>ایمیل:</strong> <a href="mailto:awebavar@gmail.com">awebavar@gmail.com</a></p>
+        </section>
+    </main>
+
+    <footer>
+        <p>&copy; 2025 تمامی حقوق برای AWE محفوظ است.</p>
+    </footer>
+</body>
+</html>
