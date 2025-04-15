@@ -6,10 +6,4 @@ email: awebavar@gmail.com
 theme: minima
 baseurl: ""
 url: "https://awe.github.io"
-# avatar:
-# social:
-  # github: ваш_логин_github #
-  # twitter: ваш_логин_twitter #
-modules:
-  disqus:
     shortname: site-disqus
