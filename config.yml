@@ -1,0 +1,15 @@
+title: صفحه شخصی گیت‌هاب
+description: یک نمونه ساده از سایت شخصی برای GitHub Pages
+name: صفحه شخصی گیت‌هاب
+author: نام شما
+email: example@email.com
+theme: minima
+baseurl: "" # اگر سایت روی یک زیرمسیر قرار دارد (مثلاً `/personal-site/`)
+url: "https://username.github.io" # آدرس مخزن شما در GitHub Pages
+avatar: "https://raw.githubusercontent.com/username/repository/main/images/avatar.png" # لینک تصویر پروفایل یا لوگو
+social:
+  github: https://github.com/username
+  twitter: https://twitter.com/username
+modules:
+  disqus:
+    shortname: site-disqus
