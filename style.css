@@ -1,232 +1,95 @@
-/* فونت وزیرمتن */
-@font-face {
-    font-family: 'Vazirmatn';
-    src: url('Vazirmatn-Regular.woff2') format('woff2'),
-         url('Vazirmatn-Regular.woff') format('woff');
-    font-weight: normal;
-    font-style: normal;
-    font-display: swap;
-}
+<!DOCTYPE html>
+<html lang="fa">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>AWE - کتابی برای دگرگونی باورها</title>
+    <link rel="stylesheet" href="css.txt">
+    <link rel="icon" href="logo.png" type="image/png"> <!-- اضافه کردن Favicon -->
+</head>
+<body>
+    <header>
+        <!-- اضافه کردن تگ img برای لوگو -->
+        <img src="logo.png" alt="لوگوی AWE" id="header-logo">
+        <h1>AWE</h1>
+        <nav>
+            <ul>
+                <li><a href="#author-bio">درباره نویسنده</a></li>
+                <li><a href="#store">فروشگاه</a></li>
+                <li><a href="#email-signup">خبرنامه</a></li>
+                <li><a href="#comments">نظرات</a></li>
+                <li><a href="#rules">قوانین سایت</a></li>
+                <li><a href="#contact">تماس</a></li>
+            </ul>
+        </nav>
+    </header>
 
-@font-face {
-    font-family: 'Vazirmatn';
-    src: url('Vazirmatn-Bold.woff2') format('woff2'),
-         url('Vazirmatn-Bold.woff') format('woff');
-    font-weight: bold;
-    font-style: normal;
-    font-display: swap;
-}
+    <section id="author-bio">
+        <h2>درباره نویسنده</h2>
+        <p>
+            من، [نام نویسنده شما - اینجا جایگزین کنید]، سال‌هاست که در مسیر خودشناسی و بهبود فردی قدم برداشته‌ام. سفری پر فراز و نشیب که با کندوکاو در اعماق ذهن و باورهایم آغاز شد. در این راه، با چالش‌های بسیاری روبرو شدم، اما هرگز دست از تلاش برنداشتم.
+        </p>
+        <p>
+            کتاب "AWE" چکیده تجربیات و آموخته‌های من در این سال‌هاست. در این کتاب، نه تنها به بررسی باورهای بنیادین و تاثیر آن‌ها بر زندگی می‌پردازم، بلکه راهکارهایی عملی و گام به گام برای شناسایی، اصلاح و ارتقای این باورها ارائه می‌دهم.
+        </p>
+        <p>
+            هدف من از نگارش این کتاب، به اشتراک گذاشتن دانش و تجربه‌ای است که زندگی من را متحول کرده است. امیدوارم "AWE" نیز بتواند چراغ راهی برای شما در مسیر تحول و شکوفایی باشد.
+        </p>
+    </section>
 
-/* متغیرهای رنگ */
-:root {
-    --primary-color: #007bff;
-    --secondary-color: #6c757d;
-    --light-color: #f8f9fa;
-    --dark-color: #343a40;
-    --text-color: #333;
-    --accent-color: #ffc107; /* زرد کهربایی برای جلب توجه */
-}
+    <section id="store">
+        <h2>فروشگاه کتاب AWE</h2>
+        <p>
+            کتاب "AWE" راهنمای جامع شما برای شناخت و دگرگونی باورهای محدودکننده. با مطالعه این کتاب، دریچه‌ای نو به سوی زندگی‌ای سرشار از موفقیت، آرامش و خوشبختی خواهید گشود.
+        </p>
+        <p>
+            همین حالا نسخه الکترونیکی کتاب "AWE" را تهیه کنید و سفر خود را به سوی تحول آغاز نمایید!
+        </p>
 
-/* تنظیمات عمومی */
-body {
-    font-family: 'Vazirmatn', sans-serif; /* استفاده از فونت وزیرمتن */
-    margin: 0;
-    padding: 0;
-    direction: rtl; /* راست به چپ */
-    text-align: right; /* تراز متن به راست */
-    background-color: var(--light-color); /* استفاده از متغیر رنگ */
-    color: var(--text-color); /* استفاده از متغیر رنگ */
-    line-height: 1.7; /* بهبود خوانایی متن */
-}
+        <section class="payment-details">
+            <h3>جزئیات پرداخت</h3>
+            <p>برای خرید کتاب "AWE" به مبلغ 9,890,000 ریال، لطفاً مبلغ را به شماره کارت زیر واریز نمایید:</p>
+            <p><strong>شماره کارت:</strong> [شماره کارت بانکی شما - اینجا جایگزین کنید]</p>
+            <p>پس از واریز وجه، لطفاً از طریق تلگرام به شناسه کاربری [شناسه تلگرام شما - اینجا جایگزین کنید] اطلاع دهید تا لینک دانلود کتاب برای شما ارسال گردد.</p>
+            <p>با تشکر از همراهی شما.</p>
+        </section>
+    </section>
 
-/* هدر */
-header {
-    background-color: var(--dark-color); /* استفاده از متغیر رنگ */
-    color: var(--light-color); /* استفاده از متغیر رنگ */
-    padding: 2rem 0; /* padding بیشتر برای فضای بهتر */
-    text-align: center;
-    position: relative; /* برای قرارگیری لوگو */
-}
+    <section id="email-signup">
+        <h2>عضویت در خبرنامه</h2>
+        <p>برای اطلاع از جدیدترین مطالب، مقالات و محصولات مرتبط با خودشناسی و بهبود فردی، در خبرنامه ما عضو شوید.</p>
+        <form>
+            <input type="email" id="email" name="email" placeholder="ایمیل خود را وارد کنید" required>
+            <button type="submit">عضویت در خبرنامه</button>
+        </form>
+    </section>
 
-header h1 {
-    margin: 0;
-    font-size: 2.5rem; /* اندازه فونت بزرگتر */
-}
+    <section id="comments">
+        <h2>نظرات کاربران</h2>
+        <p>نظر شما برای ما ارزشمند است. لطفاً نظر خود را درباره کتاب "AWE" با ما به اشتراک بگذارید.</p>
+        <form>
+            <textarea id="comment" name="comment" placeholder="نظر خود را اینجا بنویسید" required></textarea>
+            <button type="submit">ارسال نظر</button>
+        </form>
+        <p>نظرات شما پس از تایید از طریق ایمیل منتشر خواهند شد.</p>
+    </section>
 
-nav ul {
-    list-style: none;
-    padding: 0;
-    margin-top: 1rem; /* margin-top برای فاصله از عنوان */
-    display: flex;
-    justify-content: center;
-}
+    <section id="rules">
+        <h2>قوانین سایت</h2>
+        <ul>
+            <li>ساعات کاری سایت: 8:00 تا 22:00</li>
+            <li>زمان ارسال فایل کتاب پس از پرداخت در ساعات کاری: حداکثر 4 ساعت</li>
+        </ul>
+    </section>
 
-nav ul li {
-    margin: 0 1.5rem; /* margin بیشتر برای فاصله بین آیتم‌ها */
-}
+    <section id="contact">
+        <h2>تماس با ما</h2>
+        <p>در صورت داشتن هرگونه سوال یا ابهام، می‌توانید از طریق ایمیل با ما در ارتباط باشید:</p>
+        <p><strong>ایمیل:</strong> <a href="mailto:awebavar@gmail.com">awebavar@gmail.com</a></p>
+    </section>
 
-nav ul li a {
-    color: var(--light-color); /* استفاده از متغیر رنگ */
-    text-decoration: none;
-    font-size: 1.1rem; /* اندازه فونت منو */
-    transition: color 0.3s ease; /* انیمیشن تغییر رنگ */
-}
-
-nav ul li a:hover {
-    color: var(--accent-color); /* تغییر رنگ در حالت hover */
-}
-
-/* لوگو */
-.logo {
-    max-height: 70px; /* حداکثر ارتفاع لوگو */
-    max-width: 150px; /* حداکثر عرض لوگو */
-    height: auto; /* ارتفاع خودکار برای حفظ نسبت تصویر */
-    position: absolute; /* موقعیت مطلق در هدر */
-    top: 50%; /* وسط عمودی */
-    right: 2rem; /* فاصله از راست */
-    transform: translateY(-50%); /* تنظیم دقیق وسط عمودی */
-}
-
-
-/* بخش اصلی */
-section {
-    padding: 2rem; /* padding بیشتر */
-    margin: 2rem; /* margin بیشتر */
-    background-color: var(--light-color); /* استفاده از متغیر رنگ */
-    border-radius: 12px; /* border-radius بیشتر برای گوشه‌های گردتر */
-    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.05); /* سایه ملایم‌تر */
-}
-
-section h2 {
-    color: var(--dark-color); /* استفاده از متغیر رنگ */
-    margin-top: 0;
-    margin-bottom: 1.5rem; /* margin-bottom بیشتر */
-    font-size: 2rem; /* اندازه فونت بزرگتر */
-    border-bottom: 2px solid var(--accent-color); /* خط زیر عنوان */
-    padding-bottom: 0.5rem; /* فاصله خط از متن */
-}
-
-/* بیوگرافی نویسنده */
-#author-bio p {
-    font-size: 1.1rem;
-    color: var(--text-color);
-}
-
-/* فروشگاه */
-#store {
-    background-color: #eef2f5; /* رنگ پس‌زمینه ملایم‌تر برای فروشگاه */
-}
-
-#store p {
-    font-size: 1.1rem;
-    margin-bottom: 1rem;
-}
-
-.payment-details {
-    background-color: var(--light-color);
-    padding: 1.5rem;
-    border-radius: 8px;
-    box-shadow: 0 3px 9px rgba(0, 0, 0, 0.05);
-    margin-top: 1rem;
-}
-
-.payment-details h3 {
-    font-size: 1.5rem;
-    margin-top: 0;
-    margin-bottom: 1rem;
-    color: var(--primary-color);
-}
-
-.payment-details p {
-    font-size: 1rem;
-    margin-bottom: 0.8rem;
-}
-
-/* فرم عضویت در خبرنامه */
-#email-signup form {
-    max-width: 100%; /* فرم تمام عرض */
-    margin: 0; /* حذف margin برای فرم */
-    display: block; /* تغییر به display: block */
-}
-
-#email-signup input[type="email"] {
-    width: calc(100% - 22px); /* 100% عرض با احتساب padding و border */
-    padding: 1rem;
-    margin-bottom: 1rem;
-    border: 1px solid #ced4da;
-    border-radius: 6px;
-    font-size: 1rem;
-    direction: rtl; /* راست به چپ برای ورودی ایمیل */
-    text-align: right; /* تراز متن به راست */
-}
-
-
-#email-signup button {
-    background-color: var(--primary-color);
-    color: var(--light-color);
-    border: none;
-    padding: 1rem 2rem;
-    border-radius: 6px;
-    cursor: pointer;
-    font-size: 1.1rem;
-    transition: background-color 0.3s ease;
-    width: 100%; /* دکمه تمام عرض */
-}
-
-#email-signup button:hover {
-    background-color: #0056b3;
-}
-
-
-/* بخش نظرات */
-#comments textarea {
-    width: calc(100% - 22px); /* 100% عرض با احتساب padding و border */
-    padding: 1rem;
-    margin-bottom: 1rem;
-    border: 1px solid #ced4da;
-    border-radius: 6px;
-    font-size: 1rem;
-    direction: rtl; /* راست به چپ برای textarea */
-    text-align: right; /* تراز متن به راست */
-    height: 150px; /* ارتفاع بیشتر برای textarea */
-}
-
-#comments button {
-    background-color: var(--secondary-color);
-    color: var(--light-color);
-    border: none;
-    padding: 1rem 2rem;
-    border-radius: 6px;
-    cursor: pointer;
-    font-size: 1.1rem;
-    transition: background-color 0.3s ease;
-}
-
-#comments button:hover {
-    background-color: #545b62;
-}
-
-
-/* قوانین سایت و تماس */
-#rules ul, #contact p {
-    font-size: 1.1rem;
-    list-style-type: none; /* حذف bullet points */
-    padding-left: 0; /* حذف padding پیش‌فرض لیست */
-}
-
-#rules li {
-    margin-bottom: 0.5rem; /* فاصله بین آیتم‌های لیست قوانین */
-}
-
-
-/* فوتر */
-footer {
-    text-align: center;
-    padding: 1.5rem 0; /* padding کمتر */
-    background-color: var(--dark-color); /* استفاده از متغیر رنگ */
-    color: var(--light-color); /* استفاده از متغیر رنگ */
-    font-size: 0.9rem; /* اندازه فونت کوچکتر */
-    /* position: fixed;  ثابت در پایین صفحه - کامنت شد */
-    bottom: 0; /* چسبیده به پایین صفحه */
-    width: 100%; /* عرض کامل */
-}
+    <footer>
+        <p>تمامی حقوق برای awebavar.github.io محفوظ است.</p>
+    </footer>
+</body>
+</html>
