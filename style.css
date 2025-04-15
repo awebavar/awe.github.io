@@ -45,13 +45,25 @@ header {
     color: var(--light-color); /* استفاده از متغیر رنگ */
     padding: 2rem 0; /* padding بیشتر برای فضای بهتر */
     text-align: center;
-    position: relative; /* برای قرارگیری لوگو */
+    display: flex; /* هدر رو flexbox میکنه که بتونیم لوگو و عنوان رو کنار هم قرار بدیم */
+    align-items: center; /* آیتم‌های داخل هدر رو از نظر عمودی وسط‌چین میکنه */
+    justify-content: center; /* محتوای هدر رو در وسط قرار میده (افقی) */
 }
 
 header h1 {
     margin: 0;
     font-size: 2.5rem; /* اندازه فونت بزرگتر */
+    margin-right: 10px; /* فاصله بین لوگو و عنوان */
 }
+
+/* استایل لوگو که به هدر اضافه شده */
+#header-logo {
+    width: 210px; /* عرض لوگو رو 210 پیکسل تنظیم میکنه (حدود 7 برابر بزرگتر از 30px فرضی) */
+    height: auto; /* ارتفاع لوگو به صورت خودکار تنظیم بشه */
+    vertical-align: middle; /* تراز عمودی لوگو رو وسط قرار میده */
+    margin-left: 10px; /* یکم فاصله از عنوان هدر ایجاد میکنه */
+}
+
 
 nav ul {
     list-style: none;
@@ -75,18 +87,6 @@ nav ul li a {
 nav ul li a:hover {
     color: var(--accent-color); /* تغییر رنگ در حالت hover */
 }
-
-/* لوگو */
-.logo {
-    max-height: 70px; /* حداکثر ارتفاع لوگو */
-    max-width: 150px; /* حداکثر عرض لوگو */
-    height: auto; /* ارتفاع خودکار برای حفظ نسبت تصویر */
-    position: absolute; /* موقعیت مطلق در هدر */
-    top: 50%; /* وسط عمودی */
-    right: 2rem; /* فاصله از راست */
-    transform: translateY(-50%); /* تنظیم دقیق وسط عمودی */
-}
-
 
 /* بخش اصلی */
 section {
@@ -225,8 +225,4 @@ footer {
     padding: 1.5rem 0; /* padding کمتر */
     background-color: var(--dark-color); /* استفاده از متغیر رنگ */
     color: var(--light-color); /* استفاده از متغیر رنگ */
-    font-size: 0.9rem; /* اندازه فونت کوچکتر */
-    /* position: fixed;  ثابت در پایین صفحه - کامنت شد */
-    bottom: 0; /* چسبیده به پایین صفحه */
-    width: 100%; /* عرض کامل */
 }
