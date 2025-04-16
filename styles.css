@@ -1,359 +1,110 @@
-/* فونت وزیرمتن */
-@font-face {
-    font-family: 'Vazirmatn';
-    src: url('Vazirmatn-Regular.woff2') format('woff2'),
-         url('Vazirmatn-Regular.woff') format('woff');
-    font-weight: normal;
-    font-style: normal;
-    font-display: swap;
-}
+<!DOCTYPE html>
+<html lang="fa">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>AWE - کتابی برای دگرگونی باورها</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Vazirmatn:wght@400;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="style.css">
+    <link rel="icon" href="logo.png" type="image/png"> <!-- ✅ favicon اضافه شد -->
+</head>
+<body dir="rtl">
+    <header>
+        <a href="/">  <img src="logo.png" alt="لوگو AWE" class="logo"> </a>  <!-- ✅ لوگو جایگزین عنوان -->
+        <nav>
+            <ul>
+                <li><a href="#author-bio">درباره نویسنده</a></li>
+                <li><a href="#awe-for-you">کتاب AWE برای شماست اگر ...</a></li>  <!-- ✅ بخش جدید به منوی بالا منتقل شد -->
+                <li><a href="#familiar-beliefs">آیا این باورها برای شما آشنا هستند؟</a></li> <!-- ✅ بخش جدید "آیا این باورها..." -->
+                <li><a href="#store">فروشگاه</a></li>
+                <li><a href="#email-signup">خبرنامه</a></li>
+                <li><a href="#comments">نظرات</a></li>
+                <li><a href="#rules">قوانین سایت</a></li>
+                <li><a href="#contact">تماس</a></li>
+            </ul>
+        </nav>
+    </header>
 
-@font-face {
-    font-family: 'Vazirmatn';
-    src: url('Vazirmatn-Bold.woff2') format('woff2'),
-         url('Vazirmatn-Bold.woff') format('woff');
-    font-weight: bold;
-    font-style: normal;
-    font-display: swap;
-}
+    <main>
+        <section id="author-bio">
+            <img src="author-image.jpg" alt="تصویر نویسنده AWE" class="author-image">
+            <h2>درباره نویسنده</h2>
+            <p>من، نویسنده کتاب "AWE"، سال‌ها به دنبال کشف عمیق‌ترین لایه‌های ذهن و باورهای شکل‌دهنده زندگی بوده‌ام. این سفر شخصی، که با چالش‌ها و دگرگونی‌های فراوانی همراه بود، من را به درک عمیقی از قدرت باورها و چگونگی تغییر آن‌ها رساند و درست در لحظه‌ای که دریافتم، برای زدودن زنگار باورهای کهنه، صرفاً جملات انگیزشی و تلاش کافی نیست، بلکه ذهن تشنهٔ منطق استوار و مثال‌های قوی و واقعی است، جستجویی عمیق در ذهن و جهانم را آغاز  کردم. مصمم شدم تا با نور حقیقت و استدلال، زنگارهای تردید و ناامیدی را از آینهٔ دلم پاک کنم.
 
-/* متغیرهای رنگ - پالت رنگی الهام گرفته از سایت عباسمنش */
-:root {
-    --primary-color: #007bff; /* آبی اصلی - قابل تغییر به آبی ملایم‌تر */
-    --secondary-color: #6c757d; /* خاکستری متوسط */
-    --light-color: #f8f9fa; /* سفید خیلی روشن */
-    --dark-color: #343a40; /* خاکستری تیره */
-    --text-color: #333; /* مشکی خیلی روشن - متن اصلی */
-    --accent-color: #28a745; /* سبز - رنگ تاکیدی (قابل تغییر به آبی روشن‌تر) */
-    --background-color: #f8f9fa; /* رنگ پس‌زمینه اصلی سایت - سفید خیلی روشن */
-    --card-background: #ffffff; /* رنگ پس‌زمینه کارت‌ها - سفید */
-    --border-color: #dee2e6; /* رنگ بوردر کارت‌ها و جداکننده‌ها - خاکستری خیلی روشن */
-    --header-background: #ffffff; /* پس‌زمینه هدر - سفید */
-    --header-text-color: #343a40; /* رنگ متن هدر - خاکستری تیره */
-    --nav-link-color: #555; /* رنگ لینک‌های منو - خاکستری تیره‌تر */
-    --nav-link-hover-color: var(--accent-color); /* رنگ hover لینک‌های منو - سبز تاکیدی */
-}
+پس، چشمان جستجوگرم را به اطراف گشودم، نه فقط به دنیای محدودِ خود، بلکه به پهنهٔ وسیع جهان. به دنبال نشانه‌های واقعی از جنس زندگی، از جنس تجربه، از جنس انسان‌هایی که مرزهای ناممکن‌های ذهنشان را درنوردیده بودند، به دقت نگریستم.
 
-/* تنظیمات عمومی */
-body {
-    font-family: 'Vazirmatn', sans-serif; /* استفاده از فونت وزیرمتن */
-    margin: 0;
-    padding: 0;
-    direction: rtl; /* راست به چپ */
-    text-align: right; /* تراز متن به راست */
-    background-color: var(--background-color); /* استفاده از متغیر رنگ */
-    color: var(--text-color); /* استفاده از متغیر رنگ */
-    line-height: 1.8; /* بهبود خوانایی متن - خط ارتفاع بیشتر */
-    font-size: 1rem; /* اندازه فونت پایه */
-}
+شاهد بودم که چگونه انسان‌هایی درست شبیه ما، با دستانی خالی و باورهایی راسخ، موانعی را که در ذهن ما  کوه می‌نمودند، به پُل‌هایی برای رسیدن به رویاهایشان تبدیل کردند. این جستجو، نه یک تمرین ذهنیِ خشک و خالی، بلکه سفری عمیق به درونِ باورهایتان است. هر مثالِ واقعی، همچون بارانی از شواهد، زنگارهای تردید را میشوید  و نور امیدی تازه در دلتان میرویاند. دریافتم که غیرممکن‌ها، تنها سایه‌هایی از باورهای محدودکننده‌اند و جهانِ واقعیت، سرشار از فرصت‌ها و پتانسیل‌های بی‌کران است    </p>
+            <p>کتاب "AWE" نه صرفاً یک تئوری، بلکه چکیده‌ای از تجربیات عملی و تمرین‌هایی است که شخصاً برای رهایی از باورهای محدودکننده و دستیابی به پتانسیل‌های درونی‌ام به کار گرفته‌ام. در این کتاب، شما را با گام‌های عملی و موثر همراهی می‌کنم تا بتوانید باورهای خود را شناسایی، ارزیابی و در جهت بهبود زندگی‌تان متحول کنید.</p>
+            <p>هدف من از نوشتن "AWE"، به اشتراک گذاشتن این دانش و تجربه با شماست. باور دارم که هر فردی توانایی دگرگونی زندگی خود را دارد و امیدوارم این کتاب چراغ راهی باشد در مسیر خودشناسی و تحول شخصی شما.</p>
+        </section>
 
-/* هدر - طراحی جدید */
-header {
-    background-color: var(--header-background); /* سفید */
-    color: var(--header-text-color); /* خاکستری تیره */
-    padding: 1rem 2rem; /* padding کمتر در بالا و پایین */
-    text-align: center; /* وسط‌چین کردن عنوان */
-    border-bottom: 1px solid var(--border-color); /* خط جداکننده پایین هدر */
-    display: flex; /* استفاده از فلکس‌باکس برای چیدمان */
-    justify-content: space-between; /* توزیع فضا بین لوگو و عنوان/منو */
-    align-items: center; /* تراز عمودی آیتم‌ها */
-}
+        <section id="awe-for-you">  <!-- ✅ بخش "کتاب AWE برای شماست اگر ..."  بعد از بخش نویسنده -->
+            <h2>کتاب “AWE” برای شماست، اگر…</h2>
+            <p>آیا در اعماق وجودتان، حس می‌کنید که خدا شما را فراموش کرده و صدایتان را نمی‌شنود؟ آیا در لحظات تنهایی و ناامیدی، این فکر آزارتان می‌دهد که در این دنیای بزرگ، تنها و بی‌یاور رها شده‌اید؟ “AWE” برای شماست، اگر می‌خواهید ایمانی دوباره به حضور همیشگی و عشق بی‌کران خداوند در زندگی‌تان پیدا کنید. این کتاب به شما نشان می‌دهد که چگونه باورهای اشتباه در مورد خدا را کنار بگذارید و ارتباطی عمیق و معنادار با منبع هستی برقرار سازید. شما خواهید آموخت که خداوند نه تنها صدایتان را می‌شنود، بلکه همواره با آغوشی باز منتظر بازگشت و تحول شماست.</p>
 
-header h1 {
-    margin: 0;
-    font-size: 1.8rem; /* اندازه فونت عنوان */
-}
+            <p>آیا در جستجوی سلامتی هستید که فراتر از جسم باشد؟ آیا احساس می‌کنید باری سنگین از ناخوشی‌های روحی و جسمی بر دوش می‌کشید و در پی یافتن نوری در انتهای این تاریکی می‌گردید؟ “AWE” برای شماست، اگر می‌خواهید سلامتی واقعی را از درون خودتان آغاز کنید. این کتاب به شما نشان می‌دهد که چگونه با تغییر باورهای محدودکننده، مسیر شفای درونی و جسمی خود را هموار سازید.</p>
 
-nav {
-    /* منو در سمت چپ در حالت راست به چپ */
-}
+            <p>آیا رویای روابطی عمیق و پر معنا را در سر می‌پرورانید؟ آیا از تنهایی و روابط سطحی خسته شده‌اید و قلبتان تشنه‌ی عشقی واقعی و پایدار است؟ “AWE” برای شماست، اگر می‌خواهید جذابیت درونی خود را کشف کنید و روابطی را جذب نمایید که روح شما را تغذیه کنند. این کتاب به شما کمک می‌کند تا باورهای منفی در مورد خود و روابط را کنار بگذارید و درهای قلب خود را به روی عشق و صمیمیت بگشایید.</p>
 
-nav ul {
-    list-style: none;
-    padding: 0;
-    margin: 0;
-    display: flex; /* نمایش افقی منو */
-}
+            <p>آیا ثروت و فراوانی را نه فقط در حساب بانکی، بلکه در تمام جنبه‌های زندگی خود می‌خواهید؟ آیا احساس می‌کنید توانایی‌هایتان نادیده گرفته شده و لایق زندگی‌ای سرشار از نعمت و برکت هستید؟ “AWE” برای شماست، اگر می‌خواهید باورهای ثروت‌آفرین را در ذهن خود بکارید و پتانسیل‌های مالی خود را شکوفا سازید. این کتاب به شما می‌آموزد که چگونه از شر باورهای کمبود و ناتوانی رها شوید و جریان فراوانی را به زندگی خود دعوت کنید.</p>
 
-nav ul li {
-    margin-right: 1.5rem; /* فاصله بین آیتم‌های منو - راست به چپ */
-}
+            <p>آیا آرامشی عمیق و ماندگار را در میان هیاهوی زندگی آرزو دارید؟ آیا از استرس، اضطراب و افکار منفی خسته شده‌اید و دلتان برای لحظه‌ای سکوت و آسودگی پر می‌کشد؟ “AWE” برای شماست، اگر می‌خواهید آرامش واقعی را در قلب خود پیدا کنید و طوفان‌های ذهنی را مهار نمایید. این کتاب به شما نشان می‌دهد که چگونه با تغییر باورهای مخرب، به صلح درونی دست یابید و در هر شرایطی، آرام و استوار باقی بمانید.</p>
+        </section>
 
-nav ul li:last-child {
-    margin-right: 0; /* حذف فاصله از آخرین آیتم منو */
-}
+        <section id="familiar-beliefs">
+            <h2>آیا این باورها برای شما آشنا هستند؟</h2>
+            <p>کتاب "AWE" به بررسی چگونگی دستیابی به آرامش عمیق و ماندگار در زندگی پرداخته و تاکید می‌کند که با تغییر باورهای مخرب می‌توان به صلح درونی دست یافت. این کتاب با معرفی **102 باور محدود کننده** مختلف، به شناسایی و بررسی آن‌ها می‌پردازد. به عنوان مثال، باورهایی نظیر "توانایی تغییر در هیچ قسمتی از زندگیم رو ندارم" و "این بیماری من رو از پا در میاره" را مورد بررسی قرار می‌دهد و با ذکر مثال‌هایی از افراد موفق، این باورها را به چالش می‌کشد. همچنین، به افراد یادآوری می‌کند که قدرت تغییر در دستان خودشان است و امید به بهبودی از بیماری می‌تواند منجر به موفقیت و بهبود کیفیت زندگی شود.</p>
+        </section>
 
-nav ul li a {
-    color: var(--nav-link-color); /* رنگ لینک‌های منو */
-    text-decoration: none;
-    font-size: 1rem; /* اندازه فونت منو */
-    transition: color 0.3s ease; /* انیمیشن تغییر رنگ */
-    padding: 0.5rem 1rem; /* padding برای لینک‌های منو */
-    border-radius: 6px; /* گوشه‌های گرد برای لینک‌های منو */
-}
+        <section id="store">
+            <h2>فروشگاه کتاب AWE</h2>
+            <p>“AWE” راهنمایی عملی برای شناسایی و تغییر باورهای محدود کننده و شکوفا کردن پتانسیل‌ها است. نسخه الکترونیکی کتاب به قیمت 9,890,000 ریال قابل تهیه است.</p>
+            <div class="book-cards-container">
+                <div class="book-card">
+                    <img src="book-cover-1.jpg" alt="جلد کتاب AWE" class="book-cover">
+                    <div class="book-card-body">
+                        <h3 class="book-title">نسخه الکترونیکی کتاب AWE</h3>
+                        <p class="book-author">نویسنده: [نام نویسنده]</p>
+                        <p class="book-price">9,890,000 ریال</p>
+                        <a href="#" class="book-button">خرید نسخه الکترونیکی</a>
+                    </div>
+                </div>
+                </div>
+        </section>
 
-nav ul li a:hover {
-    color: var(--nav-link-hover-color); /* تغییر رنگ در حالت hover */
-    background-color: var(--light-color); /* پس‌زمینه روشن‌تر در hover */
-}
+        <section id="email-signup">
+            <h2>عضویت در خبرنامه</h2>
+            <p>با عضویت در خبرنامه AWE، از مقالات و پیشنهادات ویژه مطلع شوید.</p>
+            <form>
+                <input type="email" placeholder="ایمیل خود را وارد کنید">
+                <button type="submit">عضویت در خبرنامه</button>
+            </form>
+        </section>
 
-/* لوگو - طراحی جدید - سمت راست هدر */
-.logo {
-    max-height: 100px; /* حداکثر ارتفاع لوگو - کوچکتر */
-    max-width: 200px; /* حداکثر عرض لوگو - کوچکتر */
-    height: auto;
-}
+        <section id="comments">
+            <h2>نظرات کاربران</h2>
+            <textarea placeholder="نظر خود را درباره کتاب AWE بنویسید"></textarea>
+            <button>ارسال نظر</button>
+        </section>
 
+        <section id="rules">
+            <h2>قوانین سایت</h2>
+            <ul>
+                <li>ساعات پشتیبانی: 8:00 تا 22:00</li>
+                <li>حداکثر زمان ارسال کتاب 4 ساعت پس از پرداخت در ساعات کاری است.</li>
+            </ul>
+        </section>
 
-/* بخش اصلی */
-section {
-    padding: 2.5rem 2rem; /* padding بیشتر در بالا و پایین */
-    margin: 2rem auto; /* margin افقی خودکار برای وسط‌چین شدن در عرض‌های بزرگتر */
-    background-color: var(--card-background); /* سفید */
-    border-radius: 12px; /* گوشه‌های گردتر */
-    box-shadow: 0 3px 10px rgba(0, 0, 0, 0.04); /* سایه ملایم‌تر و ظریف‌تر */
-    max-width: 1000px; /* حداکثر عرض بخش اصلی برای خوانایی بهتر در صفحه‌های بزرگ */
-}
+        <section id="contact">
+            <h2>تماس با ما</h2>
+            <p>برای پرسش یا پیشنهاد، با ایمیل <a href="mailto:awebavar@gmail.com">awebavar@gmail.com</a> تماس بگیرید.</p>
+        </section>
+    </main>
 
-section h2 {
-    color: var(--dark-color); /* خاکستری تیره */
-    margin-top: 0;
-    margin-bottom: 1.8rem; /* margin-bottom بیشتر */
-    font-size: 1.7rem; /* اندازه فونت عنوان بخش */
-    border-bottom: 2px solid var(--accent-color); /* خط زیر عنوان - رنگ تاکیدی */
-    padding-bottom: 0.4rem; /* فاصله خط از متن */
-}
-
-section p {
-    font-size: 1rem; /* اندازه فونت پاراگراف */
-    color: var(--text-color); /* مشکی خیلی روشن */
-    margin-bottom: 1.3rem; /* فاصله پایین پاراگراف */
-}
-
-
-/* بیوگرافی نویسنده */
-#author-bio p {
-    font-size: 1rem;
-    color: var(--text-color);
-}
-
-/* استایل تصویر نویسنده (بخش درباره نویسنده) - دایره‌ای و حاشیه‌دار */
-.author-image {
-    width: 120px; /* عرض تصویر */
-    height: auto; /* ارتفاع خودکار */
-    max-width: 100%; /* حداکثر عرض 100% */
-    display: block;
-    margin: 0 auto 1rem auto; /* وسط‌چین و فاصله پایین */
-    border-radius: 50%; /* دایره‌ای کردن تصویر */
-    border: 3px solid var(--light-color); /* حاشیه سفید */
-    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.08); /* سایه ظریف */
-}
-
-
-/* فروشگاه - طراحی کارت‌محور و جذاب - بدون تغییر */
-#store {
-    background-color: var(--background-color); /* همسان با پس‌زمینه اصلی سایت - سفید خیلی روشن */
-    padding: 3rem 2rem;
-}
-
-#store h2 {
-    color: var(--primary-color); /* آبی اصلی */
-    border-bottom: 3px solid var(--primary-color); /* خط زیر عنوان فروشگاه */
-    margin-bottom: 2.5rem;
-}
-
-#store p {
-    font-size: 1.1rem;
-    color: var(--secondary-color); /* خاکستری متوسط */
-    margin-bottom: 2rem;
-    text-align: center;
-}
-
-/* کانتینر کارت‌های کتاب - استفاده از Grid Layout - بدون تغییر */
-.book-cards-container {
-    display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); /* واکنش‌گرا: حداقل عرض 280px برای هر کارت - کمی بزرگتر */
-    gap: 2.5rem;
-    justify-items: center;
-}
-
-/* کارت کتاب - بدون تغییر */
-.book-card {
-    background-color: var(--card-background); /* سفید */
-    border-radius: 12px; /* گوشه‌های گرد */
-    box-shadow: 0 8px 20px rgba(0, 0, 0, 0.06); /* سایه ملایم‌تر */
-    overflow: hidden;
-    transition: transform 0.3s ease, box-shadow 0.3s ease;
-    display: flex;
-    flex-direction: column;
-    height: 100%;
-}
-
-.book-card:hover {
-    transform: scale(1.02); /* بزرگنمایی کمتر در hover */
-    box-shadow: 0 10px 25px rgba(0, 0, 0, 0.1); /* سایه قوی‌تر در hover */
-}
-
-/* تصویر جلد کتاب - بدون تغییر */
-.book-cover {
-    width: 100%;
-    height: auto;
-    border-bottom: 1px solid var(--border-color); /* خاکستری خیلی روشن */
-    display: block;
-    border-top-left-radius: 12px; /* گوشه‌های گرد */
-    border-top-right-radius: 12px; /* گوشه‌های گرد */
-}
-
-/* بدنه کارت (متن و دکمه‌ها) - بدون تغییر */
-.book-card-body {
-    padding: 1.5rem;
-    display: flex;
-    flex-direction: column;
-    justify-content: space-between;
-    flex-grow: 1;
-}
-
-
-/* عنوان کتاب - بدون تغییر */
-.book-title {
-    font-size: 1.3rem; /* کمی کوچکتر */
-    font-weight: bold;
-    color: var(--dark-color); /* خاکستری تیره */
-    margin-bottom: 0.7rem;
-    line-height: 1.3;
-}
-
-/* نویسنده کتاب - بدون تغییر */
-.book-author {
-    font-size: 1rem;
-    color: var(--secondary-color); /* خاکستری متوسط */
-    margin-bottom: 1rem;
-}
-
-/* قیمت کتاب - بدون تغییر */
-.book-price {
-    font-size: 1.2rem;
-    color: var(--accent-color); /* سبز - رنگ تاکیدی */
-    font-weight: bold;
-    margin-bottom: 1.3rem;
-}
-
-
-/* دکمه خرید / اطلاعات بیشتر - بدون تغییر */
-.book-button {
-    background-color: var(--primary-color); /* آبی اصلی */
-    color: var(--light-color); /* سفید خیلی روشن */
-    border: none;
-    padding: 0.9rem 1.8rem; /* padding کمی کمتر */
-    border-radius: 6px; /* گوشه‌های گرد */
-    cursor: pointer;
-    font-size: 1rem;
-    font-weight: bold;
-    text-align: center;
-    transition: background-color 0.3s ease, transform 0.2s ease;
-    display: inline-block;
-    align-self: flex-start;
-    box-shadow: 0 2px 6px rgba(0, 0, 0, 0.06); /* سایه ملایم‌تر */
-}
-
-.book-button:hover {
-    background-color: #0056b3; /* آبی تیره‌تر در hover */
-    transform: translateY(-1px); /* بالا آمدن کمتر در hover */
-    box-shadow: 0 3px 8px rgba(0, 0, 0, 0.1); /* سایه بیشتر در hover */
-}
-
-.book-button:active { /* استایل برای حالت کلیک دکمه */
-    transform: translateY(0);
-    box-shadow: 0 2px 6px rgba(0, 0, 0, 0.06); /* سایه کمتر در کلیک دکمه */
-}
-
-
-/* فرم عضویت در خبرنامه - بدون تغییر */
-#email-signup form {
-    max-width: 100%;
-    margin: 0;
-    display: block;
-}
-
-#email-signup input[type="email"] {
-    width: calc(100% - 22px);
-    padding: 0.9rem; /* padding کمی کمتر */
-    margin-bottom: 0.9rem; /* margin-bottom کمی کمتر */
-    border: 1px solid #ced4da;
-    border-radius: 6px;
-    font-size: 1rem;
-    direction: rtl;
-    text-align: right;
-}
-
-
-#email-signup button {
-    background-color: var(--primary-color);
-    color: var(--light-color);
-    border: none;
-    padding: 0.9rem 1.8rem; /* padding کمی کمتر */
-    border-radius: 6px;
-    cursor: pointer;
-    font-size: 1rem;
-    transition: background-color 0.3s ease;
-    width: 100%;
-}
-
-#email-signup button:hover {
-    background-color: #0056b3;
-}
-
-
-/* بخش نظرات - بدون تغییر */
-#comments textarea {
-    width: calc(100% - 22px);
-    padding: 0.9rem; /* padding کمی کمتر */
-    margin-bottom: 0.9rem; /* margin-bottom کمی کمتر */
-    border: 1px solid #ced4da;
-    border-radius: 6px;
-    font-size: 1rem;
-    direction: rtl;
-    text-align: right;
-    height: 130px; /* ارتفاع کمتر برای textarea */
-}
-
-#comments button {
-    background-color: var(--secondary-color);
-    color: var(--light-color);
-    border: none;
-    padding: 0.9rem 1.8rem; /* padding کمی کمتر */
-    border-radius: 6px;
-    cursor: pointer;
-    font-size: 1rem;
-    transition: background-color 0.3s ease;
-}
-
-#comments button:hover {
-    background-color: #545b62;
-}
-
-
-/* قوانین سایت و تماس - بدون تغییر */
-#rules ul, #contact p {
-    font-size: 1rem;
-    list-style-type: none;
-    padding-left: 0;
-}
-
-#rules li {
-    margin-bottom: 0.4rem; /* margin-bottom کمتر */
-}
-
-
-/* فوتر - طراحی جدید - ساده‌تر */
-footer {
-    text-align: center;
-    padding: 1rem 0; /* padding کمتر */
-    background-color: var(--header-background); /* سفید - همسان با هدر */
-    color: var(--secondary-color); /* خاکستری متوسط */
-    font-size: 0.9rem;
-    border-top: 1px solid var(--border-color); /* خط جداکننده بالای فوتر */
-    /* position: fixed; ثابت در پایین صفحه - حذف شد */
-    bottom: 0;
-    width: 100%;
-}
+    <footer>
+        <p>© 2024 AWE. تمامی حقوق محفوظ است.</p>
+    </footer>
+</body>
+</html>
