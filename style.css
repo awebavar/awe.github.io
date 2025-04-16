@@ -1,7 +1,4 @@
-/* style.css.txt */
-/* طراحی خلاقانه و مبتکرانه با رنگ‌های نئون و پاستل */
-
-/* فونت وزیرمتن (همچنان استفاده شود یا فونت خلاقانه دیگر؟) */
+/* فونت وزیرمتن */
 @font-face {
     font-family: 'Vazirmatn';
     src: url('Vazirmatn-Regular.woff2') format('woff2'),
@@ -20,379 +17,300 @@
     font-display: swap;
 }
 
-/* متغیرهای رنگ نئون و پاستل */
+/* متغیرهای رنگ */
 :root {
-    --neon-green: #39FF14;
-    --pastel-pink: #FFD1DC;
-    --neon-blue: #00FFFF;
-    --pastel-yellow: #FFFACD;
-    --dark-gray: #333;
-    --light-gray: #f8f9fa;
-    --text-white: #FFFFFF;
+    --primary-color: #007bff;
+    --secondary-color: #6c757d;
+    --light-color: #f8f9fa;
+    --dark-color: #343a40;
+    --text-color: #333;
+    --accent-color: #ffc107; /* زرد کهربایی برای جلب توجه */
+    --store-background: #f9f5f1; /* رنگ پس‌زمینه بخش فروشگاه */
+    --store-card-background: #fff; /* رنگ پس‌زمینه کارت‌های کتاب */
+    --store-card-shadow: rgba(0, 0, 0, 0.1); /* سایه کارت‌های کتاب */
 }
 
-/* تنظیمات عمومی برای طراحی خلاقانه */
+/* تنظیمات عمومی */
 body {
-    font-family: 'Vazirmatn', sans-serif; /* فونت پیش‌فرض - قابل تغییر به فونت خاص‌تر */
+    font-family: 'Vazirmatn', sans-serif;
     margin: 0;
     padding: 0;
     direction: rtl;
     text-align: right;
-    background-color: var(--dark-gray); /* پس‌زمینه تیره برای کنتراست با نئون */
-    color: var(--text-white); /* متن سفید برای خوانایی روی پس‌زمینه تیره */
-    line-height: 1.8; /* خط خواناتر */
-    overflow-x: hidden; /* جلوگیری از اسکرول افقی ناخواسته */
+    background-color: var(--light-color);
+    color: var(--text-color);
+    line-height: 1.8; /* بهبود خوانایی خطوط */
 }
 
-/* هدر با طراحی نامتقارن و جذاب */
+/* هدر */
 header {
-    background: linear-gradient(45deg, var(--neon-blue) 30%, var(--pastel-pink) 90%); /* گرادیان رنگی نئون و پاستل */
-    padding: 3rem 0;
+    background-color: var(--dark-color);
+    color: var(--light-color);
+    padding: 2rem 0;
     text-align: center;
-    position: relative; /* برای موقعیت‌دهی المان‌های شناور */
-    clip-path: polygon(0 0, 100% 0, 90% 100%, 10% 100%); /* شکل نامتقارن برای هدر */
+    position: relative;
+    display: flex; /* استفاده از فلکس باکس برای هدر */
+    justify-content: space-between; /* پخش کردن عناصر در هدر */
+    align-items: center; /* تراز عمودی عناصر در وسط */
+    padding: 1.5rem 2rem; /* کاهش padding بالا و پایین و افزایش چپ و راست */
 }
 
 header h1 {
     margin: 0;
-    font-size: 3rem; /* اندازه بزرگتر عنوان */
-    font-weight: bold; /* عنوان برجسته */
-    text-shadow: 2px 2px 3px rgba(0,0,0,0.3); /* سایه متن برای عمق */
-    color: var(--dark-gray); /* رنگ تیره برای عنوان روی پس‌زمینه روشن */
-}
-
-/* منوی ناوبری شناور و خلاقانه */
-nav {
-    position: absolute; /* موقعیت مطلق برای شناور بودن */
-    top: 100%; /* قرارگیری زیر هدر */
-    right: 2rem; /* فاصله از راست */
-    background-color: rgba(0, 0, 0, 0.5); /* پس‌زمینه نیمه‌شفاف برای منو */
-    border-radius: 10px;
-    padding: 1rem 2rem;
-    z-index: 10; /* اطمینان از قرارگیری روی سایر المان‌ها */
-    transform: translateY(-10px); /* کمی بالا آمده از هدر */
-    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.6); /* سایه قوی‌تر برای منو */
+    font-size: 2rem; /* کاهش اندازه فونت عنوان */
 }
 
 nav ul {
     list-style: none;
     padding: 0;
-    margin: 0;
+    margin: 0; /* حذف margin بالا */
     display: flex;
-    justify-content: space-around; /* توزیع یکنواخت آیتم‌های منو */
+    justify-content: center;
 }
 
 nav ul li {
-    margin: 0 1.5rem;
+    margin: 0 1rem; /* کاهش margin بین آیتم‌های منو */
 }
 
 nav ul li a {
-    color: var(--text-white); /* رنگ سفید برای لینک‌های منو */
+    color: var(--light-color);
     text-decoration: none;
-    font-size: 1.2rem; /* اندازه بزرگتر لینک‌های منو */
-    transition: color 0.3s ease, transform 0.3s ease; /* انیمیشن رنگ و تغییر اندازه */
-    display: block; /* بلاک برای کلیک‌پذیری بهتر */
-    padding: 0.5rem 1rem; /* padding برای لینک‌های منو */
-    border-radius: 5px; /* گوشه‌های گرد برای لینک‌ها */
+    font-size: 1rem; /* کاهش اندازه فونت منو */
+    transition: color 0.3s ease;
 }
 
 nav ul li a:hover {
-    color: var(--neon-green); /* تغییر رنگ در حالت hover به نئون سبز */
-    transform: scale(1.1); /* بزرگنمایی در حالت hover */
-    background-color: rgba(255, 255, 255, 0.1); /* پس‌زمینه روشن‌تر در حالت hover */
+    color: var(--accent-color);
 }
 
-
-/* لوگو - موقعیت ثابت و شناور در سمت چپ */
+/* لوگو */
 .logo {
-    max-height: 250px; /* ارتفاع بیشتر برای لوگو */
-    max-width: 400px; /* عرض متناسب با ارتفاع */
+    max-height: 100px; /* ارتفاع لوگو را تنظیم کنید */
     height: auto;
-    position: fixed; /* موقعیت ثابت در صفحه */
-    top: 2rem; /* فاصله از بالا */
-    left: 2rem; /* فاصله از چپ */
-    z-index: 20; /* بالاتر از همه محتوا */
-    transform: rotate(-5deg); /* چرخش جزئی برای جذابیت بیشتر */
-    box-shadow: 5px 5px 10px rgba(0,0,0,0.5); /* سایه برای برجسته کردن لوگو */
-    border-radius: 15px; /* گوشه‌های گردتر برای لوگو */
-    transition: transform 0.5s ease; /* انیمیشن چرخش */
-}
-
-.logo:hover {
-    transform: rotate(5deg) scale(1.05); /* چرخش معکوس و بزرگنمایی در hover */
+    margin-right: 2rem; /* فاصله از عنوان */
 }
 
 
-/* بخش اصلی محتوا با طراحی لایه‌لایه و نامتقارن */
+/* بخش اصلی */
 section {
-    padding: 4rem 3rem; /* padding بیشتر برای بخش‌ها */
-    margin: 3rem; /* margin بیشتر برای فاصله بخش‌ها */
-    background-color: rgba(255, 255, 255, 0.05); /* پس‌زمینه نیمه‌شفاف برای بخش‌ها */
-    border-radius: 15px; /* گوشه‌های گردتر برای بخش‌ها */
-    box-shadow: 0 10px 25px rgba(0, 0, 0, 0.2); /* سایه قوی‌تر برای بخش‌ها */
-    position: relative; /* برای موقعیت‌دهی المان‌های داخلی */
-    overflow: hidden; /* مخفی کردن محتوای اضافی در صورت نیاز */
+    padding: 2rem;
+    margin: 2rem;
+    background-color: var(--light-color);
+    border-radius: 12px;
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.05);
 }
-
-section:nth-child(odd) {
-    transform: skewY(-2deg); /* کج کردن بخش‌های فرد برای تنوع بصری */
-    margin-top: 5rem; /* فاصله بیشتر برای بخش‌های فرد */
-    margin-bottom: 5rem; /* فاصله بیشتر برای بخش‌های فرد */
-}
-
-section:nth-child(even) {
-    transform: skewY(2deg); /* کج کردن بخش‌های زوج در جهت مخالف */
-    margin-top: 5rem; /* فاصله بیشتر برای بخش‌های زوج */
-    margin-bottom: 5rem; /* فاصله بیشتر برای بخش‌های زوج */
-}
-
-section > div {
-    transform: skewY(0deg); /* خنثی کردن کجی برای محتوای داخلی */
-}
-
 
 section h2 {
-    color: var(--pastel-yellow); /* رنگ پاستلی برای عنوان بخش */
+    color: var(--dark-color);
     margin-top: 0;
-    margin-bottom: 2rem; /* فاصله بیشتر زیر عنوان */
-    font-size: 2.8rem; /* اندازه بزرگتر عنوان بخش */
-    text-shadow: 1px 1px 2px rgba(0,0,0,0.4); /* سایه متن برای عنوان بخش */
-    position: relative; /* برای خط زیر عنوان */
-    padding-bottom: 1rem; /* فاصله خط از متن */
-    display: inline-block; /* برای محدود کردن عرض خط زیر عنوان به عرض متن */
-}
-
-section h2::after {
-    content: '';
-    position: absolute;
-    left: 0;
-    bottom: 0;
-    width: 100%;
-    height: 5px;
-    background-color: var(--neon-green); /* خط نئون سبز زیر عنوان */
-    border-radius: 5px;
-    transform: scaleX(0.7); /* کاهش عرض خط */
-    transform-origin: left; /* مبدا تغییر اندازه از چپ */
-}
-
-
-/* پاراگراف‌ها با استایل مدرن */
-section p {
-    font-size: 1.2rem;
-    color: var(--light-gray); /* رنگ روشن‌تر برای متن بخش */
     margin-bottom: 1.5rem;
-    text-shadow: 0.5px 0.5px 1px rgba(0,0,0,0.3); /* سایه متن ملایم */
+    font-size: 1.8rem; /* کاهش اندازه فونت عنوان بخش */
+    border-bottom: 2px solid var(--accent-color);
+    padding-bottom: 0.5rem;
 }
 
+section p {
+    font-size: 1rem;
+    color: var(--text-color);
+    margin-bottom: 1rem; /* فاصله پایین پاراگراف‌ها */
+}
 
-/* تصویر نویسنده - شناور و چرخنده */
+/* بیوگرافی نویسنده */
+#author-bio p {
+    font-size: 1rem; /* اندازه فونت بیوگرافی نویسنده */
+}
+
+/* استایل تصویر نویسنده */
 .author-image {
-    width: 180px; /* اندازه بزرگتر تصویر نویسنده */
+    width: 100px; /* کاهش اندازه تصویر نویسنده */
     height: auto;
     max-width: 100%;
-    border-radius: 20px; /* گوشه‌های گردتر */
-    box-shadow: 8px 8px 15px rgba(0,0,0,0.4); /* سایه قوی‌تر برای تصویر */
-    float: left; /* شناور به چپ */
-    margin-left: 2rem; /* فاصله از متن سمت راست */
-    margin-top: 1rem;
-    transform: rotate(7deg); /* چرخش بیشتر تصویر */
-    transition: transform 0.5s ease; /* انیمیشن چرخش */
-}
-
-.author-image:hover {
-    transform: rotate(-7deg) scale(1.05); /* چرخش معکوس و بزرگنمایی در hover */
-    box-shadow: 10px 10px 20px rgba(0,0,0,0.5); /* سایه قوی‌تر در hover */
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
+    border-radius: 50%;
+    margin-bottom: 1rem; /* فاصله پایین تصویر نویسنده */
 }
 
 
-/* فروشگاه با طراحی کارت‌های جذاب */
+/* فروشگاه */
 #store {
-    background-color: rgba(0, 0, 0, 0.1); /* پس‌زمینه تیره‌تر برای فروشگاه */
+    background-color: var(--store-background); /* رنگ پس‌زمینه جدید فروشگاه */
+    padding: 2.5rem; /* افزایش padding بخش فروشگاه */
 }
+
+#store h2 {
+    color: var(--primary-color); /* تغییر رنگ عنوان فروشگاه */
+    text-align: center; /* عنوان وسط‌چین */
+    margin-bottom: 2rem; /* فاصله پایین عنوان فروشگاه */
+}
+
 
 #store p {
-    color: var(--pastel-pink); /* رنگ پاستلی برای متن فروشگاه */
+    font-size: 1rem;
+    margin-bottom: 1.2rem; /* افزایش فاصله پایین پاراگراف‌ها در فروشگاه */
+    color: var(--secondary-color); /* رنگ متن توضیحات فروشگاه */
+    text-align: center; /* متن توضیحات وسط‌چین */
 }
 
+
 .book-card-container {
-    display: flex;
-    flex-wrap: wrap;
-    justify-content: space-around; /* توزیع کارت‌ها در عرض */
+    display: grid; /* استفاده از گرید برای کارت‌های کتاب */
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr)); /* واکنش‌گرا و حداقل عرض 250px */
+    gap: 2rem; /* فاصله بین کارت‌های کتاب */
+    justify-items: center; /* وسط‌چین کردن افقی کارت‌ها در هر ستون */
 }
 
 .book-card {
-    background-color: rgba(255, 255, 255, 0.1); /* پس‌زمینه کارت‌ها */
-    border-radius: 15px;
-    padding: 1.5rem;
-    margin: 1.5rem;
-    width: 300px; /* عرض ثابت برای کارت‌ها */
-    box-shadow: 5px 5px 10px rgba(0,0,0,0.3); /* سایه برای کارت‌ها */
-    transition: transform 0.3s ease, box-shadow 0.3s ease; /* انیمیشن کارت‌ها */
+    background-color: var(--store-card-background); /* رنگ پس‌زمینه کارت‌های کتاب */
+    border-radius: 12px;
+    overflow: hidden; /* جلوگیری از بیرون‌زدگی محتوا از گوشه‌های گرد */
+    box-shadow: 0 4px 12px var(--store-card-shadow); /* سایه ملایم‌تر */
+    transition: transform 0.3s ease, box-shadow 0.3s ease; /* انیمیشن برای هاور */
+    display: flex; /* استفاده از فلکس باکس */
+    flex-direction: column; /* چیدمان عمودی عناصر کارت */
+    align-items: center; /* وسط‌چین کردن عناصر به صورت افقی */
+    padding: 1.5rem; /* padding داخلی کارت‌ها */
+    text-align: center; /* تراز متن به وسط در کارت‌ها */
 }
+
 
 .book-card:hover {
-    transform: translateY(-10px) scale(1.02); /* بالا آمدن و بزرگنمایی در hover */
-    box-shadow: 8px 15px 20px rgba(0,0,0,0.4); /* سایه قوی‌تر در hover */
+    transform: scale(1.05); /* بزرگنمایی کارت در هاور */
+    box-shadow: 0 6px 18px rgba(0, 0, 0, 0.15); /* سایه بیشتر در هاور */
 }
 
+
 .book-card img {
-    max-width: 100%;
+    max-width: 100%; /* تصویر کتاب حداکثر عرض کارت */
     height: auto;
-    border-radius: 10px;
-    margin-bottom: 1rem;
+    border-radius: 8px;
+    margin-bottom: 1rem; /* فاصله پایین تصویر کتاب */
 }
 
 .book-card h3 {
-    color: var(--neon-blue); /* عنوان کتاب با رنگ نئون آبی */
-    margin-top: 0;
-    margin-bottom: 0.8rem;
-    font-size: 1.5rem;
-    text-shadow: 0.5px 0.5px 1px rgba(0,0,0,0.3); /* سایه متن برای عنوان کتاب */
+    font-size: 1.2rem; /* اندازه فونت عنوان کتاب */
+    margin: 0 0 0.5rem 0; /* فاصله پایین عنوان کتاب */
+    color: var(--dark-color); /* رنگ عنوان کتاب */
 }
 
 .book-card p {
-    font-size: 1.1rem;
-    color: var(--light-gray); /* توضیحات کتاب با رنگ روشن‌تر */
-    margin-bottom: 1rem;
+    font-size: 0.9rem; /* اندازه فونت توضیحات کتاب */
+    color: var(--text-color); /* رنگ توضیحات کتاب */
+    margin-bottom: 1rem; /* فاصله پایین توضیحات کتاب */
+    line-height: 1.6; /* خوانایی بیشتر توضیحات */
 }
 
+
 .book-card .price {
-    font-size: 1.3rem;
-    color: var(--neon-green); /* قیمت کتاب با رنگ نئون سبز */
-    font-weight: bold;
-    margin-bottom: 1rem;
+    font-size: 1rem; /* اندازه فونت قیمت */
+    color: var(--primary-color); /* رنگ قیمت */
+    font-weight: bold; /* وزن فونت قیمت */
+    margin-bottom: 1.5rem; /* فاصله پایین قیمت */
 }
 
 .book-card button {
-    background-color: var(--pastel-yellow); /* دکمه خرید با رنگ پاستلی زرد */
-    color: var(--dark-gray); /* متن دکمه تیره */
+    background-color: var(--accent-color); /* رنگ دکمه خرید */
+    color: var(--dark-color); /* رنگ متن دکمه خرید */
     border: none;
-    padding: 0.8rem 1.5rem;
-    border-radius: 8px;
+    padding: 0.75rem 1.5rem; /* padding دکمه خرید */
+    border-radius: 6px;
     cursor: pointer;
-    font-size: 1.1rem;
-    transition: background-color 0.3s ease, color 0.3s ease; /* انیمیشن دکمه */
+    font-size: 1rem; /* اندازه فونت دکمه خرید */
+    transition: background-color 0.3s ease; /* انیمیشن دکمه خرید */
 }
 
 .book-card button:hover {
-    background-color: var(--neon-green); /* تغییر رنگ دکمه در hover به نئون سبز */
-    color: var(--text-white); /* تغییر رنگ متن دکمه در hover به سفید */
+    background-color: #ffda67; /* رنگ هاور دکمه خرید */
 }
 
 
-/* فرم عضویت در خبرنامه - طراحی خاص */
-#email-signup {
-    background: linear-gradient(135deg, var(--pastel-pink) 20%, var(--neon-blue) 80%); /* گرادیان رنگی برای فرم خبرنامه */
-    padding: 3rem;
-    border-radius: 20px;
-    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.3); /* سایه قوی‌تر برای فرم خبرنامه */
-    text-align: center; /* مرکزچین کردن محتوای فرم */
+/* فرم عضویت در خبرنامه */
+#email-signup form {
+    max-width: 100%;
+    margin: 0;
+    display: block;
 }
-
-#email-signup h2 {
-    color: var(--dark-gray); /* عنوان فرم تیره */
-    text-shadow: 1px 1px 2px rgba(255,255,255,0.5); /* سایه روشن برای عنوان فرم */
-}
-
-#email-signup p {
-    color: var(--dark-gray); /* متن فرم تیره */
-    text-shadow: 0.5px 0.5px 1px rgba(255,255,255,0.5); /* سایه روشن برای متن فرم */
-}
-
 
 #email-signup input[type="email"] {
-    width: calc(100% - 40px); /* عرض کمتر برای ورودی ایمیل */
-    padding: 1.2rem; /* padding بیشتر برای ورودی ایمیل */
-    margin-bottom: 1.5rem; /* فاصله بیشتر زیر ورودی ایمیل */
-    border: none;
-    border-radius: 10px;
-    font-size: 1.1rem;
+    width: calc(100% - 22px);
+    padding: 1rem;
+    margin-bottom: 1rem;
+    border: 1px solid #ced4da;
+    border-radius: 6px;
+    font-size: 1rem;
     direction: rtl;
     text-align: right;
-    box-shadow: inset 3px 3px 7px rgba(0,0,0,0.2); /* سایه داخلی برای ورودی ایمیل */
 }
 
 #email-signup button {
-    background-color: var(--neon-green); /* دکمه فرم نئون سبز */
-    color: var(--dark-gray); /* متن دکمه تیره */
+    background-color: var(--primary-color);
+    color: var(--light-color);
     border: none;
-    padding: 1.2rem 2.5rem; /* padding بیشتر برای دکمه فرم */
-    border-radius: 10px;
+    padding: 1rem 2rem;
+    border-radius: 6px;
     cursor: pointer;
-    font-size: 1.2rem;
-    transition: background-color 0.3s ease, transform 0.3s ease; /* انیمیشن دکمه فرم */
-    box-shadow: 3px 3px 7px rgba(0,0,0,0.3); /* سایه برای دکمه فرم */
+    font-size: 1.1rem;
+    transition: background-color 0.3s ease;
+    width: 100%;
 }
 
 #email-signup button:hover {
-    background-color: var(--pastel-yellow); /* تغییر رنگ دکمه در hover به پاستلی زرد */
-    transform: scale(1.05); /* بزرگنمایی دکمه در hover */
-    box-shadow: 5px 5px 10px rgba(0,0,0,0.4); /* سایه قوی‌تر برای دکمه در hover */
+    background-color: #0056b3;
 }
 
 
-
-/* بخش نظرات - طراحی متفاوت */
-#comments {
-    background-color: rgba(255, 255, 255, 0.08); /* پس‌زمینه روشن‌تر برای نظرات */
-    border-radius: 20px;
-}
-
+/* بخش نظرات */
 #comments textarea {
-    width: calc(100% - 40px); /* عرض کمتر برای textarea نظرات */
-    padding: 1.2rem; /* padding بیشتر برای textarea نظرات */
-    margin-bottom: 1.5rem; /* فاصله بیشتر زیر textarea نظرات */
-    border: 2px solid var(--neon-blue); /* حاشیه نئون آبی برای textarea نظرات */
-    border-radius: 10px;
-    font-size: 1.1rem;
+    width: calc(100% - 22px);
+    padding: 1rem;
+    margin-bottom: 1rem;
+    border: 1px solid #ced4da;
+    border-radius: 6px;
+    font-size: 1rem;
     direction: rtl;
     text-align: right;
-    height: 180px; /* ارتفاع بیشتر برای textarea نظرات */
-    background-color: rgba(0, 0, 0, 0.1); /* پس‌زمینه تیره‌تر برای textarea نظرات */
-    color: var(--light-gray); /* متن روشن برای textarea نظرات */
-    box-shadow: 3px 3px 7px rgba(0,0,0,0.2); /* سایه برای textarea نظرات */
-}
-
-#comments textarea:focus {
-    outline: none;
-    border-color: var(--neon-green); /* تغییر رنگ حاشیه در focus به نئون سبز */
-    box-shadow: 0 0 10px var(--neon-green); /* سایه نئون سبز در focus */
+    height: 150px;
+    line-height: 1.7; /* خوانایی متن در textarea */
 }
 
 
 #comments button {
-    background-color: var(--pastel-pink); /* دکمه ارسال نظر پاستلی صورتی */
-    color: var(--dark-gray); /* متن دکمه تیره */
+    background-color: var(--secondary-color);
+    color: var(--light-color);
     border: none;
-    padding: 1.2rem 2.5rem; /* padding بیشتر برای دکمه نظرات */
-    border-radius: 10px;
+    padding: 1rem 2rem;
+    border-radius: 6px;
     cursor: pointer;
-    font-size: 1.2rem;
-    transition: background-color 0.3s ease, transform 0.3s ease; /* انیمیشن دکمه نظرات */
-    box-shadow: 3px 3px 7px rgba(0,0,0,0.3); /* سایه برای دکمه نظرات */
+    font-size: 1.1rem;
+    transition: background-color 0.3s ease;
 }
 
 #comments button:hover {
-    background-color: var(--neon-blue); /* تغییر رنگ دکمه در hover به نئون آبی */
-    transform: scale(1.05); /* بزرگنمایی دکمه در hover */
-    box-shadow: 5px 5px 10px rgba(0,0,0,0.4); /* سایه قوی‌تر برای دکمه در hover */
+    background-color: #545b62;
 }
 
 
-
-/* قوانین سایت و تماس - لیست آیکون‌دار و جذاب */
+/* قوانین سایت و تماس */
 #rules ul, #contact p {
-    font-size: 1.2rem;
+    font-size: 1rem; /* کاهش اندازه فونت قوانین و تماس */
     list-style-type: none;
     padding-left: 0;
+    line-height: 1.7; /* خوانایی بیشتر لیست قوانین و تماس */
 }
 
 #rules li {
-    margin-bottom: 1rem;
-    position: relative; /* برای آیکون‌های سفارشی */
-    padding-right: 2.5rem; /* فضا برای آیکون */
+    margin-bottom: 0.5rem;
 }
 
-/* مثال برای اضافه کردن آیکون‌های سفارشی - نیاز به تصاویر آیکون یا فونت آیکون */
-#rules li::before {
-    content: '\
+
+/* فوتر */
+footer {
+    text-align: center;
+    padding: 1.5rem 0;
+    background-color: var(--dark-color);
+    color: var(--light-color);
+    font-size: 0.8rem; /* کاهش اندازه فونت فوتر */
+    bottom: 0;
+    width: 100%;
+}
