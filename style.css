@@ -25,188 +25,349 @@
     --dark-color: #343a40;
     --text-color: #333;
     --accent-color: #ffc107; /* زرد کهربایی برای جلب توجه */
+    --background-color: #f4f7f9; /* رنگ پس‌زمینه روشن‌تر */
+    --card-background: #fff; /* رنگ پس‌زمینه کارت‌ها */
+    --shadow-color: rgba(0, 0, 0, 0.1); /* رنگ سایه */
 }
 
 /* تنظیمات عمومی */
 body {
-    font-family: 'Vazirmatn', sans-serif; /* استفاده از فونت وزیرمتن */
+    font-family: 'Vazirmatn', sans-serif;
     margin: 0;
     padding: 0;
-    direction: rtl; /* راست به چپ */
-    text-align: right; /* تراز متن به راست */
-    background-color: var(--light-color); /* استفاده از متغیر رنگ */
-    color: var(--text-color); /* استفاده از متغیر رنگ */
-    line-height: 1.8; /* بهبود خوانایی متن - افزایش فاصله خطوط */
-    font-size: 1.1rem; /* افزایش اندازه فونت پایه برای خوانایی بیشتر */
-}
-
-/* کانتینر اصلی برای مرکزیت صفحه */
-.container {
-    max-width: 960px; /* حداکثر عرض برای محتوا */
-    margin-left: auto; /* حاشیه خودکار چپ و راست برای مرکزیت */
-    margin-right: auto;
-    padding-left: 2rem; /* padding از طرفین برای فضای داخلی */
-    padding-right: 2rem;
+    direction: rtl;
+    text-align: right;
+    background-color: var(--background-color); /* پس‌زمینه روشن‌تر */
+    color: var(--text-color);
+    line-height: 1.8; /* خط خواناتر */
+    overflow-x: hidden; /* جلوگیری از اسکرول افقی ناخواسته */
 }
 
 /* هدر */
 header {
-    background-color: var(--dark-color); /* استفاده از متغیر رنگ */
-    color: var(--light-color); /* استفاده از متغیر رنگ */
-    padding: 2rem 0; /* padding بیشتر برای فضای بهتر */
-    text-align: center;
-    position: relative; /* برای قرارگیری لوگو */
+    background-color: var(--dark-color);
+    color: var(--light-color);
+    padding: 1.5rem 2rem; /* padding کمتر و متقارن */
+    display: flex;
+    justify-content: space-between; /* عنوان و لوگو در دو طرف */
+    align-items: center; /* تراز عمودی */
 }
 
 header h1 {
     margin: 0;
-    font-size: 2.5rem; /* اندازه فونت بزرگتر */
+    font-size: 2rem; /* اندازه فونت کمی کوچکتر */
 }
 
 nav ul {
     list-style: none;
     padding: 0;
-    margin-top: 1rem; /* margin-top برای فاصله از عنوان */
+    margin: 0;
     display: flex;
-    justify-content: center;
 }
 
 nav ul li {
-    margin: 0 1.5rem; /* margin بیشتر برای فاصله بین آیتم‌ها */
+    margin-right: 1.5rem; /* فاصله از راست */
+}
+
+nav ul li:last-child {
+    margin-right: 0; /* حذف margin از آخرین آیتم */
 }
 
 nav ul li a {
-    color: var(--light-color); /* استفاده از متغیر رنگ */
+    color: var(--light-color);
     text-decoration: none;
-    font-size: 1.1rem; /* اندازه فونت منو */
-    transition: color 0.3s ease; /* انیمیشن تغییر رنگ */
+    font-size: 1rem;
+    transition: color 0.3s ease;
 }
 
 nav ul li a:hover {
-    color: var(--accent-color); /* تغییر رنگ در حالت hover */
+    color: var(--accent-color);
 }
 
 /* لوگو */
 .logo {
-    max-height: 180px; /* حداکثر ارتفاع لوگو - کمی کوچکتر */
-    max-width: 400px; /* حداکثر عرض لوگو - کمی کوچکتر */
-    height: auto; /* ارتفاع خودکار برای حفظ نسبت تصویر */
-    position: absolute; /* موقعیت مطلق در هدر */
-    top: 50%; /* وسط عمودی */
-    right: 2rem; /* فاصله از راست */
-    transform: translateY(-50%); /* تنظیم دقیق وسط عمودی */
+    max-height: 150px; /* ارتفاع کمتر لوگو */
+    max-width: 250px; /* عرض کمتر لوگو */
+    height: auto;
 }
-
 
 /* بخش اصلی */
-section {
-    padding: 2rem; /* padding بیشتر */
-    margin-top: 2rem; /* margin بالا */
-    margin-bottom: 2rem; /* margin پایین */
-    background-color: var(--light-color); /* استفاده از متغیر رنگ */
-    border-radius: 12px; /* border-radius بیشتر برای گوشه‌های گردتر */
-    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.05); /* سایه ملایم‌تر */
+main {
+    padding: 2rem;
+    display: grid;
+    grid-template-columns: 1fr; /* تک ستونی در حالت موبایل */
+    gap: 2rem;
+    max-width: 1200px; /* حداکثر عرض برای دسکتاپ */
+    margin: 2rem auto; /* وسط‌چین در دسکتاپ */
 }
+
+@media (min-width: 768px) { /* برای تبلت به بالا */
+    main {
+        grid-template-columns: 1fr; /* همچنان تک ستونی در تبلت */
+    }
+}
+
+@media (min-width: 992px) { /* برای دسکتاپ */
+    main {
+        grid-template-columns: 0.7fr 1.3fr; /* دو ستونی در دسکتاپ - ستون سمت راست بزرگتر برای محتوا */
+    }
+}
+
+
+section {
+    background-color: var(--card-background); /* پس‌زمینه کارت */
+    border-radius: 12px;
+    box-shadow: 0 4px 12px var(--shadow-color); /* سایه ملایم‌تر و فراگیرتر */
+    padding: 2rem;
+    margin-bottom: 2rem; /* فاصله پایین هر بخش */
+}
+
+section:last-child {
+    margin-bottom: 0; /* حذف margin از آخرین بخش */
+}
+
 
 section h2 {
-    color: var(--dark-color); /* استفاده از متغیر رنگ */
+    color: var(--dark-color);
     margin-top: 0;
-    margin-bottom: 1.5rem; /* margin-bottom بیشتر */
-    font-size: 2.2rem; /* اندازه فونت بزرگتر - کمی بزرگتر از قبل */
-    border-bottom: 2px solid var(--accent-color); /* خط زیر عنوان */
-    padding-bottom: 0.7rem; /* فاصله خط از متن - کمی بیشتر */
-    text-align: center; /* مرکز چین برای تیترهای بخش */
+    margin-bottom: 1.5rem;
+    font-size: 1.8rem; /* اندازه فونت کمی کوچکتر */
+    border-bottom: 2px solid var(--accent-color);
+    padding-bottom: 0.5rem;
 }
 
-/* پاراگراف‌ها در بخش‌ها */
-section p {
+/* بخش قهرمان (Hero Section) */
+#hero {
+    text-align: center;
+    padding: 4rem 2rem; /* padding بیشتر برای بخش قهرمان */
+    background-image: url('images/hero-background.jpg'); /* تصویر پس‌زمینه بخش قهرمان */
+    background-size: cover; /* پوشش کامل */
+    background-position: center; /* مرکز تصویر */
+    color: var(--light-color); /* متن سفید برای بخش قهرمان */
+    position: relative; /* برای پوشش رنگی */
+    border-radius: 12px; /* گرد کردن گوشه‌ها */
+    overflow: hidden; /* مخفی کردن محتوای بیرون از بوردر- radius */
+    margin-bottom: 2rem; /* فاصله از بخش بعدی */
+}
+
+/* پوشش رنگی برای تصویر پس‌زمینه */
+#hero::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    right: 0;
+    bottom: 0;
+    left: 0;
+    background-color: rgba(0, 0, 0, 0.5); /* رنگ مشکی نیمه‌شفاف */
+    z-index: 1; /* پشت محتوای اصلی */
+}
+
+#hero-content {
+    position: relative; /* برای قرارگیری روی پوشش رنگی */
+    z-index: 2; /* روی پوشش رنگی */
+    padding: 2rem;
+}
+
+
+#hero h2 {
+    font-size: 2.5rem; /* اندازه فونت بزرگتر برای عنوان اصلی */
+    color: var(--light-color); /* رنگ سفید برای عنوان اصلی */
+    border-bottom: none; /* حذف خط زیر عنوان اصلی */
+    margin-bottom: 1rem;
+}
+
+#hero p {
+    font-size: 1.2rem; /* اندازه فونت بزرگتر برای توضیحات بخش قهرمان */
+    color: var(--light-color); /* رنگ سفید برای توضیحات */
+    margin-bottom: 2rem;
+}
+
+.btn-primary {
+    display: inline-block;
+    background-color: var(--primary-color);
+    color: var(--light-color);
+    padding: 1rem 2.5rem;
+    border-radius: 8px;
+    text-decoration: none;
     font-size: 1.1rem;
-    color: var(--text-color);
-    margin-bottom: 1.3rem; /* فاصله پایین پاراگراف‌ها برای جداسازی بهتر */
+    transition: background-color 0.3s ease;
 }
 
-/* لیست‌ها در بخش‌ها */
-section ul {
-    padding-right: 2rem; /* تورفتگی لیست‌ها */
-    margin-bottom: 1.3rem; /* فاصله پایین لیست‌ها */
-}
-
-section li {
-    margin-bottom: 0.7rem; /* فاصله بین آیتم‌های لیست */
+.btn-primary:hover {
+    background-color: #0056b3;
 }
 
 
-/* بیوگرافی نویسنده */
-#author-bio p {
-    font-size: 1.1rem;
-    color: var(--text-color);
+/* تصویر نویسنده در بخش درباره نویسنده */
+.author-image-section {
+    text-align: center; /* وسط‌چین کردن تصویر */
 }
 
-/* استایل تصویر نویسنده (بخش درباره نویسنده) - بزرگتر و دایره‌ای */
+
 .author-image {
-    width: 150px; /* عرض تصویر - بزرگتر */
-    height: auto; /* ارتفاع خودکار برای حفظ تناسب */
-    max-width: 100%; /* حداکثر عرض 100% برای واکنش‌گرا بودن */
-    display: block; /* برای جلوگیری از فضای اضافی پایین تصویر */
-    margin-left: auto; /* برای وسط قرار گرفتن در صورت نیاز */
-    margin-right: auto; /* برای وسط قرار گرفتن در صورت نیاز */
-    border-radius: 50%; /* دایره‌ای کردن تصویر */
-    margin-bottom: 1.5rem; /* فاصله پایین تصویر */
+    width: 150px; /* عرض تصویر بزرگتر */
+    height: auto;
+    max-width: 100%;
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
+    border-radius: 50%;
+    box-shadow: 0 4px 8px var(--shadow-color); /* سایه برای تصویر */
 }
 
 
 /* فروشگاه */
 #store {
-    background-color: #eef2f5; /* رنگ پس‌زمینه ملایم‌تر برای فروشگاه */
+    background-color: var(--background-color); /* پس‌زمینه متفاوت برای فروشگاه */
+    box-shadow: none; /* حذف سایه برای فروشگاه */
+    border-radius: 0; /* حذف گردی گوشه‌ها برای فروشگاه */
+    padding: 2rem 0; /* padding عمودی بیشتر برای فروشگاه */
+    margin: 2rem 0; /* margin عمودی بیشتر برای فروشگاه */
 }
 
-#store p {
-    font-size: 1.1rem;
-    margin-bottom: 1rem;
+#store h2 {
+    text-align: center; /* عنوان وسط‌چین برای فروشگاه */
+    border-bottom: none; /* حذف خط زیر عنوان فروشگاه */
+    margin-bottom: 2rem; /* margin-bottom بیشتر برای عنوان فروشگاه */
+    font-size: 2rem; /* اندازه فونت بزرگتر برای عنوان فروشگاه */
+    color: var(--primary-color); /* رنگ متفاوت برای عنوان فروشگاه */
 }
 
-.payment-details {
-    background-color: var(--light-color);
+
+.store-items {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr)); /* واکنش‌گرا و حداقل عرض 250px */
+    gap: 1.5rem;
+}
+
+.store-item {
+    background-color: var(--card-background);
+    border-radius: 12px;
+    box-shadow: 0 4px 12px var(--shadow-color);
     padding: 1.5rem;
+    text-align: center;
+}
+
+.store-item img {
+    max-width: 100%;
+    height: auto;
     border-radius: 8px;
-    box-shadow: 0 3px 9px rgba(0, 0, 0, 0.05);
-    margin-top: 1rem;
-    margin-bottom: 1.5rem; /* فاصله پایین بخش پرداخت */
-}
-
-.payment-details h3 {
-    font-size: 1.6rem; /* کمی بزرگتر */
-    margin-top: 0;
     margin-bottom: 1rem;
-    color: var(--primary-color);
-    text-align: center; /* مرکز چین برای تیترهای جزئیات پرداخت */
 }
 
-.payment-details p {
-    font-size: 1.05rem; /* کمی بزرگتر */
-    margin-bottom: 0.8rem;
+.store-item h3 {
+    font-size: 1.2rem;
+    margin-top: 0;
+    margin-bottom: 0.5rem;
+    color: var(--dark-color);
 }
+
+.store-item p {
+    font-size: 1rem;
+    color: var(--secondary-color);
+    margin-bottom: 1rem;
+}
+
+.store-item .price {
+    font-size: 1.1rem;
+    font-weight: bold;
+    color: var(--primary-color);
+    margin-bottom: 1rem;
+}
+
+.store-item .btn-buy {
+    display: inline-block;
+    background-color: var(--accent-color);
+    color: var(--dark-color);
+    padding: 0.8rem 2rem;
+    border-radius: 6px;
+    text-decoration: none;
+    font-size: 1rem;
+    transition: background-color 0.3s ease;
+}
+
+.store-item .btn-buy:hover {
+    background-color: #e0a800; /* رنگ تیره‌تر در hover */
+}
+
 
 /* فرم عضویت در خبرنامه */
+#email-signup {
+    background-color: var(--primary-color); /* پس‌زمینه رنگی برای خبرنامه */
+    color: var(--light-color); /* متن سفید برای خبرنامه */
+    text-align: center; /* وسط‌چین کردن محتوای خبرنامه */
+    padding: 3rem 2rem; /* padding بیشتر برای خبرنامه */
+    border-radius: 12px; /* گرد کردن گوشه‌ها */
+    margin-bottom: 2rem; /* فاصله از بخش بعدی */
+}
+
+#email-signup h2 {
+    color: var(--light-color); /* عنوان سفید برای خبرنامه */
+    border-bottom: none; /* حذف خط زیر عنوان خبرنامه */
+    margin-bottom: 1.5rem; /* margin-bottom بیشتر برای عنوان خبرنامه */
+    font-size: 2rem; /* اندازه فونت بزرگتر برای عنوان خبرنامه */
+}
+
+#email-signup p {
+    font-size: 1.1rem; /* اندازه فونت بزرگتر برای توضیحات خبرنامه */
+    margin-bottom: 2rem; /* margin-bottom بیشتر برای توضیحات خبرنامه */
+}
+
+
 #email-signup form {
-    max-width: 100%; /* فرم تمام عرض */
-    margin: 0; /* حذف margin برای فرم */
-    display: block; /* تغییر به display: block */
+    max-width: 500px; /* حداکثر عرض فرم خبرنامه */
+    margin: 0 auto; /* وسط‌چین کردن فرم */
+    display: flex; /* استفاده از فلکس‌باکس برای فرم */
+    gap: 0.5rem; /* فاصله بین ورودی و دکمه */
 }
 
 #email-signup input[type="email"] {
-    width: calc(100% - 22px); /* 100% عرض با احتساب padding و border */
+    flex-grow: 1; /* فیلد ایمیل فضا را پر کند */
+    padding: 1rem;
+    border: none; /* حذف بوردر */
+    border-radius: 6px; /* گرد کردن گوشه‌ها */
+    font-size: 1rem;
+    direction: rtl;
+    text-align: right;
+    color: var(--text-color); /* رنگ متن تیره برای خوانایی */
+}
+
+#email-signup input[type="email"]::placeholder {
+    color: #aaa; /* رنگ placeholder ملایم‌تر */
+}
+
+
+#email-signup button {
+    background-color: var(--accent-color); /* رنگ دکمه متفاوت */
+    color: var(--dark-color); /* رنگ متن دکمه تیره */
+    border: none;
+    padding: 1rem 2rem;
+    border-radius: 6px;
+    cursor: pointer;
+    font-size: 1.1rem;
+    transition: background-color 0.3s ease;
+}
+
+#email-signup button:hover {
+    background-color: #e0a800; /* رنگ تیره‌تر در hover */
+}
+
+
+/* بخش نظرات */
+#comments textarea {
+    width: 100%;
     padding: 1rem;
     margin-bottom: 1rem;
     border: 1px solid #ced4da;
     border-radius: 6px;
     font-size: 1rem;
-    direction: rtl; /* راست به چپ برای ورودی ایمیل */
-    text-align: right; /* تراز متن به راست */
+    direction: rtl;
+    text-align: right;
+    height: 150px;
+    resize: vertical; /* فقط تغییر ارتفاع عمودی مجاز */
 }
 
-
-#email-signup button {
+#comments button {
     background-color: var(--primary-color);
     color: var(--light-color);
     border: none;
@@ -215,68 +376,125 @@ section li {
     cursor: pointer;
     font-size: 1.1rem;
     transition: background-color 0.3s ease;
-    width: 100%; /* دکمه تمام عرض */
 }
 
-#email-signup button:hover {
+#comments button:hover {
     background-color: #0056b3;
 }
 
 
-/* بخش نظرات */
-#comments textarea {
-    width: calc(100% - 22px); /* 100% عرض با احتساب padding و border */
-    padding: 1rem;
-    margin-bottom: 1rem;
-    border: 1px solid #ced4da;
-    border-radius: 6px;
-    font-size: 1rem;
-    direction: rtl; /* راست به چپ برای textarea */
-    text-align: right;
-    height: 150px; /* ارتفاع textarea */
-    resize: vertical; /* فقط تغییر ارتفاع به صورت عمودی */
-}
-
-#comments button[type="submit"] {
-    background-color: var(--secondary-color);
-    color: var(--light-color);
-    border: none;
-    padding: 1rem 2rem;
-    border-radius: 6px;
-    cursor: pointer;
-    font-size: 1.1rem;
-    transition: background-color 0.3s ease;
-}
-
-#comments button[type="submit"]:hover {
-    background-color: #545b62;
-}
-
+/* قوانین سایت و تماس */
 #rules ul, #contact p {
-    font-size: 1.1rem;
-    color: var(--text-color);
-}
-
-#rules ul {
-    list-style: none; /* حذف bullet points پیش فرض */
-    padding-right: 2rem; /* کمی تورفتگی */
+    font-size: 1rem; /* اندازه فونت کمی کوچکتر */
+    list-style-type: none;
+    padding-left: 0;
 }
 
 #rules li {
     margin-bottom: 0.5rem;
-    padding-right: 1rem;
-    position: relative; /* برای ایجاد bullet points سفارشی */
 }
+
 
 /* فوتر */
 footer {
-    background-color: var(--dark-color); /* رنگ پس‌زمینه تیره */
-    color: var(--light-color); /* رنگ متن روشن */
-    text-align: center; /* مرکزچین کردن متن فوتر */
-    padding: 1rem 0; /* padding کمتر برای فوتر */
-    position: relative;
-    bottom: 0; /* چسباندن به پایین صفحه */
-    width: 100%; /* عرض کامل */
-    font-size: 0.9rem; /* اندازه فونت کوچکتر برای فوتر */
-    margin-top: 4rem; /* فاصله از محتوای اصلی */
+    text-align: center;
+    padding: 1rem 0; /* padding کمتر */
+    background-color: var(--dark-color);
+    color: var(--light-color);
+    font-size: 0.85rem; /* اندازه فونت خیلی کوچکتر */
+    /* position: fixed; */
+    bottom: 0;
+    width: 100%;
+}
+
+/* لینک‌ها */
+a {
+    color: var(--primary-color);
+    text-decoration: none; /* حذف خط زیر لینک‌ها به صورت پیش‌فرض */
+    transition: color 0.3s ease; /* انیمیشن تغییر رنگ لینک‌ها */
+}
+
+a:hover {
+    color: #0056b3; /* رنگ تیره‌تر در حالت hover */
+    text-decoration: underline; /* اضافه کردن خط زیر لینک در حالت hover */
+}
+
+/* کلاس‌های کمکی برای تایپوگرافی */
+.lead {
+    font-size: 1.2rem; /* متن بزرگتر برای تاکید */
+    font-weight: 500; /* وزن فونت نیمه‌bold */
+}
+
+.text-muted {
+    color: var(--secondary-color); /* متن خاکستری برای اطلاعات فرعی */
+}
+
+.text-accent {
+    color: var(--accent-color); /* رنگ تاکیدی برای جلب توجه */
+}
+
+/* واکنش‌گرایی برای موبایل */
+@media (max-width: 767px) {
+    header {
+        flex-direction: column; /* هدر عمودی در موبایل */
+        text-align: center; /* وسط‌چین کردن عنوان و لوگو */
+    }
+    header h1 {
+        margin-bottom: 1rem; /* فاصله زیر عنوان در موبایل */
+    }
+    nav ul {
+        flex-direction: column; /* منو عمودی در موبایل */
+        text-align: center; /* وسط‌چین کردن منو */
+    }
+    nav ul li {
+        margin: 0.5rem 0; /* فاصله بین آیتم‌های منو در موبایل */
+    }
+
+    #hero {
+        padding: 2rem 1rem; /* padding کمتر در موبایل برای بخش قهرمان */
+    }
+
+    #hero h2 {
+        font-size: 2rem; /* اندازه فونت کوچکتر برای عنوان اصلی در موبایل */
+    }
+
+    #hero p {
+        font-size: 1rem; /* اندازه فونت کوچکتر برای توضیحات در موبایل */
+    }
+
+    #email-signup form {
+        flex-direction: column; /* فرم خبرنامه عمودی در موبایل */
+    }
+
+    #email-signup input[type="email"] {
+        margin-bottom: 1rem; /* فاصله زیر فیلد ایمیل در موبایل */
+        width: calc(100% - 22px); /* عرض کامل در موبایل */
+    }
+
+    #email-signup button {
+        width: 100%; /* دکمه تمام عرض در موبایل */
+    }
+
+    main {
+        padding: 1rem; /* padding کمتر در موبایل برای بخش اصلی */
+        margin: 1rem auto; /* margin کمتر در موبایل برای بخش اصلی */
+    }
+
+    section {
+        padding: 1.5rem; /* padding کمتر در موبایل برای بخش‌ها */
+        margin-bottom: 1.5rem; /* margin کمتر در موبایل برای بخش‌ها */
+    }
+
+    #store {
+        padding: 1rem 0; /* padding کمتر در موبایل برای فروشگاه */
+        margin: 1rem 0; /* margin کمتر در موبایل برای فروشگاه */
+    }
+
+    .store-items {
+        grid-template-columns: repeat(auto-fit, minmax(150px, 1fr)); /* آیتم‌های فروشگاه کوچکتر در موبایل */
+    }
+
+    .store-item {
+        padding: 1rem; /* padding کمتر در موبایل برای آیتم‌های فروشگاه */
+    }
 }
