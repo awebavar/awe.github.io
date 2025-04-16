@@ -2,14 +2,15 @@
 <html lang="fa" dir="rtl">
 <head>
   <meta charset="UTF-8">
-  <title>خانه باور های AWE</title>
+  <title>AWE خانه باور</title> <!-- ✅ عنوان سایت به "AWE خانه باور" تغییر یافت -->
   <link rel="stylesheet" href="style.css"> <!-- ✅ اطمینان از وجود لینک CSS -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css"> <!-- اضافه کردن فونت آیکون -->
 </head>
 <body>
   <header>
     <div class="container">
       <div class="logo">
-        <a href="#"><img src="LOGO.png.png" alt="لوگوی فروشگاه کتاب فانتزی"></a> <!-- ✅ نام فایل لوگو اضافه شد -->
+        <a href="#"><img src="LOGO.png.png" alt="لوگوی AWE خانه باور"></a> <!-- ✅ نام فایل لوگو اضافه شد -->
       </div>
       <nav class="navigation">
         <ul>
@@ -31,9 +32,9 @@
 
   <section class="hero-banner">
     <div class="banner-content">
-      <h1>به خانه باور های AWE خوش آمدید</h1>
-      <!-- شعار حذف شد -->
-      <a href="#" class="cta-button">مشاهده کتاب‌ها</a>
+      <h1>به AWE خانه باور خوش آمدید</h1> <!-- ✅ تغییر عنوان بنر -->
+      <p>مرکز تخصصی باورهای محدود کننده و ارائه راهکارهای رهایی از آن‌ها</p> <!-- ✅ تغییر متن بنر -->
+      <a href="#categories" class="cta-button">مشاهده دسته‌بندی‌ها</a> <!-- ✅ تغییر متن دکمه بنر و لینک به دسته‌بندی‌ها -->
     </div>
   </section>
 
@@ -46,54 +47,40 @@
           <img src="image_0.png" alt="جلد کتاب 1"> <!--  ✅ مثال استفاده از نام فایل تصویر -->
           <h3>نام کتاب 1</h3>
           <p>نویسنده 1</p>
-          <a href="#" class="view-button">مشاهده کتاب</a>
+          <a href="#" class="view-button">خرید کتاب ویژه</a> <!-- ✅ تغییر متن دکمه -->
         </div>
         <div class="book-item">
           <img src="image_0 (1).png" alt="جلد کتاب 2"> <!-- ✅ مثال استفاده از نام فایل تصویر -->
           <h3>نام کتاب 2</h3>
           <p>نویسنده 2</p>
-          <a href="#" class="view-button">مشاهده کتاب</a>
+          <a href="#" class="view-button">خرید کتاب ویژه</a> <!-- ✅ تغییر متن دکمه -->
         </div>
         <div class="book-item">
           <img src="image_0 (2).png" alt="جلد کتاب 3"> <!-- ✅ مثال استفاده از نام فایل تصویر -->
           <h3>نام کتاب 3</h3>
           <p>نویسنده 3</p>
-          <a href="#" class="view-button">مشاهده کتاب</a>
+          <a href="#" class="view-button">خرید کتاب ویژه</a> <!-- ✅ تغییر متن دکمه -->
         </div>
         <!-- ... ادامه لیست کتاب‌ها ... -->
       </div>
     </div>
   </section>
 
-  <section class="categories">
+  <section class="categories" id="categories">
     <div class="container">
-      <h2>دسته‌بندی نمونه باورهای محدود کننده</h2>
+      <h2>دسته‌بندی باورهای محدود کننده</h2> <!-- ✅ تغییر عنوان بخش دسته‌بندی‌ها -->
       <div class="categories-grid">
         <!-- ... لیست دسته‌بندی‌ها ... -->
-        <div class="category-item">
-          <a href="#">“قلب‌های شیشه‌ای، باورهای پولادین”</a>
-        </div>
-        <div class="category-item">
-          <a href="#">“رازهای باور به قدرت بیکران هستی”</a>
-        </div>
-        <div class="category-item">
-          <a href="#">“بازی تقدیر یا انتخاب‌های پنهان؟”</a>
-        </div>
-        <div class="category-item">
-          <a href="#">“جادوی پشتکار: کلید گنج‌های پنهان”</a>
-        </div>
-        <div class="category-item">
-          <a href="#">“زخم‌های کودکی، باورهای بزرگسالی”</a>
-        </div>
-        <div class="category-item">
-          <a href="#">“زندان زمان: رهایی از زنجیرهای گذشته”</a>
-        </div>
-        <div class="category-item">
-          <a href="#">“سایه حسادت: دزد باورهای شخصی”</a>
-        </div>
-        <div class="category-item">
-          <a href="#">“ویروس‌های ذهنی: پاکسازی باورهای سمی”</a>
-        </div>
+        <ol class="category-list"> <!-- ✅ استفاده از لیست شماره‌دار -->
+          <li><a href="#">رازهای باور به قدرت بیکران هستی</a></li>
+          <li><a href="#">قلب‌های شیشه‌ای باورهای پولادین</a></li>
+          <li><a href="#">بازی تقدیر یا انتخاب‌های پنهان</a></li>
+          <li><a href="#">جادوی پشتکار کلید گنج‌های پنهان</a></li>
+          <li><a href="#">زخم‌های کودکی باورهای بزرگسالی</a></li>
+          <li><a href="#">زندان زمان رهایی از زنجیرهای گذشته</a></li>
+          <li><a href="#">سایه حسادت دزد باورهای شخصی</a></li>
+          <li><a href="#">ویروس‌های ذهنی پاکسازی باورهای سمی</a></li>
+        </ol>
       </div>
     </div>
   </section>
@@ -128,7 +115,7 @@
     <div class="container">
       <div class="footer-widget">
         <h3>درباره ما</h3>
-        <p>فروشگاه آنلاین کتاب فانتزی، مرجع تخصصی کتاب‌های فانتزی و تخیلی برای علاقه‌مندان به این ژانر جذاب.</p>
+        <p>AWE خانه باور، مرجع تخصصی ارائه راهکارهای رهایی از باورهای محدود کننده و دستیابی به موفقیت و خودباوری.</p> <!-- ✅ تغییر متن درباره ما -->
       </div>
       <div class="footer-widget">
         <h3>دسترسی سریع</h3>
@@ -141,13 +128,12 @@
         </ul>
       </div>
       <div class="footer-widget">
-        <h3>ارتباط با ما</h3>
-        <p>ایمیل: <a href="mailto:awebavar@gmail.com">awebavar@gmail.com</a></p>
-        <p>تلگرام: <a href="https://t.me/AWEBAVAR">@AWEBAVAR</a></p>
+        <h3>ارتباط با ما</h3> <!-- ✅ تغییر عنوان بخش ارتباط با ما -->
+        <p>ایمیل: <a href="mailto:awebavar@gmail.com">awebavar@gmail.com</a></p> <!-- ✅ حذف شناسه تلگرام -->
       </div>
     </div>
     <div class="copyright">
-      <p>&copy; 1403 کلیه حقوق این سایت متعلق به فروشگاه آنلاین کتاب فانتزی می‌باشد.</p>
+      <p>&copy; 1403 کلیه حقوق این سایت متعلق به AWE خانه باور می‌باشد.</p> <!-- ✅ تغییر متن کپی‌رایت -->
     </div>
   </footer>
 
