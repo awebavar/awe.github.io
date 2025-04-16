@@ -29,86 +29,110 @@
 
 /* تنظیمات عمومی */
 body {
-    font-family: 'Vazirmatn', sans-serif;
+    font-family: 'Vazirmatn', sans-serif; /* استفاده از فونت وزیرمتن */
     margin: 0;
     padding: 0;
-    direction: rtl;
-    text-align: right;
-    background-color: var(--light-color);
-    color: var(--text-color);
-    line-height: 1.7;
+    direction: rtl; /* راست به چپ */
+    text-align: right; /* تراز متن به راست */
+    background-color: var(--light-color); /* استفاده از متغیر رنگ */
+    color: var(--text-color); /* استفاده از متغیر رنگ */
+    line-height: 1.8; /* بهبود خوانایی متن - افزایش فاصله خطوط */
+    font-size: 1.1rem; /* افزایش اندازه فونت پایه برای خوانایی بیشتر */
+}
+
+/* کانتینر اصلی برای مرکزیت صفحه */
+.container {
+    max-width: 960px; /* حداکثر عرض برای محتوا */
+    margin-left: auto; /* حاشیه خودکار چپ و راست برای مرکزیت */
+    margin-right: auto;
+    padding-left: 2rem; /* padding از طرفین برای فضای داخلی */
+    padding-right: 2rem;
 }
 
 /* هدر */
 header {
-    background-color: var(--dark-color);
-    color: var(--light-color);
-    padding: 2rem 0;
+    background-color: var(--dark-color); /* استفاده از متغیر رنگ */
+    color: var(--light-color); /* استفاده از متغیر رنگ */
+    padding: 2rem 0; /* padding بیشتر برای فضای بهتر */
     text-align: center;
-    position: relative;
+    position: relative; /* برای قرارگیری لوگو */
 }
 
 header h1 {
     margin: 0;
-    font-size: 2.5rem;
+    font-size: 2.5rem; /* اندازه فونت بزرگتر */
 }
 
 nav ul {
     list-style: none;
     padding: 0;
-    margin-top: 1rem;
+    margin-top: 1rem; /* margin-top برای فاصله از عنوان */
     display: flex;
     justify-content: center;
 }
 
 nav ul li {
-    margin: 0 1rem;
+    margin: 0 1.5rem; /* margin بیشتر برای فاصله بین آیتم‌ها */
 }
 
 nav ul li a {
-    color: var(--light-color);
+    color: var(--light-color); /* استفاده از متغیر رنگ */
     text-decoration: none;
-    font-size: 1.1rem;
-    transition: color 0.3s ease;
+    font-size: 1.1rem; /* اندازه فونت منو */
+    transition: color 0.3s ease; /* انیمیشن تغییر رنگ */
 }
 
 nav ul li a:hover {
-    color: var(--accent-color);
+    color: var(--accent-color); /* تغییر رنگ در حالت hover */
 }
 
+/* لوگو */
 .logo {
-    max-width: 100px;
-    height: auto;
-    position: absolute;
-    top: 50%;
-    right: 2rem;
-    transform: translateY(-50%);
+    max-height: 180px; /* حداکثر ارتفاع لوگو - کمی کوچکتر */
+    max-width: 400px; /* حداکثر عرض لوگو - کمی کوچکتر */
+    height: auto; /* ارتفاع خودکار برای حفظ نسبت تصویر */
+    position: absolute; /* موقعیت مطلق در هدر */
+    top: 50%; /* وسط عمودی */
+    right: 2rem; /* فاصله از راست */
+    transform: translateY(-50%); /* تنظیم دقیق وسط عمودی */
 }
 
 
 /* بخش اصلی */
 section {
-    padding: 2rem;
-    margin: 2rem;
-    background-color: var(--light-color);
-    border-radius: 12px;
-    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.05);
-    transition: all 0.3s ease; /* انیمیشن برای تغییرات بخش */
+    padding: 2rem; /* padding بیشتر */
+    margin-top: 2rem; /* margin بالا */
+    margin-bottom: 2rem; /* margin پایین */
+    background-color: var(--light-color); /* استفاده از متغیر رنگ */
+    border-radius: 12px; /* border-radius بیشتر برای گوشه‌های گردتر */
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.05); /* سایه ملایم‌تر */
 }
-
-section:hover {
-    box-shadow: 0 8px 20px rgba(0, 0, 0, 0.1); /* سایه بیشتر در هاور */
-    transform: scale(1.01); /* بزرگنمایی جزئی در هاور */
-}
-
 
 section h2 {
-    color: var(--dark-color);
+    color: var(--dark-color); /* استفاده از متغیر رنگ */
     margin-top: 0;
-    margin-bottom: 1.5rem;
-    font-size: 2rem;
-    border-bottom: 2px solid var(--accent-color);
-    padding-bottom: 0.5rem;
+    margin-bottom: 1.5rem; /* margin-bottom بیشتر */
+    font-size: 2.2rem; /* اندازه فونت بزرگتر - کمی بزرگتر از قبل */
+    border-bottom: 2px solid var(--accent-color); /* خط زیر عنوان */
+    padding-bottom: 0.7rem; /* فاصله خط از متن - کمی بیشتر */
+    text-align: center; /* مرکز چین برای تیترهای بخش */
+}
+
+/* پاراگراف‌ها در بخش‌ها */
+section p {
+    font-size: 1.1rem;
+    color: var(--text-color);
+    margin-bottom: 1.3rem; /* فاصله پایین پاراگراف‌ها برای جداسازی بهتر */
+}
+
+/* لیست‌ها در بخش‌ها */
+section ul {
+    padding-right: 2rem; /* تورفتگی لیست‌ها */
+    margin-bottom: 1.3rem; /* فاصله پایین لیست‌ها */
+}
+
+section li {
+    margin-bottom: 0.7rem; /* فاصله بین آیتم‌های لیست */
 }
 
 
@@ -116,19 +140,18 @@ section h2 {
 #author-bio p {
     font-size: 1.1rem;
     color: var(--text-color);
-    line-height: 1.8; /* خط خواناتر برای متن */
-    margin-bottom: 1rem; /* فاصله پاراگراف‌ها */
 }
 
 /* استایل تصویر نویسنده (بخش درباره نویسنده) - بزرگتر و دایره‌ای */
 .author-image {
-    width: 130px;
-    height: auto;
-    max-width: 100%;
-    display: block;
-    margin-left: auto;
-    margin-right: auto;
-    border-radius: 50%;
+    width: 150px; /* عرض تصویر - بزرگتر */
+    height: auto; /* ارتفاع خودکار برای حفظ تناسب */
+    max-width: 100%; /* حداکثر عرض 100% برای واکنش‌گرا بودن */
+    display: block; /* برای جلوگیری از فضای اضافی پایین تصویر */
+    margin-left: auto; /* برای وسط قرار گرفتن در صورت نیاز */
+    margin-right: auto; /* برای وسط قرار گرفتن در صورت نیاز */
+    border-radius: 50%; /* دایره‌ای کردن تصویر */
+    margin-bottom: 1.5rem; /* فاصله پایین تصویر */
 }
 
 
@@ -142,50 +165,44 @@ section h2 {
     margin-bottom: 1rem;
 }
 
-#store ul {
-    font-size: 1.1rem;
-    margin-bottom: 1rem;
-    list-style-type: disc; /* استایل لیست به صورت دیسک */
-    padding-right: 20px; /* تورفتگی برای لیست راست‌چین */
-}
-
-
 .payment-details {
     background-color: var(--light-color);
     padding: 1.5rem;
     border-radius: 8px;
     box-shadow: 0 3px 9px rgba(0, 0, 0, 0.05);
     margin-top: 1rem;
+    margin-bottom: 1.5rem; /* فاصله پایین بخش پرداخت */
 }
 
 .payment-details h3 {
-    font-size: 1.5rem;
+    font-size: 1.6rem; /* کمی بزرگتر */
     margin-top: 0;
     margin-bottom: 1rem;
     color: var(--primary-color);
+    text-align: center; /* مرکز چین برای تیترهای جزئیات پرداخت */
 }
 
 .payment-details p {
-    font-size: 1rem;
+    font-size: 1.05rem; /* کمی بزرگتر */
     margin-bottom: 0.8rem;
 }
 
 /* فرم عضویت در خبرنامه */
 #email-signup form {
-    max-width: 100%;
-    margin: 0;
-    display: block;
+    max-width: 100%; /* فرم تمام عرض */
+    margin: 0; /* حذف margin برای فرم */
+    display: block; /* تغییر به display: block */
 }
 
 #email-signup input[type="email"] {
-    width: calc(100% - 22px);
+    width: calc(100% - 22px); /* 100% عرض با احتساب padding و border */
     padding: 1rem;
     margin-bottom: 1rem;
     border: 1px solid #ced4da;
     border-radius: 6px;
     font-size: 1rem;
-    direction: rtl;
-    text-align: right;
+    direction: rtl; /* راست به چپ برای ورودی ایمیل */
+    text-align: right; /* تراز متن به راست */
 }
 
 
@@ -198,7 +215,7 @@ section h2 {
     cursor: pointer;
     font-size: 1.1rem;
     transition: background-color 0.3s ease;
-    width: 100%;
+    width: 100%; /* دکمه تمام عرض */
 }
 
 #email-signup button:hover {
@@ -208,18 +225,19 @@ section h2 {
 
 /* بخش نظرات */
 #comments textarea {
-    width: calc(100% - 22px);
+    width: calc(100% - 22px); /* 100% عرض با احتساب padding و border */
     padding: 1rem;
     margin-bottom: 1rem;
     border: 1px solid #ced4da;
     border-radius: 6px;
     font-size: 1rem;
-    direction: rtl;
+    direction: rtl; /* راست به چپ برای textarea */
     text-align: right;
-    height: 150px;
+    height: 150px; /* ارتفاع textarea */
+    resize: vertical; /* فقط تغییر ارتفاع به صورت عمودی */
 }
 
-#comments button {
+#comments button[type="submit"] {
     background-color: var(--secondary-color);
     color: var(--light-color);
     border: none;
@@ -230,230 +248,35 @@ section h2 {
     transition: background-color 0.3s ease;
 }
 
-#comments button:hover {
+#comments button[type="submit"]:hover {
     background-color: #545b62;
 }
 
-.comment-guideline {
-    font-size: 0.9em;
-    color: #777;
-    margin-top: 0.5rem;
-    text-align: center;
-}
-
-
-/* قوانین سایت و تماس */
 #rules ul, #contact p {
     font-size: 1.1rem;
-    list-style-type: none;
-    padding-left: 0;
+    color: var(--text-color);
+}
+
+#rules ul {
+    list-style: none; /* حذف bullet points پیش فرض */
+    padding-right: 2rem; /* کمی تورفتگی */
 }
 
 #rules li {
     margin-bottom: 0.5rem;
+    padding-right: 1rem;
+    position: relative; /* برای ایجاد bullet points سفارشی */
 }
-
 
 /* فوتر */
 footer {
-    text-align: center;
-    padding: 1.5rem 0;
-    background-color: var(--dark-color);
-    color: var(--light-color);
-    font-size: 0.9rem;
-    bottom: 0;
-    width: 100%;
-}
-
-/*  استایل‌های بخش‌های جدید */
-
-/* نقل قول‌های الهام‌بخش */
-#inspiring-quotes {
-    background-color: #f8f9fa; /* رنگ پس زمینه روشن‌تر */
-}
-
-#inspiring-quotes h2 {
-    color: var(--primary-color); /* رنگ عنوان متفاوت */
-    text-align: center; /* مرکزچین کردن عنوان */
-}
-
-.quotes-container {
-    display: flex;
-    flex-direction: column; /* نمایش نقل قول‌ها زیر هم */
-    gap: 1.5rem; /* فاصله بین نقل قول‌ها */
-    align-items: center; /* مرکزچین کردن عمودی کارت‌ها */
-}
-
-.quote-card {
-    background-color: var(--light-color);
-    padding: 1.5rem;
-    border-radius: 12px;
-    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.08);
-    text-align: center;
-    max-width: 80%; /* حداکثر عرض کارت‌ها */
-}
-
-.quote-card p {
-    font-style: italic;
-    font-size: 1.1rem;
-    color: var(--text-color);
-    margin: 0;
-}
-
-
-/* جوایز و افتخارات */
-#awards-and-honors {
-    background-color: #e9ecef; /* رنگ پس زمینه ملایم‌تر */
-}
-
-#awards-and-honors h2 {
-    color: var(--accent-color); /* رنگ عنوان متفاوت */
-    text-align: center; /* مرکزچین کردن عنوان */
-}
-
-#awards-and-honors p {
-    font-size: 1.1rem;
-    color: var(--text-color);
-    line-height: 1.8;
-}
-
-
-/* ویدیوها (معرفی کتاب/نویسنده و باورها) */
-#book-author-video, #animated-beliefs-video {
-    background-color: #f8f9fa; /* رنگ پس زمینه روشن‌تر */
-    text-align: center; /* مرکزچین کردن محتوا */
-}
-
-#book-author-video h2, #animated-beliefs-video h2 {
-    color: var(--primary-color); /* رنگ عنوان متفاوت */
-}
-
-
-.video-placeholder {
-    background-color: #ddd; /* خاکستری برای placeholder */
-    color: #555; /* رنگ متن placeholder */
-    border-radius: 8px;
-    padding: 2rem;
-    margin-top: 1rem;
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    justify-content: center; /* مرکزچین کردن عمودی متن placeholder */
-    min-height: 200px; /* حداقل ارتفاع برای placeholder */
-}
-
-.video-placeholder p {
-    margin-top: 1rem;
-    font-size: 0.9rem;
-}
-
-
-/* موردکاوی‌ها / نمونه‌های عملی */
-#case-studies {
-    background-color: #eef2f5; /* رنگ پس زمینه ملایم‌تر */
-}
-
-#case-studies h2 {
-    color: var(--secondary-color); /* رنگ عنوان متفاوت */
-}
-
-#case-studies p {
-    font-size: 1.1rem;
-    color: var(--text-color);
-    line-height: 1.8;
-}
-
-.case-studies-placeholder {
-    background-color: #ddd; /* خاکستری برای placeholder */
-    color: #555; /* رنگ متن placeholder */
-    border-radius: 8px;
-    padding: 2rem;
-    margin-top: 1rem;
-    text-align: center;
-}
-
-
-/* پیشنهادات ویژه / تخفیف‌ها */
-#special-offers {
-    background-color: #fffaed; /* رنگ پس زمینه زرد خیلی روشن */
-    border: 2px dashed var(--accent-color); /* حاشیه пунктирная زرد */
-}
-
-#special-offers h2 {
-    color: #d4ac0d; /* رنگ عنوان کمی تیره‌تر از زرد */
-    text-align: center; /* مرکزچین کردن عنوان */
-    font-size: 2.3rem; /* اندازه فونت بزرگتر برای عنوان */
-}
-
-#special-offers p {
-    font-size: 1.2rem; /* اندازه فونت بزرگتر برای متن */
-    color: var(--text-color);
-    line-height: 1.8;
-    text-align: center; /* مرکزچین کردن متن */
-    margin-bottom: 1.2rem; /* فاصله بیشتر از پایین */
-}
-
-#special-offers del {
-    color: #888; /* رنگ خاکستری برای قیمت اصلی */
-}
-
-#special-offers strong {
-    color: #e44d26; /* رنگ قرمز-نارنجی برای قیمت تخفیف‌خورده */
-    font-size: 1.5rem; /* اندازه فونت بزرگتر برای قیمت تخفیف‌خورده */
-}
-
-
-.cta-button {
-    display: inline-block;
-    padding: 1rem 2.5rem;
-    background-color: var(--primary-color);
-    color: var(--light-color);
-    text-decoration: none;
-    border-radius: 8px;
-    font-size: 1.1rem;
-    transition: background-color 0.3s ease;
-}
-
-.cta-button:hover {
-    background-color: #0056b3;
-}
-
-
-/* نظرات متخصصان / منتقدان */
-#expert-reviews {
-    background-color: #f8f9fa; /* رنگ پس زمینه روشن‌تر */
-}
-
-#expert-reviews h2 {
-    color: var(--primary-color); /* رنگ عنوان متفاوت */
-    text-align: center; /* مرکزچین کردن عنوان */
-}
-
-.expert-reviews-container {
-    display: flex;
-    flex-direction: column; /* نظرات زیر هم */
-    gap: 2rem; /* فاصله بین نظرات */
-    align-items: center; /* مرکزچین کردن کارت‌ها */
-}
-
-.review-card {
-    background-color: var(--light-color);
-    padding: 2rem;
-    border-radius: 12px;
-    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.08);
-    text-align: justify; /* justified کردن متن نظر */
-    max-width: 75%; /* حداکثر عرض کارت‌ها */
-}
-
-.review-card p {
-    font-size: 1.1rem;
-    color: var(--text-color);
-    margin-top: 0;
-    margin-bottom: 1rem;
-}
-
-.reviewer {
-    font-style: italic;
-    text-align: left; /* تراز نام منتقد به چپ */
-    color: var(--secondary-color);
+    background-color: var(--dark-color); /* رنگ پس‌زمینه تیره */
+    color: var(--light-color); /* رنگ متن روشن */
+    text-align: center; /* مرکزچین کردن متن فوتر */
+    padding: 1rem 0; /* padding کمتر برای فوتر */
+    position: relative;
+    bottom: 0; /* چسباندن به پایین صفحه */
+    width: 100%; /* عرض کامل */
+    font-size: 0.9rem; /* اندازه فونت کوچکتر برای فوتر */
+    margin-top: 4rem; /* فاصله از محتوای اصلی */
 }
