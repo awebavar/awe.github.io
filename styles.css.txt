@@ -1,0 +1,291 @@
+/* styles.css */
+
+/* ریست CSS برای یکسان‌سازی نمایش در مرورگرهای مختلف */
+*,
+*::before,
+*::after {
+    box-sizing: border-box;
+}
+
+body,
+h1, h2, h3, h4, h5, h6,
+p, ul, ol, li,
+figure, figcaption,
+blockquote, dl, dd,
+form, fieldset, legend,
+table, th, td,
+pre, code,
+textarea, select,
+input[type="text"],
+input[type="email"],
+input[type="tel"],
+input[type="number"],
+input[type="date"],
+input[type="datetime-local"],
+input[type="password"] {
+    margin: 0;
+    padding: 0;
+    border: 0;
+    font-size: 100%;
+    font: inherit;
+    vertical-align: baseline;
+    list-style: none; /* برای حذف bullet از لیست‌ها */
+    text-decoration: none; /* برای حذف خط زیر لینک‌ها */
+    color: inherit; /* برای وراثت رنگ از body */
+}
+
+
+body {
+    font-family: Tahoma, sans-serif;
+    direction: rtl;
+    background-color: #fefefe;
+    color: #333;
+    line-height: 1.7;
+    font-size: 16px;
+    overflow-x: hidden; /* جلوگیری از اسکرول افقی */
+}
+
+.container {
+    max-width: 1200px; /* کمی بزرگتر برای پهنای بیشتر */
+    margin-left: auto;
+    margin-right: auto;
+    padding-left: 20px;
+    padding-right: 20px;
+}
+
+/* ----- هدر ----- */
+header {
+    background-color: #fff;
+    padding: 20px 0;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.05); /* سایه ملایم */
+    position: sticky; /* هدر چسبنده */
+    top: 0;
+    z-index: 100; /* اطمینان از قرارگیری بالای محتوا */
+}
+
+.header-container {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.logo-link {
+    display: block; /* لینک لوگو بلاک باشد برای کلیک‌پذیری */
+}
+
+.logo {
+    height: auto; /* ارتفاع خودکار */
+    width: 150px; /* عرض لوگو - قابل تنظیم */
+    max-width: 100%; /* حداکثر عرض 100% والد */
+    display: block; /* حذف فضای اضافی زیر تصویر */
+}
+
+
+nav ul {
+    display: flex;
+}
+
+nav li {
+    margin-right: 20px;
+}
+
+nav li:last-child {
+    margin-right: 0;
+}
+
+nav a {
+    color: #555;
+    font-weight: bold;
+    transition: color 0.3s ease;
+}
+
+nav a:hover {
+    color: #007bff; /* رنگ هاور - آبی */
+}
+
+
+/* ----- بخش قهرمان (Hero) ----- */
+.hero {
+    padding: 80px 0;
+    background-color: #f8f9fa; /* رنگ پس‌زمینه ملایم‌تر */
+}
+
+.hero-container {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 30px; /* فاصله بین محتوا و تصویر */
+}
+
+.hero-content {
+    flex: 1; /* اجازه رشد به محتوا */
+}
+
+.hero-content h1 {
+    font-size: 2.5em;
+    margin-bottom: 15px;
+    color: #222;
+}
+
+.hero-content p {
+    font-size: 1.2em;
+    color: #555;
+    margin-bottom: 30px;
+}
+
+.hero-image {
+    flex: 1; /* اجازه رشد به تصویر */
+    max-width: 50%; /* حداکثر پهنای تصویر */
+}
+
+.book-cover {
+    max-width: 100%;
+    height: auto;
+    border-radius: 8px; /* گرد کردن گوشه‌های جلد کتاب */
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1); /* سایه برای برجسته‌تر شدن */
+    display: block; /* حذف فضای اضافی زیر تصویر */
+}
+
+
+/* ----- بخش‌های محتوا ----- */
+.content-section {
+    padding: 60px 0;
+}
+
+.content-section:nth-child(even) {
+    background-color: #fff; /* بخش‌های زوج سفید باشند */
+}
+
+.content-section:nth-child(odd) {
+    background-color: #f8f9fa; /* بخش‌های فرد رنگ ملایم داشته باشند */
+}
+
+
+.content-section h2 {
+    font-size: 2em;
+    margin-bottom: 30px;
+    text-align: center;
+    color: #222;
+}
+
+.content-section p {
+    margin-bottom: 20px;
+    color: #555;
+}
+
+.content-section ul {
+    padding-right: 20px; /* برای فاصله از لبه راست */
+}
+
+.content-section li {
+    margin-bottom: 10px;
+    list-style-type: disc; /* استایل دایره‌ای برای لیست */
+    color: #555;
+}
+
+/* استایل خاص برای بخش محتوای کتاب */
+.book-content-section p {
+    line-height: 2; /* خط خواناتر برای متن کتاب */
+    text-align: justify; /* justify کردن متن کتاب */
+}
+
+
+/* ----- بخش نظرات مشتریان ----- */
+.reviews-section .review {
+    background-color: #fff;
+    padding: 20px;
+    margin-bottom: 20px;
+    border-radius: 8px;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+}
+
+.reviews-section .reviewer {
+    font-style: italic;
+    text-align: left; /* نام مشتری در سمت چپ */
+    color: #777;
+    margin-top: 10px;
+}
+
+
+/* ----- دکمه‌ها ----- */
+.btn {
+    display: inline-block;
+    padding: 12px 30px;
+    border-radius: 6px;
+    font-size: 1em;
+    font-weight: bold;
+    text-align: center;
+    cursor: pointer;
+    transition: background-color 0.3s ease, color 0.3s ease;
+    border: none; /* حذف بوردر پیش‌فرض */
+}
+
+.primary-btn {
+    background-color: #007bff; /* آبی */
+    color: #fff;
+}
+
+.primary-btn:hover {
+    background-color: #0056b3; /* آبی تیره‌تر در هاور */
+}
+
+.secondary-btn {
+    background-color: #6c757d; /* خاکستری */
+    color: #fff;
+}
+
+.secondary-btn:hover {
+    background-color: #545b62; /* خاکستری تیره‌تر در هاور */
+}
+
+
+/* ----- پاورقی ----- */
+footer {
+    background-color: #343a40; /* خاکستری تیره */
+    color: #fff;
+    padding: 30px 0;
+    text-align: center;
+    font-size: 0.9em;
+}
+
+.footer-container {
+    border-top: 1px solid rgba(255, 255, 255, 0.1); /* خط جداکننده ملایم */
+    padding-top: 20px;
+}
+
+/* ----- طراحی واکنش‌گرا ----- */
+@media (max-width: 768px) {
+    .hero-container {
+        flex-direction: column; /* چیدن عمودی در موبایل */
+        text-align: center; /* مرکزچین کردن متن در موبایل */
+    }
+
+    .hero-image {
+        max-width: 80%; /* تصویر بزرگتر در موبایل */
+        margin-top: 30px;
+    }
+
+    nav ul {
+        flex-direction: column; /* منو عمودی در موبایل */
+        text-align: center;
+        margin-top: 20px;
+    }
+
+    nav li {
+        margin-right: 0;
+        margin-bottom: 15px;
+    }
+
+    .container {
+        padding-left: 15px;
+        padding-right: 15px;
+    }
+
+    .content-section {
+        padding: 40px 0; /* padding کمتر در موبایل */
+    }
+
+    .content-section h2 {
+        font-size: 1.7em; /* فونت کوچکتر عنوان‌ها در موبایل */
+    }
+}
