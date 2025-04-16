@@ -1,120 +1,144 @@
 <!DOCTYPE html>
 <html lang="fa" dir="rtl">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>AWE خانه باور</title>
-    <link rel="stylesheet" href="style.css">
+  <meta charset="UTF-8">
+  <title>فروشگاه آنلاین کتاب فانتزی</title>
+  <link rel="stylesheet" href="style.css"> <!-- ✅ اطمینان از وجود لینک CSS -->
 </head>
 <body>
-    <header class="header">
-        <div class="container">
-            <div class="logo">
-                <a href="/">
-                    <img src="LOGO.png.png" alt="AWE خانه باور">
-                </a>
-            </div>
-            <nav class="main-nav">
-                <ul>
-                    <li><a href="#">صفحه اصلی</a></li>
-                    <li><a href="#">دسته‌بندی‌ها</a></li>
-                    <li><a href="#">کتاب‌های ویژه</a></li>
-                    <li><a href="#">پیشنهادات ویژه</a></li>
-                    <li><a href="#">درباره ما</a></li>
-                    <li><a href="#">تماس با ما</a></li>
-                </ul>
-            </nav>
-        </div>
-    </header>
+  <header>
+    <div class="container">
+      <div class="logo">
+        <a href="#"><img src="LOGO.png.png" alt="لوگوی فروشگاه کتاب فانتزی"></a> <!-- ✅ نام فایل لوگو اضافه شد -->
+      </div>
+      <nav class="navigation">
+        <ul>
+          <li><a href="#">صفحه اصلی</a></li>
+          <li><a href="#">فروشگاه</a></li>
+          <li><a href="#">دسته‌بندی‌ها</a></li>
+          <li><a href="#">پیشنهادات ویژه</a></li>
+          <li><a href="#">درباره ما</a></li>
+          <li><a href="#">تماس با ما</a></li>
+        </ul>
+      </nav>
+      <div class="user-icons">
+        <a href="#"><i class="fa fa-search"></i></a>
+        <a href="#"><i class="fa fa-shopping-cart"></i></a>
+        <a href="#"><i class="fa fa-user"></i></a>
+      </div>
+    </div>
+  </header>
 
-    <section class="hero">
-        <div class="container">
-            <h1>به AWE خانه باور خوش آمدید</h1>
-            <a href="#" class="btn primary-btn">مشاهده کتاب‌ها</a>
-        </div>
-    </section>
+  <section class="hero-banner">
+    <div class="banner-content">
+      <h1>به فروشگاه آنلاین کتاب فانتزی خوش آمدید</h1>
+      <p>دنیایی از کتاب‌های جذاب و هیجان‌انگیز در انتظار شماست. سفر خود را به سرزمین فانتزی آغاز کنید!</p>
+      <a href="#" class="cta-button">مشاهده کتاب‌ها</a>
+    </div>
+  </section>
 
-    <section id="featured-books" class="featured-books-section">
-        <div class="container">
-            <h2>کتاب‌های ویژه</h2>
-            <div class="book-list">
-                <div class="book-item">
-                    <img src="Screenshot (139).png" alt="کتاب 1">
-                    <h3>نام کتاب ویژه 1</h3>
-                    <p>توضیحات کوتاه کتاب ویژه 1</p>
-                    <a href="#" class="btn secondary-btn">خرید کتاب ویژه</a>
-                </div>
-                <div class="book-item">
-                    <img src="Screenshot (140).png" alt="کتاب 2">
-                    <h3>نام کتاب ویژه 2</h3>
-                    <p>توضیحات کوتاه کتاب ویژه 2</p>
-                    <a href="#" class="btn secondary-btn">خرید کتاب ویژه</a>
-                </div>
-                <div class="book-item">
-                    <img src="Screenshot (141).png" alt="کتاب 3">
-                    <h3>نام کتاب ویژه 3</h3>
-                    <p>توضیحات کوتاه کتاب ویژه 3</p>
-                    <a href="#" class="btn secondary-btn">خرید کتاب ویژه</a>
-                </div>
-            </div>
+  <section class="featured-books">
+    <div class="container">
+      <h2>کتاب‌های ویژه</h2>
+      <div class="books-grid">
+        <!-- ... لیست کتاب‌های ویژه ... -->
+        <div class="book-item">
+          <img src="image_0.png" alt="جلد کتاب 1"> <!--  ✅ مثال استفاده از نام فایل تصویر -->
+          <h3>نام کتاب 1</h3>
+          <p>نویسنده 1</p>
+          <a href="#" class="view-button">مشاهده کتاب</a>
         </div>
-    </section>
-
-    <section id="categories" class="categories-section">
-        <div class="container">
-            <h2>نمونه ای از دسته بندی باورهای محدود کننده</h2>
-            <div class="category-list">
-                <div class="category-item">۱. رازهای باور به قدرت بیکران هستی</div>
-                <div class="category-item">۲. قلب‌های شیشه‌ای، باورهای پولادین</div>
-                <div class="category-item">۳. بازی تقدیر یا انتخاب‌های پنهان؟</div>
-                <div class="category-item">۴. جادوی پشتکار: کلید گنج‌های پنهان</div>
-                <div class="category-item">۵. زخم‌های کودکی، باورهای بزرگسالی</div>
-                <div class="category-item">۶. زندان زمان: رهایی از زنجیرهای گذشته</div>
-                <div class="category-item">۷. سایه حسادت: دزد باورهای شخصی</div>
-                <div class="category-item">۸. ویروس‌های ذهنی: پاکسازی باورهای سمی</div>
-            </div>
+        <div class="book-item">
+          <img src="image_0 (1).png" alt="جلد کتاب 2"> <!-- ✅ مثال استفاده از نام فایل تصویر -->
+          <h3>نام کتاب 2</h3>
+          <p>نویسنده 2</p>
+          <a href="#" class="view-button">مشاهده کتاب</a>
         </div>
-    </section>
-
-
-    <section id="special-offers" class="special-offers-section">
-        <div class="container">
-            <h2>پیشنهادات ویژه</h2>
-            <div class="offer-list">
-                <div class="offer-item">
-                    <img src="image_0.png" alt="پیشنهاد 1">
-                    <h3>پیشنهاد ویژه 1</h3>
-                    <p>توضیحات پیشنهاد ویژه 1</p>
-                    <a href="#" class="btn primary-btn">مشاهده پیشنهاد</a>
-                </div>
-                <div class="offer-item">
-                    <img src="image_0 (1).png" alt="پیشنهاد 2">
-                    <h3>پیشنهاد ویژه 2</h3>
-                    <p>توضیحات پیشنهاد ویژه 2</p>
-                    <a href="#" class="btn primary-btn">مشاهده پیشنهاد</a>
-                </div>
-            </div>
+        <div class="book-item">
+          <img src="image_0 (2).png" alt="جلد کتاب 3"> <!-- ✅ مثال استفاده از نام فایل تصویر -->
+          <h3>نام کتاب 3</h3>
+          <p>نویسنده 3</p>
+          <a href="#" class="view-button">مشاهده کتاب</a>
         </div>
-    </section>
+        <!-- ... ادامه لیست کتاب‌ها ... -->
+      </div>
+    </div>
+  </section>
 
-    <footer class="footer">
-        <div class="container">
-            <div class="footer-content">
-                <div class="copyright">
-                    <p>کلیه حقوق مادی و معنوی این سایت متعلق به AWE خانه باور است.</p>
-                </div>
-                 <div class="contact-info">
-                    <h4>راه های ارتباطی</h4>
-                    <p>ایمیل: <a href="mailto:awebavar@gmail.com">awebavar@gmail.com</a></p>
-                </div>
-                <div class="social-icons">
-                    <a href="#" target="_blank"><img src="image_0.png" alt="Facebook"></a>
-                    <a href="#" target="_blank"><img src="image_0 (1).png" alt="Twitter"></a>
-                    <a href="#" target="_blank"><img src="image_0 (2).png" alt="Instagram"></a>
-                </div>
-            </div>
+  <section class="categories">
+    <div class="container">
+      <h2>دسته‌بندی‌ها</h2>
+      <div class="categories-grid">
+        <!-- ... لیست دسته‌بندی‌ها ... -->
+        <div class="category-item">
+          <a href="#">فانتزی حماسی</a>
         </div>
-    </footer>
+        <div class="category-item">
+          <a href="#">فانتزی تاریک</a>
+        </div>
+        <div class="category-item">
+          <a href="#">علمی-تخیلی</a>
+        </div>
+        <div class="category-item">
+          <a href="#">ماجراجویی</a>
+        </div>
+        <!-- ... ادامه دسته‌بندی‌ها ... -->
+      </div>
+    </div>
+  </section>
+
+  <section class="special-offers">
+    <div class="container">
+      <h2>پیشنهادات ویژه</h2>
+      <div class="offers-slider">
+        <!-- ... لیست پیشنهادات ویژه ... -->
+        <div class="offer-item">
+          <img src="image_0.png" alt="پیشنهاد ویژه 1"> <!-- ✅ مثال استفاده از نام فایل تصویر -->
+          <div class="offer-item-content">
+            <h3>کتاب با تخفیف ویژه</h3>
+            <p>تا پایان هفته فرصت دارید!</p>
+            <a href="#" class="offer-button">مشاهده پیشنهاد</a>
+          </div>
+        </div>
+        <div class="offer-item">
+          <img src="image_0 (1).png" alt="پیشنهاد ویژه 2"> <!-- ✅ مثال استفاده از نام فایل تصویر -->
+          <div class="offer-item-content">
+            <h3>مجموعه کتاب‌های فلان نویسنده</h3>
+            <p>با قیمت استثنایی!</p>
+            <a href="#" class="offer-button">مشاهده پیشنهاد</a>
+          </div>
+        </div>
+        <!-- ... ادامه پیشنهادات ویژه ... -->
+      </div>
+    </div>
+  </section>
+
+  <footer>
+    <div class="container">
+      <div class="footer-widget">
+        <h3>درباره ما</h3>
+        <p>فروشگاه آنلاین کتاب فانتزی، مرجع تخصصی کتاب‌های فانتزی و تخیلی برای علاقه‌مندان به این ژانر جذاب.</p>
+      </div>
+      <div class="footer-widget">
+        <h3>دسترسی سریع</h3>
+        <ul>
+          <li><a href="#">صفحه اصلی</a></li>
+          <li><a href="#">فروشگاه</a></li>
+          <li><a href="#">دسته‌بندی‌ها</a></li>
+          <li><a href="#">پیشنهادات ویژه</a></li>
+          <li><a href="#">تماس با ما</a></li>
+        </ul>
+      </div>
+      <div class="footer-widget">
+        <h3>ارتباط با ما</h3>
+        <p>ایمیل: <a href="mailto:awebavar@gmail.com">awebavar@gmail.com</a></p>
+        <p>تلگرام: <a href="https://t.me/AWEBAVAR">@AWEBAVAR</a></p>
+      </div>
+    </div>
+    <div class="copyright">
+      <p>&copy; 1403 کلیه حقوق این سایت متعلق به فروشگاه آنلاین کتاب فانتزی می‌باشد.</p>
+    </div>
+  </footer>
 
 </body>
 </html>
