@@ -41,7 +41,7 @@ body {
 }
 
 .logo img {
-    max-height: 70px; /* Reverted logo size to original (larger) */
+    max-height: 140px; /* Increased logo size */
 }
 
 .main-nav ul {
@@ -79,17 +79,12 @@ body {
     color: var(--light-background);
     text-align: center;
     padding: 100px 0;
-    background-color: var(--primary-color); /* Reverted hero background color */
+    background-color: #d4edda; /* Changed hero background color to light green */
 }
 
 .hero h1 {
     font-size: 2.5em;
     margin-bottom: 20px;
-}
-
-.hero p {
-    font-size: 1.2em;
-    margin-bottom: 30px;
 }
 
 
@@ -153,12 +148,12 @@ body {
 .offer-item {
     width: 30%;
     margin-bottom: 20px;
-    padding: 15px;
-    border: 1px solid #ddd;
-    border-radius: 8px;
-    text-align: center;
-    background-color: #fff;
-    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.05);
+    padding: 0px; /* Removed padding from category-item */
+    border: none; /* Removed border from category-item */
+    border-radius: 0px; /* Removed border-radius from category-item */
+    text-align: right; /* Align text to right for categories */
+    background-color: transparent; /* Make background transparent for category-item */
+    box-shadow: none; /* Removed box-shadow from category-item */
 }
 
 .book-item img,
@@ -198,12 +193,12 @@ body {
     width: auto; /* Adjust width as needed */
     flex: 1; /* Distribute available space equally */
     margin: 0 5px; /* Spacing between items */
-    padding: 15px;
-    border: 1px solid #ddd;
-    border-radius: 8px;
-    text-align: center;
-    background-color: #fff;
-    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.05);
+    padding: 0px; /* Removed padding here as well */
+    border: none; /* Removed border here as well */
+    border-radius: 0px; /* Removed border-radius here as well */
+    text-align: right; /* Align text to right for categories */
+    background-color: transparent; /* Make background transparent here as well */
+    box-shadow: none; /* Removed box-shadow here as well */
     display: flex; /* Enable flexbox for vertical alignment */
     flex-direction: column; /* Stack content vertically */
     justify-content: center; /* Vertically center content */
@@ -211,6 +206,7 @@ body {
 .categories-section .category-item h3 {
     margin: 0; /* Remove default heading margins */
     font-size: 1em; /* Adjust font size as needed */
+    text-align: right; /* Ensure text alignment is right */
 }
 
 
@@ -236,11 +232,19 @@ body {
 }
 .contact-info {
     margin-bottom: 10px; /* Add some space below contact info */
+    text-align: right; /* Align contact info to right */
+}
+.contact-info h4 {
+    margin-top: 0; /* Remove top margin from heading */
+    margin-bottom: 10px; /* Add bottom margin to heading */
+    font-size: 1.1em; /* Adjust heading font size if needed */
+    text-align: right; /* Ensure heading is also right-aligned */
 }
 .contact-info p, .contact-info a {
     color: var(--light-background);
     font-size: 0.9em;
     text-decoration: none; /* Remove underline from email link */
+    text-align: right; /* Ensure text is right-aligned */
 }
 
 
@@ -301,6 +305,7 @@ body {
     .copyright, .contact-info, .social-icons {
         width: 100%;
         margin-bottom: 10px;
+        text-align: right; /* Align footer content to right on small screens */
     }
     .social-icons {
         text-align: center;
@@ -311,6 +316,7 @@ body {
     .categories-section .category-item {
         width: 100%; /* Full width for category items on small screens */
         margin: 10px 0; /* Add vertical margin between items */
+        text-align: right; /* Ensure category text is right-aligned on small screens */
     }
 
 }
