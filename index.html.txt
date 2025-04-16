@@ -1,0 +1,144 @@
+<!DOCTYPE html>
+<html lang="fa" dir="rtl">
+<head>
+  <meta charset="UTF-8">
+  <title>فروشگاه آنلاین کتاب فانتزی</title>
+  <link rel="stylesheet" href="style.css"> <!-- ✅ اطمینان از وجود لینک CSS -->
+</head>
+<body>
+  <header>
+    <div class="container">
+      <div class="logo">
+        <a href="#"><img src="LOGO.png.png" alt="لوگوی فروشگاه کتاب فانتزی"></a> <!-- ✅ نام فایل لوگو اضافه شد -->
+      </div>
+      <nav class="navigation">
+        <ul>
+          <li><a href="#">صفحه اصلی</a></li>
+          <li><a href="#">فروشگاه</a></li>
+          <li><a href="#">دسته‌بندی‌ها</a></li>
+          <li><a href="#">پیشنهادات ویژه</a></li>
+          <li><a href="#">درباره ما</a></li>
+          <li><a href="#">تماس با ما</a></li>
+        </ul>
+      </nav>
+      <div class="user-icons">
+        <a href="#"><i class="fa fa-search"></i></a>
+        <a href="#"><i class="fa fa-shopping-cart"></i></a>
+        <a href="#"><i class="fa fa-user"></i></a>
+      </div>
+    </div>
+  </header>
+
+  <section class="hero-banner">
+    <div class="banner-content">
+      <h1>به فروشگاه آنلاین کتاب فانتزی خوش آمدید</h1>
+      <p>دنیایی از کتاب‌های جذاب و هیجان‌انگیز در انتظار شماست. سفر خود را به سرزمین فانتزی آغاز کنید!</p>
+      <a href="#" class="cta-button">مشاهده کتاب‌ها</a>
+    </div>
+  </section>
+
+  <section class="featured-books">
+    <div class="container">
+      <h2>کتاب‌های ویژه</h2>
+      <div class="books-grid">
+        <!-- ... لیست کتاب‌های ویژه ... -->
+        <div class="book-item">
+          <img src="image_0.png" alt="جلد کتاب 1"> <!--  ✅ مثال استفاده از نام فایل تصویر -->
+          <h3>نام کتاب 1</h3>
+          <p>نویسنده 1</p>
+          <a href="#" class="view-button">مشاهده کتاب</a>
+        </div>
+        <div class="book-item">
+          <img src="image_0 (1).png" alt="جلد کتاب 2"> <!-- ✅ مثال استفاده از نام فایل تصویر -->
+          <h3>نام کتاب 2</h3>
+          <p>نویسنده 2</p>
+          <a href="#" class="view-button">مشاهده کتاب</a>
+        </div>
+        <div class="book-item">
+          <img src="image_0 (2).png" alt="جلد کتاب 3"> <!-- ✅ مثال استفاده از نام فایل تصویر -->
+          <h3>نام کتاب 3</h3>
+          <p>نویسنده 3</p>
+          <a href="#" class="view-button">مشاهده کتاب</a>
+        </div>
+        <!-- ... ادامه لیست کتاب‌ها ... -->
+      </div>
+    </div>
+  </section>
+
+  <section class="categories">
+    <div class="container">
+      <h2>دسته‌بندی‌ها</h2>
+      <div class="categories-grid">
+        <!-- ... لیست دسته‌بندی‌ها ... -->
+        <div class="category-item">
+          <a href="#">فانتزی حماسی</a>
+        </div>
+        <div class="category-item">
+          <a href="#">فانتزی تاریک</a>
+        </div>
+        <div class="category-item">
+          <a href="#">علمی-تخیلی</a>
+        </div>
+        <div class="category-item">
+          <a href="#">ماجراجویی</a>
+        </div>
+        <!-- ... ادامه دسته‌بندی‌ها ... -->
+      </div>
+    </div>
+  </section>
+
+  <section class="special-offers">
+    <div class="container">
+      <h2>پیشنهادات ویژه</h2>
+      <div class="offers-slider">
+        <!-- ... لیست پیشنهادات ویژه ... -->
+        <div class="offer-item">
+          <img src="image_0.png" alt="پیشنهاد ویژه 1"> <!-- ✅ مثال استفاده از نام فایل تصویر -->
+          <div class="offer-item-content">
+            <h3>کتاب با تخفیف ویژه</h3>
+            <p>تا پایان هفته فرصت دارید!</p>
+            <a href="#" class="offer-button">مشاهده پیشنهاد</a>
+          </div>
+        </div>
+        <div class="offer-item">
+          <img src="image_0 (1).png" alt="پیشنهاد ویژه 2"> <!-- ✅ مثال استفاده از نام فایل تصویر -->
+          <div class="offer-item-content">
+            <h3>مجموعه کتاب‌های فلان نویسنده</h3>
+            <p>با قیمت استثنایی!</p>
+            <a href="#" class="offer-button">مشاهده پیشنهاد</a>
+          </div>
+        </div>
+        <!-- ... ادامه پیشنهادات ویژه ... -->
+      </div>
+    </div>
+  </section>
+
+  <footer>
+    <div class="container">
+      <div class="footer-widget">
+        <h3>درباره ما</h3>
+        <p>فروشگاه آنلاین کتاب فانتزی، مرجع تخصصی کتاب‌های فانتزی و تخیلی برای علاقه‌مندان به این ژانر جذاب.</p>
+      </div>
+      <div class="footer-widget">
+        <h3>دسترسی سریع</h3>
+        <ul>
+          <li><a href="#">صفحه اصلی</a></li>
+          <li><a href="#">فروشگاه</a></li>
+          <li><a href="#">دسته‌بندی‌ها</a></li>
+          <li><a href="#">پیشنهادات ویژه</a></li>
+          <li><a href="#">تماس با ما</a></li>
+        </ul>
+      </div>
+      <div class="footer-widget">
+        <h3>ارتباط با ما</h3>
+        <p>ایمیل: <a href="mailto:awebavar@gmail.com">awebavar@gmail.com</a></p>
+        <p>تلگرام: <a href="https://t.me/AWEBAVAR">@AWEBAVAR</a></p>
+      </div>
+    </div>
+    <div class="copyright">
+      <p>&copy; 1403 کلیه حقوق این سایت متعلق به فروشگاه آنلاین کتاب فانتزی می‌باشد.</p>
+    </div>
+  </footer>
+
+</body>
+</html>
