@@ -39,7 +39,7 @@ body {
     text-align: right;
     background-color: var(--light-color);
     color: var(--text-color);
-    line-height: 1.8; /* بهبود خوانایی خطوط */
+    line-height: 1.8;
 }
 
 /* هدر */
@@ -47,11 +47,9 @@ header {
     background-color: var(--dark-color);
     color: var(--light-color);
     padding: 1.5rem 2rem;
-    text-align: center;
-    position: relative;
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
+    display: flex; /* فعال کردن فلکس باکس */
+    justify-content: space-between; /* توزیع فضا بین لوگو و عنوان/منو */
+    align-items: center; /* تراز عمودی آیتم‌ها */
 }
 
 header h1 {
@@ -84,9 +82,9 @@ nav ul li a:hover {
 
 /* لوگو */
 .logo {
-    max-height: 100px;
+    max-height: 100px; /* کاهش ارتفاع لوگو */
     height: auto;
-    margin-right: 2rem;
+    margin-right: 1rem; /* فاصله از عنوان */
 }
 
 
@@ -97,7 +95,7 @@ section {
     background-color: var(--light-color);
     border-radius: 12px;
     box-shadow: 0 5px 15px rgba(0, 0, 0, 0.05);
-    line-height: 1.8; /* اضافه شدن line-height به section */
+    line-height: 1.8;
 }
 
 section h2 {
@@ -118,7 +116,7 @@ section p {
 /* بیوگرافی نویسنده */
 #author-bio p {
     font-size: 1rem;
-    line-height: 1.9; /* بهبود خوانایی پاراگراف‌های بیوگرافی */
+    line-height: 1.9;
 }
 
 /* استایل تصویر نویسنده */
@@ -152,7 +150,7 @@ section p {
     margin-bottom: 1.2rem;
     color: var(--secondary-color);
     text-align: center;
-    line-height: 1.9; /* بهبود خوانایی پاراگراف‌های فروشگاه */
+    line-height: 1.9;
 }
 
 
