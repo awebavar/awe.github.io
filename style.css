@@ -17,18 +17,14 @@
     font-display: swap;
 }
 
-/* متغیرهای رنگ - رنگ‌های سایت موفقیت */
+/* متغیرهای رنگ */
 :root {
-    --primary-color: #2E86AB; /* آبی اصلی */
-    --secondary-color: #343a40; /* خاکستری تیره */
-    --light-color: #f8f9fa; /* سفید خیلی روشن */
-    --dark-color: #222; /* مشکی */
-    --text-color: #333; /* خاکستری متن */
-    --accent-color: #F7DC6F; /* زرد طلایی */
-    --success-color: #28a745; /* سبز موفقیت */
-    --warning-color: #ffc107; /* زرد هشدار */
-    --danger-color: #dc3545; /* قرمز خطر */
-    --info-color: #17a2b8; /* آبی اطلاع‌رسانی */
+    --primary-color: #007bff;
+    --secondary-color: #6c757d;
+    --light-color: #f8f9fa;
+    --dark-color: #343a40;
+    --text-color: #333;
+    --accent-color: #ffc107; /* زرد کهربایی برای جلب توجه */
 }
 
 /* تنظیمات عمومی */
@@ -40,54 +36,39 @@ body {
     text-align: right;
     background-color: var(--light-color);
     color: var(--text-color);
-    line-height: 1.8; /* یکم بیشتر برای خوانایی */
-    font-size: 16px; /* اندازه فونت پایه */
-}
-
-.container {
-    max-width: 1200px; /* عرض بیشتر برای سایت‌های موفقیت */
-    margin-left: auto;
-    margin-right: auto;
-    padding-left: 20px;
-    padding-right: 20px;
+    line-height: 1.7;
 }
 
 /* هدر */
 header {
-    background-color: var(--primary-color); /* آبی اصلی */
+    background-color: var(--dark-color);
     color: var(--light-color);
-    padding: 1.5rem 0; /* کم کردن padding هدر */
-    /* text-align: center; حذف تراز وسط */
+    padding: 2rem 0;
+    text-align: center;
+    position: relative;
 }
-
-.header-container {
-    display: flex; /* استفاده از فلکس باکس برای چیدمان */
-    justify-content: space-between; /* فاصله بین لوگو و منو */
-    align-items: center; /* تراز عمودی */
-}
-
 
 header h1 {
     margin: 0;
-    font-size: 2.2rem; /* اندازه فونت کمتر هدر */
+    font-size: 2.5rem;
 }
 
 nav ul {
     list-style: none;
     padding: 0;
-    margin-top: 0; /* حذف margin-top منو */
+    margin-top: 1rem;
     display: flex;
-    /* justify-content: center; حذف تراز وسط */
+    justify-content: center;
 }
 
 nav ul li {
-    margin: 0 1rem; /* فاصله کمتر بین آیتم‌های منو */
+    margin: 0 1.5rem;
 }
 
 nav ul li a {
     color: var(--light-color);
     text-decoration: none;
-    font-size: 1rem; /* اندازه فونت منو کمتر */
+    font-size: 1.1rem;
     transition: color 0.3s ease;
 }
 
@@ -96,126 +77,353 @@ nav ul li a:hover {
 }
 
 /* لوگو */
-.logo-link {
-    display: block; /* لینک لوگو بلاک باشد */
-}
-
 .logo {
-    max-height: 150px; /* ارتفاع لوگو کمتر */
-    max-width: 300px; /* عرض لوگو کمتر */
+    max-height: 210px;
+    max-width: 450px;
     height: auto;
+    position: absolute;
+    top: 50%;
+    right: 2rem;
+    transform: translateY(-50%);
 }
 
 
-/* بخش اصلی (main) - طرح دو ستونی */
-.main-container {
-    display: flex; /* فلکس باکس برای دو ستونی شدن */
-    gap: 2rem; /* فاصله بین ستون‌ها */
-    padding-top: 2rem;
-    padding-bottom: 2rem;
-}
-
-.sidebar {
-    width: 30%; /* عرض ستون سمت چپ (سایدبار) */
-    /* background-color: #f0f0f0;  رنگ پس‌زمینه برای تست */
-    padding: 1.5rem;
-}
-
-.content {
-    width: 70%; /* عرض ستون سمت راست (محتوا) */
-    /* background-color: #e0e0e0;  رنگ پس‌زمینه برای تست */
-    padding: 1.5rem;
-}
-
-/* سایدبار - بخش‌های داخلی */
-.sidebar-section {
-    margin-bottom: 2rem; /* فاصله بین بخش‌های سایدبار */
-    padding: 1.5rem;
-    background-color: var(--light-color);
-    border-radius: 12px;
-    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.05);
-}
-
-.sidebar-section:last-child {
-    margin-bottom: 0; /* حذف margin-bottom آخرین بخش سایدبار */
-}
-
-/* بخش سوالات متداول در سایدبار */
-#faq ul {
-    list-style: none;
-    padding-right: 0; /* حذف padding پیش‌فرض لیست */
-}
-
-#faq ul li {
-    margin-bottom: 0.8rem; /* فاصله بین آیتم‌های سوالات متداول */
-}
-
-#faq ul li a {
-    text-decoration: none;
-    color: var(--primary-color); /* رنگ لینک سوالات متداول */
-    transition: color 0.3s ease;
-    font-size: 0.9rem; /* اندازه فونت کوچکتر سوالات متداول */
-}
-
-#faq ul li a:hover {
-    color: var(--accent-color); /* رنگ هاور لینک سوالات متداول */
-}
-
-
-/* بخش‌های محتوا (section ها) */
+/* بخش اصلی */
 section {
     padding: 2rem;
-    margin-bottom: 2rem; /* فاصله بین بخش‌های محتوا */
+    margin: 2rem;
     background-color: var(--light-color);
     border-radius: 12px;
     box-shadow: 0 5px 15px rgba(0, 0, 0, 0.05);
 }
 
-section:last-child {
-    margin-bottom: 0; /* حذف margin-bottom آخرین بخش */
-}
-
-
 section h2 {
     color: var(--dark-color);
     margin-top: 0;
-    margin-bottom: 1.2rem; /* فاصله کمتر زیر عنوان */
-    font-size: 1.8rem; /* اندازه فونت کمتر عنوان */
+    margin-bottom: 1.5rem;
+    font-size: 2rem;
     border-bottom: 2px solid var(--accent-color);
-    padding-bottom: 0.4rem; /* فاصله کمتر خط زیر عنوان */
+    padding-bottom: 0.5rem;
 }
 
-/* بخش Hero */
-#hero {
-    background-color: var(--accent-color); /* رنگ پس‌زمینه بخش hero */
-    color: var(--dark-color); /* رنگ متن بخش hero */
-    text-align: center;
-    padding: 4rem 2rem; /* padding بیشتر برای بخش hero */
-    border-radius: 12px;
-    margin-bottom: 2rem; /* فاصله از بخش بعدی */
+/* بیوگرافی نویسنده */
+#author-bio p {
+    font-size: 1.1rem;
+    color: var(--text-color);
 }
 
-.hero-content {
-    max-width: 800px;
-    margin: 0 auto; /* وسط چین کردن محتوای hero */
+/* استایل تصویر نویسنده */
+.author-image {
+    width: 130px;
+    height: auto;
+    max-width: 100%;
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
+    border-radius: 50%;
 }
 
-#hero h1 {
-    font-size: 3rem; /* اندازه فونت بزرگتر عنوان hero */
+/* بخش نقل قول‌های الهام‌بخش */
+#inspiring-quotes blockquote {
+    background-color: #f0f0f0;
+    padding: 1.5rem;
+    border-left: 5px solid var(--accent-color); /* خط کناری برای تمایز */
+    margin: 1rem 0;
+    border-radius: 5px;
+    font-style: italic; /* ایتالیک برای نقل قول */
+}
+
+#inspiring-quotes blockquote p {
+    font-size: 1.1rem;
+    color: var(--text-color);
+    margin-bottom: 0.5rem;
+}
+
+#inspiring-quotes blockquote footer {
+    font-size: 0.9rem;
+    text-align: left; /* تراز به چپ برای منبع */
+    color: var(--secondary-color);
+}
+
+/* بخش جوایز و افتخارات */
+#awards-honors ul {
+    list-style: none;
+    padding-left: 0;
+}
+
+#awards-honors li {
     margin-bottom: 1rem;
-    color: var(--dark-color); /* رنگ عنوان hero */
+    padding-bottom: 1rem;
+    border-bottom: 1px dashed #ccc; /* خط пунктирный زیر هر مورد */
 }
 
-.hero-tagline {
-    font-size: 1.2rem;
-    color: var(--dark-color); /* رنگ شعار hero */
+#awards-honors li:last-child {
+    border-bottom: none; /* حذف خط زیر آخرین مورد */
+}
+
+/* بخش ویدیو معرفی */
+#video-intro .video-container {
+    position: relative;
+    padding-bottom: 56.25%; /* نسبت تصویر 16:9 برای ویدیوهای عریض */
+    height: 0;
+    overflow: hidden;
+    margin-top: 1rem;
+}
+
+#video-intro .video-container iframe,
+#video-intro .video-container video {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+}
+#video-intro .video-container p { /* استایل برای Placeholder ویدیو */
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    text-align: center;
+    color: var(--secondary-color);
+    font-style: italic;
+}
+
+
+/* بخش موردکاوی‌ها */
+#case-studies .case-study {
     margin-bottom: 2rem;
+    padding: 1.5rem;
+    border: 1px solid #ddd;
+    border-radius: 8px;
+    background-color: #f9f9f9;
 }
 
-.cta-button, .order-button { /* استایل مشترک برای دکمه‌های اصلی */
-    display: inline-block;
-    background-color: var(--primary-color); /* رنگ دکمه hero */
-    color: var(--light-color); /* رنگ متن دکمه hero */
+#case-studies .case-study h3 {
+    font-size: 1.4rem;
+    margin-top: 0;
+    margin-bottom: 1rem;
+    color: var(--primary-color);
+}
+
+#case-studies .case-study p {
+    font-size: 1.1rem;
+    margin-bottom: 1rem;
+}
+
+#case-studies .case-study a {
+    color: var(--primary-color);
+    text-decoration: none;
+}
+
+#case-studies .case-study a:hover {
+    text-decoration: underline;
+}
+
+/* بخش پیشنهادات ویژه */
+#special-offers .offer {
+    margin-bottom: 2rem;
+    padding: 2rem;
+    background-color: #fff;
+    border-radius: 12px;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.07);
+    text-align: center; /* تراز وسط متن پیشنهاد */
+}
+
+#special-offers .offer h3 {
+    font-size: 1.6rem;
+    margin-top: 0;
+    margin-bottom: 1rem;
+    color: var(--accent-color); /* رنگ متفاوت برای عنوان پیشنهاد */
+}
+
+#special-offers .offer p {
+    font-size: 1.1rem;
+    margin-bottom: 1.5rem;
+}
+
+#special-offers .offer .discount {
+    font-size: 1.3rem;
+    color: red; /* رنگ قرمز برای تاکید تخفیف */
+    font-weight: bold;
+}
+
+#special-offers .offer a {
+    display: inline-block; /* دکمه خرید */
+    background-color: var(--primary-color);
+    color: var(--light-color);
     padding: 1rem 2.5rem;
     border-radius: 8px;
     text-decoration: none;
+    font-size: 1.1rem;
+    transition: background-color 0.3s ease;
+}
+
+#special-offers .offer a:hover {
+    background-color: #0056b3;
+}
+
+/* بخش نظرات متخصصان */
+#expert-opinions .expert-opinion {
+    margin-bottom: 2rem;
+    padding: 1.5rem;
+    border: 1px solid #ddd;
+    border-radius: 8px;
+    background-color: #f9f9f9;
+}
+
+#expert-opinions .expert-opinion h3 {
+    font-size: 1.4rem;
+    margin-top: 0;
+    margin-bottom: 1rem;
+    color: var(--primary-color);
+}
+
+#expert-opinions .expert-opinion p {
+    font-size: 1.1rem;
+    margin-bottom: 1rem;
+}
+
+#expert-opinions .expert-opinion .video-container { /* استایل برای ویدیو متخصصان (اگر وجود داشته باشد) */
+    position: relative;
+    padding-bottom: 56.25%; /* 16:9 aspect ratio */
+    height: 0;
+    overflow: hidden;
+    margin-top: 1rem;
+}
+
+#expert-opinions .expert-opinion .video-container iframe,
+#expert-opinions .expert-opinion .video-container video {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+}
+#expert-opinions .expert-opinion .video-container p { /* استایل برای Placeholder ویدیو متخصصان */
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    text-align: center;
+    color: var(--secondary-color);
+    font-style: italic;
+}
+
+
+/* فروشگاه */
+#store {
+    background-color: #eef2f5;
+}
+
+#store p {
+    font-size: 1.1rem;
+    margin-bottom: 1rem;
+}
+
+.payment-details {
+    background-color: var(--light-color);
+    padding: 1.5rem;
+    border-radius: 8px;
+    box-shadow: 0 3px 9px rgba(0, 0, 0, 0.05);
+    margin-top: 1rem;
+}
+
+.payment-details h3 {
+    font-size: 1.5rem;
+    margin-top: 0;
+    margin-bottom: 1rem;
+    color: var(--primary-color);
+}
+
+.payment-details p {
+    font-size: 1rem;
+    margin-bottom: 0.8rem;
+}
+
+/* فرم عضویت در خبرنامه */
+#email-signup form {
+    max-width: 100%;
+    margin: 0;
+    display: block;
+}
+
+#email-signup input[type="email"] {
+    width: calc(100% - 22px);
+    padding: 1rem;
+    margin-bottom: 1rem;
+    border: 1px solid #ced4da;
+    border-radius: 6px;
+    font-size: 1rem;
+    direction: rtl;
+    text-align: right;
+}
+
+
+#email-signup button {
+    background-color: var(--primary-color);
+    color: var(--light-color);
+    border: none;
+    padding: 1rem 2rem;
+    border-radius: 6px;
+    cursor: pointer;
+    font-size: 1.1rem;
+    transition: background-color 0.3s ease;
+    width: 100%;
+}
+
+#email-signup button:hover {
+    background-color: #0056b3;
+}
+
+
+/* بخش نظرات */
+#comments textarea {
+    width: calc(100% - 22px);
+    padding: 1rem;
+    margin-bottom: 1rem;
+    border: 1px solid #ced4da;
+    border-radius: 6px;
+    font-size: 1rem;
+    direction: rtl;
+    text-align: right;
+    height: 150px;
+}
+
+#comments button {
+    background-color: var(--secondary-color);
+    color: var(--light-color);
+    border: none;
+    padding: 1rem 2rem;
+    border-radius: 6px;
+    cursor: pointer;
+    font-size: 1.1rem;
+    transition: background-color 0.3s ease;
+}
+
+#comments button:hover {
+    background-color: #545b62;
+}
+
+
+/* قوانین سایت و تماس */
+#rules ul, #contact p {
+    font-size: 1.1rem;
+    list-style-type: none;
+    padding-left: 0;
+}
+
+#rules li {
+    margin-bottom: 0.5rem;
+}
+
+
+/* فوتر */
+footer {
+    text-align: center;
+    padding: 1.5rem 0;
+    background-color: var(--dark-color);
+    color: var(--light-color);
+    font-size: 0.9rem;
+    bottom: 0;
+    width: 100%;
+}
