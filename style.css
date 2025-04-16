@@ -17,125 +17,205 @@
     font-display: swap;
 }
 
-/* متغیرهای رنگ */
+/* متغیرهای رنگ - رنگ‌های سایت موفقیت */
 :root {
-    --primary-color: #007bff;
-    --secondary-color: #6c757d;
-    --light-color: #f8f9fa;
-    --dark-color: #343a40;
-    --text-color: #333;
-    --accent-color: #ffc107; /* زرد کهربایی برای جلب توجه */
+    --primary-color: #2E86AB; /* آبی اصلی */
+    --secondary-color: #343a40; /* خاکستری تیره */
+    --light-color: #f8f9fa; /* سفید خیلی روشن */
+    --dark-color: #222; /* مشکی */
+    --text-color: #333; /* خاکستری متن */
+    --accent-color: #F7DC6F; /* زرد طلایی */
+    --success-color: #28a745; /* سبز موفقیت */
+    --warning-color: #ffc107; /* زرد هشدار */
+    --danger-color: #dc3545; /* قرمز خطر */
+    --info-color: #17a2b8; /* آبی اطلاع‌رسانی */
 }
 
 /* تنظیمات عمومی */
 body {
-    font-family: 'Vazirmatn', sans-serif; /* استفاده از فونت وزیرمتن */
+    font-family: 'Vazirmatn', sans-serif;
     margin: 0;
     padding: 0;
-    direction: rtl; /* راست به چپ */
-    text-align: right; /* تراز متن به راست */
-    background-color: var(--light-color); /* استفاده از متغیر رنگ */
-    color: var(--text-color); /* استفاده از متغیر رنگ */
-    line-height: 1.7; /* بهبود خوانایی متن */
+    direction: rtl;
+    text-align: right;
+    background-color: var(--light-color);
+    color: var(--text-color);
+    line-height: 1.8; /* یکم بیشتر برای خوانایی */
+    font-size: 16px; /* اندازه فونت پایه */
+}
+
+.container {
+    max-width: 1200px; /* عرض بیشتر برای سایت‌های موفقیت */
+    margin-left: auto;
+    margin-right: auto;
+    padding-left: 20px;
+    padding-right: 20px;
 }
 
 /* هدر */
 header {
-    background-color: var(--dark-color); /* استفاده از متغیر رنگ */
-    color: var(--light-color); /* استفاده از متغیر رنگ */
-    padding: 2rem 0; /* padding بیشتر برای فضای بهتر */
-    text-align: center;
-    position: relative; /* برای قرارگیری لوگو */
+    background-color: var(--primary-color); /* آبی اصلی */
+    color: var(--light-color);
+    padding: 1.5rem 0; /* کم کردن padding هدر */
+    /* text-align: center; حذف تراز وسط */
 }
+
+.header-container {
+    display: flex; /* استفاده از فلکس باکس برای چیدمان */
+    justify-content: space-between; /* فاصله بین لوگو و منو */
+    align-items: center; /* تراز عمودی */
+}
+
 
 header h1 {
     margin: 0;
-    font-size: 2.5rem; /* اندازه فونت بزرگتر */
+    font-size: 2.2rem; /* اندازه فونت کمتر هدر */
 }
 
 nav ul {
     list-style: none;
     padding: 0;
-    margin-top: 1rem; /* margin-top برای فاصله از عنوان */
+    margin-top: 0; /* حذف margin-top منو */
     display: flex;
-    justify-content: center;
+    /* justify-content: center; حذف تراز وسط */
 }
 
 nav ul li {
-    margin: 0 1.5rem; /* margin بیشتر برای فاصله بین آیتم‌ها */
+    margin: 0 1rem; /* فاصله کمتر بین آیتم‌های منو */
 }
 
 nav ul li a {
-    color: var(--light-color); /* استفاده از متغیر رنگ */
+    color: var(--light-color);
     text-decoration: none;
-    font-size: 1.1rem; /* اندازه فونت منو */
-    transition: color 0.3s ease; /* انیمیشن تغییر رنگ */
+    font-size: 1rem; /* اندازه فونت منو کمتر */
+    transition: color 0.3s ease;
 }
 
 nav ul li a:hover {
-    color: var(--accent-color); /* تغییر رنگ در حالت hover */
+    color: var(--accent-color);
 }
 
 /* لوگو */
+.logo-link {
+    display: block; /* لینک لوگو بلاک باشد */
+}
+
 .logo {
-    max-height: 210px; /* حداکثر ارتفاع لوگو (قبلی: 70px) */
-    max-width: 450px; /* حداکثر عرض لوگو (قبلی: 150px) */
-    height: auto; /* ارتفاع خودکار برای حفظ نسبت تصویر */
-    position: absolute; /* موقعیت مطلق در هدر */
-    top: 50%; /* وسط عمودی */
-    right: 2rem; /* فاصله از راست */
-    transform: translateY(-50%); /* تنظیم دقیق وسط عمودی */
+    max-height: 150px; /* ارتفاع لوگو کمتر */
+    max-width: 300px; /* عرض لوگو کمتر */
+    height: auto;
 }
 
 
-/* بخش اصلی */
+/* بخش اصلی (main) - طرح دو ستونی */
+.main-container {
+    display: flex; /* فلکس باکس برای دو ستونی شدن */
+    gap: 2rem; /* فاصله بین ستون‌ها */
+    padding-top: 2rem;
+    padding-bottom: 2rem;
+}
+
+.sidebar {
+    width: 30%; /* عرض ستون سمت چپ (سایدبار) */
+    /* background-color: #f0f0f0;  رنگ پس‌زمینه برای تست */
+    padding: 1.5rem;
+}
+
+.content {
+    width: 70%; /* عرض ستون سمت راست (محتوا) */
+    /* background-color: #e0e0e0;  رنگ پس‌زمینه برای تست */
+    padding: 1.5rem;
+}
+
+/* سایدبار - بخش‌های داخلی */
+.sidebar-section {
+    margin-bottom: 2rem; /* فاصله بین بخش‌های سایدبار */
+    padding: 1.5rem;
+    background-color: var(--light-color);
+    border-radius: 12px;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.05);
+}
+
+.sidebar-section:last-child {
+    margin-bottom: 0; /* حذف margin-bottom آخرین بخش سایدبار */
+}
+
+/* بخش سوالات متداول در سایدبار */
+#faq ul {
+    list-style: none;
+    padding-right: 0; /* حذف padding پیش‌فرض لیست */
+}
+
+#faq ul li {
+    margin-bottom: 0.8rem; /* فاصله بین آیتم‌های سوالات متداول */
+}
+
+#faq ul li a {
+    text-decoration: none;
+    color: var(--primary-color); /* رنگ لینک سوالات متداول */
+    transition: color 0.3s ease;
+    font-size: 0.9rem; /* اندازه فونت کوچکتر سوالات متداول */
+}
+
+#faq ul li a:hover {
+    color: var(--accent-color); /* رنگ هاور لینک سوالات متداول */
+}
+
+
+/* بخش‌های محتوا (section ها) */
 section {
-    padding: 2rem; /* padding بیشتر */
-    margin: 2rem; /* margin بیشتر */
-    background-color: var(--light-color); /* استفاده از متغیر رنگ */
-    border-radius: 12px; /* border-radius بیشتر برای گوشه‌های گردتر */
-    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.05); /* سایه ملایم‌تر */
+    padding: 2rem;
+    margin-bottom: 2rem; /* فاصله بین بخش‌های محتوا */
+    background-color: var(--light-color);
+    border-radius: 12px;
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.05);
 }
+
+section:last-child {
+    margin-bottom: 0; /* حذف margin-bottom آخرین بخش */
+}
+
 
 section h2 {
-    color: var(--dark-color); /* استفاده از متغیر رنگ */
+    color: var(--dark-color);
     margin-top: 0;
-    margin-bottom: 1.5rem; /* margin-bottom بیشتر */
-    font-size: 2rem; /* اندازه فونت بزرگتر */
-    border-bottom: 2px solid var(--accent-color); /* خط زیر عنوان */
-    padding-bottom: 0.5rem; /* فاصله خط از متن */
+    margin-bottom: 1.2rem; /* فاصله کمتر زیر عنوان */
+    font-size: 1.8rem; /* اندازه فونت کمتر عنوان */
+    border-bottom: 2px solid var(--accent-color);
+    padding-bottom: 0.4rem; /* فاصله کمتر خط زیر عنوان */
 }
 
-/* بیوگرافی نویسنده */
-#author-bio p {
-    font-size: 1.1rem;
-    color: var(--text-color);
+/* بخش Hero */
+#hero {
+    background-color: var(--accent-color); /* رنگ پس‌زمینه بخش hero */
+    color: var(--dark-color); /* رنگ متن بخش hero */
+    text-align: center;
+    padding: 4rem 2rem; /* padding بیشتر برای بخش hero */
+    border-radius: 12px;
+    margin-bottom: 2rem; /* فاصله از بخش بعدی */
 }
 
-/* استایل تصویر نویسنده (بخش درباره نویسنده) - بزرگتر و دایره‌ای */
-.author-image {
-    width: 130px; /* عرض تصویر (قبلی: 65px - یک برابر بزرگتر شده) */
-    height: auto; /* ارتفاع خودکار برای حفظ تناسب */
-    max-width: 100%; /* حداکثر عرض 100% برای واکنش‌گرا بودن */
-    display: block; /* برای جلوگیری از فضای اضافی پایین تصویر */
-    margin-left: auto; /* برای وسط قرار گرفتن در صورت نیاز */
-    margin-right: auto; /* برای وسط قرار گرفتن در صورت نیاز */
-    border-radius: 50%; /* دایره‌ای کردن تصویر */
+.hero-content {
+    max-width: 800px;
+    margin: 0 auto; /* وسط چین کردن محتوای hero */
 }
 
-
-/* فروشگاه */
-#store {
-    background-color: #eef2f5; /* رنگ پس‌زمینه ملایم‌تر برای فروشگاه */
-}
-
-#store p {
-    font-size: 1.1rem;
+#hero h1 {
+    font-size: 3rem; /* اندازه فونت بزرگتر عنوان hero */
     margin-bottom: 1rem;
+    color: var(--dark-color); /* رنگ عنوان hero */
 }
 
-.payment-details {
-    background-color: var(--light-color);
-    padding: 1.5rem;
+.hero-tagline {
+    font-size: 1.2rem;
+    color: var(--dark-color); /* رنگ شعار hero */
+    margin-bottom: 2rem;
+}
+
+.cta-button, .order-button { /* استایل مشترک برای دکمه‌های اصلی */
+    display: inline-block;
+    background-color: var(--primary-color); /* رنگ دکمه hero */
+    color: var(--light-color); /* رنگ متن دکمه hero */
+    padding: 1rem 2.5rem;
     border-radius: 8px;
-    box-shadow: 0 3px 9px rgba(0, 0, 0,
+    text-decoration: none;
