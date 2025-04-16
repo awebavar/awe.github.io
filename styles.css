@@ -169,71 +169,191 @@ section p {
     text-align: center;
 }
 
-/* ادامه استایل‌های فروشگاه، دکمه‌ها، فوتر و ... (محتوای کامل فایل style.css.txt) */
-/* ... (بقیه محتوای فایل style.css.txt را اینجا کپی کنید) ... */
+/* کانتینر کارت‌های کتاب - استفاده از Grid Layout - بدون تغییر */
+.book-cards-container {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); /* واکنش‌گرا: حداقل عرض 280px برای هر کارت - کمی بزرگتر */
+    gap: 2.5rem;
+    justify-items: center;
+}
+
+/* کارت کتاب - بدون تغییر */
+.book-card {
+    background-color: var(--card-background); /* سفید */
+    border-radius: 12px; /* گوشه‌های گرد */
+    box-shadow: 0 8px 20px rgba(0, 0, 0, 0.06); /* سایه ملایم‌تر */
+    overflow: hidden;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+    display: flex;
+    flex-direction: column;
+    height: 100%;
+}
+
+.book-card:hover {
+    transform: scale(1.02); /* بزرگنمایی کمتر در hover */
+    box-shadow: 0 10px 25px rgba(0, 0, 0, 0.1); /* سایه قوی‌تر در hover */
+}
+
+/* تصویر جلد کتاب - بدون تغییر */
+.book-cover {
+    width: 100%;
+    height: auto;
+    border-bottom: 1px solid var(--border-color); /* خاکستری خیلی روشن */
+    display: block;
+    border-top-left-radius: 12px; /* گوشه‌های گرد */
+    border-top-right-radius: 12px; /* گوشه‌های گرد */
+}
+
+/* بدنه کارت (متن و دکمه‌ها) - بدون تغییر */
+.book-card-body {
+    padding: 1.5rem;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    flex-grow: 1;
+}
 
 
-/* استایل دکمه‌ها */
-button, .button {
-    display: inline-block;
-    padding: 0.75rem 1.5rem;
+/* عنوان کتاب - بدون تغییر */
+.book-title {
+    font-size: 1.3rem; /* کمی کوچکتر */
+    font-weight: bold;
+    color: var(--dark-color); /* خاکستری تیره */
+    margin-bottom: 0.7rem;
+    line-height: 1.3;
+}
+
+/* نویسنده کتاب - بدون تغییر */
+.book-author {
     font-size: 1rem;
-    border: none;
-    border-radius: 6px;
-    background-color: var(--primary-color); /* آبی اصلی */
-    color: white;
-    text-decoration: none;
-    cursor: pointer;
-    transition: background-color 0.3s ease;
-    text-align: center; /* Center text inside buttons */
-}
-
-button:hover, .button:hover {
-    background-color: #0056b3; /* آبی تیره‌تر در hover */
-}
-
-/* استایل دکمه‌های ثانویه (خاکستری) */
-.button-secondary {
-    background-color: var(--secondary-color); /* خاکستری متوسط */
-}
-
-.button-secondary:hover {
-    background-color: #545b62; /* خاکستری تیره‌تر در hover */
-}
-
-
-/* بخش قوانین سایت و تماس با ما - طراحی ساده */
-#rules ul, #contact ul {
-    list-style-type: none; /* حذف bulletها */
-    padding: 0;
-}
-
-#rules li, #contact li {
-    margin-bottom: 0.8rem;
-}
-
-#rules p, #contact p {
-    font-size: 1rem;
-}
-
-
-/* فوتر */
-footer {
-    padding: 1rem;
-    background-color: var(--header-background); /* همسان با هدر - سفید */
     color: var(--secondary-color); /* خاکستری متوسط */
-    text-align: center;
-    border-top: 1px solid var(--border-color); /* خط جداکننده بالا */
-    position: relative; /* برای footer-note */
-    width: 100%; /* عرض کامل فوتر */
-    box-sizing: border-box; /* Padding را در عرض محاسبه کند */
-    margin-top: 50px; /* فاصله از بخش‌های بالایی */
+    margin-bottom: 1rem;
+}
+
+/* قیمت کتاب - بدون تغییر */
+.book-price {
+    font-size: 1.2rem;
+    color: var(--accent-color); /* سبز - رنگ تاکیدی */
+    font-weight: bold;
+    margin-bottom: 1.3rem;
 }
 
 
-/* پاورقی فوتر - یادداشت کوچک */
-.footer-note {
-    font-size: 0.8rem; /* اندازه فونت کوچکتر */
-    color: #777; /* خاکستری روشن‌تر */
-    margin-top: 1rem; /* فاصله از محتوای اصلی فوتر */
+/* دکمه خرید / اطلاعات بیشتر - بدون تغییر */
+.book-button {
+    background-color: var(--primary-color); /* آبی اصلی */
+    color: var(--light-color); /* سفید خیلی روشن */
+    border: none;
+    padding: 0.9rem 1.8rem; /* padding کمی کمتر */
+    border-radius: 6px; /* گوشه‌های گرد */
+    cursor: pointer;
+    font-size: 1rem;
+    font-weight: bold;
+    text-align: center;
+    transition: background-color 0.3s ease, transform 0.2s ease;
+    display: inline-block;
+    align-self: flex-start;
+    box-shadow: 0 2px 6px rgba(0, 0, 0, 0.06); /* سایه ملایم‌تر */
+}
+
+.book-button:hover {
+    background-color: #0056b3; /* آبی تیره‌تر در hover */
+    transform: translateY(-1px); /* بالا آمدن کمتر در hover */
+    box-shadow: 0 3px 8px rgba(0, 0, 0, 0.1); /* سایه بیشتر در hover */
+}
+
+.book-button:active { /* استایل برای حالت کلیک دکمه */
+    transform: translateY(0);
+    box-shadow: 0 2px 6px rgba(0, 0, 0, 0.06); /* سایه کمتر در کلیک دکمه */
+}
+
+
+/* فرم عضویت در خبرنامه - بدون تغییر */
+#email-signup form {
+    max-width: 100%;
+    margin: 0;
+    display: block;
+}
+
+#email-signup input[type="email"] {
+    width: calc(100% - 22px);
+    padding: 0.9rem; /* padding کمی کمتر */
+    margin-bottom: 0.9rem; /* margin-bottom کمی کمتر */
+    border: 1px solid #ced4da;
+    border-radius: 6px;
+    font-size: 1rem;
+    direction: rtl;
+    text-align: right;
+}
+
+
+#email-signup button {
+    background-color: var(--primary-color);
+    color: var(--light-color);
+    border: none;
+    padding: 0.9rem 1.8rem; /* padding کمی کمتر */
+    border-radius: 6px;
+    cursor: pointer;
+    font-size: 1rem;
+    transition: background-color 0.3s ease;
+    width: 100%;
+}
+
+#email-signup button:hover {
+    background-color: #0056b3;
+}
+
+
+/* بخش نظرات - بدون تغییر */
+#comments textarea {
+    width: calc(100% - 22px);
+    padding: 0.9rem; /* padding کمی کمتر */
+    margin-bottom: 0.9rem; /* margin-bottom کمی کمتر */
+    border: 1px solid #ced4da;
+    border-radius: 6px;
+    font-size: 1rem;
+    direction: rtl;
+    text-align: right;
+    height: 130px; /* ارتفاع کمتر برای textarea */
+}
+
+#comments button {
+    background-color: var(--secondary-color);
+    color: var(--light-color);
+    border: none;
+    padding: 0.9rem 1.8rem; /* padding کمی کمتر */
+    border-radius: 6px;
+    cursor: pointer;
+    font-size: 1rem;
+    transition: background-color 0.3s ease;
+}
+
+#comments button:hover {
+    background-color: #545b62;
+}
+
+
+/* قوانین سایت و تماس - بدون تغییر */
+#rules ul, #contact p {
+    font-size: 1rem;
+    list-style-type: none;
+    padding-left: 0;
+}
+
+#rules li {
+    margin-bottom: 0.4rem; /* margin-bottom کمتر */
+}
+
+
+/* فوتر - طراحی جدید - ساده‌تر */
+footer {
+    text-align: center;
+    padding: 1rem 0; /* padding کمتر */
+    background-color: var(--header-background); /* سفید - همسان با هدر */
+    color: var(--secondary-color); /* خاکستری متوسط */
+    font-size: 0.9rem;
+    border-top: 1px solid var(--border-color); /* خط جداکننده بالای فوتر */
+    /* position: fixed; ثابت در پایین صفحه - حذف شد */
+    bottom: 0;
+    width: 100%;
 }
