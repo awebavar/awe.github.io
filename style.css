@@ -40,7 +40,7 @@ body {
    ====================================== */
 header {
     background-color: var(--bg-color-white);
-    padding: 10px 0; /* کاهش ارتفاع سربرگ */
+    padding: 5px 0; /* کاهش padding هدر به 5px 0 */
     box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
     position: sticky; /* هدر چسبنده */
     top: 0;
@@ -153,6 +153,31 @@ header .container {
 
 
 /* ======================================
+   بخش درباره نویسنده
+   ====================================== */
+.about-author-section {
+    padding: 60px 0;
+    background-color: var(--bg-color-light);
+}
+
+.about-author-section h2 {
+    text-align: center;
+    margin-bottom: 35px;
+    color: var(--text-color-dark);
+    font-size: 2.2em;
+}
+
+.author-description {
+    max-width: 900px;
+    margin: 0 auto;
+    padding: 0 20px;
+    font-size: 1.1em;
+    color: var(--text-color-light);
+    line-height: 1.8;
+}
+
+
+/* ======================================
    بخش کتاب‌های ویژه
    ====================================== */
 .featured-books {
@@ -160,7 +185,7 @@ header .container {
     background-color: var(--bg-color-light);
 }
 
-.featured-books h2, .categories h2, .special-offers h2, footer h3 {
+.featured-books h2, .categories h2, .special-offers h2, footer h3, .about-author-section h2 {
     text-align: center;
     margin-bottom: 35px;
     color: var(--text-color-dark);
@@ -237,24 +262,17 @@ header .container {
     grid-template-columns: repeat(auto-fit, minmax(180px, 1fr)); /* پهن‌تر کردن دسته‌بندی‌ها */
     gap: 25px;
     text-align: center;
+    direction: rtl; /* راست‌چین کردن محتوای دسته‌بندی‌ها */
 }
 
-.category-item a {
-    display: block;
-    padding: 25px;
-    background-color: var(--bg-color-lighter);
-    text-decoration: none;
-    color: var(--text-color-light);
-    border-radius: 10px;
-    transition: background-color 0.3s ease, color 0.3s ease, transform 0.3s ease; /* انیمیشن هاور */
+.category-list li {
+    text-align: right; /* راست‌چین کردن متن هر مورد در لیست */
+    padding-right: 15px; /* کمی فاصله از سمت راست برای زیبایی */
 }
 
-.category-item a:hover,
-.category-item a:focus {
-    background-color: #e0e0e0;
-    color: var(--text-color-dark);
-    transform: translateY(-3px); /* کمی به بالا حرکت کند هنگام هاور */
-    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); /* سایه هنگام هاور */
+.category-list li::marker { /*  استایل دهی به نشانگر لیست (عدد) */
+    float: right; /*  شناور کردن نشانگر به راست */
+    margin-right: 5px; /*  فاصله بین نشانگر و متن */
 }
 
 
@@ -389,5 +407,94 @@ footer a:focus {
 
 .social-icons {
     text-align: center;
-    margin-top: 2;
+    margin-top: 25px;
+}
+
+.social-icons a {
+    display: inline-flex; /* استفاده از فلکس برای آیکون‌های شبکه‌های اجتماعی */
+    justify-content: center;
+    align-items: center;
+    width: 40px; /* اندازه آیکون‌ها */
+    height: 40px;
+    border-radius: 50%; /* دایره‌ای شدن آیکون‌ها */
+    background-color: rgba(255, 255, 255, 0.1); /* پس‌زمینه نیمه‌شفاف */
+    color: var(--bg-color-white);
+    font-size: 1.2em;
+    margin: 0 8px;
+    text-decoration: none;
+    transition: background-color 0.3s ease, color 0.3s ease;
+}
+
+.social-icons a:hover,
+.social-icons a:focus {
+    background-color: rgba(255, 255, 255, 0.3); /* پس‌زمینه شفاف‌تر هنگام هاور */
+    color: var(--secondary-color);
+}
+
+
+/* ======================================
+   استایل‌های واکنش‌گرا (Responsive)
+   ====================================== */
+@media (max-width: 992px) {
+    .container {
+        max-width: 960px;
+    }
+    .hero-banner {
+        padding: 100px 0;
+    }
+    .hero-banner h1 {
+        font-size: 2.8em;
+    }
+    .hero-banner p {
+        font-size: 1.2em;
+    }
+    .navigation {
+        display: none; /* مخفی کردن منو در سایز متوسط و کوچکتر */
+    }
+}
+
+
+@media (max-width: 768px) {
+    .container {
+        max-width: 720px;
+        padding: 15px;
+    }
+    .hero-banner {
+        padding: 80px 0;
+    }
+    .hero-banner h1 {
+        font-size: 2.4em;
+    }
+    .hero-banner p {
+        font-size: 1.1em;
+    }
+    .books-grid, .categories-grid, .offers-slider, footer .container {
+        grid-template-columns: repeat(auto-fit, minmax(200px, 1fr)); /* کوچک‌تر شدن آیتم‌ها در موبایل */
+    }
+    footer .container {
+        gap: 25px;
+    }
+}
+
+@media (max-width: 576px) {
+    .container {
+        max-width: 540px;
+        padding: 10px;
+    }
+    .hero-banner {
+        padding: 60px 0;
+    }
+    .hero-banner h1 {
+        font-size: 2em;
+    }
+    .hero-banner p {
+        font-size: 1em;
+    }
+    .featured-books, .categories, .special-offers, footer {
+        padding: 40px 0;
+    }
+    .featured-books h2, .categories h2, .special-offers h2, footer h3 {
+        font-size: 1.8em;
+        margin-bottom: 25px;
+    }
 }
