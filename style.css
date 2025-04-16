@@ -17,225 +17,252 @@
     font-display: swap;
 }
 
-/* متغیرهای رنگ - پالت رنگی مدرن‌تر */
+/* متغیرهای رنگ */
 :root {
-    --primary-color: #3498db; /* آبی روشن */
-    --secondary-color: #7f8c8d; /* خاکستری ملایم */
-    --light-color: #ecf0f1; /* خاکستری روشن */
-    --dark-color: #2c3e50; /* آبی تیره */
-    --text-color: #34495e; /* خاکستری تیره */
-    --accent-color: #f39c12; /* نارنجی */
-    --background-color: #f9fafa; /* پس‌زمینه خیلی روشن */
-    --card-background: #ffffff; /* پس‌زمینه کارت‌ها */
-    --border-color: #e0e0e0; /* رنگ حاشیه ملایم */
+    --primary-color: #007bff;
+    --secondary-color: #6c757d;
+    --light-color: #f8f9fa;
+    --dark-color: #343a40;
+    --text-color: #333;
+    --accent-color: #ffc107; /* زرد کهربایی برای جلب توجه */
+    --background-color: #f8f9fa; /* رنگ پس‌زمینه اصلی سایت */
+    --card-background: #ffffff; /* رنگ پس‌زمینه کارت‌ها */
+    --border-color: #dee2e6; /* رنگ بوردر کارت‌ها و جداکننده‌ها */
+    --dark-color: #343a40; /* رنگ تیره اصلی */
+    --light-color: #f8f9fa; /* رنگ روشن اصلی */
 }
 
 /* تنظیمات عمومی */
 body {
-    font-family: 'Vazirmatn', sans-serif;
+    font-family: 'Vazirmatn', sans-serif; /* استفاده از فونت وزیرمتن */
     margin: 0;
     padding: 0;
-    direction: rtl;
-    text-align: right;
-    background-color: var(--background-color); /* تغییر رنگ پس‌زمینه */
-    color: var(--text-color);
-    line-height: 1.8; /* افزایش line-height برای خوانایی بهتر */
-    -webkit-font-smoothing: antialiased; /* بهبود رندرینگ فونت در مرورگرهای WebKit */
-    -moz-osx-font-smoothing: grayscale; /* بهبود رندرینگ فونت در Firefox در macOS */
+    direction: rtl; /* راست به چپ */
+    text-align: right; /* تراز متن به راست */
+    background-color: var(--light-color); /* استفاده از متغیر رنگ */
+    color: var(--text-color); /* استفاده از متغیر رنگ */
+    line-height: 1.7; /* بهبود خوانایی متن */
 }
 
 /* هدر */
 header {
-    background-color: var(--dark-color);
-    color: var(--light-color);
-    padding: 2.5rem 0; /* افزایش padding هدر */
+    background-color: var(--dark-color); /* استفاده از متغیر رنگ */
+    color: var(--light-color); /* استفاده از متغیر رنگ */
+    padding: 2rem 0; /* padding بیشتر برای فضای بهتر */
     text-align: center;
-    position: relative;
-    margin-bottom: 2rem; /* فاصله از بخش اصلی */
+    position: relative; /* برای قرارگیری لوگو */
 }
 
 header h1 {
     margin: 0;
-    font-size: 3rem; /* اندازه فونت بزرگتر برای عنوان هدر */
-    font-weight: bold; /* bold کردن عنوان هدر */
-    letter-spacing: -1px; /* کاهش فاصله حروف برای زیبایی بیشتر */
+    font-size: 2.5rem; /* اندازه فونت بزرگتر */
 }
 
 nav ul {
     list-style: none;
     padding: 0;
-    margin-top: 1.5rem; /* افزایش margin-top منو */
+    margin-top: 1rem; /* margin-top برای فاصله از عنوان */
     display: flex;
     justify-content: center;
 }
 
 nav ul li {
-    margin: 0 2rem; /* افزایش margin بین آیتم‌های منو */
+    margin: 0 1.5rem; /* margin بیشتر برای فاصله بین آیتم‌ها */
 }
 
 nav ul li a {
-    color: var(--light-color);
+    color: var(--light-color); /* استفاده از متغیر رنگ */
     text-decoration: none;
-    font-size: 1.2rem; /* اندازه فونت بزرگتر برای منو */
-    font-weight: 500; /* وزن فونت نیمه bold برای منو */
-    transition: color 0.3s ease;
-    position: relative; /* برای خط زیر منو */
-    padding-bottom: 0.5rem; /* فضا برای خط زیر منو */
+    font-size: 1.1rem; /* اندازه فونت منو */
+    transition: color 0.3s ease; /* انیمیشن تغییر رنگ */
 }
 
-nav ul li a:hover,
-nav ul li a.active { /* استایل برای حالت hover و لینک فعال */
-    color: var(--accent-color);
+nav ul li a:hover {
+    color: var(--accent-color); /* تغییر رنگ در حالت hover */
 }
-
-nav ul li a::after { /* خط زیر منو */
-    content: '';
-    position: absolute;
-    left: 0;
-    bottom: 0;
-    width: 0;
-    height: 2px;
-    background-color: var(--accent-color);
-    transition: width 0.3s ease;
-}
-
-nav ul li a:hover::after,
-nav ul li a.active::after { /* نمایش خط زیر منو در حالت hover و لینک فعال */
-    width: 100%;
-}
-
 
 /* لوگو */
 .logo {
-    max-height: 250px; /* افزایش حداکثر ارتفاع لوگو */
-    max-width: 500px; /* افزایش حداکثر عرض لوگو */
-    height: auto;
-    position: absolute;
-    top: 50%;
-    right: 3rem; /* افزایش فاصله لوگو از راست */
-    transform: translateY(-50%);
+    max-height: 210px; /* حداکثر ارتفاع لوگو (قبلی: 70px) */
+    max-width: 450px; /* حداکثر عرض لوگو (قبلی: 150px) */
+    height: auto; /* ارتفاع خودکار برای حفظ نسبت تصویر */
+    position: absolute; /* موقعیت مطلق در هدر */
+    top: 50%; /* وسط عمودی */
+    right: 2rem; /* فاصله از راست */
+    transform: translateY(-50%); /* تنظیم دقیق وسط عمودی */
 }
 
-/* بخش اصلی سایت */
-main {
-    max-width: 1200px; /* حداکثر عرض بخش اصلی سایت */
-    margin: 0 auto; /* وسط‌چین کردن بخش اصلی */
-    padding: 2rem;
-}
 
+/* بخش اصلی */
 section {
-    padding: 2.5rem; /* افزایش padding بخش‌ها */
-    margin-bottom: 2rem; /* فاصله بین بخش‌ها */
-    background-color: var(--card-background); /* رنگ پس‌زمینه کارت‌ها برای بخش‌ها */
-    border-radius: 15px; /* افزایش border-radius گوشه‌ها */
-    box-shadow: 0 8px 20px rgba(0, 0, 0, 0.06); /* سایه بیشتر و ملایم‌تر */
-    border: 1px solid var(--border-color); /* حاشیه ملایم برای بخش‌ها */
+    padding: 2rem; /* padding بیشتر */
+    margin: 2rem; /* margin بیشتر */
+    background-color: var(--light-color); /* استفاده از متغیر رنگ */
+    border-radius: 12px; /* border-radius بیشتر برای گوشه‌های گردتر */
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.05); /* سایه ملایم‌تر */
 }
 
 section h2 {
-    color: var(--dark-color);
+    color: var(--dark-color); /* استفاده از متغیر رنگ */
     margin-top: 0;
-    margin-bottom: 2rem; /* افزایش margin-bottom عنوان بخش */
-    font-size: 2.7rem; /* اندازه فونت بزرگتر برای عنوان بخش */
-    font-weight: bold; /* bold کردن عنوان بخش */
-    border-bottom: 3px solid var(--accent-color); /* خط زیر عنوان ضخیم‌تر */
-    padding-bottom: 0.7rem; /* فاصله خط از متن بیشتر */
-    display: inline-block; /* عنوان به اندازه متن */
-    line-height: 1.2; /* بهبود خط ارتفاع عنوان */
+    margin-bottom: 1.5rem; /* margin-bottom بیشتر */
+    font-size: 2rem; /* اندازه فونت بزرگتر */
+    border-bottom: 2px solid var(--accent-color); /* خط زیر عنوان */
+    padding-bottom: 0.5rem; /* فاصله خط از متن */
 }
-
 
 /* بیوگرافی نویسنده */
 #author-bio p {
-    font-size: 1.2rem; /* اندازه فونت بزرگتر برای متن بیوگرافی */
+    font-size: 1.1rem;
     color: var(--text-color);
-    margin-bottom: 1.5rem; /* فاصله پاراگراف‌ها در بیوگرافی */
 }
 
-/* استایل تصویر نویسنده */
+/* استایل تصویر نویسنده (بخش درباره نویسنده) - بزرگتر و دایره‌ای */
 .author-image {
-    width: 150px; /* عرض تصویر بزرگتر */
-    height: auto;
-    max-width: 100%;
-    display: block;
-    margin-left: auto;
-    margin-right: auto;
-    border-radius: 50%;
-    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); /* سایه ملایم برای تصویر */
-    transition: transform 0.3s ease; /* انیمیشن برای hover */
-}
-
-.author-image:hover {
-    transform: scale(1.05); /* بزرگنمایی تصویر در hover */
+    width: 130px; /* عرض تصویر (قبلی: 65px - یک برابر بزرگتر شده) */
+    height: auto; /* ارتفاع خودکار برای حفظ تناسب */
+    max-width: 100%; /* حداکثر عرض 100% برای واکنش‌گرا بودن */
+    display: block; /* برای جلوگیری از فضای اضافی پایین تصویر */
+    margin-left: auto; /* برای وسط قرار گرفتن در صورت نیاز */
+    margin-right: auto; /* برای وسط قرار گرفتن در صورت نیاز */
+    border-radius: 50%; /* دایره‌ای کردن تصویر */
 }
 
 
-/* فروشگاه */
+/* فروشگاه - طراحی کارت‌محور و جذاب */
 #store {
-    background-color: var(--background-color); /* پس‌زمینه متفاوت برای فروشگاه */
-    border: none; /* حذف حاشیه فروشگاه */
-    box-shadow: none; /* حذف سایه فروشگاه */
-    padding: 2rem 0; /* padding متفاوت برای فروشگاه */
+    background-color: var(--background-color); /* همسان با پس‌زمینه اصلی سایت */
+    padding: 3rem 2rem; /* padding بیشتر برای بخش فروشگاه */
 }
 
 #store h2 {
-    border-bottom: 3px solid var(--primary-color); /* خط زیر عنوان فروشگاه رنگ متفاوت */
-    color: var(--primary-color); /* رنگ عنوان فروشگاه متفاوت */
+    color: var(--primary-color); /* رنگ عنوان فروشگاه */
+    border-bottom: 3px solid var(--primary-color); /* خط زیر عنوان فروشگاه */
+    margin-bottom: 2.5rem; /* فاصله بیشتر عنوان از کارت‌ها */
 }
-
 
 #store p {
     font-size: 1.2rem;
-    margin-bottom: 1.2rem;
-    color: var(--secondary-color); /* رنگ متن فروشگاه متفاوت */
+    color: var(--secondary-color); /* رنگ متن توضیحات فروشگاه */
+    margin-bottom: 2rem; /* فاصله بیشتر متن توضیحات */
+    text-align: center; /* وسط‌چین کردن متن توضیحات */
 }
 
-.payment-details {
-    background-color: var(--card-background);
-    padding: 2rem; /* padding بیشتر برای جزئیات پرداخت */
-    border-radius: 12px;
-    box-shadow: 0 5px 12px rgba(0, 0, 0, 0.04); /* سایه ملایم‌تر برای جزئیات پرداخت */
-    margin-top: 1.5rem;
-    border: 1px solid var(--border-color); /* حاشیه ملایم برای جزئیات پرداخت */
+/* کانتینر کارت‌های کتاب - استفاده از Grid Layout */
+.book-cards-container {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr)); /* واکنش‌گرا: حداقل عرض 250px برای هر کارت */
+    gap: 2.5rem; /* فاصله بین کارت‌ها */
+    justify-items: center; /* وسط‌چین کردن افقی کارت‌ها در هر ستون */
 }
 
-.payment-details h3 {
-    font-size: 1.7rem; /* اندازه فونت بزرگتر برای عنوان جزئیات پرداخت */
-    margin-top: 0;
-    margin-bottom: 1.2rem;
-    color: var(--primary-color);
+/* کارت کتاب */
+.book-card {
+    background-color: var(--card-background); /* پس‌زمینه کارت‌ها */
+    border-radius: 15px; /* گوشه‌های گردتر کارت */
+    box-shadow: 0 10px 25px rgba(0, 0, 0, 0.08); /* سایه ملایم‌تر و قوی‌تر برای کارت */
+    overflow: hidden; /* جلوگیری از بیرون‌زدگی محتوا از گوشه‌های گرد */
+    transition: transform 0.3s ease, box-shadow 0.3s ease; /* انیمیشن برای hover */
+    display: flex; /* استفاده از فلکس‌باکس برای چیدمان عمودی محتوا */
+    flex-direction: column; /* چیدمان عمودی عناصر کارت */
+    height: 100%; /* ارتفاع 100% برای هم‌ترازی کارت‌ها در Grid */
 }
 
-.payment-details p {
-    font-size: 1.1rem;
-    margin-bottom: 1rem;
-    color: var(--text-color); /* رنگ متن جزئیات پرداخت به رنگ متن اصلی */
+.book-card:hover {
+    transform: scale(1.03); /* بزرگنمایی کارت در hover */
+    box-shadow: 0 12px 30px rgba(0, 0, 0, 0.12); /* سایه قوی‌تر در hover */
+}
+
+/* تصویر جلد کتاب */
+.book-cover {
+    width: 100%; /* عرض 100% کارت */
+    height: auto;
+    border-bottom: 1px solid var(--border-color); /* خط جداکننده تصویر از متن */
+    display: block; /* جلوگیری از فضای اضافی زیر تصویر */
+    border-top-left-radius: 15px; /* گرد کردن گوشه بالا-چپ تصویر */
+    border-top-right-radius: 15px; /* گرد کردن گوشه بالا-راست تصویر */
+}
+
+/* بدنه کارت (متن و دکمه‌ها) */
+.book-card-body {
+    padding: 1.5rem; /* padding داخلی بدنه کارت */
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between; /* توزیع فضا بین عنوان/نویسنده و دکمه‌ها */
+    flex-grow: 1; /* اجازه رشد برای پر کردن فضای کارت */
+}
+
+
+/* عنوان کتاب */
+.book-title {
+    font-size: 1.5rem; /* اندازه فونت بزرگتر برای عنوان کتاب */
+    font-weight: bold; /* bold کردن عنوان کتاب */
+    color: var(--dark-color); /* رنگ عنوان کتاب */
+    margin-bottom: 0.8rem; /* فاصله پایین عنوان */
+    line-height: 1.3; /* خط ارتفاع مناسب برای عنوان */
+}
+
+/* نویسنده کتاب */
+.book-author {
+    font-size: 1.1rem; /* اندازه فونت نویسنده */
+    color: var(--secondary-color); /* رنگ نویسنده */
+    margin-bottom: 1.2rem; /* فاصله پایین نویسنده */
+}
+
+/* قیمت کتاب */
+.book-price {
+    font-size: 1.3rem; /* اندازه فونت قیمت */
+    color: var(--accent-color); /* رنگ قیمت - رنگ تاکیدی */
+    font-weight: bold; /* bold کردن قیمت */
+    margin-bottom: 1.5rem; /* فاصله پایین قیمت */
+}
+
+
+/* دکمه خرید / اطلاعات بیشتر */
+.book-button {
+    background-color: var(--primary-color); /* رنگ دکمه */
+    color: var(--light-color); /* رنگ متن دکمه */
+    border: none;
+    padding: 1rem 2rem; /* padding دکمه */
+    border-radius: 8px; /* گوشه‌های گرد دکمه */
+    cursor: pointer;
+    font-size: 1.1rem; /* اندازه فونت دکمه */
+    font-weight: bold; /* bold کردن متن دکمه */
+    text-align: center; /* وسط‌چین کردن متن دکمه */
+    transition: background-color 0.3s ease, transform 0.2s ease; /* انیمیشن برای hover و کلیک */
+    display: inline-block; /* دکمه به اندازه محتوا */
+    align-self: flex-start; /* تراز دکمه به بالای flex container در صورت فضای خالی */
+    box-shadow: 0 3px 8px rgba(0, 0, 0, 0.08); /* سایه ملایم برای دکمه */
+}
+
+.book-button:hover {
+    background-color: #2980b9; /* رنگ hover دکمه تیره‌تر */
+    transform: translateY(-2px); /* کمی بالا آمدن دکمه در hover */
+    box-shadow: 0 5px 12px rgba(0, 0, 0, 0.12); /* سایه بیشتر در hover دکمه */
+}
+
+.book-button:active { /* استایل برای حالت کلیک دکمه */
+    transform: translateY(0); /* بازگشت به حالت اولیه در کلیک */
+    box-shadow: 0 3px 8px rgba(0, 0, 0, 0.08); /* سایه کمتر در کلیک دکمه */
 }
 
 
 /* فرم عضویت در خبرنامه */
 #email-signup form {
-    max-width: 100%;
-    margin: 0;
-    display: block;
+    max-width: 100%; /* فرم تمام عرض */
+    margin: 0; /* حذف margin برای فرم */
+    display: block; /* تغییر به display: block */
 }
 
 #email-signup input[type="email"] {
-    width: calc(100% - 2rem); /* کاهش عرض برای padding */
-    padding: 1.2rem; /* padding بیشتر برای فیلد ایمیل */
-    margin-bottom: 1.2rem;
-    border: 2px solid var(--border-color); /* حاشیه ضخیم‌تر برای فیلد ایمیل */
-    border-radius: 8px; /* border-radius بیشتر برای فیلد ایمیل */
-    font-size: 1.1rem;
-    direction: rtl;
-    text-align: right;
-    transition: border-color 0.3s ease; /* انیمیشن برای تغییر رنگ حاشیه */
-}
-
-#email-signup input[type="email"]:focus { /* استایل focus برای فیلد ایمیل */
-    border-color: var(--primary-color);
-    outline: none; /* حذف outline پیش‌فرض focus */
-    box-shadow: 0 0 0 2px rgba(52, 152, 219, 0.2); /* سایه ملایم focus */
+    width: calc(100% - 22px); /* 100% عرض با احتساب padding و border */
+    padding: 1rem;
+    margin-bottom: 1rem;
+    border: 1px solid #ced4da;
+    border-radius: 6px;
+    font-size: 1rem;
+    direction: rtl; /* راست به چپ برای ورودی ایمیل */
+    text-align: right; /* تراز متن به راست */
 }
 
 
@@ -243,109 +270,68 @@ section h2 {
     background-color: var(--primary-color);
     color: var(--light-color);
     border: none;
-    padding: 1.2rem 2.5rem; /* padding بیشتر برای دکمه */
-    border-radius: 8px; /* border-radius بیشتر برای دکمه */
+    padding: 1rem 2rem;
+    border-radius: 6px;
     cursor: pointer;
-    font-size: 1.2rem;
-    font-weight: bold; /* bold کردن متن دکمه */
-    transition: background-color 0.3s ease, transform 0.2s ease; /* انیمیشن برای hover و کلیک */
-    width: 100%;
-    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1); /* سایه ملایم برای دکمه */
+    font-size: 1.1rem;
+    transition: background-color 0.3s ease;
+    width: 100%; /* دکمه تمام عرض */
 }
 
 #email-signup button:hover {
-    background-color: #2980b9; /* رنگ hover تیره‌تر */
-    transform: translateY(-2px); /* کمی بالا آمدن دکمه در hover */
-    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.15); /* سایه بیشتر در hover */
-}
-
-#email-signup button:active { /* استایل برای حالت کلیک */
-    transform: translateY(0); /* بازگشت به حالت اولیه در کلیک */
-    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1); /* سایه کمتر در کلیک */
+    background-color: #0056b3;
 }
 
 
 /* بخش نظرات */
 #comments textarea {
-    width: calc(100% - 2rem); /* کاهش عرض برای padding */
-    padding: 1.2rem; /* padding بیشتر برای textarea */
-    margin-bottom: 1.2rem;
-    border: 2px solid var(--border-color); /* حاشیه ضخیم‌تر برای textarea */
-    border-radius: 8px; /* border-radius بیشتر برای textarea */
-    font-size: 1.1rem;
-    direction: rtl;
-    text-align: right;
-    height: 180px; /* ارتفاع بیشتر برای textarea */
-    transition: border-color 0.3s ease; /* انیمیشن برای تغییر رنگ حاشیه */
-    resize: vertical; /* فقط تغییر ارتفاع textarea مجاز است */
+    width: calc(100% - 22px); /* 100% عرض با احتساب padding و border */
+    padding: 1rem;
+    margin-bottom: 1rem;
+    border: 1px solid #ced4da;
+    border-radius: 6px;
+    font-size: 1rem;
+    direction: rtl; /* راست به چپ برای textarea */
+    text-align: right; /* تراز متن به راست */
+    height: 150px; /* ارتفاع بیشتر برای textarea */
 }
-
-#comments textarea:focus { /* استایل focus برای textarea */
-    border-color: var(--primary-color);
-    outline: none;
-    box-shadow: 0 0 0 2px rgba(52, 152, 219, 0.2); /* سایه ملایم focus */
-}
-
 
 #comments button {
     background-color: var(--secondary-color);
     color: var(--light-color);
     border: none;
-    padding: 1.2rem 2.5rem; /* padding بیشتر برای دکمه نظرات */
-    border-radius: 8px; /* border-radius بیشتر برای دکمه نظرات */
+    padding: 1rem 2rem;
+    border-radius: 6px;
     cursor: pointer;
-    font-size: 1.2rem;
-    font-weight: bold; /* bold کردن متن دکمه نظرات */
-    transition: background-color 0.3s ease, transform 0.2s ease; /* انیمیشن برای hover و کلیک */
-    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1); /* سایه ملایم برای دکمه نظرات */
+    font-size: 1.1rem;
+    transition: background-color 0.3s ease;
 }
 
 #comments button:hover {
-    background-color: #777; /* رنگ hover تیره‌تر برای دکمه نظرات */
-    transform: translateY(-2px); /* کمی بالا آمدن دکمه نظرات در hover */
-    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.15); /* سایه بیشتر در hover برای دکمه نظرات */
-}
-
-#comments button:active { /* استایل برای حالت کلیک دکمه نظرات */
-    transform: translateY(0); /* بازگشت به حالت اولیه در کلیک دکمه نظرات */
-    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1); /* سایه کمتر در کلیک دکمه نظرات */
+    background-color: #545b62;
 }
 
 
 /* قوانین سایت و تماس */
 #rules ul, #contact p {
-    font-size: 1.2rem; /* اندازه فونت بزرگتر برای قوانین و تماس */
-    list-style-type: none;
-    padding-left: 0;
-    margin-bottom: 1.5rem; /* فاصله پایین بیشتر برای بخش قوانین و تماس */
+    font-size: 1.1rem;
+    list-style-type: none; /* حذف bullet points */
+    padding-left: 0; /* حذف padding پیش‌فرض لیست */
 }
 
 #rules li {
-    margin-bottom: 0.8rem;
-}
-
-#contact p {
-    line-height: 1.9; /* افزایش line-height برای متن تماس */
+    margin-bottom: 0.5rem; /* فاصله بین آیتم‌های لیست قوانین */
 }
 
 
 /* فوتر */
 footer {
     text-align: center;
-    padding: 2rem 0; /* padding بیشتر برای فوتر */
-    background-color: var(--dark-color);
-    color: var(--light-color);
-    font-size: 1rem; /* اندازه فونت بزرگتر برای فوتر */
-    border-top: 1px solid #444; /* خط جداکننده بالای فوتر */
-}
-
-/* استایل کلی لینک‌ها در متن */
-a {
-    color: var(--primary-color);
-    text-decoration: none;
-    transition: color 0.3s ease;
-}
-
-a:hover {
-    color: #2980b9; /* رنگ hover تیره‌تر برای لینک‌ها */
+    padding: 1.5rem 0; /* padding کمتر */
+    background-color: var(--dark-color); /* استفاده از متغیر رنگ */
+    color: var(--light-color); /* استفاده از متغیر رنگ */
+    font-size: 0.9rem; /* اندازه فونت کوچکتر */
+    /* position: fixed;  ثابت در پایین صفحه - کامنت شد */
+    bottom: 0; /* چسبیده به پایین صفحه */
+    width: 100%; /* عرض کامل */
 }
