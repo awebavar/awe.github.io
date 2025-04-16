@@ -4,18 +4,18 @@
    تنظیمات کلی و متغیرها
    ====================================== */
 :root {
-    --primary-color: #007bff;        /* رنگ اصلی (آبی) */
-    --primary-dark-color: #0056b3;   /* رنگ اصلی تیره */
-    --secondary-color: #ffc107;      /* رنگ ثانویه (زرد) */
-    --secondary-dark-color: #ffb300; /* رنگ ثانویه تیره */
-    --text-color-dark: #333;         /* رنگ متن تیره */
-    --text-color-light: #555;        /* رنگ متن روشن‌تر */
-    --bg-color-light: #f9f9f9;       /* رنگ پس‌زمینه روشن */
-    --bg-color-lighter: #f0f0f0;      /* رنگ پس‌زمینه خیلی روشن */
-    --bg-color-white: #fff;          /* رنگ سفید */
-    --footer-bg-color: #333;        /* رنگ پس‌زمینه فوتر */
-    --footer-text-color: #ccc;       /* رنگ متن فوتر */
-    --font-main: 'Tahoma', sans-serif; /* فونت اصلی */
+    --primary-color: #007bff;
+    --primary-dark-color: #0056b3;
+    --secondary-color: #ffc107;
+    --secondary-dark-color: #ffb300;
+    --text-color-dark: #333;
+    --text-color-light: #555;
+    --bg-color-light: #f9f9f9;
+    --bg-color-lighter: #f0f0f0;
+    --bg-color-white: #fff;
+    --footer-bg-color: #333;
+    --footer-text-color: #ccc;
+    --font-main: 'Tahoma', sans-serif;
 }
 
 body {
@@ -25,8 +25,8 @@ body {
     color: var(--text-color-dark);
     margin: 0;
     padding: 0;
-    line-height: 1.7; /* افزایش ارتفاع خط برای خوانایی بهتر */
-    font-size: 16px; /* اندازه فونت پیش‌فرض */
+    line-height: 1.7;
+    font-size: 16px;
 }
 
 .container {
@@ -40,11 +40,11 @@ body {
    ====================================== */
 header {
     background-color: var(--bg-color-white);
-    padding: 10px 0; /* ✅ کاهش padding هدر به نصف */
+    padding: 5px 0; /* ✅ کاهش بیشتر padding هدر برای نصف شدن ارتفاع */
     box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
-    position: sticky; /* هدر چسبنده */
+    position: sticky;
     top: 0;
-    z-index: 100; /* اطمینان از نمایش روی سایر محتوا */
+    z-index: 100;
 }
 
 header .container {
@@ -54,7 +54,7 @@ header .container {
 }
 
 .logo img {
-    max-width: 180px; /* کمی بزرگتر کردن لوگو */
+    max-width: 180px;
     height: auto;
 }
 
@@ -66,7 +66,7 @@ header .container {
 }
 
 .navigation li {
-    margin-right: 25px; /* افزایش فاصله آیتم‌های منو */
+    margin-right: 25px;
 }
 
 .navigation li:last-child {
@@ -78,21 +78,21 @@ header .container {
     color: var(--text-color-dark);
     font-weight: bold;
     transition: color 0.3s ease;
-    padding: 8px 12px; /* اضافه کردن padding به لینک‌های منو برای لمس‌پذیری بهتر */
+    padding: 8px 12px;
     border-radius: 5px;
 }
 
 .navigation a:hover,
-.navigation a:focus { /* اضافه کردن focus برای دسترسی‌پذیری با کیبورد */
+.navigation a:focus {
     color: var(--primary-color);
-    background-color: var(--bg-color-lighter); /* پس‌زمینه هاور */
+    background-color: var(--bg-color-lighter);
 }
 
 .user-icons a {
     margin-left: 15px;
     text-decoration: none;
     color: var(--text-color-light);
-    font-size: 1.2em; /* بزرگتر کردن آیکون‌ها */
+    font-size: 1.2em;
     transition: color 0.3s ease;
 }
 
@@ -101,56 +101,50 @@ header .container {
     color: var(--primary-color);
 }
 
-
 /* ======================================
    بنر اصلی
    ====================================== */
 .hero-banner {
     background-color: #e0f7fa;
-    padding: 120px 0; /* افزایش padding بنر */
+    padding: 120px 0;
     text-align: center;
-    /* background-image: url('image_0.png'); /* تصویر زمینه بنر */
-    /* background-size: cover; */
-    /* background-position: center; */
-    /* color: var(--bg-color-white); /* رنگ متن بنر در صورت استفاده از تصویر زمینه تیره */ */
 }
 
 .hero-banner .banner-content {
-    max-width: 900px; /* پهن‌تر کردن محتوای بنر */
+    max-width: 900px;
     margin: 0 auto;
 }
 
 .hero-banner h1 {
-    font-size: 3em; /* بزرگتر کردن عنوان بنر */
+    font-size: 3em;
     margin-bottom: 25px;
     color: var(--text-color-dark);
     line-height: 1.3;
 }
 
 .hero-banner p {
-    font-size: 1.3em; /* بزرگتر کردن توضیحات بنر */
+    font-size: 1.3em;
     color: var(--text-color-light);
     margin-bottom: 40px;
 }
 
 .cta-button {
     display: inline-block;
-    padding: 15px 35px; /* بزرگتر کردن دکمه */
+    padding: 15px 35px;
     background-color: var(--primary-color);
     color: var(--bg-color-white);
     text-decoration: none;
-    border-radius: 8px; /* گردتر کردن گوشه‌های دکمه */
+    border-radius: 8px;
     font-weight: bold;
     font-size: 1.1em;
     transition: background-color 0.3s ease;
-    box-shadow: 0 3px 7px rgba(0, 0, 0, 0.2); /* سایه دکمه */
+    box-shadow: 0 3px 7px rgba(0, 0, 0, 0.2);
 }
 
 .cta-button:hover,
 .cta-button:focus {
     background-color: var(--primary-dark-color);
 }
-
 
 /* ======================================
    بخش کتاب‌های ویژه
@@ -164,28 +158,28 @@ header .container {
     text-align: center;
     margin-bottom: 35px;
     color: var(--text-color-dark);
-    font-size: 2.2em; /* بزرگتر کردن عناوین بخش‌ها */
+    font-size: 2.2em;
 }
 
 .books-grid {
     display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); /* پهن‌تر کردن آیتم‌های گرید */
-    gap: 35px; /* افزایش فاصله بین کتاب‌ها */
+    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+    gap: 35px;
 }
 
 .book-item {
     text-align: center;
     padding: 25px;
     background-color: var(--bg-color-white);
-    border-radius: 10px; /* گردتر کردن گوشه‌های آیتم کتاب */
-    box-shadow: 0 3px 7px rgba(0, 0, 0, 0.08); /* سایه قوی‌تر برای هر کتاب */
-    transition: transform 0.3s ease, box-shadow 0.3s ease; /* انیمیشن هاور */
+    border-radius: 10px;
+    box-shadow: 0 3px 7px rgba(0, 0, 0, 0.08);
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
 }
 
 .book-item:hover,
-.book-item:focus-within { /* focus-within برای وقتی که دکمه داخل book-item فوکوس شود */
-    transform: scale(1.05); /* بزرگنمایی هنگام هاور */
-    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.15); /* سایه قوی‌تر هنگام هاور */
+.book-item:focus-within {
+    transform: scale(1.05);
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.15);
 }
 
 .book-item img {
@@ -223,13 +217,12 @@ header .container {
     background-color: var(--primary-dark-color);
 }
 
-
 /* ======================================
    بخش دسته‌بندی‌ها
    ====================================== */
 .categories {
     padding: 60px 0;
-    background-color: var(--bg-color-lighter); /* تغییر رنگ پس زمینه بخش دسته‌بندی‌ها */
+    background-color: var(--bg-color-lighter);
 }
 
 .categories h2 {
@@ -240,45 +233,39 @@ header .container {
 }
 
 .categories-grid {
-    display: flex; /* ✅ تغییر به فلکس باکس برای لیست عمودی */
-    flex-direction: column; /* ✅ تنظیم جهت فلکس باکس به عمودی */
-    align-items: flex-start; /* تراز آیتم‌ها به ابتدای خط */
-    gap: 10px; /* فاصله بین آیتم‌ها */
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 10px;
 }
 
 .category-list {
-    list-style-type: none; /* حذف استایل پیش‌فرض لیست */
+    list-style-type: none;
     padding: 0;
     margin: 0;
 }
 
 .category-list li {
-    margin-bottom: 10px; /* فاصله بین ردیف‌های لیست */
+    margin-bottom: 10px;
+    display: flex; /* ✅ استفاده از فلکس برای ردیف کردن شماره و متن */
+    align-items: baseline; /* ✅ تراز کردن متن با خط پایه شماره */
 }
 
 .category-list li::before {
-    content: counter(list-item) ". "; /* اضافه کردن شماره */
-    counter-increment: list-item; /* افزایش شمارنده */
+    content: counter(list-item) ". ";
+    counter-increment: list-item;
     display: inline-block;
-    width: 25px; /* عرض برای شماره‌ها */
-    text-align: right; /* تراز راست شماره‌ها */
-    color: var(--primary-color); /* رنگ شماره‌ها */
+    width: 25px;
+    text-align: right;
+    color: var(--primary-color);
     font-weight: bold;
 }
 
-.category-list a {
-    display: inline-block; /* لینک فقط به اندازه متن باشد */
-    padding: 10px 0; /* padding برای متن لینک */
-    text-decoration: none;
+.category-list span { /* ✅ استایل برای متن دسته‌بندی (دیگر لینک نیست) */
+    display: inline-block; /* برای مدیریت فضا */
+    padding: 10px 0;
     color: var(--text-color-dark);
     font-weight: bold;
-    transition: color 0.3s ease;
-}
-
-.category-list a:hover,
-.category-list a:focus {
-    color: var(--primary-color);
-    text-decoration: underline; /* خط زیر متن در هاور */
 }
 
 
@@ -292,17 +279,17 @@ header .container {
 
 .offers-slider {
     display: flex;
-    overflow-x: auto; /* اسکرول افقی برای اسلایدر */
+    overflow-x: auto;
     gap: 30px;
-    padding-bottom: 20px; /* فضا برای اسکرول */
+    padding-bottom: 20px;
 }
 
 .offer-item {
-    min-width: 300px; /* حداقل عرض برای هر اسلاید */
+    min-width: 300px;
     background-color: var(--bg-color-white);
     border-radius: 10px;
     box-shadow: 0 3px 7px rgba(0, 0, 0, 0.08);
-    overflow: hidden; /* مخفی کردن محتوای بیرون‌زده */
+    overflow: hidden;
     transition: transform 0.3s ease, box-shadow 0.3s ease;
 }
 
@@ -314,9 +301,9 @@ header .container {
 
 .offer-item img {
     max-width: 100%;
-    height: auto; /* ارتفاع خودکار */
-    display: block; /* جلوگیری از فضای اضافی پایین تصویر */
-    border-radius: 10px 10px 0 0; /* گرد کردن بالا */
+    height: auto;
+    display: block;
+    border-radius: 10px 10px 0 0;
 }
 
 .offer-item-content {
@@ -337,8 +324,8 @@ header .container {
 .offer-button {
     display: inline-block;
     padding: 12px 25px;
-    background-color: var(--secondary-color); /* رنگ متفاوت برای دکمه پیشنهاد */
-    color: var(--text-color-dark); /* رنگ متن تیره برای دکمه پیشنهاد */
+    background-color: var(--secondary-color);
+    color: var(--text-color-dark);
     text-decoration: none;
     border-radius: 5px;
     font-weight: bold;
@@ -348,9 +335,8 @@ header .container {
 .offer-button:hover,
 .offer-button:focus {
     background-color: var(--secondary-dark-color);
-    color: var(--bg-color-white); /* تغییر رنگ متن در هاور دکمه پیشنهاد */
+    color: var(--bg-color-white);
 }
-
 
 /* ======================================
    فوتر
@@ -369,11 +355,11 @@ footer .container {
 }
 
 footer h3 {
-    color: var(--bg-color-white); /* رنگ سفید برای عنوان فوتر */
+    color: var(--bg-color-white);
     border-bottom: 2px solid var(--secondary-color);
     padding-bottom: 10px;
     margin-bottom: 20px;
-    text-align: left; /* تراز چپ برای عناوین فوتر */
+    text-align: left;
 }
 
 footer p, footer ul {
@@ -407,116 +393,107 @@ footer .copyright {
     margin-top: 40px;
 }
 
-
 /* ======================================
-   استایل‌های 반응گرا (Responsive)
+   استایل‌های واکنش‌گرا (Responsive)
    ====================================== */
-/* برای صفحه‌های نمایش کوچکتر از 768 پیکسل */
 @media (max-width: 768px) {
     .container {
         padding: 15px;
     }
 
-    /* هدر موبایل */
     header .container {
-        flex-direction: column; /* تغییر جهت به عمودی در موبایل */
-        align-items: center; /* مرکزچین کردن آیتم‌ها */
-        text-align: center; /* متن‌ها هم مرکزچین شوند */
+        flex-direction: column;
+        align-items: center;
+        text-align: center;
     }
 
     .logo {
-        margin-bottom: 20px; /* فاصله بیشتر لوگو از منو */
+        margin-bottom: 20px;
     }
 
     .logo img {
-        max-width: 150px; /* لوگو کمی کوچکتر در موبایل */
+        max-width: 150px;
     }
 
     .navigation ul {
-        flex-direction: column; /* منو عمودی در موبایل */
-        text-align: center; /* مرکزچین کردن منو */
+        flex-direction: column;
+        text-align: center;
     }
 
     .navigation li {
-        margin: 10px 0; /* فاصله بین آیتم‌های منو در موبایل */
-        margin-right: 0; /* حذف margin-right */
+        margin: 10px 0;
+        margin-right: 0;
     }
 
     .user-icons {
-        margin-top: 20px; /* فاصله آیکون‌های کاربر از منو */
+        margin-top: 20px;
     }
 
     .user-icons a {
-        margin: 0 10px; /* فاصله بین آیکون‌های کاربر در موبایل */
+        margin: 0 10px;
     }
 
-
-    /* بنر اصلی موبایل */
     .hero-banner {
-        padding: 80px 0; /* padding کمتر برای بنر در موبایل */
+        padding: 80px 0;
     }
 
     .hero-banner h1 {
-        font-size: 2.5em; /* فونت کوچکتر عنوان بنر در موبایل */
+        font-size: 2.5em;
     }
 
     .hero-banner p {
-        font-size: 1.1em; /* فونت کوچکتر توضیحات بنر در موبایل */
+        font-size: 1.1em;
         margin-bottom: 30px;
     }
 
     .cta-button {
-        padding: 12px 30px; /* دکمه کمی کوچکتر در موبایل */
+        padding: 12px 30px;
         font-size: 1em;
     }
 
-
-    /* بخش کتاب‌های ویژه و دسته‌بندی‌ها موبایل */
     .featured-books, .categories, .special-offers {
-        padding: 50px 0; /* padding کمتر برای بخش‌ها در موبایل */
+        padding: 50px 0;
     }
 
     .featured-books h2, .categories h2, .special-offers h2, footer h3 {
-        font-size: 2em; /* فونت کوچکتر عناوین بخش‌ها در موبایل */
+        font-size: 2em;
         margin-bottom: 30px;
     }
 
     .books-grid, .categories-grid {
-        grid-template-columns: repeat(auto-fit, minmax(150px, 1fr)); /* آیتم‌های گرید باریک‌تر در موبایل */
-        gap: 20px; /* فاصله کمتر در موبایل */
+        grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
+        gap: 20px;
     }
 
     .book-item, .category-item {
-        padding: 15px; /* padding کمتر برای آیتم‌ها در موبایل */
+        padding: 15px;
     }
 
     .book-item h3 {
-        font-size: 1.2em; /* فونت کوچکتر عنوان کتاب در موبایل */
+        font-size: 1.2em;
     }
 
     .book-item p {
-        font-size: 0.95em; /* فونت کوچکتر توضیحات کتاب در موبایل */
+        font-size: 0.95em;
         margin-bottom: 15px;
     }
 
     .view-button, .offer-button {
-        padding: 10px 20px; /* دکمه‌های کوچکتر در موبایل */
+        padding: 10px 20px;
         font-size: 0.9em;
     }
 
-
-    /* فوتر موبایل */
     footer {
-        padding: 50px 0; /* padding کمتر برای فوتر در موبایل */
-        text-align: center; /* مرکزچین کردن متن فوتر در موبایل */
+        padding: 50px 0;
+        text-align: center;
     }
 
     footer .container {
-        grid-template-columns: 1fr; /* ستون‌های فوتر روی هم در موبایل */
-        gap: 25px; /* فاصله بیشتر بین ستون‌ها در موبایل */
+        grid-template-columns: 1fr;
+        gap: 25px;
     }
 
     footer h3 {
-        text-align: center; /* عناوین فوتر مرکزچین در موبایل */
+        text-align: center;
     }
 }
