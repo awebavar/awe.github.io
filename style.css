@@ -26,12 +26,12 @@ body {
 }
 
 .header {
-    background-color: var(--light-background);
+    background-color: var(--light-background); /* Reverted header background color */
     padding: 20px 0;
-    position: sticky; /* Make header sticky */
+    position: sticky;
     top: 0;
-    z-index: 100; /* Ensure it's above other content */
-    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1); /* Optional shadow for better visual separation */
+    z-index: 100;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
 }
 
 .header .container {
@@ -41,7 +41,7 @@ body {
 }
 
 .logo img {
-    max-height: 50px; /* Adjust logo size as needed */
+    max-height: 70px; /* Reverted logo size to original (larger) */
 }
 
 .main-nav ul {
@@ -52,7 +52,7 @@ body {
 }
 
 .main-nav li {
-    margin-right: 20px; /* Spacing between nav items */
+    margin-right: 20px;
 }
 
 .main-nav li:last-child {
@@ -73,12 +73,13 @@ body {
 
 
 .hero {
-    background-image: url('Screenshot (138).png'); /* Hero banner image */
+    background-image: url('Screenshot (138).png');
     background-size: cover;
     background-position: center;
     color: var(--light-background);
     text-align: center;
     padding: 100px 0;
+    background-color: var(--primary-color); /* Reverted hero background color */
 }
 
 .hero h1 {
@@ -100,7 +101,7 @@ body {
     cursor: pointer;
     text-decoration: none;
     transition: background-color 0.3s ease, color 0.3s ease;
-    text-align: center; /* Ensure text is centered */
+    text-align: center;
 }
 
 .primary-btn {
@@ -125,7 +126,7 @@ body {
 .special-offers-section {
     padding: 40px 0;
     background-color: var(--light-background);
-    border-bottom: 1px solid #eee; /* Separator between sections */
+    border-bottom: 1px solid #eee;
 }
 
 
@@ -139,50 +140,77 @@ body {
 
 
 .book-list,
-.category-grid,
+.category-list, /* Updated to category-list */
 .offer-list {
     display: flex;
     flex-wrap: wrap;
-    justify-content: space-around; /* Distribute items evenly */
+    justify-content: space-around;
 }
 
 
 .book-item,
-.category-item,
+.category-item, /* Updated to category-item */
 .offer-item {
-    width: 30%; /* Adjust as needed for item width */
+    width: 30%;
     margin-bottom: 20px;
     padding: 15px;
     border: 1px solid #ddd;
     border-radius: 8px;
     text-align: center;
-    background-color: #fff; /* Item background color */
-    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.05); /* Subtle shadow */
+    background-color: #fff;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.05);
 }
 
 .book-item img,
-.category-item img,
+/* .category-item img,  Removed image styles from category-item */
 .offer-item img {
     max-width: 100%;
     height: auto;
-    border-radius: 8px; /* Rounded corners for images */
+    border-radius: 8px;
     margin-bottom: 15px;
 }
 
 
 .book-item h3,
-.category-item h3,
+.category-item h3, /* Updated to category-item */
 .offer-item h3 {
     color: var(--text-color);
     margin-bottom: 10px;
 }
 
 .book-item p,
-.category-item p,
+.category-item p, /* Updated to category-item */
 .offer-item p {
     color: var(--text-color);
     font-size: 0.9em;
     line-height: 1.4;
+}
+
+/* Category list specific styles */
+.categories-section .category-list {
+    display: flex;
+    flex-direction: row; /* Display categories in a row */
+    justify-content: space-between; /* Distribute space evenly */
+    align-items: stretch; /* Make items take full height */
+}
+
+.categories-section .category-item {
+    width: auto; /* Adjust width as needed */
+    flex: 1; /* Distribute available space equally */
+    margin: 0 5px; /* Spacing between items */
+    padding: 15px;
+    border: 1px solid #ddd;
+    border-radius: 8px;
+    text-align: center;
+    background-color: #fff;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.05);
+    display: flex; /* Enable flexbox for vertical alignment */
+    flex-direction: column; /* Stack content vertically */
+    justify-content: center; /* Vertically center content */
+}
+.categories-section .category-item h3 {
+    margin: 0; /* Remove default heading margins */
+    font-size: 1em; /* Adjust font size as needed */
 }
 
 
@@ -198,7 +226,7 @@ body {
     display: flex;
     justify-content: space-between;
     align-items: center;
-    flex-wrap: wrap; /* Allows content to wrap on smaller screens */
+    flex-wrap: wrap;
 }
 
 
@@ -206,6 +234,15 @@ body {
     font-size: 0.9em;
     margin: 0;
 }
+.contact-info {
+    margin-bottom: 10px; /* Add some space below contact info */
+}
+.contact-info p, .contact-info a {
+    color: var(--light-background);
+    font-size: 0.9em;
+    text-decoration: none; /* Remove underline from email link */
+}
+
 
 .social-icons a {
     display: inline-block;
@@ -220,7 +257,7 @@ body {
 }
 
 .social-icons img {
-    height: 25px; /* Adjust social icon size */
+    height: 25px;
     width: auto;
 }
 
@@ -245,7 +282,7 @@ body {
     .book-item,
     .category-item,
     .offer-item {
-        width: 80%; /* Full width on smaller screens */
+        width: 80%;
         margin-left: auto;
         margin-right: auto;
     }
@@ -259,14 +296,21 @@ body {
         font-size: 1em;
     }
     .footer-content {
-        padding: 20px; /* Add padding for better spacing in mobile footer */
+        padding: 20px;
     }
-    .copyright, .social-icons {
+    .copyright, .contact-info, .social-icons {
         width: 100%;
-        margin-bottom: 10px; /* Space between copyright and social icons in mobile */
+        margin-bottom: 10px;
     }
     .social-icons {
-        text-align: center; /* Center social icons on mobile */
+        text-align: center;
+    }
+    .categories-section .category-list {
+        flex-direction: column; /* Stack categories vertically on smaller screens */
+    }
+    .categories-section .category-item {
+        width: 100%; /* Full width for category items on small screens */
+        margin: 10px 0; /* Add vertical margin between items */
     }
 
 }
