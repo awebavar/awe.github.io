@@ -46,36 +46,35 @@ body {
 header {
     background-color: var(--dark-color);
     color: var(--light-color);
-    padding: 2rem 0;
+    padding: 1.5rem 2rem;
     text-align: center;
     position: relative;
-    display: flex; /* استفاده از فلکس باکس برای هدر */
-    justify-content: space-between; /* پخش کردن عناصر در هدر */
-    align-items: center; /* تراز عمودی عناصر در وسط */
-    padding: 1.5rem 2rem; /* کاهش padding بالا و پایین و افزایش چپ و راست */
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
 }
 
 header h1 {
     margin: 0;
-    font-size: 2rem; /* کاهش اندازه فونت عنوان */
+    font-size: 2rem;
 }
 
 nav ul {
     list-style: none;
     padding: 0;
-    margin: 0; /* حذف margin بالا */
+    margin: 0;
     display: flex;
     justify-content: center;
 }
 
 nav ul li {
-    margin: 0 1rem; /* کاهش margin بین آیتم‌های منو */
+    margin: 0 1rem;
 }
 
 nav ul li a {
     color: var(--light-color);
     text-decoration: none;
-    font-size: 1rem; /* کاهش اندازه فونت منو */
+    font-size: 1rem;
     transition: color 0.3s ease;
 }
 
@@ -85,9 +84,9 @@ nav ul li a:hover {
 
 /* لوگو */
 .logo {
-    max-height: 100px; /* ارتفاع لوگو را تنظیم کنید */
+    max-height: 100px;
     height: auto;
-    margin-right: 2rem; /* فاصله از عنوان */
+    margin-right: 2rem;
 }
 
 
@@ -98,13 +97,14 @@ section {
     background-color: var(--light-color);
     border-radius: 12px;
     box-shadow: 0 5px 15px rgba(0, 0, 0, 0.05);
+    line-height: 1.8; /* اضافه شدن line-height به section */
 }
 
 section h2 {
     color: var(--dark-color);
     margin-top: 0;
     margin-bottom: 1.5rem;
-    font-size: 1.8rem; /* کاهش اندازه فونت عنوان بخش */
+    font-size: 1.8rem;
     border-bottom: 2px solid var(--accent-color);
     padding-bottom: 0.5rem;
 }
@@ -112,116 +112,118 @@ section h2 {
 section p {
     font-size: 1rem;
     color: var(--text-color);
-    margin-bottom: 1rem; /* فاصله پایین پاراگراف‌ها */
+    margin-bottom: 1rem;
 }
 
 /* بیوگرافی نویسنده */
 #author-bio p {
-    font-size: 1rem; /* اندازه فونت بیوگرافی نویسنده */
+    font-size: 1rem;
+    line-height: 1.9; /* بهبود خوانایی پاراگراف‌های بیوگرافی */
 }
 
 /* استایل تصویر نویسنده */
 .author-image {
-    width: 100px; /* کاهش اندازه تصویر نویسنده */
+    width: 100px;
     height: auto;
     max-width: 100%;
     display: block;
     margin-left: auto;
     margin-right: auto;
     border-radius: 50%;
-    margin-bottom: 1rem; /* فاصله پایین تصویر نویسنده */
+    margin-bottom: 1rem;
 }
 
 
 /* فروشگاه */
 #store {
-    background-color: var(--store-background); /* رنگ پس‌زمینه جدید فروشگاه */
-    padding: 2.5rem; /* افزایش padding بخش فروشگاه */
+    background-color: var(--store-background);
+    padding: 2.5rem;
 }
 
 #store h2 {
-    color: var(--primary-color); /* تغییر رنگ عنوان فروشگاه */
-    text-align: center; /* عنوان وسط‌چین */
-    margin-bottom: 2rem; /* فاصله پایین عنوان فروشگاه */
+    color: var(--primary-color);
+    text-align: center;
+    margin-bottom: 2rem;
 }
 
 
 #store p {
     font-size: 1rem;
-    margin-bottom: 1.2rem; /* افزایش فاصله پایین پاراگراف‌ها در فروشگاه */
-    color: var(--secondary-color); /* رنگ متن توضیحات فروشگاه */
-    text-align: center; /* متن توضیحات وسط‌چین */
+    margin-bottom: 1.2rem;
+    color: var(--secondary-color);
+    text-align: center;
+    line-height: 1.9; /* بهبود خوانایی پاراگراف‌های فروشگاه */
 }
 
 
 .book-card-container {
-    display: grid; /* استفاده از گرید برای کارت‌های کتاب */
-    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr)); /* واکنش‌گرا و حداقل عرض 250px */
-    gap: 2rem; /* فاصله بین کارت‌های کتاب */
-    justify-items: center; /* وسط‌چین کردن افقی کارت‌ها در هر ستون */
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    gap: 2rem;
+    justify-items: center;
 }
 
 .book-card {
-    background-color: var(--store-card-background); /* رنگ پس‌زمینه کارت‌های کتاب */
+    background-color: var(--store-card-background);
     border-radius: 12px;
-    overflow: hidden; /* جلوگیری از بیرون‌زدگی محتوا از گوشه‌های گرد */
-    box-shadow: 0 4px 12px var(--store-card-shadow); /* سایه ملایم‌تر */
-    transition: transform 0.3s ease, box-shadow 0.3s ease; /* انیمیشن برای هاور */
-    display: flex; /* استفاده از فلکس باکس */
-    flex-direction: column; /* چیدمان عمودی عناصر کارت */
-    align-items: center; /* وسط‌چین کردن عناصر به صورت افقی */
-    padding: 1.5rem; /* padding داخلی کارت‌ها */
-    text-align: center; /* تراز متن به وسط در کارت‌ها */
+    overflow: hidden;
+    box-shadow: 0 4px 12px var(--store-card-shadow);
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding: 1.5rem;
+    text-align: center;
 }
 
 
 .book-card:hover {
-    transform: scale(1.05); /* بزرگنمایی کارت در هاور */
-    box-shadow: 0 6px 18px rgba(0, 0, 0, 0.15); /* سایه بیشتر در هاور */
+    transform: scale(1.05);
+    box-shadow: 0 6px 18px rgba(0, 0, 0, 0.15);
 }
 
 
 .book-card img {
-    max-width: 100%; /* تصویر کتاب حداکثر عرض کارت */
+    max-width: 100%;
     height: auto;
     border-radius: 8px;
-    margin-bottom: 1rem; /* فاصله پایین تصویر کتاب */
+    margin-bottom: 1rem;
 }
 
 .book-card h3 {
-    font-size: 1.2rem; /* اندازه فونت عنوان کتاب */
-    margin: 0 0 0.5rem 0; /* فاصله پایین عنوان کتاب */
-    color: var(--dark-color); /* رنگ عنوان کتاب */
+    font-size: 1.2rem;
+    margin: 0 0 0.5rem 0;
+    color: var(--dark-color);
 }
 
 .book-card p {
-    font-size: 0.9rem; /* اندازه فونت توضیحات کتاب */
-    color: var(--text-color); /* رنگ توضیحات کتاب */
-    margin-bottom: 1rem; /* فاصله پایین توضیحات کتاب */
-    line-height: 1.6; /* خوانایی بیشتر توضیحات */
+    font-size: 0.9rem;
+    color: var(--text-color);
+    margin-bottom: 1rem;
+    line-height: 1.6;
 }
 
 
 .book-card .price {
-    font-size: 1rem; /* اندازه فونت قیمت */
-    color: var(--primary-color); /* رنگ قیمت */
-    font-weight: bold; /* وزن فونت قیمت */
-    margin-bottom: 1.5rem; /* فاصله پایین قیمت */
+    font-size: 1rem;
+    color: var(--primary-color);
+    font-weight: bold;
+    margin-bottom: 1.5rem;
 }
 
 .book-card button {
-    background-color: var(--accent-color); /* رنگ دکمه خرید */
-    color: var(--dark-color); /* رنگ متن دکمه خرید */
+    background-color: var(--accent-color);
+    color: var(--dark-color);
     border: none;
-    padding: 0.75rem 1.5rem; /* padding دکمه خرید */
+    padding: 0.75rem 1.5rem;
     border-radius: 6px;
     cursor: pointer;
-    font-size: 1rem; /* اندازه فونت دکمه خرید */
-    transition: background-color 0.3s ease; /* انیمیشن دکمه خرید */
+    font-size: 1rem;
+    transition: background-color 0.3s ease;
 }
 
 .book-card button:hover {
-    background-color: #ffda67; /* رنگ هاور دکمه خرید */
+    background-color: #ffda67;
 }
 
 
@@ -271,7 +273,7 @@ section p {
     direction: rtl;
     text-align: right;
     height: 150px;
-    line-height: 1.7; /* خوانایی متن در textarea */
+    line-height: 1.7;
 }
 
 
@@ -293,10 +295,10 @@ section p {
 
 /* قوانین سایت و تماس */
 #rules ul, #contact p {
-    font-size: 1rem; /* کاهش اندازه فونت قوانین و تماس */
+    font-size: 1rem;
     list-style-type: none;
     padding-left: 0;
-    line-height: 1.7; /* خوانایی بیشتر لیست قوانین و تماس */
+    line-height: 1.7;
 }
 
 #rules li {
@@ -310,7 +312,7 @@ footer {
     padding: 1.5rem 0;
     background-color: var(--dark-color);
     color: var(--light-color);
-    font-size: 0.8rem; /* کاهش اندازه فونت فوتر */
+    font-size: 0.8rem;
     bottom: 0;
     width: 100%;
 }
