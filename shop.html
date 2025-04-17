@@ -2,29 +2,29 @@
 <html lang="fa" dir="rtl">
 <head>
   <meta charset="UTF-8">
-  <title>فروشگاه AWE خانه باور</title>
+  <title>فروشگاه | AWE خانه باور</title>
   <link rel="stylesheet" href="style.css">
   <link rel="stylesheet"
         href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
 </head>
 <body>
 
-  <!-- ====== HEADER ====== -->
-  <header>
+  <!-- HEADER & NAV -->
+  <header class="site-header">
     <div class="container">
       <div class="logo">
         <a href="index.html">
           <img src="LOGO.png.png" alt="لوگوی AWE خانه باور">
         </a>
       </div>
-      <nav class="navigation">
+      <nav class="site-nav">
         <ul>
           <li><a href="index.html">صفحه اصلی</a></li>
-          <li><a href="shop.html">فروشگاه</a></li>
-          <li><a href="#categories">دسته‌بندی‌ها</a></li>
-          <li><a href="#">مقالات</a></li>
-          <li><a href="#">درباره ما</a></li>
-          <li><a href="#">تماس با ما</a></li>
+          <li><a href="shop.html" class="active">فروشگاه</a></li>
+          <li><a href="index.html#author">درباره نویسنده</a></li>
+          <li><a href="index.html#categories">دسته‌بندی‌ها</a></li>
+          <li><a href="index.html#special-offers">پیشنهادات ویژه</a></li>
+          <li><a href="index.html#contact">تماس با ما</a></li>
         </ul>
       </nav>
       <div class="user-icons">
@@ -32,61 +32,57 @@
         <a href="#"><i class="fa fa-shopping-cart"></i></a>
         <a href="#"><i class="fa fa-user"></i></a>
       </div>
-      <div class="menu-toggle">
-        <i class="fa fa-bars"></i>
-      </div>
     </div>
   </header>
 
-  <!-- ====== HERO BANNER ====== -->
-  <section class="hero-banner">
-    <div class="banner-content">
+  <!-- HERO BANNER -->
+  <section id="hero" class="hero-section">
+    <div class="container">
       <h1>به فروشگاه AWE خانه باور خوش آمدید</h1>
-      <p>محصولات و دوره‌های آموزشی برای رهایی از باورهای محدود کننده</p>
+      <p>محصولات و دوره‌های آموزشی برای رهایی از باورهای محدودکننده</p>
     </div>
   </section>
 
-  <!-- ====== MAIN SHOP CONTENT ====== -->
-  <main class="shop-page">
+  <!-- PRODUCTS LIST -->
+  <main class="products-section">
     <div class="container">
       <h2>محصولات ما</h2>
       <p>به زودی محصولات متنوعی در این بخش ارائه خواهد شد.</p>
-      <!-- در اینجا لیست محصولات قرار خواهد گرفت -->
+      <div id="products-grid" class="books-grid">
+        <!-- محصولات داینامیک توسط main.js رندر می‌شوند -->
+      </div>
     </div>
   </main>
 
-  <!-- ====== FOOTER ====== -->
-  <footer>
+  <!-- FOOTER -->
+  <footer class="site-footer">
     <div class="container">
-      <div class="footer-widget">
-        <h3>درباره ما</h3>
-        <p>AWE خانه باور، مرجع تخصصی ارائه راهکارهای رهایی از باورهای محدودکننده و دستیابی به موفقیت و خودباوری.</p>
+      <div class="footer-widgets">
+        <div class="widget">
+          <h3>درباره ما</h3>
+          <p>AWE خانه باور، مرجع تخصصی ارائه راهکارهای رهایی از باورهای محدودکننده و دستیابی به موفقیت و خودباوری.</p>
+        </div>
+        <div class="widget">
+          <h3>دسترسی سریع</h3>
+          <ul>
+            <li><a href="index.html">صفحه اصلی</a></li>
+            <li><a href="shop.html">فروشگاه</a></li>
+            <li><a href="index.html#categories">دسته‌بندی‌ها</a></li>
+            <li><a href="index.html#special-offers">پیشنهادات ویژه</a></li>
+            <li><a href="index.html#contact">تماس با ما</a></li>
+          </ul>
+        </div>
+        <div class="widget">
+          <h3>ارتباط با ما</h3>
+          <p><i class="fa fa-envelope"></i> awebavar@gmail.com</p>
+        </div>
       </div>
-      <div class="footer-widget">
-        <h3>دسترسی سریع</h3>
-        <ul>
-          <li><a href="index.html">صفحه اصلی</a></li>
-          <li><a href="shop.html">فروشگاه</a></li>
-          <li><a href="#">دسته‌بندی‌ها</a></li>
-          <li><a href="#">پیشنهادات ویژه</a></li>
-          <li><a href="#">تماس با ما</a></li>
-        </ul>
+      <div class="copyright">
+        <p>&copy; 1403 AWE خانه باور | کلیه حقوق محفوظ است.</p>
       </div>
-      <div class="footer-widget">
-        <h3>ارتباط با ما</h3>
-        <p>ایمیل: <a href="mailto:awebavar@gmail.com">awebavar@gmail.com</a></p>
-      </div>
-    </div>
-    <div class="copyright">
-      <p>&copy; 1403 کلیه حقوق این سایت متعلق به AWE خانه باور می‌باشد.</p>
     </div>
   </footer>
 
-  <script>
-    // موبایل منو
-    document.querySelector('.menu-toggle').onclick = function() {
-      document.querySelector('.navigation ul').classList.toggle('active');
-    }
-  </script>
+  <script src="main.js"></script>
 </body>
 </html>
