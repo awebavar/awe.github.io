@@ -1,50 +1,50 @@
-// لیست نمونه برای پیشنهادات جستجو
-const sampleSuggestions = [
-  'رازهای باور به قدرت بیکران هستی',
-  'زخم‌های کودکی و باورهای بزرگسالی',
-  'ویروس‌های ذهنی پاکسازی باورهای سمی',
-  'تمرینات روزانه برای تقویت باور',
-  'کتاب سفر به اعماق رازهای نهان باورها'
-];
-
-function setupSearch(inputId, suggId) {
-  const input = document.getElementById(inputId);
-  const suggBox = document.getElementById(suggId);
-
-  input.addEventListener('input', () => {
-    const val = input.value.trim().toLowerCase();
-    suggBox.innerHTML = '';
-    if (!val) {
-      suggBox.style.display = 'none';
-      return;
-    }
-    const matches = sampleSuggestions.filter(item =>
-      item.toLowerCase().includes(val)
-    );
-    if (matches.length) {
-      matches.forEach(text => {
-        const li = document.createElement('li');
-        li.textContent = text;
-        li.onclick = () => {
-          input.value = text;
-          suggBox.style.display = 'none';
-        };
-        suggBox.appendChild(li);
-      });
-      suggBox.style.display = 'block';
-    } else {
-      suggBox.style.display = 'none';
-    }
-  });
-
-  document.addEventListener('click', e => {
-    if (!input.contains(e.target)) {
-      suggBox.style.display = 'none';
-    }
-  });
-}
+// main.js
+// ماژول اصلی برای صفحات index و shop
 
 document.addEventListener('DOMContentLoaded', () => {
-  setupSearch('search-input', 'suggestions');
-  setupSearch('search-input-shop', 'suggestions-shop');
+  renderShopProducts();
 });
+
+// تابع رندر محصولات صفحه فروشگاه
+function renderShopProducts() {
+  const grid = document.getElementById('products-grid');
+  if (!grid) return;
+
+  // نمونه داده محصولات
+  const products = [
+    {
+      id: 1,
+      title: 'سفر به اعماق رازهای نهان باورها',
+      description: 'درون این کتاب، گنجینه‌ای از خودشناسی نهفته است…',
+      image: 'image_0.png',
+      link: '#'
+    },
+    {
+      id: 2,
+      title: 'عنوان محصول دوم',
+      description: 'خلاصه‌ای از این محصول دوم؛ توضیحی کوتاه.',
+      image: 'image_0 (1).png',
+      link: '#'
+    },
+    {
+      id: 3,
+      title: 'عنوان محصول سوم',
+      description: 'نکتهٔ کلیدی دربارهٔ این محصول.',
+      image: 'image_0 (2).png',
+      link: '#'
+    }
+  ];
+
+  grid.innerHTML = '';
+  products.forEach(p => {
+    const card = document.createElement('div');
+    card.className = 'book-item';
+    card.innerHTML = `
+      <img src="${p.image}" alt="${p.title}">
+      <h3>${p.title}</h3>
+      <p>${p.description}</p>
+      <a href="${p.link}" class="btn btn-secondary">مشاهده و خرید</a>
+    `;
+    grid.appendChild(card);
+  });
+}
