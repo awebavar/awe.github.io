@@ -1,208 +1,422 @@
-/* 1. Variables & Reset */
+/* فایل style.css - نسخه‌ی به‌روزشده با چیدمان جدید هدر */
+
+/* ======================================
+   تنظیمات کلی و متغیرها
+   ====================================== */
 :root {
-  --color-primary:    #0569c9;
-  --color-secondary:  #f5f5f5;
-  --color-text:       #333;
-  --color-bg:         #fff;
-  --font-main:        'Tahoma', sans-serif;
+    --primary-color: #007bff;        /* رنگ اصلی (آبی) */
+    --primary-dark-color: #0056b3;   /* رنگ اصلی تیره */
+    --secondary-color: #ffc107;      /* رنگ ثانویه (زرد) */
+    --secondary-dark-color: #ffb300; /* رنگ ثانویه تیره */
+    --text-color-dark: #333;         /* رنگ متن تیره */
+    --text-color-light: #555;        /* رنگ متن روشن‌تر */
+    --bg-color-light: #f9f9f9;       /* رنگ پس‌زمینه روشن */
+    --bg-color-lighter: #f0f0f0;     /* رنگ پس‌زمینه خیلی روشن */
+    --bg-color-white: #fff;          /* رنگ سفید */
+    --footer-bg-color: #333;         /* رنگ پس‌زمینه فوتر */
+    --footer-text-color: #ccc;       /* رنگ متن فوتر */
+    --font-main: 'Tahoma', sans-serif; /* فونت اصلی */
 }
-* {
-  margin: 0; padding: 0; box-sizing: border-box;
-}
+
 body {
-  font-family: var(--font-main);
-  color: var(--color-text);
-  background: var(--color-bg);
-  direction: rtl;
-  line-height: 1.6;
+    font-family: var(--font-main);
+    direction: rtl;
+    background-color: var(--bg-color-lighter);
+    color: var(--text-color-dark);
+    margin: 0;
+    padding: 0;
+    line-height: 1.7; /* افزایش ارتفاع خط برای خوانایی بهتر */
+    font-size: 16px;  /* اندازه فونت پیش‌فرض */
 }
 
-/* 2. Utility Classes */
 .container {
-  width: 90%;
-  max-width: 1200px;
-  margin: 0 auto;
-}
-.btn {
-  display: inline-block;
-  padding: .6em 1.2em;
-  text-decoration: none;
-  border-radius: 4px;
-  text-align: center;
-  transition: background .3s, color .3s;
-}
-.btn-primary {
-  background: var(--color-primary);
-  color: #fff;
-}
-.btn-secondary {
-  background: #fff;
-  color: var(--color-primary);
-  border: 1px solid var(--color-primary);
-}
-.btn-secondary:hover {
-  background: var(--color-primary);
-  color: #fff;
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 20px;
 }
 
-/* 3. Header & Nav */
-.site-header {
-  background: #fff;
-  padding: 1em 0;
-  box-shadow: 0 2px 5px rgba(0,0,0,0.1);
-  position: sticky; top: 0; z-index: 100;
+/* ======================================
+   هدر (Header) - چیدمان جدید
+   ====================================== */
+header {
+    background-color: var(--bg-color-white);
+    padding: 5px 0;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+    position: sticky;
+    top: 0;
+    z-index: 100;
 }
-.site-header .logo img {
-  height: 50px;
+
+header .container {
+    position: relative;        /* برای مکان‌یابی لوگو و آیکون‌ها */
+    display: flex;
+    justify-content: center;   /* منوی اصلی وسط */
+    align-items: center;
 }
-.site-nav ul {
-  list-style: none;
-  display: flex;
-  gap: 1em;
+
+/* لوگوی بزرگ‌تر در گوشه‌ی راست */
+.logo {
+    position: absolute;
+    top: 50%;
+    right: 20px;
+    transform: translateY(-50%);
 }
-.site-nav a {
-  color: var(--color-text);
-  text-decoration: none;
-  font-weight: bold;
+
+.logo img {
+    max-height: 80px;  /* ارتفاع لوگو */
+    width: auto;
 }
-.site-nav a.active {
-  color: var(--color-primary);
+
+/* آیکون‌های جست‌وجو، سبد، کاربر در گوشه‌ی چپ */
+.user-icons {
+    position: absolute;
+    top: 50%;
+    left: 20px;
+    transform: translateY(-50%);
+    display: flex;
+    gap: 1rem;          /* فاصله بین آیکون‌ها */
 }
+
 .user-icons a {
-  margin-left: .8em;
-  color: var(--color-text);
-  font-size: 1.2em;
+    text-decoration: none;
+    color: var(--text-color-light);
+    font-size: 1.2em;
+    transition: color 0.3s ease;
 }
 
-/* 4. Hero Section */
-.hero-section {
-  background: var(--color-secondary);
-  text-align: center;
-  padding: 4em 0;
-}
-.hero-section h1 {
-  font-size: 2em;
-  margin-bottom: .5em;
-}
-.hero-section p {
-  margin-bottom: 1.5em;
-  max-width: 800px;
-  margin-inline: auto;
+.user-icons a:hover,
+.user-icons a:focus {
+    color: var(--primary-color);
 }
 
-/* 5. About Author */
+/* منوی اصلی (متن وسط هدر) */
+.navigation ul {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+    display: flex;
+    gap: 2em;           /* فاصله بین لینک‌ها */
+}
+
+.navigation a {
+    text-decoration: none;
+    color: var(--text-color-dark);
+    font-weight: bold;
+    padding: 8px 12px;
+    border-radius: 5px;
+    transition: background-color 0.3s, color 0.3s;
+}
+
+.navigation a:hover,
+.navigation a:focus {
+    background-color: var(--bg-color-lighter);
+    color: var(--primary-color);
+}
+
+
+/* ======================================
+   بنر اصلی (Hero Banner)
+   ====================================== */
+.hero-banner {
+    background-color: #e0f7fa;
+    padding: 120px 0;
+    text-align: center;
+    /* background-image: url('path/to/your-image.jpg'); */
+    /* background-size: cover; */
+    /* background-position: center; */
+}
+
+.hero-banner .banner-content {
+    max-width: 900px;
+    margin: 0 auto;
+}
+
+.hero-banner h1 {
+    font-size: 3em;
+    margin-bottom: 25px;
+    color: var(--text-color-dark);
+    line-height: 1.3;
+}
+
+.hero-banner p {
+    font-size: 1.3em;
+    color: var(--text-color-light);
+    margin-bottom: 40px;
+}
+
+.cta-button {
+    display: inline-block;
+    padding: 15px 35px;
+    background-color: var(--primary-color);
+    color: var(--bg-color-white);
+    text-decoration: none;
+    border-radius: 8px;
+    font-weight: bold;
+    font-size: 1.1em;
+    transition: background-color 0.3s ease;
+    box-shadow: 0 3px 7px rgba(0, 0, 0, 0.2);
+}
+
+.cta-button:hover,
+.cta-button:focus {
+    background-color: var(--primary-dark-color);
+}
+
+
+/* ======================================
+   بخش درباره نویسنده
+   ====================================== */
 .about-author-section {
-  background: #f9f9f9;
-  padding: 3em 0;
+    padding: 60px 0;
+    background-color: var(--bg-color-light);
 }
+
 .about-author-section h2 {
-  text-align: center;
-  margin-bottom: 1em;
-}
-.author-description p {
-  margin-bottom: 1em;
+    text-align: center;
+    margin-bottom: 35px;
+    color: var(--text-color-dark);
+    font-size: 2.2em;
 }
 
-/* 6. Featured Books & Products */
-.featured-books-section,
-.products-section {
-  padding: 3em 0;
+.author-description {
+    max-width: 900px;
+    margin: 0 auto;
+    padding: 0 20px;
+    font-size: 1.1em;
+    color: var(--text-color-light);
+    line-height: 1.8;
 }
+
+
+/* ======================================
+   بخش کتاب‌های ویژه
+   ====================================== */
+.featured-books {
+    padding: 60px 0;
+    background-color: var(--bg-color-light);
+}
+
+.featured-books h2,
+.categories h2,
+.special-offers h2,
+footer h3,
+.about-author-section h2 {
+    text-align: center;
+    margin-bottom: 35px;
+    color: var(--text-color-dark);
+    font-size: 2.2em;
+}
+
 .books-grid {
-  display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
-  gap: 2em;
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+    gap: 35px;
 }
+
 .book-item {
-  background: #fff;
-  padding: 1.5em;
-  border: 1px solid #eee;
-  text-align: center;
-}
-.book-item img {
-  max-width: 100%;
-  margin-bottom: 1em;
+    text-align: center;
+    padding: 25px;
+    background-color: var(--bg-color-white);
+    border-radius: 10px;
+    box-shadow: 0 3px 7px rgba(0, 0, 0, 0.08);
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
 }
 
-/* 7. Categories */
-.categories-section {
-  background: var(--color-secondary);
-  padding: 3em 0;
+.book-item:hover,
+.book-item:focus-within {
+    transform: scale(1.05);
 }
+
+
+/* ======================================
+   بخش دسته‌بندی‌ها
+   ====================================== */
+.categories {
+    padding: 60px 0;
+    background-color: var(--bg-color-light);
+    direction: rtl;
+}
+
 .categories-grid {
-  display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
-  gap: 2em;
-}
-.category-item h3 {
-  margin-bottom: .5em;
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+    gap: 35px;
 }
 
-/* 8. Special Offers */
-.special-offers-section {
-  padding: 3em 0;
+.category-item {
+    text-align: right;
+    padding: 20px;
+    background-color: var(--bg-color-white);
+    border-radius: 8px;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+    transition: transform 0.3s ease;
 }
-.offers-grid {
-  display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
-  gap: 2em;
+
+.category-item:hover,
+.category-item:focus-within {
+    transform: scale(1.03);
 }
+
+
+/* ======================================
+   بخش پیشنهادات ویژه
+   ====================================== */
+.special-offers {
+    padding: 60px 0;
+    background-color: var(--bg-color-light);
+}
+
+.offers-slider {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+    gap: 35px;
+}
+
 .offer-item {
-  border: 1px solid #eee;
-  padding: 1em;
-  text-align: center;
-}
-.offer-item img {
-  max-width: 100%;
-  margin-bottom: .8em;
-}
-
-/* 9. Contact */
-.contact-section {
-  background: #f9f9f9;
-  padding: 2em 0;
-  text-align: center;
+    text-align: center;
+    padding: 25px;
+    background-color: var(--bg-color-white);
+    border-radius: 10px;
+    box-shadow: 0 3px 7px rgba(0, 0, 0, 0.08);
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
 }
 
-/* 10. Footer */
-.site-footer {
-  background: #222;
-  color: #ccc;
-  padding: 2em 0;
-}
-.site-footer .footer-widgets {
-  display: flex;
-  flex-wrap: wrap;
-  gap: 2em;
-}
-.site-footer .widget h3 {
-  margin-bottom: .5em;
-  color: #fff;
-}
-.site-footer a {
-  color: #ccc;
-  text-decoration: none;
-}
-.site-footer a:hover {
-  color: var(--color-primary);
-}
-.site-footer .copyright {
-  text-align: center;
-  margin-top: 2em;
-  font-size: .9em;
+.offer-item:hover,
+.offer-item:focus-within {
+    transform: scale(1.05);
 }
 
-/* 11. Responsive */
+.offer-item h3 {
+    margin-bottom: 15px;
+    font-size: 1.4em;
+}
+
+.offer-item .btn-offer {
+    display: inline-block;
+    padding: 10px 25px;
+    background-color: var(--secondary-color);
+    color: var(--bg-color-white);
+    border-radius: 6px;
+    text-decoration: none;
+    transition: background-color 0.3s ease;
+}
+
+.offer-item .btn-offer:hover,
+.offer-item .btn-offer:focus {
+    background-color: var(--secondary-dark-color);
+}
+
+
+/* ======================================
+   فوتر (Footer)
+   ====================================== */
+footer {
+    background-color: var(--footer-bg-color);
+    color: var(--footer-text-color);
+    padding: 60px 0;
+}
+
+.footer-widgets {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+    gap: 35px;
+}
+
+footer h3 {
+    color: var(--bg-color-white);
+    font-size: 1.8em;
+    margin-bottom: 20px;
+}
+
+footer p,
+footer a {
+    color: var(--footer-text-color);
+    text-decoration: none;
+    line-height: 1.6;
+    transition: color 0.3s;
+}
+
+footer a:hover,
+footer a:focus {
+    color: var(--secondary-color);
+}
+
+.social-icons {
+    text-align: center;
+    margin-top: 25px;
+}
+
+.social-icons a {
+    display: inline-flex;
+    justify-content: center;
+    align-items: center;
+    width: 40px;
+    height: 40px;
+    border-radius: 50%;
+    background-color: rgba(255, 255, 255, 0.1);
+    color: var(--bg-color-white);
+    font-size: 1.2em;
+    margin: 0 8px;
+    text-decoration: none;
+    transition: background-color 0.3s ease, color 0.3s ease;
+}
+
+.social-icons a:hover,
+.social-icons a:focus {
+    background-color: rgba(255, 255, 255, 0.3);
+    color: var(--secondary-color);
+}
+
+.copyright {
+    text-align: center;
+    margin-top: 40px;
+    padding-top: 25px;
+    border-top: 1px solid var(--text-color-light);
+    font-size: 0.95em;
+}
+
+
+/* ======================================
+   واکنش‌گرایی (Responsive)
+   ====================================== */
 @media (max-width: 992px) {
-  .site-nav ul { display: none; }
+    .container { max-width: 960px; }
+    .hero-banner { padding: 100px 0; }
+    .hero-banner h1 { font-size: 2.8em; }
+    .hero-banner p { font-size: 1.2em; }
+    .navigation { display: none; }
 }
+
 @media (max-width: 768px) {
-  .container { padding: 0 15px; }
+    .container { max-width: 720px; padding: 15px; }
+    .hero-banner { padding: 80px 0; }
+    .hero-banner h1 { font-size: 2.4em; }
+    .hero-banner p { font-size: 1.1em; }
+    .books-grid,
+    .categories-grid,
+    .offers-slider,
+    footer .container {
+        grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+    }
+    footer .container { gap: 25px; }
 }
+
 @media (max-width: 576px) {
-  .hero-section, .featured-books-section,
-  .categories-section, .special-offers-section,
-  .products-section, .site-footer {
-    padding: 2em 0;
-  }
+    .container { max-width: 540px; padding: 10px; }
+    .hero-banner { padding: 60px 0; }
+    .hero-banner h1 { font-size: 2em; }
+    .hero-banner p { font-size: 1em; }
+    .featured-books,
+    .categories,
+    .special-offers,
+    footer {
+        padding: 40px 0;
+    }
+    .featured-books h2,
+    .categories h2,
+    .special-offers h2,
+    footer h3 {
+        font-size: 1.8em;
+        margin-bottom: 25px;
+    }
 }
