@@ -498,3 +498,41 @@ footer a:focus {
         margin-bottom: 25px;
     }
 }
+/* ===== ماژول به‌روز شده برای هدر ===== */
+header .container {
+  display: flex;
+  align-items: center;
+  justify-content: center;   /* منو در مرکز قرار می‌گیرد */
+  position: relative;        /* برای موقعیت‌دهی مطلق آیکون‌‌ها */
+}
+
+/* لوگو */
+header .logo {
+  order: 3;                  /* سومین آیتم در ردیف */
+}
+header .logo img {
+  max-width: 200px;          /* اندازه بزرگ‌تر لوگو */
+  height: auto;
+}
+
+/* منو */
+header .navigation {
+  order: 2;                  /* دومین آیتم */
+  flex: 1;                   /* به‌اندازهٔ فضای خالی گسترش می‌یابد */
+}
+header .navigation ul {
+  display: flex;
+  justify-content: center;   /* چیدمان آیتم‌های منو در مرکز */
+}
+
+/* آیکون‌های کاربر (جستجو، سبد، کاربری) */
+header .user-icons {
+  order: 1;                  /* اولین آیتم */
+  position: absolute;
+  left: 20px;                /* فاصله از گوشهٔ چپ */
+  display: flex;
+}
+header .user-icons a {
+  margin-left: 0;
+  margin-right: 15px;        /* فاصله میان آیکون‌ها */
+}
