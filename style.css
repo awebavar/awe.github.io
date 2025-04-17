@@ -1,4 +1,4 @@
-/* فایل style.css - نسخه‌ی به‌روزشده با چیدمان جدید هدر */
+/* فایل style.css - به‌روزرسانی شده */
 
 /* ======================================
    تنظیمات کلی و متغیرها
@@ -11,9 +11,9 @@
     --text-color-dark: #333;         /* رنگ متن تیره */
     --text-color-light: #555;        /* رنگ متن روشن‌تر */
     --bg-color-light: #f9f9f9;       /* رنگ پس‌زمینه روشن */
-    --bg-color-lighter: #f0f0f0;     /* رنگ پس‌زمینه خیلی روشن */
+    --bg-color-lighter: #f0f0f0;      /* رنگ پس‌زمینه خیلی روشن */
     --bg-color-white: #fff;          /* رنگ سفید */
-    --footer-bg-color: #333;         /* رنگ پس‌زمینه فوتر */
+    --footer-bg-color: #333;        /* رنگ پس‌زمینه فوتر */
     --footer-text-color: #ccc;       /* رنگ متن فوتر */
     --font-main: 'Tahoma', sans-serif; /* فونت اصلی */
 }
@@ -26,7 +26,7 @@ body {
     margin: 0;
     padding: 0;
     line-height: 1.7; /* افزایش ارتفاع خط برای خوانایی بهتر */
-    font-size: 16px;  /* اندازه فونت پیش‌فرض */
+    font-size: 16px; /* اندازه فونت پیش‌فرض */
 }
 
 .container {
@@ -36,51 +36,63 @@ body {
 }
 
 /* ======================================
-   هدر (Header) - چیدمان جدید
+   هدر
    ====================================== */
 header {
     background-color: var(--bg-color-white);
-    padding: 5px 0;
+    padding: 5px 0; /* کاهش padding هدر به 5px 0 */
     box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
-    position: sticky;
+    position: sticky; /* هدر چسبنده */
     top: 0;
-    z-index: 100;
+    z-index: 100; /* اطمینان از نمایش روی سایر محتوا */
 }
 
 header .container {
-    position: relative;        /* برای مکان‌یابی لوگو و آیکون‌ها */
     display: flex;
-    justify-content: center;   /* منوی اصلی وسط */
+    justify-content: space-between;
     align-items: center;
 }
 
-/* لوگوی بزرگ‌تر در گوشه‌ی راست */
-.logo {
-    position: absolute;
-    top: 50%;
-    right: 20px;
-    transform: translateY(-50%);
-}
-
 .logo img {
-    max-height: 80px;  /* ارتفاع لوگو */
-    width: auto;
+    max-width: 180px; /* کمی بزرگتر کردن لوگو */
+    height: auto;
 }
 
-/* آیکون‌های جست‌وجو، سبد، کاربر در گوشه‌ی چپ */
-.user-icons {
-    position: absolute;
-    top: 50%;
-    left: 20px;
-    transform: translateY(-50%);
+.navigation ul {
+    list-style: none;
+    padding: 0;
+    margin: 0;
     display: flex;
-    gap: 1rem;          /* فاصله بین آیکون‌ها */
+}
+
+.navigation li {
+    margin-right: 25px; /* افزایش فاصله آیتم‌های منو */
+}
+
+.navigation li:last-child {
+    margin-right: 0;
+}
+
+.navigation a {
+    text-decoration: none;
+    color: var(--text-color-dark);
+    font-weight: bold;
+    transition: color 0.3s ease;
+    padding: 8px 12px; /* اضافه کردن padding به لینک‌های منو برای لمس‌پذیری بهتر */
+    border-radius: 5px;
+}
+
+.navigation a:hover,
+.navigation a:focus { /* اضافه کردن focus برای دسترسی‌پذیری با کیبورد */
+    color: var(--primary-color);
+    background-color: var(--bg-color-lighter); /* پس‌زمینه هاور */
 }
 
 .user-icons a {
+    margin-left: 15px;
     text-decoration: none;
     color: var(--text-color-light);
-    font-size: 1.2em;
+    font-size: 1.2em; /* بزرگتر کردن آیکون‌ها */
     transition: color 0.3s ease;
 }
 
@@ -89,72 +101,49 @@ header .container {
     color: var(--primary-color);
 }
 
-/* منوی اصلی (متن وسط هدر) */
-.navigation ul {
-    list-style: none;
-    padding: 0;
-    margin: 0;
-    display: flex;
-    gap: 2em;           /* فاصله بین لینک‌ها */
-}
-
-.navigation a {
-    text-decoration: none;
-    color: var(--text-color-dark);
-    font-weight: bold;
-    padding: 8px 12px;
-    border-radius: 5px;
-    transition: background-color 0.3s, color 0.3s;
-}
-
-.navigation a:hover,
-.navigation a:focus {
-    background-color: var(--bg-color-lighter);
-    color: var(--primary-color);
-}
-
 
 /* ======================================
-   بنر اصلی (Hero Banner)
+   بنر اصلی
    ====================================== */
 .hero-banner {
     background-color: #e0f7fa;
-    padding: 120px 0;
+    padding: 120px 0; /* افزایش padding بنر */
     text-align: center;
-    /* background-image: url('path/to/your-image.jpg'); */
+    /* background-image: url('image_0.png'); /* تصویر زمینه بنر */
     /* background-size: cover; */
     /* background-position: center; */
+    /* color: var(--bg-color-white); /* رنگ متن بنر در صورت استفاده از تصویر زمینه تیره */ */
 }
 
 .hero-banner .banner-content {
-    max-width: 900px;
+    max-width: 900px; /* پهن‌تر کردن محتوای بنر */
     margin: 0 auto;
 }
 
 .hero-banner h1 {
-    font-size: 3em;
+    font-size: 3em; /* بزرگتر کردن عنوان بنر */
     margin-bottom: 25px;
     color: var(--text-color-dark);
     line-height: 1.3;
 }
 
 .hero-banner p {
-    font-size: 1.3em;
+    font-size: 1.3em; /* بزرگتر کردن توضیحات بنر */
     color: var(--text-color-light);
     margin-bottom: 40px;
 }
 
 .cta-button {
     display: inline-block;
-    padding: 15px 35px;
+    padding: 15px 35px; /* بزرگتر کردن دکمه */
     background-color: var(--primary-color);
     color: var(--bg-color-white);
     text-decoration: none;
-    border-radius: 8px;
+    border-radius: 8px; /* گردتر کردن گوشه‌های دکمه */
     font-weight: bold;
     font-size: 1.1em;
     transition: background-color 0.3s ease;
-    box-shadow: 0 3px 7px rgba(0, 0, 0, 0.2);
+    box-shadow: 0 3px 7px rgba(0, 0, 0, 0.2); /* سایه دکمه */
 }
 
 .cta-button:hover,
@@ -196,35 +185,67 @@ header .container {
     background-color: var(--bg-color-light);
 }
 
-.featured-books h2,
-.categories h2,
-.special-offers h2,
-footer h3,
-.about-author-section h2 {
+.featured-books h2, .categories h2, .special-offers h2, footer h3, .about-author-section h2 {
     text-align: center;
     margin-bottom: 35px;
     color: var(--text-color-dark);
-    font-size: 2.2em;
+    font-size: 2.2em; /* بزرگتر کردن عناوین بخش‌ها */
 }
 
 .books-grid {
     display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
-    gap: 35px;
+    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); /* پهن‌تر کردن آیتم‌های گرید */
+    gap: 35px; /* افزایش فاصله بین کتاب‌ها */
 }
 
 .book-item {
     text-align: center;
     padding: 25px;
     background-color: var(--bg-color-white);
-    border-radius: 10px;
-    box-shadow: 0 3px 7px rgba(0, 0, 0, 0.08);
-    transition: transform 0.3s ease, box-shadow 0.3s ease;
+    border-radius: 10px; /* گردتر کردن گوشه‌های آیتم کتاب */
+    box-shadow: 0 3px 7px rgba(0, 0, 0, 0.08); /* سایه قوی‌تر برای هر کتاب */
+    transition: transform 0.3s ease, box-shadow 0.3s ease; /* انیمیشن هاور */
 }
 
 .book-item:hover,
-.book-item:focus-within {
-    transform: scale(1.05);
+.book-item:focus-within { /* focus-within برای وقتی که دکمه داخل book-item فوکوس شود */
+    transform: scale(1.05); /* بزرگنمایی هنگام هاور */
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.15); /* سایه قوی‌تر هنگام هاور */
+}
+
+.book-item img {
+    max-width: 100%;
+    height: auto;
+    margin-bottom: 20px;
+    border-radius: 8px;
+}
+
+.book-item h3 {
+    font-size: 1.3em;
+    margin-bottom: 12px;
+    color: var(--text-color-dark);
+}
+
+.book-item p {
+    color: var(--text-color-light);
+    margin-bottom: 20px;
+}
+
+.view-button {
+    display: inline-block;
+    padding: 12px 25px;
+    background-color: var(--primary-color);
+    color: var(--bg-color-white);
+    text-decoration: none;
+    border-radius: 8px;
+    font-size: 1em;
+    font-weight: bold;
+    transition: background-color 0.3s ease;
+}
+
+.view-button:hover,
+.view-button:focus {
+    background-color: var(--primary-dark-color);
 }
 
 
@@ -233,28 +254,25 @@ footer h3,
    ====================================== */
 .categories {
     padding: 60px 0;
-    background-color: var(--bg-color-light);
-    direction: rtl;
+    background-color: var(--bg-color-white);
 }
 
 .categories-grid {
     display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
-    gap: 35px;
+    grid-template-columns: repeat(auto-fit, minmax(180px, 1fr)); /* پهن‌تر کردن دسته‌بندی‌ها */
+    gap: 25px;
+    text-align: center;
+    direction: rtl; /* راست‌چین کردن محتوای دسته‌بندی‌ها */
 }
 
-.category-item {
-    text-align: right;
-    padding: 20px;
-    background-color: var(--bg-color-white);
-    border-radius: 8px;
-    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
-    transition: transform 0.3s ease;
+.category-list li {
+    text-align: right; /* راست‌چین کردن متن هر مورد در لیست */
+    padding-right: 15px; /* کمی فاصله از سمت راست برای زیبایی */
 }
 
-.category-item:hover,
-.category-item:focus-within {
-    transform: scale(1.03);
+.category-list li::marker { /*  استایل دهی به نشانگر لیست (عدد) */
+    float: right; /*  شناور کردن نشانگر به راست */
+    margin-right: 5px; /*  فاصله بین نشانگر و متن */
 }
 
 
@@ -268,47 +286,68 @@ footer h3,
 
 .offers-slider {
     display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+    grid-template-columns: repeat(auto-fit, minmax(320px, 1fr)); /* پهن‌تر کردن پیشنهادات ویژه */
     gap: 35px;
 }
 
 .offer-item {
-    text-align: center;
-    padding: 25px;
     background-color: var(--bg-color-white);
     border-radius: 10px;
+    overflow: hidden;
     box-shadow: 0 3px 7px rgba(0, 0, 0, 0.08);
-    transition: transform 0.3s ease, box-shadow 0.3s ease;
+    transition: transform 0.3s ease, box-shadow 0.3s ease; /* انیمیشن هاور */
 }
 
 .offer-item:hover,
-.offer-item:focus-within {
-    transform: scale(1.05);
+.offer-item:focus-within { /* focus-within برای وقتی که دکمه داخل offer-item فوکوس شود */
+    transform: scale(1.03); /* بزرگنمایی هنگام هاور */
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.15); /* سایه قوی‌تر هنگام هاور */
+}
+
+
+.offer-item img {
+    width: 100%;
+    height: auto;
+    display: block;
+}
+
+.offer-item-content {
+    padding: 25px;
+    text-align: center;
 }
 
 .offer-item h3 {
+    font-size: 1.2em;
     margin-bottom: 15px;
-    font-size: 1.4em;
+    color: var(--text-color-dark);
 }
 
-.offer-item .btn-offer {
+.offer-item p {
+    color: var(--text-color-light);
+    margin-bottom: 20px;
+}
+
+.offer-button {
     display: inline-block;
-    padding: 10px 25px;
+    padding: 12px 25px;
     background-color: var(--secondary-color);
-    color: var(--bg-color-white);
-    border-radius: 6px;
+    color: var(--text-color-dark);
     text-decoration: none;
+    border-radius: 8px;
+    font-size: 1em;
+    font-weight: bold;
     transition: background-color 0.3s ease;
+    box-shadow: 0 3px 7px rgba(0, 0, 0, 0.2); /* سایه دکمه */
 }
 
-.offer-item .btn-offer:hover,
-.offer-item .btn-offer:focus {
+.offer-button:hover,
+.offer-button:focus {
     background-color: var(--secondary-dark-color);
 }
 
 
 /* ======================================
-   فوتر (Footer)
+   فوتر
    ====================================== */
 footer {
     background-color: var(--footer-bg-color);
@@ -316,29 +355,54 @@ footer {
     padding: 60px 0;
 }
 
-.footer-widgets {
+footer .container {
     display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
-    gap: 35px;
+    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); /* پهن‌تر کردن ویجت‌های فوتر */
+    gap: 40px; /* افزایش فاصله ویجت‌ها */
 }
 
 footer h3 {
     color: var(--bg-color-white);
-    font-size: 1.8em;
-    margin-bottom: 20px;
+    border-bottom: 2px solid var(--text-color-light); /* خط ضخیم‌تر زیر عنوان ویجت */
+    padding-bottom: 12px;
+    margin-bottom: 25px;
+    text-align: left;
+    font-size: 1.5em; /* بزرگتر کردن عنوان ویجت‌های فوتر */
 }
 
-footer p,
+footer p, footer ul {
+    color: var(--footer-text-color);
+    line-height: 1.9;
+}
+
+footer ul {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+}
+
+footer li {
+    margin-bottom: 12px;
+}
+
 footer a {
     color: var(--footer-text-color);
     text-decoration: none;
-    line-height: 1.6;
-    transition: color 0.3s;
+    transition: color 0.3s ease;
 }
 
 footer a:hover,
 footer a:focus {
-    color: var(--secondary-color);
+    color: var(--bg-color-white);
+}
+
+.copyright {
+    text-align: center;
+    margin-top: 40px;
+    padding-top: 25px;
+    border-top: 1px solid var(--text-color-light);
+    font-size: 0.95em;
+    color: var(--footer-text-color);
 }
 
 .social-icons {
@@ -347,13 +411,13 @@ footer a:focus {
 }
 
 .social-icons a {
-    display: inline-flex;
+    display: inline-flex; /* استفاده از فلکس برای آیکون‌های شبکه‌های اجتماعی */
     justify-content: center;
     align-items: center;
-    width: 40px;
+    width: 40px; /* اندازه آیکون‌ها */
     height: 40px;
-    border-radius: 50%;
-    background-color: rgba(255, 255, 255, 0.1);
+    border-radius: 50%; /* دایره‌ای شدن آیکون‌ها */
+    background-color: rgba(255, 255, 255, 0.1); /* پس‌زمینه نیمه‌شفاف */
     color: var(--bg-color-white);
     font-size: 1.2em;
     margin: 0 8px;
@@ -363,59 +427,73 @@ footer a:focus {
 
 .social-icons a:hover,
 .social-icons a:focus {
-    background-color: rgba(255, 255, 255, 0.3);
+    background-color: rgba(255, 255, 255, 0.3); /* پس‌زمینه شفاف‌تر هنگام هاور */
     color: var(--secondary-color);
-}
-
-.copyright {
-    text-align: center;
-    margin-top: 40px;
-    padding-top: 25px;
-    border-top: 1px solid var(--text-color-light);
-    font-size: 0.95em;
 }
 
 
 /* ======================================
-   واکنش‌گرایی (Responsive)
+   استایل‌های واکنش‌گرا (Responsive)
    ====================================== */
 @media (max-width: 992px) {
-    .container { max-width: 960px; }
-    .hero-banner { padding: 100px 0; }
-    .hero-banner h1 { font-size: 2.8em; }
-    .hero-banner p { font-size: 1.2em; }
-    .navigation { display: none; }
+    .container {
+        max-width: 960px;
+    }
+    .hero-banner {
+        padding: 100px 0;
+    }
+    .hero-banner h1 {
+        font-size: 2.8em;
+    }
+    .hero-banner p {
+        font-size: 1.2em;
+    }
+    .navigation {
+        display: none; /* مخفی کردن منو در سایز متوسط و کوچکتر */
+    }
 }
 
+
 @media (max-width: 768px) {
-    .container { max-width: 720px; padding: 15px; }
-    .hero-banner { padding: 80px 0; }
-    .hero-banner h1 { font-size: 2.4em; }
-    .hero-banner p { font-size: 1.1em; }
-    .books-grid,
-    .categories-grid,
-    .offers-slider,
-    footer .container {
-        grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+    .container {
+        max-width: 720px;
+        padding: 15px;
     }
-    footer .container { gap: 25px; }
+    .hero-banner {
+        padding: 80px 0;
+    }
+    .hero-banner h1 {
+        font-size: 2.4em;
+    }
+    .hero-banner p {
+        font-size: 1.1em;
+    }
+    .books-grid, .categories-grid, .offers-slider, footer .container {
+        grid-template-columns: repeat(auto-fit, minmax(200px, 1fr)); /* کوچک‌تر شدن آیتم‌ها در موبایل */
+    }
+    footer .container {
+        gap: 25px;
+    }
 }
 
 @media (max-width: 576px) {
-    .container { max-width: 540px; padding: 10px; }
-    .hero-banner { padding: 60px 0; }
-    .hero-banner h1 { font-size: 2em; }
-    .hero-banner p { font-size: 1em; }
-    .featured-books,
-    .categories,
-    .special-offers,
-    footer {
+    .container {
+        max-width: 540px;
+        padding: 10px;
+    }
+    .hero-banner {
+        padding: 60px 0;
+    }
+    .hero-banner h1 {
+        font-size: 2em;
+    }
+    .hero-banner p {
+        font-size: 1em;
+    }
+    .featured-books, .categories, .special-offers, footer {
         padding: 40px 0;
     }
-    .featured-books h2,
-    .categories h2,
-    .special-offers h2,
-    footer h3 {
+    .featured-books h2, .categories h2, .special-offers h2, footer h3 {
         font-size: 1.8em;
         margin-bottom: 25px;
     }
