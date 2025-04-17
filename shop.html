@@ -9,48 +9,36 @@
 </head>
 <body>
 
-  <!-- ========== HEADER ========== -->
+  <!-- ====== HEADER ====== -->
   <header>
     <div class="container">
       <div class="logo">
-        <a href="index.html"><img src="LOGO.png.png" alt="لوگوی AWE خانه باور"></a>
+        <a href="index.html">
+          <img src="LOGO.png.png" alt="لوگوی AWE خانه باور">
+        </a>
       </div>
       <nav class="navigation">
         <ul>
           <li><a href="index.html">صفحه اصلی</a></li>
           <li><a href="shop.html">فروشگاه</a></li>
-          <li class="has-submenu">
-            <a href="#">دسته‌بندی‌ها <i class="fa fa-caret-down"></i></a>
-            <ul class="submenu">
-              <li><a href="#">رازهای باور به قدرت بیکران هستی</a></li>
-              <li><a href="#">زخم‌های کودکی و باورهای بزرگسالی</a></li>
-              <li><a href="#">ویروس‌های ذهنی پاکسازی باورهای سمی</a></li>
-            </ul>
-          </li>
+          <li><a href="#categories">دسته‌بندی‌ها</a></li>
           <li><a href="#">مقالات</a></li>
           <li><a href="#">درباره ما</a></li>
           <li><a href="#">تماس با ما</a></li>
         </ul>
       </nav>
-      <div class="header-right">
-        <div class="search-container">
-          <i class="fa fa-search"></i>
-          <input type="text" id="search-input-shop" placeholder="جستجو در فروشگاه...">
-          <ul id="suggestions-shop" class="suggestions"></ul>
-        </div>
-        <div class="user-icons">
-          <a href="cart.html">
-            <i class="fa fa-shopping-cart"></i>
-            <span class="cart-count" id="cart-count-shop">0</span>
-          </a>
-          <a href="login.html" class="auth-link">ورود</a>
-          <a href="register.html" class="auth-link">ثبت‌نام</a>
-        </div>
+      <div class="user-icons">
+        <a href="#"><i class="fa fa-search"></i></a>
+        <a href="#"><i class="fa fa-shopping-cart"></i></a>
+        <a href="#"><i class="fa fa-user"></i></a>
+      </div>
+      <div class="menu-toggle">
+        <i class="fa fa-bars"></i>
       </div>
     </div>
   </header>
 
-  <!-- ========== HERO BANNER ========== -->
+  <!-- ====== HERO BANNER ====== -->
   <section class="hero-banner">
     <div class="banner-content">
       <h1>به فروشگاه AWE خانه باور خوش آمدید</h1>
@@ -58,37 +46,29 @@
     </div>
   </section>
 
-  <!-- ========== PRODUCTS GRID ========== -->
+  <!-- ====== MAIN SHOP CONTENT ====== -->
   <main class="shop-page">
     <div class="container">
       <h2>محصولات ما</h2>
-      <div class="products-grid">
-        <!-- نمونه یک محصول -->
-        <div class="product-item">
-          <img src="journey.jpg" alt="سفر به اعماق رازهای نهان باورها">
-          <h4>سفر به اعماق رازهای نهان باورها</h4>
-          <p>قیمت: ۱۲۹,۰۰۰ تومان</p>
-          <a href="product.html" class="btn">جزئیات و خرید</a>
-        </div>
-        <!-- موارد بیشتر ... -->
-      </div>
+      <p>به زودی محصولات متنوعی در این بخش ارائه خواهد شد.</p>
+      <!-- در اینجا لیست محصولات قرار خواهد گرفت -->
     </div>
   </main>
 
-  <!-- ========== FOOTER ========== -->
+  <!-- ====== FOOTER ====== -->
   <footer>
     <div class="container">
       <div class="footer-widget">
         <h3>درباره ما</h3>
-        <p>AWE خانه باور، مرجع تخصصی ارائه راهکارهای رهایی از باورهای محدود کننده و دستیابی به خودباوری.</p>
+        <p>AWE خانه باور، مرجع تخصصی ارائه راهکارهای رهایی از باورهای محدودکننده و دستیابی به موفقیت و خودباوری.</p>
       </div>
       <div class="footer-widget">
         <h3>دسترسی سریع</h3>
         <ul>
           <li><a href="index.html">صفحه اصلی</a></li>
           <li><a href="shop.html">فروشگاه</a></li>
-          <li><a href="#categories">دسته‌بندی‌ها</a></li>
-          <li><a href="#featured-books">کتاب‌های ویژه</a></li>
+          <li><a href="#">دسته‌بندی‌ها</a></li>
+          <li><a href="#">پیشنهادات ویژه</a></li>
           <li><a href="#">تماس با ما</a></li>
         </ul>
       </div>
@@ -102,6 +82,11 @@
     </div>
   </footer>
 
-  <script src="main.js"></script>
+  <script>
+    // موبایل منو
+    document.querySelector('.menu-toggle').onclick = function() {
+      document.querySelector('.navigation ul').classList.toggle('active');
+    }
+  </script>
 </body>
 </html>
