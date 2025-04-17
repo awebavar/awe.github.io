@@ -1,157 +1,73 @@
 <!DOCTYPE html>
-<html lang="fa" dir="rtl">
+<html lang="fa">
 <head>
-  <meta charset="UTF-8">
-  <title>AWE خانه باور</title>
-  <link rel="stylesheet" href="style.css">
-  <link rel="stylesheet"
-        href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>فروشگاه | AWE خانه باور</title>
+  <link rel="stylesheet" href="style.css" />
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css"/>
 </head>
 <body>
-
-  <!-- HEADER & NAV -->
-  <header class="site-header">
+  <!-- ========== HEADER ========== -->
+  <header>
     <div class="container">
-      <div class="logo">
-        <a href="index.html">
-          <img src="LOGO.png.png" alt="لوگوی AWE خانه باور">
-        </a>
-      </div>
-      <nav class="site-nav">
-        <ul>
-          <li><a href="index.html">صفحه اصلی</a></li>
-          <li><a href="shop.html">فروشگاه</a></li>
-          <li><a href="#author">درباره نویسنده</a></li>
-          <li><a href="#categories">دسته‌بندی‌ها</a></li>
-          <li><a href="#special-offers">پیشنهادات ویژه</a></li>
-          <li><a href="#contact">تماس با ما</a></li>
-        </ul>
-      </nav>
+      <!-- آیکون‌های کاربری در چپ -->
       <div class="user-icons">
         <a href="#"><i class="fa fa-search"></i></a>
         <a href="#"><i class="fa fa-shopping-cart"></i></a>
         <a href="#"><i class="fa fa-user"></i></a>
       </div>
+
+      <!-- منوی اصلی در مرکز -->
+      <nav class="navigation">
+        <ul>
+          <li><a href="index.html">صفحه اصلی</a></li>
+          <li><a href="shop.html">فروشگاه</a></li>
+          <li><a href="categories.html">دسته‌بندی‌ها</a></li>
+          <li><a href="articles.html">مقالات</a></li>
+          <li><a href="about.html">درباره ما</a></li>
+          <li><a href="contact.html">تماس با ما</a></li>
+        </ul>
+      </nav>
+
+      <!-- لوگو در راست -->
+      <a href="index.html" class="logo">
+        <img src="images/logo.png" alt="AWE خانه باور" />
+      </a>
     </div>
   </header>
 
-  <main>
-    <!-- HERO SECTION -->
-    <section id="hero" class="hero-section">
-      <div class="container">
-        <h1>زندگی‌ای که لایقش هستی، در انتظار توست!</h1>
-        <p>
-          زندگی‌ای که همیشه آرزویش را داشته‌اید، در دسترس شماست!  
-          اما شاید باورهای محدودکننده، مانند زنجیرهایی نامرئی، شما را در بند نگه داشته‌اند.
-          وقت آن رسیده که این زنجیرها را پاره کنید و به سوی پتانسیل‌های واقعی خود پرواز کنید.
-          فرصت را از دست ندهید! همین حالا با AWE همراه شوید و اولین قدم را به سوی زندگی دلخواهتان بردارید.
-        </p>
-        <a href="#categories" class="btn btn-primary">مشاهده دسته‌بندی‌ها</a>
-      </div>
-    </section>
-
-    <!-- ABOUT AUTHOR -->
-    <section id="author" class="about-author-section">
-      <div class="container">
-        <h2>درباره نویسنده AWE</h2>
-        <div class="author-description">
-          <p>گاهی آدم خودش را در آینه نگاه می‌کند و جز غبار خستگی و بغضی ته‌نشین‌شده چیزی نمی‌بیند. من هم یکی از همان‌هایی بودم که روزی…</p>
-          <p>این کتاب، هر صفحه‌اش، نه یک روایت صرف، بلکه راهی آزمایش شده است: گذر از ترس و ناکامی به ایمان و موفقیت…</p>
-          <p>هر خط این کتاب دعوتی است به ساختن خودت، جان تازه‌ای بر باورهایت؛ کاش روزی داستان تو را هم در ادامه این راه بخوانم.</p>
-        </div>
-      </div>
-    </section>
-
-    <!-- FEATURED BOOKS -->
-    <section id="featured-books" class="featured-books-section">
-      <div class="container">
-        <h2>کتاب‌های ویژه</h2>
-        <div class="books-grid">
-          <div class="book-item">
-            <img src="image_0.png" alt="جلد کتاب 1">
-            <h3>سفر به اعماق رازهای نهان باورها</h3>
-            <p>درون این کتاب، گنجینه‌ای از خودشناسی نهفته است…</p>
-            <p>نویسنده AWE</p>
-            <a href="shop.html" class="btn btn-secondary">خرید کتاب ویژه</a>
-          </div>
-          <div class="book-item">
-            <img src="image_0 (1).png" alt="جلد کتاب 2">
-            <h3>عنوان کتاب دوم</h3>
-            <p>خلاصه‌ای از این کتاب دوم؛ توضیحی کوتاه در یک یا دو جمله.</p>
-            <p>نویسنده AWE</p>
-            <a href="shop.html" class="btn btn-secondary">خرید کتاب ویژه</a>
-          </div>
-          <div class="book-item">
-            <img src="image_0 (2).png" alt="جلد کتاب 3">
-            <h3>عنوان کتاب سوم</h3>
-            <p>خلاصه‌ای از این کتاب سوم؛ نکتهٔ کلیدی دربارهٔ محتوا.</p>
-            <p>نویسنده AWE</p>
-            <a href="shop.html" class="btn btn-secondary">خرید کتاب ویژه</a>
-          </div>
-        </div>
-      </div>
-    </section>
-
-    <!-- CATEGORIES -->
-    <section id="categories" class="categories-section">
-      <div class="container">
-        <h2>شروع سفر تحول باورها</h2>
-        <div class="categories-grid">
-          <div class="category-item">
-            <a href="shop.html"><h3>رازهای باور به قدرت بیکران هستی</h3></a>
-            <p>آیا حس می‌کنید در این دنیای پهناور تنها هستید و هیچ نیروی کمکی ندارید؟…</p>
-          </div>
-          <!-- دیگر آیتم‌ها -->
-        </div>
-      </div>
-    </section>
-
-    <!-- SPECIAL OFFERS -->
-    <section id="special-offers" class="special-offers-section">
-      <div class="container">
-        <h2>پیشنهادات ویژه</h2>
-        <div class="offers-grid">
-          <div class="offer-item">
-            <img src="image_0.png" alt="پیشنهاد ویژه 1">
-            <h3>کتاب با تخفیف ویژه</h3>
-            <a href="#" class="btn btn-secondary">مشاهده پیشنهاد</a>
-          </div>
-          <!-- دیگر پیشنهادات -->
-        </div>
-      </div>
-    </section>
-
-    <!-- CONTACT -->
-    <section id="contact" class="contact-section">
-      <div class="container">
-        <h2>تماس با ما</h2>
-        <p>ایمیل: <a href="mailto:awebavar@gmail.com">awebavar@gmail.com</a></p>
-      </div>
-    </section>
-  </main>
-
-  <!-- FOOTER -->
-  <footer class="site-footer">
+  <!-- ========== MAIN SHOP SECTION ========== -->
+  <section class="products">
     <div class="container">
-      <div class="footer-widgets">
-        <div class="widget">
-          <h3>دسترسی سریع</h3>
-          <ul>
-            <li><a href="index.html">صفحه اصلی</a></li>
-            <li><a href="shop.html">فروشگاه</a></li>
-            <li><a href="#categories">دسته‌بندی‌ها</a></li>
-            <li><a href="#special-offers">پیشنهادات ویژه</a></li>
-            <li><a href="#contact">تماس با ما</a></li>
-          </ul>
-        </div>
-        <div class="widget">
-          <h3>ارتباط با ما</h3>
-          <p><i class="fa fa-envelope"></i> awebavar@gmail.com</p>
-        </div>
+      <h2>محصولات ما</h2>
+      <p>به زودی مجموعه‌ای متنوع از محصولات در اینجا در دسترس شما قرار خواهد گرفت.</p>
+      <!-- گرید محصولات … -->
+    </div>
+  </section>
+
+  <!-- ========== FOOTER ========== -->
+  <footer>
+    <div class="container footer-widgets">
+      <div class="widget">
+        <h3>ماموریت ما</h3>
+        <p>ما در AWE خانه باور به شما کمک می‌کنیم تا …</p>
       </div>
-      <div class="copyright">
-        <p>&copy; 1403 AWE خانه باور | کلیه حقوق محفوظ است.</p>
+      <div class="widget">
+        <h3>لینک‌های سریع</h3>
+        <ul>
+          <li><a href="index.html">صفحه اصلی</a></li>
+          <li><a href="shop.html">فروشگاه</a></li>
+          <li><a href="contact.html">تماس با ما</a></li>
+        </ul>
       </div>
+      <div class="widget">
+        <h3>تماس با ما</h3>
+        <p>ایمیل: info@awehome.com</p>
+      </div>
+    </div>
+    <div class="copyright">
+      © 1403 کلیه حقوق برای AWE خانه باور محفوظ است.
     </div>
   </footer>
 
