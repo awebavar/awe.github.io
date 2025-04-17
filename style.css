@@ -1,478 +1,208 @@
-/* ======================================
-   style.css – مرتب‌شده و کامل
-   ====================================== */
-
-/* ۱. تنظیمات کلی و متغیرها */
+/* 1. Variables & Reset */
 :root {
-  --primary-color:        #007bff;
-  --primary-dark-color:   #0056b3;
-  --secondary-color:      #ffc107;
-  --secondary-dark-color: #ffb300;
-  --text-color-dark:      #333;
-  --text-color-light:     #555;
-  --bg-color-white:       #fff;
-  --bg-color-light:       #f9f9f9;
-  --bg-color-lighter:     #f0f0f0;
-  --footer-bg-color:      #333;
-  --footer-text-color:    #ccc;
-  --font-main:            'Tahoma', sans-serif;
+  --color-primary:    #0569c9;
+  --color-secondary:  #f5f5f5;
+  --color-text:       #333;
+  --color-bg:         #fff;
+  --font-main:        'Tahoma', sans-serif;
 }
-
-/* ۲. ریست / پایه‌ای */
-*,
-*::before,
-*::after {
-  box-sizing: border-box;
-  margin: 0;
-  padding: 0;
+* {
+  margin: 0; padding: 0; box-sizing: border-box;
 }
-
 body {
   font-family: var(--font-main);
+  color: var(--color-text);
+  background: var(--color-bg);
   direction: rtl;
-  background-color: var(--bg-color-lighter);
-  color: var(--text-color-dark);
-  line-height: 1.7;
-  font-size: 16px;
-  min-width: 320px;
+  line-height: 1.6;
 }
 
+/* 2. Utility Classes */
 .container {
+  width: 90%;
   max-width: 1200px;
   margin: 0 auto;
-  padding: 20px;
+}
+.btn {
+  display: inline-block;
+  padding: .6em 1.2em;
+  text-decoration: none;
+  border-radius: 4px;
+  text-align: center;
+  transition: background .3s, color .3s;
+}
+.btn-primary {
+  background: var(--color-primary);
+  color: #fff;
+}
+.btn-secondary {
+  background: #fff;
+  color: var(--color-primary);
+  border: 1px solid var(--color-primary);
+}
+.btn-secondary:hover {
+  background: var(--color-primary);
+  color: #fff;
 }
 
-/* ۳. هدر و ناوبری */
-header {
-  background-color: var(--bg-color-white);
-  padding: 5px 0;
+/* 3. Header & Nav */
+.site-header {
+  background: #fff;
+  padding: 1em 0;
   box-shadow: 0 2px 5px rgba(0,0,0,0.1);
-  position: sticky;
-  top: 0;
-  z-index: 100;
+  position: sticky; top: 0; z-index: 100;
 }
-
-header .container {
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
+.site-header .logo img {
+  height: 50px;
 }
-
-.logo img {
-  max-width: 180px;
-  height: auto;
-}
-
-.navigation ul {
+.site-nav ul {
   list-style: none;
   display: flex;
-  gap: 20px;
+  gap: 1em;
 }
-
-.navigation a {
+.site-nav a {
+  color: var(--color-text);
   text-decoration: none;
-  color: var(--text-color-dark);
   font-weight: bold;
-  padding: 8px 12px;
-  border-radius: 5px;
-  transition: background-color .3s, color .3s;
 }
-
-.navigation a:hover,
-.navigation a:focus {
-  background-color: var(--bg-color-light);
-  color: var(--primary-color);
+.site-nav a.active {
+  color: var(--color-primary);
 }
-
 .user-icons a {
-  margin-left: 15px;
+  margin-left: .8em;
+  color: var(--color-text);
   font-size: 1.2em;
-  color: var(--text-color-light);
-  transition: color .3s;
 }
 
-.user-icons a:hover,
-.user-icons a:focus {
-  color: var(--primary-color);
-}
-
-/* ۴. بنر اصلی (Hero) */
-.hero-banner {
-  background-color: #e0f7fa;
+/* 4. Hero Section */
+.hero-section {
+  background: var(--color-secondary);
   text-align: center;
-  padding: 120px 20px;
+  padding: 4em 0;
+}
+.hero-section h1 {
+  font-size: 2em;
+  margin-bottom: .5em;
+}
+.hero-section p {
+  margin-bottom: 1.5em;
+  max-width: 800px;
+  margin-inline: auto;
 }
 
-.hero-banner .banner-content {
-  max-width: 900px;
-  margin: 0 auto;
-}
-
-.hero-banner h1 {
-  font-size: 3em;
-  margin-bottom: 25px;
-  line-height: 1.3;
-}
-
-.hero-banner p {
-  font-size: 1.3em;
-  color: var(--text-color-light);
-  margin-bottom: 40px;
-}
-
-.cta-button {
-  display: inline-block;
-  padding: 15px 35px;
-  background-color: var(--primary-color);
-  color: var(--bg-color-white);
-  text-decoration: none;
-  border-radius: 8px;
-  font-weight: bold;
-  font-size: 1.1em;
-  box-shadow: 0 3px 7px rgba(0,0,0,0.2);
-  transition: background-color .3s;
-}
-
-.cta-button:hover,
-.cta-button:focus {
-  background-color: var(--primary-dark-color);
-}
-
-/* ۵. بخش درباره ما */
-.about-us-section {
-  padding: 60px 0;
-  background-color: var(--bg-color-white);
-}
-
-.about-us-section h2 {
-  text-align: center;
-  margin-bottom: 35px;
-  font-size: 2.2em;
-  color: var(--text-color-dark);
-}
-
-.about-us-section p {
-  max-width: 900px;
-  margin: 0 auto;
-  padding: 0 20px;
-  font-size: 1.1em;
-  color: var(--text-color-light);
-  line-height: 1.8;
-}
-
-/* ۶. بخش درباره نویسنده */
+/* 5. About Author */
 .about-author-section {
-  padding: 60px 0;
-  background-color: var(--bg-color-light);
+  background: #f9f9f9;
+  padding: 3em 0;
 }
-
 .about-author-section h2 {
   text-align: center;
-  margin-bottom: 35px;
-  font-size: 2.2em;
-  color: var(--text-color-dark);
+  margin-bottom: 1em;
+}
+.author-description p {
+  margin-bottom: 1em;
 }
 
-.author-description {
-  max-width: 900px;
-  margin: 0 auto;
-  padding: 0 20px;
-  font-size: 1.1em;
-  color: var(--text-color-light);
-  line-height: 1.8;
+/* 6. Featured Books & Products */
+.featured-books-section,
+.products-section {
+  padding: 3em 0;
 }
-
-/* ۷. بخش کتاب‌های ویژه */
-.featured-books {
-  padding: 60px 0;
-  background-color: var(--bg-color-light);
-}
-
-.featured-books h2 {
-  text-align: center;
-  margin-bottom: 35px;
-  font-size: 2.2em;
-  color: var(--text-color-dark);
-}
-
 .books-grid {
   display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(280px,1fr));
-  gap: 35px;
+  grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
+  gap: 2em;
 }
-
 .book-item {
-  background-color: var(--bg-color-white);
-  padding: 25px;
-  border-radius: 10px;
-  box-shadow: 0 3px 7px rgba(0,0,0,0.08);
+  background: #fff;
+  padding: 1.5em;
+  border: 1px solid #eee;
   text-align: center;
-  transition: transform .3s, box-shadow .3s;
 }
-
-.book-item:hover,
-.book-item:focus-within {
-  transform: scale(1.05);
-  box-shadow: 0 5px 15px rgba(0,0,0,0.15);
-}
-
 .book-item img {
   max-width: 100%;
-  height: auto;
-  margin-bottom: 20px;
-  border-radius: 8px;
+  margin-bottom: 1em;
 }
 
-.book-item h3 {
-  font-size: 1.3em;
-  margin-bottom: 12px;
-  color: var(--text-color-dark);
+/* 7. Categories */
+.categories-section {
+  background: var(--color-secondary);
+  padding: 3em 0;
 }
-
-.book-item p {
-  color: var(--text-color-light);
-  margin-bottom: 20px;
-}
-
-.view-button {
-  display: inline-block;
-  padding: 12px 25px;
-  background-color: var(--primary-color);
-  color: var(--bg-color-white);
-  text-decoration: none;
-  border-radius: 8px;
-  font-weight: bold;
-  transition: background-color .3s;
-}
-
-.view-button:hover,
-.view-button:focus {
-  background-color: var(--primary-dark-color);
-}
-
-/* ۸. بخش دسته‌بندی‌ها */
-.categories {
-  padding: 60px 0;
-  background-color: var(--bg-color-white);
-}
-
-.categories h2 {
-  text-align: center;
-  margin-bottom: 35px;
-  font-size: 2.2em;
-  color: var(--text-color-dark);
-}
-
 .categories-grid {
   display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(180px,1fr));
-  gap: 25px;
-  text-align: center;
+  grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+  gap: 2em;
+}
+.category-item h3 {
+  margin-bottom: .5em;
 }
 
-.category-list li {
-  text-align: right;
-  padding-right: 15px;
+/* 8. Special Offers */
+.special-offers-section {
+  padding: 3em 0;
 }
-
-.category-list li::marker {
-  float: right;
-  margin-right: 5px;
-}
-
-/* ۹. بخش پیشنهادات ویژه */
-.special-offers {
-  padding: 60px 0;
-  background-color: var(--bg-color-light);
-}
-
-.special-offers h2 {
-  text-align: center;
-  margin-bottom: 35px;
-  font-size: 2.2em;
-  color: var(--text-color-dark);
-}
-
-.offers-slider {
+.offers-grid {
   display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(320px,1fr));
-  gap: 35px;
+  grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
+  gap: 2em;
 }
-
 .offer-item {
-  background-color: var(--bg-color-white);
-  border-radius: 10px;
-  overflow: hidden;
-  box-shadow: 0 3px 7px rgba(0,0,0,0.08);
-  transition: transform .3s, box-shadow .3s;
+  border: 1px solid #eee;
+  padding: 1em;
+  text-align: center;
 }
-
-.offer-item:hover,
-.offer-item:focus-within {
-  transform: scale(1.03);
-  box-shadow: 0 5px 15px rgba(0,0,0,0.15);
-}
-
 .offer-item img {
-  width: 100%;
-  height: auto;
-  display: block;
+  max-width: 100%;
+  margin-bottom: .8em;
 }
 
-.offer-item-content {
-  padding: 25px;
+/* 9. Contact */
+.contact-section {
+  background: #f9f9f9;
+  padding: 2em 0;
   text-align: center;
 }
 
-.offer-item h3 {
-  font-size: 1.2em;
-  margin-bottom: 15px;
-  color: var(--text-color-dark);
+/* 10. Footer */
+.site-footer {
+  background: #222;
+  color: #ccc;
+  padding: 2em 0;
 }
-
-.offer-item p {
-  color: var(--text-color-light);
-  margin-bottom: 20px;
+.site-footer .footer-widgets {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 2em;
 }
-
-.offer-button {
-  display: inline-block;
-  padding: 12px 25px;
-  background-color: var(--secondary-color);
-  color: var(--text-color-dark);
+.site-footer .widget h3 {
+  margin-bottom: .5em;
+  color: #fff;
+}
+.site-footer a {
+  color: #ccc;
   text-decoration: none;
-  border-radius: 8px;
-  font-weight: bold;
-  box-shadow: 0 3px 7px rgba(0,0,0,0.2);
-  transition: background-color .3s;
 }
-
-.offer-button:hover,
-.offer-button:focus {
-  background-color: var(--secondary-dark-color);
+.site-footer a:hover {
+  color: var(--color-primary);
 }
-
-/* ۱۰. فوتر */
-footer {
-  background-color: var(--footer-bg-color);
-  color: var(--footer-text-color);
-  padding: 60px 0;
-}
-
-footer .container {
-  display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(280px,1fr));
-  gap: 40px;
-}
-
-footer h3 {
-  color: var(--bg-color-white);
-  border-bottom: 2px solid var(--text-color-light);
-  padding-bottom: 12px;
-  margin-bottom: 25px;
-  font-size: 1.5em;
-  text-align: left;
-}
-
-footer p,
-footer ul {
-  color: var(--footer-text-color);
-  line-height: 1.9;
-}
-
-footer ul {
-  list-style: none;
-}
-
-footer li {
-  margin-bottom: 12px;
-}
-
-footer a {
-  color: var(--footer-text-color);
-  text-decoration: none;
-  transition: color .3s;
-}
-
-footer a:hover,
-footer a:focus {
-  color: var(--bg-color-white);
-}
-
-.social-icons {
+.site-footer .copyright {
   text-align: center;
-  margin-top: 25px;
+  margin-top: 2em;
+  font-size: .9em;
 }
 
-.social-icons a {
-  display: inline-flex;
-  justify-content: center;
-  align-items: center;
-  width: 40px;
-  height: 40px;
-  border-radius: 50%;
-  background-color: rgba(255,255,255,0.1);
-  color: var(--bg-color-white);
-  font-size: 1.2em;
-  margin: 0 8px;
-  transition: background-color .3s, color .3s;
-}
-
-.social-icons a:hover,
-.social-icons a:focus {
-  background-color: rgba(255,255,255,0.3);
-  color: var(--secondary-color);
-}
-
-.copyright {
-  text-align: center;
-  margin-top: 40px;
-  padding-top: 25px;
-  border-top: 1px solid var(--text-color-light);
-  font-size: 0.95em;
-}
-
-/* نوشتهٔ زیر فوتر */
-.footer-note {
-  text-align: center;
-  padding: 15px 20px;
-  font-size: 0.9em;
-  background-color: var(--bg-color-light);
-  color: var(--text-color-light);
-  border-top: 1px solid var(--text-color-light);
-}
-
-/* ۱۱. واکنش‌گرایی */
+/* 11. Responsive */
 @media (max-width: 992px) {
-  .navigation { display: none; }
-  .hero-banner { padding: 100px 20px; }
-  .hero-banner h1 { font-size: 2.8em; }
-  .hero-banner p { font-size: 1.2em; }
+  .site-nav ul { display: none; }
 }
-
 @media (max-width: 768px) {
-  .container { padding: 15px; }
-  .hero-banner { padding: 80px 20px; }
-  .hero-banner h1 { font-size: 2.4em; }
-  .hero-banner p { font-size: 1.1em; }
-  .books-grid,
-  .categories-grid,
-  .offers-slider,
-  footer .container { grid-template-columns: repeat(auto-fit,minmax(200px,1fr)); }
+  .container { padding: 0 15px; }
 }
-
 @media (max-width: 576px) {
-  .container { padding: 10px; }
-  .hero-banner { padding: 60px 20px; }
-  .hero-banner h1 { font-size: 2em; }
-  .hero-banner p { font-size: 1em; }
-  .featured-books,
-  .categories,
-  .special-offers,
-  footer { padding: 40px 0; }
-  .featured-books h2,
-  .categories h2,
-  .special-offers h2,
-  footer h3 { font-size: 1.8em; margin-bottom: 25px; }
+  .hero-section, .featured-books-section,
+  .categories-section, .special-offers-section,
+  .products-section, .site-footer {
+    padding: 2em 0;
+  }
 }
