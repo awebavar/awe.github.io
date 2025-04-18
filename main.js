@@ -48,3 +48,28 @@ function renderShopProducts() {
     grid.appendChild(card);
   });
 }
+document.addEventListener('DOMContentLoaded', function() {
+  document.querySelectorAll('.add-to-cart').forEach(btn => {
+    btn.addEventListener('click', function(){
+      const id    = this.dataset.id;
+      const title = this.dataset.title;
+      const price = parseInt(this.dataset.price);
+
+      // خواندن سبد
+      let cart = JSON.parse(localStorage.getItem('cart')) || [];
+
+      // اگر هست، تعدادش را زیاد کن
+      const existing = cart.find(item => item.id === id);
+      if (existing) {
+        existing.qty++;
+      } else {
+        cart.push({ id, title, price, qty: 1 });
+      }
+
+      // ذخیره در localStorage
+      localStorage.setItem('cart', JSON.stringify(cart));
+
+      alert('محصول به سبد اضافه شد!');
+    });
+  });
+});
