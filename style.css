@@ -187,6 +187,23 @@ header .container {
 /* ======================================
    بخش کتاب‌های ویژه
    ====================================== */
+/* ========== نمایش عنوان و مبلغ هر کتاب ========== */
+.price-label {
+  font-size: 1em;                   /* اندازه‌ی متوسط برای تیتر */
+  font-weight: bold;                /* پررنگ */
+  color: var(--text-color-dark);    /* رنگ تیره متن */
+  margin: 12px 0 4px;               /* فاصله از بالا و از پایین */
+  text-align: center;               /* وسط‌چین */
+}
+
+.book-price {
+  font-size: 1.1em;                 /* کمی بزرگ‌تر برای مبلغ */
+  font-weight: bold;                
+  color: var(--secondary-color);    /* رنگ زرد ثانویه */
+  margin: 0 0 12px;                 /* فاصله از پایین */
+  text-align: center;
+}
+
 .featured-books {
     padding: 60px 0;
     background-color: var(--bg-color-light);
