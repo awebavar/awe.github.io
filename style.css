@@ -40,7 +40,7 @@ body {
    ====================================== */
 header {
     background-color: var(--bg-color-white);
-    padding: 3px 0; /* کاهش padding هدر به 5px 0 */
+    padding: 3px 0; /* کاهش padding هدر به 3px 0 */
     box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
     position: sticky; /* هدر چسبنده */
     top: 0;
@@ -51,6 +51,11 @@ header .container {
     display: flex;
     justify-content: space-between;
     align-items: center;
+   max-width: 700px;       /* باریک‌تر کردن عرض (پیش‌فرض container =1200px) */
+    margin: -10px auto 0;   /* ۱۰px به بالا؛ و خودِ container وسط‌چین */
+    padding: 8px 20px;      /* فاصله‌ی داخلی از لبه‌ها */
+    background-color: var(--bg-color-white);   /* پس‌زمینه‌ی سفید */
+    border-radius: 0 0 8px 8px; /* گرد کردن گوشه‌های پایینی (اختیاری) */
 }
 /* ==== AI-HEADER-START ==== */
 header .container {
