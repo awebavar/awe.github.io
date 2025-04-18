@@ -240,20 +240,36 @@ header .container {
     gap: 35px; /* افزایش فاصله بین کتاب‌ها */
 }
 
-.book-item {
-    text-align: center;
-    padding: 25px;
-    background-color: var(--bg-color-white);
-    border-radius: 10px; /* گردتر کردن گوشه‌های آیتم کتاب */
-    box-shadow: 0 3px 7px rgba(0, 0, 0, 0.08); /* سایه قوی‌تر برای هر کتاب */
-    transition: transform 0.3s ease, box-shadow 0.3s ease; /* انیمیشن هاور */
+.book-item,
+.product-card {
+  text-align: center;
+  padding: 25px;
+  background-color: var(--bg-color-white);
+  border-radius: 10px;
+  box-shadow: 0 3px 7px rgba(0, 0, 0, 0.08);
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+.book-item:hover,
+.product-card:hover,
+.book-item:focus-within,
+.product-card:focus-within {
+  transform: scale(1.05);
+  box-shadow: 0 5px 15px rgba(0, 0, 0, 0.15);
 }
 
-.book-item:hover,
-.book-item:focus-within { /* focus-within برای وقتی که دکمه داخل book-item فوکوس شود */
-    transform: scale(1.05); /* بزرگنمایی هنگام هاور */
-    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.15); /* سایه قوی‌تر هنگام هاور */
+/* ==== استایل برای بخش shop.html ==== */
+.product-card img {
+  max-width: 150px;
+  height: auto;
 }
+.product-card button {
+  background: var(--primary-color);
+  color: #fff;
+  border: none;
+  padding: 8px 12px;
+  cursor: pointer;
+}
+
 /* ======================================
    بخش ویدیوی کنار دسته‌بندی‌ها
    ====================================== */
