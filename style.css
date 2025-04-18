@@ -39,7 +39,7 @@ body {
    هدر
    ====================================== */
 header {
-    background-color: transparent;  /* پس‌زمینه‌ی شفاف تا بن‌مایه‌ی سفید پاک شود */
+    background-color: var(--bg-color-white);  /* پس‌زمینه‌ی شفاف تا بن‌مایه‌ی سفید پاک شود */
     padding: 0px 0; /* کاهش padding هدر به 3px 0 */
     box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
     position: sticky; /* هدر چسبنده */
@@ -58,18 +58,6 @@ header .container {
     border-radius: 0 0 8px 8px; /* (اختیاری) گرد کردن گوشه‌های پایین */
 }
 /* ==== AI-HEADER-START ==== */
-header .container {
-  display: flex !important;
-  justify-content: center !important;
-  align-items: center !important;
-}
-header .user-icons {
-  margin-right: auto !important;
-}
-header .logo {
-  margin-left: auto !important;
-}
-
 /* ==== AI-HEADER-END   ==== */
 
 .logo img {
