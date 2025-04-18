@@ -51,6 +51,11 @@ header .container {
     display: flex;
     justify-content: space-between;
     align-items: center;
+    max-width: 900px;       /* باریک‌تر کردن عرض (پیش‌فرض container =1200px) */
+    margin: -10px auto 0;   /* ۱۰px به بالا؛ و خودِ container وسط‌چین */
+    padding: 8px 20px;      /* فاصله‌ی داخلی از لبه‌ها */
+    background-color: var(--bg-color-white);   /* پس‌زمینه‌ی سفید */
+    border-radius: 0 0 8px 8px; /* گرد کردن گوشه‌های پایینی (اختیاری) */
 }
 /* ==== AI-HEADER-START ==== */
 header .container {
