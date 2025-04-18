@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="fa" dir="rtl">
+<head>
+  <meta charset="UTF-8">
+  <title>سبد خرید | AWE خانه باور</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <!-- ==== Header (مثل shop.html) ==== -->
+  <header> … </header>
+
+  <!-- ==== Main: نمایش سبد خرید ==== -->
+  <main class="cart-page">
+    <div class="container">
+      <h2>سبد خرید شما</h2>
+      <div id="cart-items">
+        <!-- آیتم‌ها توسط JS اینجا رندر می‌شوند -->
+      </div>
+      <div id="cart-total">
+        <!-- مجموع قیمت اینجا نشان داده می‌شود -->
+      </div>
+    </div>
+  </main>
+
+  <!-- ==== Footer (مثل shop.html) ==== -->
+  <footer> … </footer>
+
+  <!-- ==== اسکریپت‌های لازم ==== -->
+  <script src="main.js"></script>
+  <script>
+    // تابع نمایش سبد
+    function renderCart() {
+      const cart = JSON.parse(localStorage.getItem('cart')) || [];
+      const container = document.getElementById('cart-items');
+      const totalDiv = document.getElementById('cart-total');
+      container.innerHTML = '';  let total = 0;
+
+      if(cart.length === 0) {
+        container.innerHTML = '<p>سبد خرید شما خالی است.</p>';
+        totalDiv.innerHTML = '';
+        return;
+      }
+
+      cart.forEach(item => {
+        const itemDiv = document.createElement('div');
+        itemDiv.className = 'cart-item';
+        const subtotal = item.price * item.qty;
+        total += subtotal;
+
+        itemDiv.innerHTML = `
+          <h4>${item.title}</h4>
+          <p>قیمت واحد: ${item.price.toLocaleString()} تومان</p>
+          <p>تعداد: ${item.qty}</p>
+          <p>جمع: ${subtotal.toLocaleString()} تومان</p>
+        `;
+        container.appendChild(itemDiv);
+      });
+
+      totalDiv.innerHTML = `<h3>مبلغ کل: ${total.toLocaleString()} تومان</h3>`;
+    }
+
+    document.addEventListener('DOMContentLoaded', renderCart);
+  </script>
+</body>
+</html>
