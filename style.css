@@ -186,17 +186,20 @@ header .container {
    ویدیوی معرفی محصول: شروع سفر من
    ====================================== */
 .video-intro {
-  padding: 60px 0;
-  background-color: var(--bg-color-lighter);
+    padding: 60px 0;                       /* فاصله عمودی بالا/پایین */
+    background-color: var(--bg-color-lighter); /* پس‌زمینه روشن */
 }
+
 .video-intro .video-wrapper {
-  max-width: 900px;
-  margin: 20px auto;
+    width: 33.33%;     /* یک‌سوم عرض والد */
+    max-width: none;   /* غیرفعال‌سازی محدودیت قبلی */
+    margin: 0 auto;    /* قرارگیری افقی در مرکز */
 }
+
 .video-intro video {
-  width: 100%;
-  height: auto;
-  border-radius: 8px;
+    width: 100%;       /* پرکردن تمام عرض .video-wrapper */
+    height: auto;      /* حفظ نسبت ابعاد ویدیو */
+    border-radius: 8px;/* گوشه‌های نرم */
 }
 
 /* ======================================
@@ -255,38 +258,42 @@ header .container {
    بخش ویدیوی کنار دسته‌بندی‌ها
    ====================================== */
 .categories-section {
-  padding: 60px 0;
+    padding: 60px 0;   /* فاصله عمودی برای کل بخش */
 }
+
 .categories-section .categories-content {
-  display: flex;
-  gap: 30px;
-  align-items: flex-start;
+    display: flex;     /* کنار هم قرار دادن دو ستون */
+    gap: 30px;         /* فاصله بین ستون‌ها */
+    align-items: flex-start; /* تراز از بالا */
 }
 
 /* ستون ویدیو */
 .video-section {
-  flex: 1;
+    flex: 1;           /* به نسبت ستون دسته‌بندی‌ها کم‌عرض‌تر */
 }
+
 .video-section h3 {
-  font-size: 1.3em;
-  margin-bottom: 12px;
-  text-align: center;
+    font-size: 1.3em;  /* اندازه عنوان ویدیو */
+    margin-bottom: 12px;
+    text-align: center;
 }
+
 .video-section .video-wrapper {
-  width: 100%;
+    width: 33.33%;     /* یک‌سوم عرض ستون ویدیو */
 }
+
 .video-section video {
-  width: 100%;
-  height: auto;
-  border-radius: 8px;
+    width: 100%;       /* پرکردن تمام عرض wrapper */
+    height: auto;      /* حفظ نسبت ابعاد */
+    border-radius: 8px;
 }
 
 /* ستون دسته‌بندی */
 .categories-section .categories-grid {
-  flex: 2;
-  display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
-  gap: 20px;
+    flex: 2;           /* عرض دو برابر ستون ویدیو */
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    gap: 20px;
 }
 
 .book-item img {
