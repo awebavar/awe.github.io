@@ -182,7 +182,22 @@ header .container {
     color: var(--text-color-light);
     line-height: 1.8;
 }
-
+/* ======================================
+   ویدیوی معرفی محصول: شروع سفر من
+   ====================================== */
+.video-intro {
+  padding: 60px 0;
+  background-color: var(--bg-color-lighter);
+}
+.video-intro .video-wrapper {
+  max-width: 900px;
+  margin: 20px auto;
+}
+.video-intro video {
+  width: 100%;
+  height: auto;
+  border-radius: 8px;
+}
 
 /* ======================================
    بخش کتاب‌های ویژه
@@ -235,6 +250,43 @@ header .container {
 .book-item:focus-within { /* focus-within برای وقتی که دکمه داخل book-item فوکوس شود */
     transform: scale(1.05); /* بزرگنمایی هنگام هاور */
     box-shadow: 0 5px 15px rgba(0, 0, 0, 0.15); /* سایه قوی‌تر هنگام هاور */
+}
+/* ======================================
+   بخش ویدیوی کنار دسته‌بندی‌ها
+   ====================================== */
+.categories-section {
+  padding: 60px 0;
+}
+.categories-section .categories-content {
+  display: flex;
+  gap: 30px;
+  align-items: flex-start;
+}
+
+/* ستون ویدیو */
+.video-section {
+  flex: 1;
+}
+.video-section h3 {
+  font-size: 1.3em;
+  margin-bottom: 12px;
+  text-align: center;
+}
+.video-section .video-wrapper {
+  width: 100%;
+}
+.video-section video {
+  width: 100%;
+  height: auto;
+  border-radius: 8px;
+}
+
+/* ستون دسته‌بندی */
+.categories-section .categories-grid {
+  flex: 2;
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+  gap: 20px;
 }
 
 .book-item img {
