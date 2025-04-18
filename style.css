@@ -53,8 +53,8 @@ header .container {
     align-items: center;
     background-color: var(--bg-color-white); /* پس‌زمینه‌ی سفید */
     max-width: 1200px;       /* عرض دلخواه */
-    margin:-20px auto 0;   /* ۱۰px به بالا، خودکار چپ/راست برای وسط‌چین */
-    padding: 8px 10px;      /* فاصله‌ی داخلی بالایی/پایینی و کناری */
+    margin:-20px auto -10;   /* ۱۰px به بالا، خودکار چپ/راست برای وسط‌چین */
+    padding: 5px 5px;      /* فاصله‌ی داخلی بالایی/پایینی و کناری */
     border-radius: 0 0 8px 8px; /* (اختیاری) گرد کردن گوشه‌های پایین */
 }
 /* ==== AI-HEADER-START ==== */
