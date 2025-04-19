@@ -1119,3 +1119,92 @@ html, body {
   max-height: none !important;
   -webkit-line-clamp: unset !important;
 }
+/* بهینه‌سازی اندازه متن‌ها و واکنش‌پذیری */
+body {
+  font-size: 14px; /* کاهش سایز پایه متن‌ها */
+}
+
+/* حفظ اندازه عناوین اصلی و دکمه‌ها */
+h1, h2, h3, .navigation a, .header-content a {
+  font-size: revert; /* حفظ سایز اصلی */
+}
+
+/* کوچک‌تر کردن متن پاراگراف‌ها */
+p {
+  font-size: 0.9rem;
+  line-height: 1.5;
+}
+
+/* خلاصه‌سازی متن طولانی با سه نقطه */
+.footer-widget p {
+  overflow: hidden;
+  text-overflow: ellipsis;
+  display: -webkit-box;
+  -webkit-line-clamp: 5; /* تعداد خطوط نمایشی */
+  -webkit-box-orient: vertical;
+  max-height: 150px;
+}
+
+/* دکمه نمایش بیشتر */
+.read-more-btn {
+  display: inline-block;
+  margin-top: 5px;
+  color: var(--primary-color);
+  cursor: pointer;
+  font-size: 0.9em;
+  font-weight: bold;
+}
+
+/* حالت گسترش متن */
+.expanded {
+  -webkit-line-clamp: unset;
+  max-height: unset;
+}
+
+/* بهبود واکنش‌پذیری برای صفحات مختلف */
+@media (max-width: 992px) {
+  .container {
+    max-width: 95%;
+    padding: 15px;
+  }
+  
+  .books-grid, .categories-grid, .offers-slider {
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    gap: 20px;
+  }
+}
+
+@media (max-width: 768px) {
+  footer .container {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 20px;
+  }
+  
+  #about-us {
+    grid-column: 1 / -1;
+    order: -1;
+  }
+  
+  .footer-widget {
+    margin-bottom: 0;
+  }
+}
+
+@media (max-width: 480px) {
+  body {
+    font-size: 13px;
+  }
+  
+  footer .container {
+    grid-template-columns: 1fr;
+  }
+  
+  .hero-banner h1 {
+    font-size: 1.8em;
+  }
+  
+  .hero-banner {
+    padding: 60px 0;
+  }
+}
