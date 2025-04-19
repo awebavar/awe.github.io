@@ -27,39 +27,76 @@
 
   <!-- ==== اسکریپت‌های لازم ==== -->
   <script src="main.js"></script>
-  <script>
-    // تابع نمایش سبد
-    function renderCart() {
-      const cart = JSON.parse(localStorage.getItem('cart')) || [];
-      const container = document.getElementById('cart-items');
-      const totalDiv = document.getElementById('cart-total');
-      container.innerHTML = '';  let total = 0;
+<script>
+  // تابع render و دکمه‌ها
+  function renderCart() {
+    const cart = JSON.parse(localStorage.getItem('cart')) || [];
+    const container = document.getElementById('cart-items');
+    const totalDiv = document.getElementById('cart-total');
+    container.innerHTML = '';
+    let total = 0;
 
-      if(cart.length === 0) {
-        container.innerHTML = '<p>سبد خرید شما خالی است.</p>';
-        totalDiv.innerHTML = '';
-        return;
-      }
-
-      cart.forEach(item => {
-        const itemDiv = document.createElement('div');
-        itemDiv.className = 'cart-item';
-        const subtotal = item.price * item.qty;
-        total += subtotal;
-
-        itemDiv.innerHTML = `
-          <h4>${item.title}</h4>
-          <p>قیمت واحد: ${item.price.toLocaleString()} تومان</p>
-          <p>تعداد: ${item.qty}</p>
-          <p>جمع: ${subtotal.toLocaleString()} تومان</p>
-        `;
-        container.appendChild(itemDiv);
-      });
-
-      totalDiv.innerHTML = `<h3>مبلغ کل: ${total.toLocaleString()} تومان</h3>`;
+    if (cart.length === 0) {
+      container.innerHTML = '<p>سبد خرید شما خالی است.</p>';
+      totalDiv.innerHTML = '';
+      updateCartCount();
+      return;
     }
 
-    document.addEventListener('DOMContentLoaded', renderCart);
-  </script>
+    cart.forEach(item => {
+      const subtotal = item.price * item.qty;
+      total += subtotal;
+
+      // markup با دکمه‌های qty و حذف
+      const itemHTML = `
+        <div class="cart-item">
+          <img src="${item.image}" alt="${item.title}">
+          <div class="cart-item-title">${item.title}</div>
+          <div class="cart-item-price">${item.price.toLocaleString()} تومان</div>
+          <div class="qty-controls">
+            <button class="decrease" data-id="${item.id}">−</button>
+            <span>${item.qty}</span>
+            <button class="increase" data-id="${item.id}">+</button>
+          </div>
+          <div class="cart-item-subtotal">${subtotal.toLocaleString()} تومان</div>
+          <button class="remove-btn" data-id="${item.id}">&times;</button>
+        </div>`;
+      container.insertAdjacentHTML('beforeend', itemHTML);
+    });
+
+    totalDiv.innerHTML = `<h3 id="cart-summary">مبلغ کل: ${total.toLocaleString()} تومان</h3>`;
+
+    // اضافه کردن event listener برای دکمه‌ها
+    document.querySelectorAll('.increase').forEach(btn =>
+      btn.addEventListener('click', () => changeQty(btn.dataset.id, +1))
+    );
+    document.querySelectorAll('.decrease').forEach(btn =>
+      btn.addEventListener('click', () => changeQty(btn.dataset.id, -1))
+    );
+    document.querySelectorAll('.remove-btn').forEach(btn =>
+      btn.addEventListener('click', () => changeQty(btn.dataset.id, 'remove'))
+    );
+
+    updateCartCount();
+  }
+
+  // تغییر تعداد یا حذف آیتم
+  function changeQty(id, delta) {
+    let cart = JSON.parse(localStorage.getItem('cart')) || [];
+    cart = cart.map(item => {
+      if (item.id == id) {
+        if (delta === 'remove') return null;
+        item.qty += delta;
+        if (item.qty < 1) return null;
+      }
+      return item;
+    }).filter(Boolean);
+    localStorage.setItem('cart', JSON.stringify(cart));
+    renderCart();
+  }
+
+  document.addEventListener('DOMContentLoaded', renderCart);
+</script>
+
 </body>
 </html>
