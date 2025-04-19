@@ -238,3 +238,14 @@ document.addEventListener('DOMContentLoaded', function() {
     });
   }
 });
+// عملکرد منوی موبایل
+document.addEventListener('DOMContentLoaded', function() {
+  const menuBtn = document.querySelector('.mobile-menu-btn');
+  const mainMenu = document.querySelector('.main-menu');
+  
+  if (menuBtn && mainMenu) {
+    menuBtn.addEventListener('click', function() {
+      mainMenu.classList.toggle('show');
+    });
+  }
+});
