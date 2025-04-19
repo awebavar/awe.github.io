@@ -567,6 +567,19 @@ footer a:focus {
     }
     
 }
+/* ===== اجازه‌ی شکست کلمات خیلی طولانی ===== */
+body,
+p,
+a,
+h1, h2, h3, h4, h5, h6,
+input,
+.author-description,
+footer p {
+  overflow-wrap: break-word;  /* مرورگرهای جدید */
+  word-wrap: break-word;      /* مرورگرهای قدیمی */
+  word-break: break-word;     /* هرجا لازم باشه بشکند */
+}
+
 /* ===== استایل صفحه سبد خرید (cart-page) ===== */
 .cart-item {
   display: grid;
@@ -653,6 +666,19 @@ footer a:focus {
         gap: 25px;
     }
 }
+/* ===== اجازه‌ی شکست کلمات خیلی طولانی ===== */
+body,
+p,
+a,
+h1, h2, h3, h4, h5, h6,
+input,
+.author-description,
+footer p {
+  overflow-wrap: break-word;  /* مرورگرهای جدید */
+  word-wrap: break-word;      /* مرورگرهای قدیمی */
+  word-break: break-word;     /* هرجا لازم باشه بشکند */
+}
+
 /* ===== استایل صفحه سبد خرید (cart-page) ===== */
 .cart-item {
   display: grid;
@@ -719,7 +745,7 @@ footer a:focus {
 
 @media (max-width: 576px) {
     .container {
-        max-width: 540px;
+        max-width: 100px;
         padding: 10px;
     }
     .hero-banner {
@@ -739,6 +765,19 @@ footer a:focus {
         margin-bottom: 25px;
     }
 }
+/* ===== اجازه‌ی شکست کلمات خیلی طولانی ===== */
+body,
+p,
+a,
+h1, h2, h3, h4, h5, h6,
+input,
+.author-description,
+footer p {
+  overflow-wrap: break-word;  /* مرورگرهای جدید */
+  word-wrap: break-word;      /* مرورگرهای قدیمی */
+  word-break: break-word;     /* هرجا لازم باشه بشکند */
+}
+
 /* ===== استایل صفحه سبد خرید (cart-page) ===== */
 .cart-item {
   display: grid;
