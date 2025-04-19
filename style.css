@@ -804,3 +804,199 @@ footer a:focus {
   font-size: 0.8em;
 }
 .user-icons a { position: relative; } /* برای قرارگیری badge */
+/* ======================================
+   بهبود رسپانسیو بودن سایت
+   ====================================== */
+
+/* بهبود استایل پایه برای متن‌ها */
+p {
+  text-align: justify;
+  max-width: 100%;
+}
+
+/* اصلاح مشکل قسمت ایمیل در فوتر */
+#contact-us {
+  background-color: var(--footer-bg-color);
+  width: 100%;
+}
+
+#contact-us a {
+  display: inline-block;
+  word-break: break-word;
+}
+
+/* تنظیمات برای تبلت و موبایل */
+@media (max-width: 991px) {
+  .container {
+    max-width: 95%;
+    padding: 15px;
+  }
+  
+  .hero-banner {
+    padding: 80px 0;
+  }
+  
+  .hero-banner h1 {
+    font-size: 2.5em;
+  }
+  
+  .categories-section .categories-content {
+    flex-direction: column;
+  }
+  
+  .video-section, .categories-section .categories-grid {
+    flex: 1 1 100%;
+  }
+  
+  .video-section .video-wrapper {
+    width: 80%;
+    margin: 0 auto 30px;
+  }
+  
+  /* ستون‌های کمتر برای کتاب‌ها و پیشنهادات */
+  .books-grid, .categories-grid, .offers-slider {
+    grid-template-columns: repeat(2, 1fr);
+  }
+  
+  /* تنظیم هدر برای تبلت */
+  header .container {
+    flex-wrap: wrap;
+  }
+  
+  .logo {
+    margin-bottom: 10px;
+  }
+  
+  .navigation {
+    width: 100%;
+    margin-top: 10px;
+  }
+  
+  .navigation ul {
+    justify-content: center;
+  }
+  
+  /* تنظیم فوتر برای تبلت */
+  footer .container {
+    grid-template-columns: repeat(2, 1fr);
+    gap: 30px;
+  }
+}
+
+/* برای گوشی‌های موبایل */
+@media (max-width: 767px) {
+  .container {
+    max-width: 100%;
+    padding: 10px;
+  }
+  
+  .hero-banner {
+    padding: 60px 0;
+  }
+  
+  .hero-banner h1 {
+    font-size: 2em;
+  }
+  
+  .hero-banner p {
+    font-size: 1.1em;
+  }
+  
+  .cta-button {
+    padding: 12px 25px;
+    font-size: 1em;
+  }
+  
+  /* یک ستونه کردن همه گرید‌ها در موبایل */
+  .books-grid, .categories-grid, .offers-slider {
+    grid-template-columns: 1fr;
+  }
+  
+  /* بهبود هدر در موبایل */
+  header .container {
+    flex-direction: column;
+    align-items: center;
+  }
+  
+  .logo, .navigation, .user-icons {
+    width: 100%;
+    text-align: center;
+    margin-bottom: 10px;
+  }
+  
+  .navigation ul {
+    flex-direction: column;
+    align-items: center;
+  }
+  
+  .navigation li {
+    margin: 8px 0;
+    width: 100%;
+    text-align: center;
+  }
+  
+  /* تنظیم عرض ویدیو */
+  .video-intro .video-wrapper,
+  .video-section .video-wrapper {
+    width: 100%;
+  }
+  
+  /* فوتر یک ستونه */
+  footer .container {
+    grid-template-columns: 1fr;
+  }
+  
+  /* اصلاح صفحه سبد خرید */
+  .cart-item {
+    grid-template-columns: 60px 1fr;
+    row-gap: 10px;
+  }
+  
+  .cart-item-price, 
+  .cart-item-subtotal {
+    text-align: right;
+  }
+  
+  .qty-controls {
+    justify-content: flex-start;
+  }
+  
+  /* حل مشکل فضای خاکستری اضافی */
+  body {
+    overflow-x: hidden;
+    width: 100%;
+  }
+}
+
+/* برای صفحه‌های خیلی کوچک */
+@media (max-width: 479px) {
+  .hero-banner h1 {
+    font-size: 1.8em;
+  }
+  
+  .featured-books h2, 
+  .categories h2, 
+  .special-offers h2, 
+  footer h3, 
+  .about-author-section h2 {
+    font-size: 1.8em;
+  }
+  
+  .book-item, 
+  .product-card, 
+  .offer-item, 
+  .category-item {
+    padding: 15px;
+  }
+  
+  /* تنظیم مجدد قسمت ایمیل در فوتر */
+  #contact-us p {
+    word-break: break-word;
+  }
+}
+
+/* رفع مشکل حاشیه کناری اضافی در موبایل */
+html, body {
+  max-width: 100%;
+  overflow-x: hidden;
+}
