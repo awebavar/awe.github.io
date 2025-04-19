@@ -30,7 +30,7 @@
 <script>
   // تابع render و دکمه‌ها
   function renderCart() {
-    const cart = JSON.parse(localStorage.getItem('cart')) || [];
+    const cart = JSON.parse(localStorage.getItem('cartItems')) || [];
     const container = document.getElementById('cart-items');
     const totalDiv = document.getElementById('cart-total');
     container.innerHTML = '';
@@ -44,18 +44,18 @@
     }
 
     cart.forEach(item => {
-      const subtotal = item.price * item.qty;
+      const subtotal = item.price * item.quantity;
       total += subtotal;
 
       // markup با دکمه‌های qty و حذف
       const itemHTML = `
         <div class="cart-item">
-          <img src="${item.image}" alt="${item.title}">
-          <div class="cart-item-title">${item.title}</div>
+          <img src="placeholder.jpg" alt="${item.name}">
+          <div class="cart-item-title">${item.name}</div>
           <div class="cart-item-price">${item.price.toLocaleString()} تومان</div>
           <div class="qty-controls">
             <button class="decrease" data-id="${item.id}">−</button>
-            <span>${item.qty}</span>
+            <span>${item.quantity}</span>
             <button class="increase" data-id="${item.id}">+</button>
           </div>
           <div class="cart-item-subtotal">${subtotal.toLocaleString()} تومان</div>
@@ -68,7 +68,48 @@
 
     // اضافه کردن event listener برای دکمه‌ها
     document.querySelectorAll('.increase').forEach(btn =>
-      btn.addEventListener('click', () => changeQty(btn.dataset.id, +1))
+      btn.addEventListener('click', () => changeQty(btn.dataset.id, 1))
+    );
+    document.querySelectorAll('.decrease').forEach(btn =>
+      btn.addEventListener('click', () => changeQty(btn.dataset.id, -1))
+    );
+    document.querySelectorAll('.remove-btn').forEach(btn =>
+      btn.addEventListener('click', () => removeFromCart(btn.dataset.id))
+    );
+
+    updateCartCount();
+  }
+
+  // تغییر تعداد آیتم
+  function changeQty(id, delta) {
+    let cart = JSON.parse(localStorage.getItem('cartItems')) || [];
+    const itemIndex = cart.findIndex(item => item.id === id);
+    
+    if (itemIndex !== -1) {
+      cart[itemIndex].quantity += delta;
+      
+      // حذف آیتم اگر تعداد آن صفر یا کمتر شود
+      if (cart[itemIndex].quantity <= 0) {
+        cart.splice(itemIndex, 1);
+      }
+      
+      localStorage.setItem('cartItems', JSON.stringify(cart));
+      renderCart();
+    }
+  }
+  
+  // حذف از سبد خرید
+  function removeFromCart(productId) {
+    const cartItems = JSON.parse(localStorage.getItem('cartItems')) || [];
+    const updatedCart = cartItems.filter(item => item.id !== productId);
+    
+    localStorage.setItem('cartItems', JSON.stringify(updatedCart));
+    renderCart();
+  }
+
+  document.addEventListener('DOMContentLoaded', renderCart);
+</script>
+
     );
     document.querySelectorAll('.decrease').forEach(btn =>
       btn.addEventListener('click', () => changeQty(btn.dataset.id, -1))
