@@ -151,3 +151,48 @@ document.addEventListener('DOMContentLoaded', () => {
   renderCartItems();
   updateCartCount();
 });
+// اضافه کردن دکمه منو برای موبایل
+document.addEventListener('DOMContentLoaded', function() {
+  // ایجاد دکمه منو برای حالت موبایل
+  const header = document.querySelector('header .container');
+  const navigation = document.querySelector('.navigation');
+  
+  // ساخت دکمه منو
+  const menuToggle = document.createElement('button');
+  menuToggle.className = 'menu-toggle';
+  menuToggle.innerHTML = '&#9776;'; // نماد همبرگر
+  menuToggle.style.display = 'none'; // در ابتدا مخفی
+  
+  // اضافه کردن به هدر، قبل از navigation
+  header.insertBefore(menuToggle, navigation);
+  
+  // تنظیم نمایش دکمه منو در موبایل
+  function adjustMenuVisibility() {
+    if (window.innerWidth <= 991) {
+      menuToggle.style.display = 'block';
+      navigation.classList.add('mobile-menu');
+      if (!navigation.classList.contains('active')) {
+        navigation.style.display = 'none';
+      }
+    } else {
+      menuToggle.style.display = 'none';
+      navigation.style.display = 'block';
+      navigation.classList.remove('mobile-menu');
+    }
+  }
+  
+  // اجرا در بارگذاری و تغییر سایز
+  adjustMenuVisibility();
+  window.addEventListener('resize', adjustMenuVisibility);
+  
+  // کلیک روی دکمه منو
+  menuToggle.addEventListener('click', function() {
+    if (navigation.style.display === 'none' || navigation.style.display === '') {
+      navigation.style.display = 'block';
+      navigation.classList.add('active');
+    } else {
+      navigation.style.display = 'none';
+      navigation.classList.remove('active');
+    }
+  });
+});
