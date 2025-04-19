@@ -17,11 +17,14 @@ function updateCartCount() {
 
 // تابع برای نمایش محصولات در صفحه فروشگاه
 function displayProducts() {
-    // کد نمایش محصولات می‌تواند اینجا باشد
-}
-
 // افزودن آیتم به سبد خرید
-function addToCart(productId, productName, productPrice) {
+function addToCart(productId, productName, productPrice, inStock = true) {
+    // اگر محصول موجود نیست، اضافه نکن
+    if (!inStock) {
+        alert(`${productName} موجود نیست و نمی‌تواند به سبد خرید اضافه شود.`);
+        return;
+    }
+    
     const cartItems = JSON.parse(localStorage.getItem('cartItems')) || [];
     
     // بررسی آیا محصول قبلاً در سبد خرید بوده است
@@ -39,6 +42,17 @@ function addToCart(productId, productName, productPrice) {
             quantity: 1
         });
     }
+    
+    // ذخیره در localStorage
+    localStorage.setItem('cartItems', JSON.stringify(cartItems));
+    
+    // به‌روزرسانی تعداد سبد خرید
+    updateCartCount();
+    
+    // نمایش پیام موفقیت
+    alert(`${productName} به سبد خرید اضافه شد.`);
+}
+
     
     // ذخیره در localStorage
     localStorage.setItem('cartItems', JSON.stringify(cartItems));
@@ -165,6 +179,35 @@ function addCartButtonEvents() {
         button.addEventListener('click', () => {
             const productId = button.getAttribute('data-id');
             removeFromCart(productId);
+            // اضافه کردن event listener به دکمه‌های "افزودن به سبد خرید"
+function setupAddToCartButtons() {
+    const addToCartButtons = document.querySelectorAll('.add-to-cart');
+    
+    addToCartButtons.forEach(button => {
+        button.addEventListener('click', () => {
+            const productId = button.getAttribute('data-id');
+            const productName = button.getAttribute('data-name');
+            const productPrice = parseFloat(button.getAttribute('data-price'));
+            const inStock = button.getAttribute('data-stock') !== 'false';
+            
+            addToCart(productId, productName, productPrice, inStock);
+        });
+    });
+}
+
+// اجرای توابع مورد نیاز هنگام بارگذاری صفحه
+document.addEventListener('DOMContentLoaded', () => {
+    updateCartCount();
+    
+    // نمایش آیتم‌های سبد خرید اگر در صفحه سبد خرید هستیم
+    if (document.getElementById('cart-items')) {
+        displayCartItems();
+    }
+    
+    // راه‌اندازی دکمه‌های افزودن به سبد خرید
+    setupAddToCartButtons();
+});
+
         });
     });
 }
