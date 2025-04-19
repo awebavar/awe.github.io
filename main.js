@@ -63,7 +63,7 @@ document.addEventListener('DOMContentLoaded', function() {
       const id    = this.dataset.id;
       const title = this.dataset.title;
       const price = parseInt(this.dataset.price);
-
+updateCartCount();
       // خواندن سبد
       let cart = JSON.parse(localStorage.getItem('cart')) || [];
 
@@ -149,5 +149,6 @@ function calculateCartTotal() {
 // وقتی cart.html لود شد
 document.addEventListener('DOMContentLoaded', () => {
   renderCartItems();
+  updateCartCount();
 });
 
