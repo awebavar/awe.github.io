@@ -372,6 +372,7 @@ footer {
     box-shadow: 0 3px 10px rgba(0, 0, 0, 0.1);
     transition: transform 0.3s ease, box-shadow 0.3s ease;
     text-align: center;
+  padding-bottom: 15px; /* اضافه کردن فاصله در پایین */
 }
 
 .category-item:hover {
@@ -389,6 +390,7 @@ footer {
     margin: 15px 0 10px;
     color: var(--text-color-dark);
     font-size: 1.3em;
+ padding: 0 10px;
 }
 
 .category-item p {
@@ -396,6 +398,18 @@ footer {
     color: var(--text-color-light);
     font-size: 0.95em;
     line-height: 1.6;
+margin-bottom: 10px;
+}
+.category-item .price {
+    font-weight: bold;
+    color: var(--primary-color);
+    margin: 10px 0;
+    padding: 0 15px;
+}
+
+.category-item .add-to-cart {
+    margin-top: 10px;
+    margin-bottom: 15px;
 }
 
 /* ======================================
