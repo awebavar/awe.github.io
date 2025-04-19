@@ -565,7 +565,9 @@ footer a:focus {
     .hero-banner p {
         font-size: 1.2em;
     }
-    
+.navigation {
+        display: block;
+    }    
 }
 /* ===== استایل صفحه سبد خرید (cart-page) ===== */
 .cart-item {
