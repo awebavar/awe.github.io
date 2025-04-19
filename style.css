@@ -1,10 +1,5 @@
 /* فایل style.css - به‌روزرسانی شده */
-/* ===== همه عناصر باکس‑باکس (box-sizing) داشته باشند ===== */
-*,
-*::before,
-*::after {
-  box-sizing: border-box;
-}
+
 /* ======================================
    تنظیمات کلی و متغیرها
    ====================================== */
@@ -570,21 +565,10 @@ footer a:focus {
     .hero-banner p {
         font-size: 1.2em;
     }
-    
+    .navigation {
+        display: none; /* مخفی کردن منو در سایز متوسط و کوچکتر */
+    }
 }
-/* ===== اجازه‌ی شکست کلمات خیلی طولانی ===== */
-body,
-p,
-a,
-h1, h2, h3, h4, h5, h6,
-input,
-.author-description,
-footer p {
-  overflow-wrap: break-word;  /* مرورگرهای جدید */
-  word-wrap: break-word;      /* مرورگرهای قدیمی */
-  word-break: break-word;     /* هرجا لازم باشه بشکند */
-}
-
 /* ===== استایل صفحه سبد خرید (cart-page) ===== */
 .cart-item {
   display: grid;
@@ -671,19 +655,6 @@ footer p {
         gap: 25px;
     }
 }
-/* ===== اجازه‌ی شکست کلمات خیلی طولانی ===== */
-body,
-p,
-a,
-h1, h2, h3, h4, h5, h6,
-input,
-.author-description,
-footer p {
-  overflow-wrap: break-word;  /* مرورگرهای جدید */
-  word-wrap: break-word;      /* مرورگرهای قدیمی */
-  word-break: break-word;     /* هرجا لازم باشه بشکند */
-}
-
 /* ===== استایل صفحه سبد خرید (cart-page) ===== */
 .cart-item {
   display: grid;
@@ -750,7 +721,7 @@ footer p {
 
 @media (max-width: 576px) {
     .container {
-        max-width: 100px;
+        max-width: 540px;
         padding: 10px;
     }
     .hero-banner {
@@ -770,19 +741,6 @@ footer p {
         margin-bottom: 25px;
     }
 }
-/* ===== اجازه‌ی شکست کلمات خیلی طولانی ===== */
-body,
-p,
-a,
-h1, h2, h3, h4, h5, h6,
-input,
-.author-description,
-footer p {
-  overflow-wrap: break-word;  /* مرورگرهای جدید */
-  word-wrap: break-word;      /* مرورگرهای قدیمی */
-  word-break: break-word;     /* هرجا لازم باشه بشکند */
-}
-
 /* ===== استایل صفحه سبد خرید (cart-page) ===== */
 .cart-item {
   display: grid;
