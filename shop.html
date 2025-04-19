@@ -4,6 +4,10 @@
     <meta charset="UTF-8">
     <title>فروشگاه AWE خانه باور</title>
     <link rel="stylesheet" href="style.css"> <!-- برای استفاده از استایل‌های موجود -->
+    <!-- FontAwesome برای آیکون‌های سبد و سرچ -->
+    <link rel="stylesheet"
+          href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+
 </head>
 <body>
     <header>
@@ -25,11 +29,16 @@
 <!-- ==== AI-HTML-END   ==== -->
 </ul>
             </nav>
-            <div class="user-icons">
-                <a href="#"><i class="fa fa-search"></i></a>
-                <a href="cart.html"><i class="fa fa-shopping-cart"></i></a>
-<a href="#"><i class="fa fa-user"></i></a>
-            </div>
+                <div class="user-icons">
+        <a href="#"><i class="fa fa-search"></i></a>
+         <!-- سبد خرید با badge برای نمایش تعداد -->
+        <a href="cart.html" class="cart-icon">
+          <i class="fa fa-shopping-cart"></i>
+          <span id="cart-count">0</span>
+        </a>
+        <a href="#"><i class="fa fa-user"></i></a>
+    </div>
+
         </div>
     </header>
 
