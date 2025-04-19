@@ -3,10 +3,6 @@
 /* ======================================
    تنظیمات کلی و متغیرها
    ====================================== */
-html, body {
-  margin: 0;
-  padding: 0;
-}
 :root {
     --primary-color: #007bff;        /* رنگ اصلی (آبی) */
     --primary-dark-color: #0056b3;   /* رنگ اصلی تیره */
@@ -34,8 +30,7 @@ body {
 }
 
 .container {
-    width: 100%;
-   max-width: 1200px;
+    max-width: 1200px;
     margin: 0 auto;
     padding: 20px;
 }
