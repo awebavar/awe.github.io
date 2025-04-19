@@ -372,7 +372,9 @@ footer {
     box-shadow: 0 3px 10px rgba(0, 0, 0, 0.1);
     transition: transform 0.3s ease, box-shadow 0.3s ease;
     text-align: center;
-  padding-bottom: 15px; /* اضافه کردن فاصله در پایین */
+    height: 350px; /* اضافه کردن ارتفاع ثابت */
+    display: flex;
+    flex-direction: column;
 }
 
 .category-item:hover {
@@ -390,28 +392,25 @@ footer {
     margin: 15px 0 10px;
     color: var(--text-color-dark);
     font-size: 1.3em;
- padding: 0 10px;
+    padding: 0 10px;
 }
 
 .category-item p {
-    padding: 0 15px 20px;
+    padding: 0 15px;
     color: var(--text-color-light);
     font-size: 0.95em;
     line-height: 1.6;
-margin-bottom: 10px;
+    margin-bottom: 15px;
+    flex-grow: 1; /* اضافه کردن برای پر کردن فضای خالی */
 }
 .category-item .price {
-    font-weight: bold;
-    color: var(--primary-color);
-    margin: 10px 0;
-    padding: 0 15px;
+    margin: 0 0 10px;
 }
 
 .category-item .add-to-cart {
-    margin-top: 10px;
-    margin-bottom: 15px;
+    margin: 0 auto 15px;
+    width: 80%;
 }
-
 /* ======================================
    کتاب‌های ویژه
    ====================================== */
