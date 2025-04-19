@@ -565,9 +565,7 @@ footer a:focus {
     .hero-banner p {
         font-size: 1.2em;
     }
-    .navigation {
-        display: none; /* مخفی کردن منو در سایز متوسط و کوچکتر */
-    }
+    
 }
 /* ===== استایل صفحه سبد خرید (cart-page) ===== */
 .cart-item {
