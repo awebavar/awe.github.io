@@ -4,8 +4,8 @@
 function updateCartCount() {
   const cart = JSON.parse(localStorage.getItem('cart')) || [];
   const count = cart.reduce((sum, item) => sum + item.qty, 0);
-  const badge = document.getElementById('cart-count');
-  if (badge) badge.textContent = count;
+  const badgeElems = document.querySelectorAll('#cart-count');
+  badgeElems.forEach(b => b.textContent = count);
 }
 
 document.addEventListener('DOMContentLoaded', () => {
