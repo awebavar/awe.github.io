@@ -805,6 +805,7 @@ footer a:focus {
 }
 .user-icons a { position: relative; } /* برای قرارگیری badge */
 /* ======================================
+   /* ======================================
    بهبود رسپانسیو بودن سایت
    ====================================== */
 
@@ -823,6 +824,28 @@ p {
 #contact-us a {
   display: inline-block;
   word-break: break-word;
+}
+
+/* ===== استایل‌های جدید برای صفحه سبد خرید ===== */
+.cart-page {
+  padding: 40px 0;
+}
+
+.cart-page h2 {
+  margin-bottom: 30px;
+  text-align: center;
+}
+
+.empty-cart-message {
+  text-align: center;
+  font-size: 1.2em;
+  padding: 30px 0;
+}
+
+.cart-actions {
+  display: flex;
+  justify-content: space-between;
+  margin-top: 30px;
 }
 
 /* تنظیمات برای تبلت و موبایل */
@@ -948,23 +971,60 @@ p {
   
   /* اصلاح صفحه سبد خرید */
   .cart-item {
-    grid-template-columns: 60px 1fr;
+    grid-template-columns: 80px 1fr;
+    grid-template-areas: 
+      "image title"
+      "image price"
+      "image quantity"
+      "image subtotal"
+      "remove remove";
+    padding: 15px 0;
     row-gap: 10px;
   }
   
-  .cart-item-price, 
-  .cart-item-subtotal {
-    text-align: right;
+  .cart-item img {
+    grid-area: image;
+  }
+  
+  .cart-item-title {
+    grid-area: title;
+  }
+  
+  .cart-item-price {
+    grid-area: price;
+    text-align: left;
   }
   
   .qty-controls {
+    grid-area: quantity;
     justify-content: flex-start;
   }
   
-  /* حل مشکل فضای خاکستری اضافی */
-  body {
-    overflow-x: hidden;
+  .cart-item-subtotal {
+    grid-area: subtotal;
+    text-align: left;
+  }
+  
+  .remove-btn {
+    grid-area: remove;
+    justify-self: end;
+  }
+  
+  .cart-actions {
+    flex-direction: column;
+    gap: 15px;
+  }
+  
+  .cart-actions a {
     width: 100%;
+    text-align: center;
+  }
+  
+  #cart-summary {
+    text-align: center;
+    padding: 15px 0;
+    border-top: 1px solid #ddd;
+    border-bottom: 1px solid #ddd;
   }
 }
 
