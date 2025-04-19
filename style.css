@@ -719,7 +719,7 @@ footer a:focus {
 
 @media (max-width: 576px) {
     .container {
-        max-width: 540px;
+        max-width: 100px;
         padding: 10px;
     }
     .hero-banner {
