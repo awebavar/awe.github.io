@@ -107,7 +107,25 @@ header .container {
 .user-icons a:focus {
     color: var(--primary-color);
 }
-
+/* ===== استایل برای cart-icon و badge ===== */
+.cart-icon {
+  position: relative;
+  display: inline-block;
+}
+#cart-count {
+  position: absolute;
+  top: -5px;
+  right: -8px;
+  width: 18px;
+  height: 18px;
+  background: red;
+  color: #fff;
+  font-size: 12px;
+  line-height: 18px;
+  text-align: center;
+  border-radius: 50%;
+  pointer-events: none;
+}
 
 /* ======================================
    بنر اصلی
