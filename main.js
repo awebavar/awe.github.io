@@ -196,3 +196,24 @@ document.addEventListener('DOMContentLoaded', function() {
     }
   });
 });
+// عملکرد دکمه "نمایش بیشتر" در متن‌های طولانی
+document.addEventListener('DOMContentLoaded', function() {
+  const aboutUsText = document.querySelector('#about-us p');
+  
+  if (aboutUsText && aboutUsText.scrollHeight > aboutUsText.clientHeight) {
+    const readMoreBtn = document.createElement('span');
+    readMoreBtn.className = 'read-more-btn';
+    readMoreBtn.textContent = 'نمایش بیشتر...';
+    aboutUsText.after(readMoreBtn);
+    
+    readMoreBtn.addEventListener('click', function() {
+      if (aboutUsText.classList.contains('expanded-text')) {
+        aboutUsText.classList.remove('expanded-text');
+        this.textContent = 'نمایش بیشتر...';
+      } else {
+        aboutUsText.classList.add('expanded-text');
+        this.textContent = 'نمایش کمتر';
+      }
+    });
+  }
+});
