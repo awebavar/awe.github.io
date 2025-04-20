@@ -3,107 +3,181 @@
 <head>
   <meta charset="UTF-8">
   <title>AWE خانه باور</title>
-  <meta name="viewport" content="width=device-width,initial-scale=1.0">
   <link rel="stylesheet" href="style.css">
-  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css"/>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" crossorigin="anonymous" referrerpolicy="no-referrer" />
+  <style>
+    /* استایل دکمه منوی موبایل */
+    .menu-toggle {
+      display: none;
+      background: none;
+      border: none;
+      font-size: 24px;
+      cursor: pointer;
+      color: #333;
+      padding: 5px;
+    }
+    @media (max-width: 991px) {
+      .mobile-menu { width: 100%; }
+      .mobile-menu.active { display: block; }
+      .mobile-menu ul {
+        flex-direction: column;
+        align-items: center;
+      }
+      .mobile-menu li {
+        margin: 10px 0;
+        width: 100%;
+        text-align: center;
+      }
+    }
+  </style>
 </head>
 <body>
-<header>
-  <div class="container">
-    <div class="logo">
-      <a href="index.html"><img src="LOGO.png.png" alt="لوگوی AWE خانه باور"></a>
+  <header>
+    <div class="container">
+      <div class="logo">
+        <a href="#"><img src="LOGO.png.png" alt="لوگوی AWE خانه باور"></a>
+      </div>
+      <button class="menu-toggle" aria-label="باز کردن منو">&#9776;</button>
+      <nav class="navigation">
+        <ul>
+          <li><a href="index.html">صفحه اصلی</a></li>
+          <li><a href="shop.html">فروشگاه</a></li>
+          <li><a href="#categories">دسته‌بندی‌ها</a></li>
+          <li><a href="#">مقالات</a></li>
+          <li><a href="#about-us">درباره ما</a></li>
+          <li><a href="#contact-us">تماس با ما</a></li>
+          <li><a href="#special-offers">پیشنهادات ویژه</a></li>
+        </ul>
+      </nav>
+      <div class="user-icons">
+        <a href="#"><i class="fa fa-search"></i></a>
+        <a href="cart.html">
+          <i class="fa fa-shopping-cart"></i>
+          <span id="cart-count">0</span>
+        </a>
+        <a href="#"><i class="fa fa-user"></i></a>
+      </div>
     </div>
-    <button class="menu-toggle">&#9776;</button>
-    <nav class="navigation">
-      <ul>
-        <li><a href="index.html">خانه</a></li>
-        <li><a href="shop.html">فروشگاه</a></li>
-        <li><a href="#categories">دسته‌بندی‌ها</a></li>
-        <li><a href="#about-author">درباره نویسنده</a></li>
-        <li><a href="#special-offers">پیشنهادات ویژه</a></li>
-        <li><a href="#contact-us">تماس با ما</a></li>
-      </ul>
-    </nav>
-    <div class="user-icons">
-      <a href="#"><i class="fa fa-search"></i></a>
-      <a href="cart.html" class="cart-icon">
-        <i class="fa fa-shopping-cart"></i>
-        <span id="cart-count">0</span>
-      </a>
-      <a href="#"><i class="fa fa-user"></i></a>
+  </header>
+
+  <section class="hero-banner">
+    <div class="banner-content">
+      <h1>یک جرقه‌ی کوچک، دنیایی از معجزه می‌سازد…</h1>
+      <p>زندگی‌ای که همیشه آرزویش را داشتی، در دسترس توست! اما شاید باورهای محدودکننده، مانند زنجیرهایی نامرئی، تو را در بند نگه داشته‌اند...</p>
+      <a href="#categories" class="cta-button">مشاهده دسته‌بندی‌ها</a>
     </div>
-  </div>
-</header>
+  </section>
 
-<section class="hero-banner">
-  <div class="banner-content">
-    <h1>یک جرقه‌ی کوچک، دنیایی از معجزه می‌سازد…</h1>
-    <p>زندگی‌ای که همیشه آرزویش را داشتی، در دسترس توست! اما شاید باورهای محدودکننده، مانند زنجیرهایی نامرئی، تو را در بند نگه داشته‌اند...</p>
-    <a href="shop.html" class="cta-button">مشاهده فروشگاه</a>
-  </div>
-</section>
-
-<section class="video-intro">
-  <div class="container">
-    <h2>شروع سفر من</h2>
-    <div class="video-wrapper">
-      <video controls>
-        <source src="videos/intro.mp4" type="video/mp4">
-        مرورگر شما ویدیو را پشتیبانی نمی‌کند.
-      </video>
+  <!-- ===== ویدیوی معرفی محصول: شروع سفر من ===== -->
+  <section class="video-intro">
+    <div class="container">
+      <h2>شروع سفر من</h2>
+      <div class="video-wrapper">
+        <video controls>
+          <source src="videos/intro.mp4" type="video/mp4">
+          مرورگر شما ویدیو را پشتیبانی نمی‌کند.
+        </video>
+      </div>
     </div>
-  </div>
-</section>
+  </section>
+  <!-- ===== پایان ویدیوی معرفی محصول ===== -->
 
-<section id="about-author" class="about-author-section">
-  <h2>درباره نویسنده AWE</h2>
-  <div class="author-description">
-    <!-- بخش طولانی شرح حال نویسنده از نمونه شما -->
-    <!-- ... (متن شما) ... -->
-  </div>
-</section>
+  <section class="about-author-section">
+    <h2>درباره نویسنده AWE</h2>
+    <div class="author-description">
+      ...متن داستان نویسنده مطابق فایل...
+    </div>
+  </section>
 
-<section id="special-offers" class="special-offers">
-  <div class="container">
-    <h2>پیشنهادات ویژه</h2>
-    <div class="offers-slider">
-      <div class="offer-item">
-        <img src="image_0.png" alt="پیشنهاد ویژه 1">
-        <div class="offer-item-content">
-          <h3>کتاب با تخفیف ویژه</h3>
-          <a href="shop.html" class="offer-button">مشاهده پیشنهاد</a>
+  <!-- ==== بخش دسته‌بندی کتاب‌ها ==== -->
+  <section id="categories" class="categories-section">
+    <div class="container">
+      <h2>دسته‌بندی کتاب‌ها</h2>
+      <div class="categories-grid">
+        <div class="category-item">
+          <a href="shop.html?cat=growth"><h3>باورهای رشد فردی</h3></a>
+          <p>برای تحول شخصی و کشف توانایی‌های درونی</p>
+        </div>
+        <div class="category-item">
+          <a href="shop.html?cat=success"><h3>موفقیت و مدیریت ذهن</h3></a>
+          <p>گام‌های عملی برای دستیابی به موفقیت واقعی در زندگی</p>
+        </div>
+        <div class="category-item">
+          <a href="shop.html?cat=spiritual"><h3>معنویت و آرامش</h3></a>
+          <p>یافتن آرامش ذهنی و معنای عمیق‌تر زندگی</p>
+        </div>
+        <!-- دسته‌های بیشتری اضافه کنید -->
+      </div>
+    </div>
+  </section>
+  <!-- ==== پایان بخش دسته‌بندی کتاب‌ها ==== -->
+
+  <!-- ==== چکیده کتاب ویژه ==== -->
+  <section class="book-summary-section">
+    <div class="container">
+      <h2>چکیده‌ای از کتاب «سفر به اعماق رازهای نهان باورها»</h2>
+      <div class="book-summary">
+        <p>
+          این کتاب به شناخت و اصلاح باورهای پنهان ذهنی می‌پردازد و با مثال‌های عینی و تمرین‌های عملی، شما را به سوی کشف و ساختن باورهای قدرت‌بخشتان راهنمایی می‌کند. مسیری برای رهایی از ترس‌ها و دستیابی به اعتماد و موفقیت درونی!
+        </p>
+      </div>
+    </div>
+  </section>
+  <!-- ==== پایان چکیده کتاب ==== -->
+
+  <section id="special-offers" class="special-offers">
+    <div class="container">
+      <h2>پیشنهادات ویژه</h2>
+      <div class="offers-slider">
+        <div class="offer-item">
+          <img src="image_0.png" alt="پیشنهاد ویژه 1">
+          <div class="offer-item-content">
+            <h3>کتاب با تخفیف ویژه</h3>
+            <p></p>
+            <a href="#" class="offer-button">مشاهده پیشنهاد</a>
+          </div>
+        </div>
+        <div class="offer-item">
+          <img src="image_0 (1).png" alt="پیشنهاد ویژه 2">
+          <div class="offer-item-content">
+            <h3>مجموعه کتاب‌های فلان نویسنده</h3>
+            <p></p>
+            <a href="#" class="offer-button">مشاهده پیشنهاد</a>
+          </div>
         </div>
       </div>
-      <!-- ... سایر پیشنهادها ... -->
     </div>
-  </div>
-</section>
+  </section>
 
-<footer>
-  <div class="container">
-    <div class="footer-widget">
-      <h3>درباره ما</h3>
-      <p>خانه باور، مرکزی برای رشد و توسعه فردی...</p>
+  <footer>
+    <div class="container">
+      <div id="about-us" class="footer-widget">
+        <h3>درباره ما</h3>
+        <p>ماموریت من در AWE خانه باور، توانمندسازی انسان‌ها برای رهایی از زنجیرهای باورهای محدودکننده و دستیابی به پتانسیل‌های بی‌کرانشان است...</p>
+      </div>
+      <div class="footer-widget">
+        <h3>دسترسی سریع</h3>
+        <ul>
+          <li><a href="index.html">صفحه اصلی</a></li>
+          <li><a href="shop.html">فروشگاه</a></li>
+          <li><a href="#categories">دسته‌بندی‌ها</a></li>
+          <li><a href="#">مقالات</a></li>
+          <li><a href="#">پیشنهادات ویژه</a></li>
+          <li><a href="#">تماس با ما</a></li>
+        </ul>
+      </div>
+      <div id="contact-us" class="footer-widget">
+        <h3>ارتباط با ما</h3>
+        <p>ایمیل: <a href="mailto:awebavar@gmail.com">awebavar@gmail.com</a></p>
+      </div>
     </div>
-    <div class="footer-widget">
-      <h3>دسترسی سریع</h3>
-      <ul>
-        <li><a href="index.html">خانه</a></li>
-        <li><a href="shop.html">فروشگاه</a></li>
-        <li><a href="#categories">دسته‌بندی‌ها</a></li>
-        <li><a href="#about-author">درباره نویسنده</a></li>
-        <li><a href="#contact-us">تماس با ما</a></li>
-      </ul>
+    <div class="copyright">
+      <p>&copy; 1403 کلیه حقوق این سایت متعلق به AWE خانه باور می‌باشد.</p>
     </div>
-    <div class="footer-widget" id="contact-us">
-      <h3>ارتباط با ما</h3>
-      <p>ایمیل: <a href="mailto:awebavar@gmail.com">awebavar@gmail.com</a></p>
-    </div>
+  </footer>
+  <div class="footer-note">
+    این فایل فقط برای استفاده شخصی شماست...
   </div>
-  <div class="copyright">
-    <p>&copy; 1403 کلیه حقوق این سایت متعلق به AWE خانه باور می‌باشد.</p>
-  </div>
-</footer>
-<script src="main.js"></script>
+  <script src="main.js"></script>
 </body>
 </html>
