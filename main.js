@@ -1,4 +1,6 @@
 // main.js
+// ماژول اصلی برای صفحات index و shop
+// به‌روز رسانی عدد badge روی آیکون سبد
 function updateCartCount() {
   const cart = JSON.parse(localStorage.getItem('cart')) || [];
   const count = cart.reduce((sum, item) => sum + item.qty, 0);
@@ -9,20 +11,34 @@ function updateCartCount() {
 document.addEventListener('DOMContentLoaded', () => {
   renderShopProducts();
   updateCartCount();
-  renderCartItems();
 });
 
+// تابع رندر محصولات صفحه فروشگاه
 function renderShopProducts() {
   const grid = document.getElementById('products-grid');
   if (!grid) return;
 
-  // فقط یک کتاب مجاز
+  // نمونه داده محصولات
   const products = [
     {
       id: 1,
       title: 'سفر به اعماق رازهای نهان باورها',
-      description: 'درون این کتاب، گنجینه‌ای از خودشناسی نهفته است. باورهای پنهانی که سال‌ها زندگی‌ات را تحت تاثیر قرار داده‌اند را کشف کن و با سفر به اعماق باورهایت ، کلید رهایی را پیدا کن',
+      description: 'درون این کتاب، گنجینه‌ای از خودشناسی نهفته است…',
       image: 'image_0.png',
+      link: '#'
+    },
+    {
+      id: 2,
+      title: 'عنوان محصول دوم',
+      description: 'خلاصه‌ای از این محصول دوم؛ توضیحی کوتاه.',
+      image: 'image_0 (1).png',
+      link: '#'
+    },
+    {
+      id: 3,
+      title: 'عنوان محصول سوم',
+      description: 'نکتهٔ کلیدی دربارهٔ این محصول.',
+      image: 'image_0 (2).png',
       link: '#'
     }
   ];
@@ -35,83 +51,78 @@ function renderShopProducts() {
       <img src="${p.image}" alt="${p.title}">
       <h3>${p.title}</h3>
       <p>${p.description}</p>
-      <button class="add-to-cart"
-        data-id="${p.id}"
-        data-title="${p.title}"
-        data-price="0"
-        data-image="${p.image}">افزودن به سبد خرید</button>
+      <a href="${p.link}" class="btn btn-secondary">مشاهده و خرید</a>
     `;
     grid.appendChild(card);
   });
-
-  // فعال‌سازی دکمه سبد فقط برای کتاب موجود
-  grid.querySelectorAll('.add-to-cart').forEach(btn => {
+}
+document.addEventListener('DOMContentLoaded', function() {
+  document.querySelectorAll('.add-to-cart').forEach(btn => {
     btn.addEventListener('click', function(){
-      const id = this.dataset.id;
+      const id    = this.dataset.id;
       const title = this.dataset.title;
-      const price = 0; // قیمت صفر، طبق درخواست
-      const image = this.dataset.image;
+      const price = parseInt(this.dataset.price);
+      updateCartCount();
+      // خواندن سبد
       let cart = JSON.parse(localStorage.getItem('cart')) || [];
+
+      // اگر هست، تعدادش را زیاد کن
       const existing = cart.find(item => item.id === id);
       if (existing) {
         existing.qty++;
       } else {
-        cart.push({ id, title, price, image, qty: 1 });
+        cart.push({ id, title, price, qty: 1 });
       }
+
+      // ذخیره در localStorage
       localStorage.setItem('cart', JSON.stringify(cart));
       updateCartCount();
+
       alert('محصول به سبد اضافه شد!');
     });
   });
-}
-
+});
 // نمایش آیتم‌های سبد در cart.html
 function renderCartItems() {
   const container = document.getElementById('cart-items');
-  const totalElem = document.getElementById('cart-total');
   if (!container) return;
   let cart = JSON.parse(localStorage.getItem('cart')) || [];
   container.innerHTML = '';
   if (cart.length === 0) {
     container.innerHTML = '<p>سبد شما خالی است.</p>';
-    if(totalElem) totalElem.style.display = 'none';
+    document.getElementById('cart-summary').style.display = 'none';
     return;
   }
-  let total = 0;
   cart.forEach(item => {
-    const subtotal = item.price * item.qty;
-    total += subtotal;
     const div = document.createElement('div');
     div.className = 'cart-item';
     div.innerHTML = `
       <img src="${item.image}" alt="">
       <div class="cart-item-title">${item.title}</div>
-      <div class="cart-item-price">${item.price}</div>
+      <div class="cart-item-price">${item.price.toLocaleString()}</div>
       <div class="qty-controls">
         <button class="dec-btn" data-id="${item.id}">-</button>
         <span>${item.qty}</span>
         <button class="inc-btn" data-id="${item.id}">+</button>
       </div>
-      <div class="cart-item-subtotal">${(item.price * item.qty)}</div>
+      <div class="cart-item-subtotal">${(item.price * item.qty).toLocaleString()}</div>
       <button class="remove-btn" data-id="${item.id}">&times;</button>
     `;
     container.appendChild(div);
   });
-  if(totalElem) {
-    totalElem.style.display = 'block';
-    totalElem.innerHTML = `<h3 id="cart-summary">مبلغ کل: ${total} تومان</h3>`;
-  }
-  // دکمه‌ها
+
+  // پیوند دکمه‌ها
   container.querySelectorAll('.inc-btn').forEach(b =>
     b.addEventListener('click', () => changeQty(b.dataset.id, +1)));
   container.querySelectorAll('.dec-btn').forEach(b =>
     b.addEventListener('click', () => changeQty(b.dataset.id, -1)));
   container.querySelectorAll('.remove-btn').forEach(b =>
     b.addEventListener('click', () => changeQty(b.dataset.id, 0)));
- // update count badge
-  updateCartCount();
+
+  calculateCartTotal();
 }
 
+// تغییر تعداد یا حذف
 function changeQty(id, delta) {
   let cart = JSON.parse(localStorage.getItem('cart')) || [];
   cart = cart.map(item => {
@@ -126,15 +137,35 @@ function changeQty(id, delta) {
   renderCartItems();
 }
 
-// منوی موبایل
+// محاسبه جمع کل
+function calculateCartTotal() {
+  const cart = JSON.parse(localStorage.getItem('cart')) || [];
+  const total = cart.reduce((sum, i) => sum + i.price * i.qty, 0);
+  const el = document.getElementById('cart-total');
+  if (el) el.textContent = total.toLocaleString();
+}
+
+// وقتی cart.html لود شد
+document.addEventListener('DOMContentLoaded', () => {
+  renderCartItems();
+  updateCartCount();
+});
+// اضافه کردن دکمه منو برای موبایل
 document.addEventListener('DOMContentLoaded', function() {
+  // ایجاد دکمه منو برای حالت موبایل
   const header = document.querySelector('header .container');
   const navigation = document.querySelector('.navigation');
+  
+  // ساخت دکمه منو
   const menuToggle = document.createElement('button');
   menuToggle.className = 'menu-toggle';
-  menuToggle.innerHTML = '&#9776;';
-  menuToggle.style.display = 'none';
+  menuToggle.innerHTML = '&#9776;'; // نماد همبرگر
+  menuToggle.style.display = 'none'; // در ابتدا مخفی
+  
+  // اضافه کردن به هدر، قبل از navigation
   header.insertBefore(menuToggle, navigation);
+  
+  // تنظیم نمایش دکمه منو در موبایل
   function adjustMenuVisibility() {
     if (window.innerWidth <= 991) {
       menuToggle.style.display = 'block';
@@ -148,8 +179,12 @@ document.addEventListener('DOMContentLoaded', function() {
       navigation.classList.remove('mobile-menu');
     }
   }
+  
+  // اجرا در بارگذاری و تغییر سایز
   adjustMenuVisibility();
   window.addEventListener('resize', adjustMenuVisibility);
+  
+  // کلیک روی دکمه منو
   menuToggle.addEventListener('click', function() {
     if (navigation.style.display === 'none' || navigation.style.display === '') {
       navigation.style.display = 'block';
