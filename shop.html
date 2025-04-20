@@ -3,10 +3,14 @@
 <head>
     <meta charset="UTF-8">
     <title>فروشگاه AWE خانه باور</title>
-    <link rel="stylesheet" href="style.css"> 
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" crossorigin="anonymous" referrerpolicy="no-referrer" />
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+    <link rel="stylesheet" href="style.css"> <!-- برای استفاده از استایل‌های موجود -->
+   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" integrity="sha512-..." crossorigin="anonymous" referrerpolicy="no-referrer" />
+
+    <!-- FontAwesome برای آیکون‌های سبد و سرچ -->
+    <link rel="stylesheet"
+          href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
 <style>
+  /* استایل دکمه منوی موبایل */
   .menu-toggle {
     display: none;
     background: none;
@@ -16,13 +20,26 @@
     color: #333;
     padding: 5px;
   }
+  
   @media (max-width: 991px) {
-    .mobile-menu { width: 100%; }
-    .mobile-menu.active { display: block; }
-    .mobile-menu ul { flex-direction: column; align-items: center;}
-    .mobile-menu li { margin: 10px 0; width: 100%; text-align: center;}
+    .mobile-menu {
+      width: 100%;
+    }
+    .mobile-menu.active {
+      display: block;
+    }
+    .mobile-menu ul {
+      flex-direction: column;
+      align-items: center;
+    }
+    .mobile-menu li {
+      margin: 10px 0;
+      width: 100%;
+      text-align: center;
+    }
   }
 </style>
+
 </head>
 <body>
     <header>
@@ -38,41 +55,54 @@
                     <li><a href="#">مقالات</a></li>
                     <li><a href="index.html#about-us">درباره ما</a></li>
                     <li><a href="index.html#contact-us">تماس با ما</a></li>
-                    <li><a href="special.html">ویژه</a></li>
-                </ul>
+                    <!-- ==== AI-HTML-START ==== -->
+<!-- تغییرات منو تنها بین این دو نشانگر باشد -->
+<li><a href="special.html">ویژه</a></li>
+<!-- ==== AI-HTML-END   ==== -->
+</ul>
             </nav>
-            <div class="user-icons">
-                <a href="#"><i class="fa fa-search"></i></a>
-                <a href="cart.html" class="cart-icon">
-                    <i class="fa fa-shopping-cart"></i>
-                    <span id="cart-count">0</span>
-                </a>
-                <a href="#"><i class="fa fa-user"></i></a>
-            </div>
+                <div class="user-icons">
+        <a href="#"><i class="fa fa-search"></i></a>
+         <!-- سبد خرید با badge برای نمایش تعداد -->
+        <a href="cart.html" class="cart-icon">
+          <i class="fa fa-shopping-cart"></i>
+          <span id="cart-count">0</span>
+        </a>
+        <a href="#"><i class="fa fa-user"></i></a>
+    </div>
+
         </div>
     </header>
+
     <section class="hero-banner">
         <div class="banner-content">
             <h1>به فروشگاه AWE خانه باور خوش آمدید</h1>
             <p>محصولات و دوره‌های آموزشی برای رهایی از باورهای محدود کننده</p>
         </div>
     </section>
+
     <main class="shop-page">
         <div class="container">
            <div class="product-card">
-                <img src="image_0.png" alt="سفر به اعماق رازهای نهان باورها">
-                <h3>سفر به اعماق رازهای نهان باورها</h3>
-                <p>نویسنده : AWE </p>
-                <p>قیمت: <span class="product-price">998000</span> تومان</p>
-                <button class="add-to-cart"
-                        data-id="book1"
-                        data-title="سفر به اعماق رازهای نهان باورها"
-                        data-price="998000">
-                  افزودن به سبد
-                </button>
-            </div>
+  <img src="image_0.png" alt="سفر به اعماق رازهای نهان باورها">
+  <h3>سفر به اعماق رازهای نهان باورها</h3>
+  <p>نویسنده : AWE </p>
+  <p>قیمت: <span class="product-price">998000</span> تومان</p>
+  <button class="add-to-cart"
+          data-id="book1"
+          data-title="سفر به اعماق رازهای نهان باورها"
+          data-price="998000">
+    افزودن به سبد
+  </button>
+</div>
+ 
+    افزودن به سبد
+  </button>
+</div>
+
         </div>
     </main>
+
     <footer>
         <div class="container">
             <div class="footer-widget">
