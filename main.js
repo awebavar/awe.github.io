@@ -105,6 +105,7 @@ function renderShopProducts() {
 document.addEventListener('DOMContentLoaded', function () {
   renderShopProducts();
   updateCartCount();
+calculateCartTotal();
 
   // event delegation برای افزودن به سبد خرید
   document.body.addEventListener('click', function (e) {
