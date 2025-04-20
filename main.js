@@ -1,21 +1,55 @@
 // main.js
 
+// Badge cart count
 function updateCartCount() {
   const cart = JSON.parse(localStorage.getItem('cart')) || [];
   const count = cart.reduce((sum, item) => sum + item.qty, 0);
-  document.querySelectorAll('#cart-count').forEach(node => node.textContent = count);
+  const badgeElems = document.querySelectorAll('#cart-count');
+  badgeElems.forEach(b => b.textContent = count);
+}
+document.addEventListener('DOMContentLoaded', () => {
+  renderShopProducts();
+  updateCartCount();
+});
+
+// Shop Products Rendering (اگر grid وجود دارد)
+function renderShopProducts() {
+  const grid = document.getElementById('products-grid');
+  if (!grid) return;
+  const products = [
+    {
+      id: 1,
+      title: 'سفر به اعماق رازهای نهان باورها',
+      description: 'درون این کتاب، گنجینه‌ای از خودشناسی نهفته است…',
+      image: 'image_0.png',
+      link: '#'
+    },
+    // محصولات دیگر...
+  ];
+  grid.innerHTML = '';
+  products.forEach(p => {
+    const card = document.createElement('div');
+    card.className = 'book-item';
+    card.innerHTML = `
+      <img src="${p.image}" alt="${p.title}">
+      <h3>${p.title}</h3>
+      <p>${p.description}</p>
+      <a href="${p.link}" class="btn btn-secondary">مشاهده و خرید</a>
+    `;
+    grid.appendChild(card);
+  });
 }
 
-// فروشگاه: افزودن به سبد
-document.addEventListener('DOMContentLoaded', () => {
-  updateCartCount();
+// Add to cart
+document.addEventListener('DOMContentLoaded', function() {
   document.querySelectorAll('.add-to-cart').forEach(btn => {
-    btn.addEventListener('click', function() {
-      const id    = this.dataset.id;
+    btn.addEventListener('click', function(){
+      const id = this.dataset.id;
       const title = this.dataset.title;
       const price = parseInt(this.dataset.price);
+      updateCartCount();
       let cart = JSON.parse(localStorage.getItem('cart')) || [];
-      let existing = cart.find(item => item.id === id);
+      const existing = cart.find(item => item.id === id);
       if (existing) {
         existing.qty++;
       } else {
@@ -23,84 +57,116 @@ document.addEventListener('DOMContentLoaded', () => {
       }
       localStorage.setItem('cart', JSON.stringify(cart));
       updateCartCount();
-      alert('محصول اضافه شد!');
+      alert('محصول به سبد اضافه شد!');
     });
   });
-  
-  // cart.html: نمایش سبد
-  if (document.querySelector('.cart-page')) renderCart();
-  
-  // موبایل: دکمه منو
-  const menuToggle = document.querySelector('.menu-toggle');
-  const navigation = document.querySelector('.navigation');
-  if (menuToggle && navigation) {
-    menuToggle.addEventListener('click', () => {
-      navigation.classList.toggle('active');
-    });
-  }
 });
 
-function renderCart() {
-  const cart = JSON.parse(localStorage.getItem('cart')) || [];
+// Cart Items Rendering (صفحه سبد خرید)
+function renderCartItems() {
   const container = document.getElementById('cart-items');
-  const totalDiv = document.getElementById('cart-total');
+  if (!container) return;
+  let cart = JSON.parse(localStorage.getItem('cart')) || [];
   container.innerHTML = '';
-  let total = 0;
   if (cart.length === 0) {
-    container.innerHTML = '<p class="empty-cart-message">سبد خرید شما خالی است.</p>';
-    totalDiv.innerHTML = '';
-    document.querySelector('.cart-actions').style.display = 'none';
-    updateCartCount();
+    container.innerHTML = '<p>سبد شما خالی است.</p>';
+    document.getElementById('cart-summary').style.display = 'none';
     return;
   }
-  document.querySelector('.cart-actions').style.display = 'flex';
   cart.forEach(item => {
-    const subtotal = item.price * item.qty;
-    total += subtotal;
-    const el = document.createElement('div');
-    el.className = 'cart-item';
-    el.innerHTML = `
-      <img src="${item.image || 'image_0.png'}" alt="${item.title}">
+    const div = document.createElement('div');
+    div.className = 'cart-item';
+    div.innerHTML = `
+      <img src="${item.image}" alt="">
       <div class="cart-item-title">${item.title}</div>
-      <div class="cart-item-price">${item.price.toLocaleString()} تومان</div>
+      <div class="cart-item-price">${item.price.toLocaleString()}</div>
       <div class="qty-controls">
-        <button class="dec-btn" data-id="${item.id}">−</button>
+        <button class="dec-btn" data-id="${item.id}">-</button>
         <span>${item.qty}</span>
         <button class="inc-btn" data-id="${item.id}">+</button>
       </div>
-      <div class="cart-item-subtotal">${subtotal.toLocaleString()} تومان</div>
+      <div class="cart-item-subtotal">${(item.price * item.qty).toLocaleString()}</div>
       <button class="remove-btn" data-id="${item.id}">&times;</button>
     `;
-    container.appendChild(el);
+    container.appendChild(div);
   });
-  totalDiv.innerHTML = `<h3>جمع کل: ${total.toLocaleString()} تومان</h3>`;
-  container.querySelectorAll('.inc-btn').forEach(btn =>
-    btn.addEventListener('click', () => changeQty(btn.dataset.id, +1))
-  );
-  container.querySelectorAll('.dec-btn').forEach(btn =>
-    btn.addEventListener('click', () => changeQty(btn.dataset.id, -1))
-  );
-  container.querySelectorAll('.remove-btn').forEach(btn =>
-    btn.addEventListener('click', () => removeFromCart(btn.dataset.id))
-  );
-  updateCartCount();
+
+  // attach btn event
+  container.querySelectorAll('.inc-btn').forEach(b =>
+    b.addEventListener('click', () => changeQty(b.dataset.id, +1)));
+  container.querySelectorAll('.dec-btn').forEach(b =>
+    b.addEventListener('click', () => changeQty(b.dataset.id, -1)));
+  container.querySelectorAll('.remove-btn').forEach(b =>
+    b.addEventListener('click', () => changeQty(b.dataset.id, 0)));
+
+  calculateCartTotal();
 }
 
+// Cart Qty Logic
 function changeQty(id, delta) {
   let cart = JSON.parse(localStorage.getItem('cart')) || [];
   cart = cart.map(item => {
     if (item.id == id) {
+      if (delta === 0) return null;
       item.qty = Math.max(1, item.qty + delta);
     }
     return item;
-  });
+  }).filter(i => i);
   localStorage.setItem('cart', JSON.stringify(cart));
-  renderCart();
+  updateCartCount();
+  renderCartItems();
 }
 
-function removeFromCart(id) {
-  let cart = JSON.parse(localStorage.getItem('cart')) || [];
-  cart = cart.filter(item => item.id != id);
-  localStorage.setItem('cart', JSON.stringify(cart));
-  renderCart();
+// Cart Total
+function calculateCartTotal() {
+  const cart = JSON.parse(localStorage.getItem('cart')) || [];
+  const total = cart.reduce((sum, i) => sum + i.price * i.qty, 0);
+  const el = document.getElementById('cart-total');
+  if (el) el.textContent = total.toLocaleString();
 }
+
+document.addEventListener('DOMContentLoaded', () => {
+  renderCartItems();
+  updateCartCount();
+});
+
+// منوی موبایل
+document.addEventListener('DOMContentLoaded', function() {
+  const header = document.querySelector('header .container');
+  const navigation = document.querySelector('.navigation');
+  const menuToggle = document.querySelector('.menu-toggle') ||
+    (() => {
+      const btn = document.createElement('button');
+      btn.className = 'menu-toggle';
+      btn.innerHTML = '&#9776;';
+      return btn;
+    })();
+
+  header.insertBefore(menuToggle, navigation);
+
+  function adjustMenuVisibility() {
+    if (window.innerWidth <= 991) {
+      menuToggle.style.display = 'block';
+      navigation.classList.add('mobile-menu');
+      if (!navigation.classList.contains('active')) {
+        navigation.style.display = 'none';
+      }
+    } else {
+      menuToggle.style.display = 'none';
+      navigation.style.display = 'flex';
+      navigation.classList.remove('mobile-menu');
+    }
+  }
+  adjustMenuVisibility();
+  window.addEventListener('resize', adjustMenuVisibility);
+
+  menuToggle.addEventListener('click', function() {
+    if (!navigation.classList.contains('active')) {
+      navigation.style.display = 'flex';
+      navigation.classList.add('active');
+    } else {
+      navigation.classList.remove('active');
+      navigation.style.display = 'none';
+    }
+  });
+});
