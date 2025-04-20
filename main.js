@@ -1,171 +1,141 @@
 // main.js
-// ماژول اصلی برای صفحات index و shop
-// به‌روز رسانی عدد badge روی آیکون سبد
 function updateCartCount() {
   const cart = JSON.parse(localStorage.getItem('cart')) || [];
   const count = cart.reduce((sum, item) => sum + item.qty, 0);
-  const badgeElems = document.querySelectorAll('#cart-count');
-  badgeElems.forEach(b => b.textContent = count);
+  document.querySelectorAll('#cart-count').forEach(elem => elem.textContent = count);
 }
 
-document.addEventListener('DOMContentLoaded', () => {
-  renderShopProducts();
-  updateCartCount();
-});
-
-// تابع رندر محصولات صفحه فروشگاه
 function renderShopProducts() {
   const grid = document.getElementById('products-grid');
   if (!grid) return;
 
-  // نمونه داده محصولات
   const products = [
     {
       id: 1,
       title: 'سفر به اعماق رازهای نهان باورها',
       description: 'درون این کتاب، گنجینه‌ای از خودشناسی نهفته است…',
-      image: 'image_0.png',
-      link: '#'
-    },
-    {
-      id: 2,
-      title: 'عنوان محصول دوم',
-      description: 'خلاصه‌ای از این محصول دوم؛ توضیحی کوتاه.',
-      image: 'image_0 (1).png',
-      link: '#'
-    },
-    {
-      id: 3,
-      title: 'عنوان محصول سوم',
-      description: 'نکتهٔ کلیدی دربارهٔ این محصول.',
-      image: 'image_0 (2).png',
-      link: '#'
+      price: 998000,
+      image: 'image_0.png'
     }
+    // محصولات دیگر را در همین آرایه اضافه کنید
   ];
 
   grid.innerHTML = '';
   products.forEach(p => {
     const card = document.createElement('div');
-    card.className = 'book-item';
+    card.className = 'product-card';
     card.innerHTML = `
       <img src="${p.image}" alt="${p.title}">
       <h3>${p.title}</h3>
       <p>${p.description}</p>
-      <a href="${p.link}" class="btn btn-secondary">مشاهده و خرید</a>
+      <p>قیمت: <span class="product-price">${p.price.toLocaleString()}</span> تومان</p>
+      <button class="add-to-cart"
+        data-id="${p.id}"
+        data-title="${p.title}"
+        data-price="${p.price}">
+        افزودن به سبد
+      </button>
     `;
     grid.appendChild(card);
   });
-}
-document.addEventListener('DOMContentLoaded', function() {
-  document.querySelectorAll('.add-to-cart').forEach(btn => {
-    btn.addEventListener('click', function(){
-      const id    = this.dataset.id;
+  document.querySelectorAll('.add-to-cart').forEach(btn =>
+    btn.addEventListener('click', function () {
+      const id = this.dataset.id;
       const title = this.dataset.title;
       const price = parseInt(this.dataset.price);
-      updateCartCount();
-      // خواندن سبد
       let cart = JSON.parse(localStorage.getItem('cart')) || [];
-
-      // اگر هست، تعدادش را زیاد کن
-      const existing = cart.find(item => item.id === id);
+      const existing = cart.find(item => String(item.id) === id);
       if (existing) {
         existing.qty++;
       } else {
         cart.push({ id, title, price, qty: 1 });
       }
-
-      // ذخیره در localStorage
       localStorage.setItem('cart', JSON.stringify(cart));
       updateCartCount();
-
       alert('محصول به سبد اضافه شد!');
-    });
-  });
-});
-// نمایش آیتم‌های سبد در cart.html
-function renderCartItems() {
-  const container = document.getElementById('cart-items');
-  if (!container) return;
-  let cart = JSON.parse(localStorage.getItem('cart')) || [];
-  container.innerHTML = '';
-  if (cart.length === 0) {
-    container.innerHTML = '<p>سبد شما خالی است.</p>';
-    document.getElementById('cart-summary').style.display = 'none';
-    return;
-  }
-  cart.forEach(item => {
-    const div = document.createElement('div');
-    div.className = 'cart-item';
-    div.innerHTML = `
-      <img src="${item.image}" alt="">
-      <div class="cart-item-title">${item.title}</div>
-      <div class="cart-item-price">${item.price.toLocaleString()}</div>
-      <div class="qty-controls">
-        <button class="dec-btn" data-id="${item.id}">-</button>
-        <span>${item.qty}</span>
-        <button class="inc-btn" data-id="${item.id}">+</button>
-      </div>
-      <div class="cart-item-subtotal">${(item.price * item.qty).toLocaleString()}</div>
-      <button class="remove-btn" data-id="${item.id}">&times;</button>
-    `;
-    container.appendChild(div);
-  });
-
-  // پیوند دکمه‌ها
-  container.querySelectorAll('.inc-btn').forEach(b =>
-    b.addEventListener('click', () => changeQty(b.dataset.id, +1)));
-  container.querySelectorAll('.dec-btn').forEach(b =>
-    b.addEventListener('click', () => changeQty(b.dataset.id, -1)));
-  container.querySelectorAll('.remove-btn').forEach(b =>
-    b.addEventListener('click', () => changeQty(b.dataset.id, 0)));
-
-  calculateCartTotal();
+    })
+  );
 }
 
-// تغییر تعداد یا حذف
+function renderCart() {
+  const cart = JSON.parse(localStorage.getItem('cart')) || [];
+  const container = document.getElementById('cart-items');
+  const totalDiv = document.getElementById('cart-total');
+  const actions = document.querySelector('.cart-actions');
+  if (!container || !totalDiv) return;
+
+  container.innerHTML = '';
+  let total = 0;
+  if (cart.length === 0) {
+    container.innerHTML = '<p class="empty-cart-message">سبد خرید شما خالی است.</p>';
+    totalDiv.innerHTML = '';
+    if (actions) actions.style.display = 'none';
+    updateCartCount();
+    return;
+  }
+  if (actions) actions.style.display = 'flex';
+
+  cart.forEach(item => {
+    const subtotal = item.price * item.qty;
+    total += subtotal;
+    const itemHTML = `
+      <div class="cart-item">
+        <img src="${item.image || 'placeholder.png'}" alt="${item.title}">
+        <div class="cart-item-title">${item.title}</div>
+        <div class="cart-item-price">${item.price.toLocaleString()} تومان</div>
+        <div class="qty-controls">
+          <button class="decrease" data-id="${item.id}">−</button>
+          <span>${item.qty}</span>
+          <button class="increase" data-id="${item.id}">+</button>
+        </div>
+        <div class="cart-item-subtotal">${subtotal.toLocaleString()} تومان</div>
+        <button class="remove-btn" data-id="${item.id}">&times;</button>
+      </div>
+    `;
+    container.insertAdjacentHTML('beforeend', itemHTML);
+  });
+
+  totalDiv.innerHTML = `<h3 id="cart-summary">مبلغ کل: ${total.toLocaleString()} تومان</h3>`;
+
+  container.querySelectorAll('.increase').forEach(btn =>
+    btn.addEventListener('click', () => changeQty(btn.dataset.id, 1))
+  );
+  container.querySelectorAll('.decrease').forEach(btn =>
+    btn.addEventListener('click', () => changeQty(btn.dataset.id, -1))
+  );
+  container.querySelectorAll('.remove-btn').forEach(btn =>
+    btn.addEventListener('click', () => changeQty(btn.dataset.id, 'remove'))
+  );
+
+  updateCartCount();
+}
+
 function changeQty(id, delta) {
   let cart = JSON.parse(localStorage.getItem('cart')) || [];
   cart = cart.map(item => {
-    if (item.id == id) {
-      if (delta === 0) return null;
-      item.qty = Math.max(1, item.qty + delta);
+    if (String(item.id) === String(id)) {
+      if (delta === 'remove') return null;
+      item.qty += delta;
+      if (item.qty < 1) return null;
     }
     return item;
-  }).filter(i => i);
+  }).filter(Boolean);
   localStorage.setItem('cart', JSON.stringify(cart));
-  updateCartCount();
-  renderCartItems();
+  renderCart();
 }
 
-// محاسبه جمع کل
-function calculateCartTotal() {
-  const cart = JSON.parse(localStorage.getItem('cart')) || [];
-  const total = cart.reduce((sum, i) => sum + i.price * i.qty, 0);
-  const el = document.getElementById('cart-total');
-  if (el) el.textContent = total.toLocaleString();
-}
-
-// وقتی cart.html لود شد
-document.addEventListener('DOMContentLoaded', () => {
-  renderCartItems();
-  updateCartCount();
-});
-// اضافه کردن دکمه منو برای موبایل
-document.addEventListener('DOMContentLoaded', function() {
-  // ایجاد دکمه منو برای حالت موبایل
+function setupMobileMenu() {
   const header = document.querySelector('header .container');
   const navigation = document.querySelector('.navigation');
-  
-  // ساخت دکمه منو
+  if (!header || !navigation) return;
+  if (document.querySelector('.menu-toggle')) return;
   const menuToggle = document.createElement('button');
   menuToggle.className = 'menu-toggle';
-  menuToggle.innerHTML = '&#9776;'; // نماد همبرگر
-  menuToggle.style.display = 'none'; // در ابتدا مخفی
-  
-  // اضافه کردن به هدر، قبل از navigation
+  menuToggle.innerHTML = '&#9776;';
+  menuToggle.style.display = 'none';
+
   header.insertBefore(menuToggle, navigation);
-  
-  // تنظیم نمایش دکمه منو در موبایل
+
   function adjustMenuVisibility() {
     if (window.innerWidth <= 991) {
       menuToggle.style.display = 'block';
@@ -179,13 +149,11 @@ document.addEventListener('DOMContentLoaded', function() {
       navigation.classList.remove('mobile-menu');
     }
   }
-  
-  // اجرا در بارگذاری و تغییر سایز
+
   adjustMenuVisibility();
   window.addEventListener('resize', adjustMenuVisibility);
-  
-  // کلیک روی دکمه منو
-  menuToggle.addEventListener('click', function() {
+
+  menuToggle.addEventListener('click', function () {
     if (navigation.style.display === 'none' || navigation.style.display === '') {
       navigation.style.display = 'block';
       navigation.classList.add('active');
@@ -194,4 +162,15 @@ document.addEventListener('DOMContentLoaded', function() {
       navigation.classList.remove('active');
     }
   });
+}
+
+document.addEventListener('DOMContentLoaded', function () {
+  updateCartCount();
+  setupMobileMenu();
+
+  if (document.body.classList.contains('cart-page')) {
+    renderCart();
+  } else if (document.body.classList.contains('shop-page')) {
+    renderShopProducts();
+  }
 });
