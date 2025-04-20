@@ -174,48 +174,89 @@ header .container {
 }
 
 /* ==================== بخش کتاب‌های ویژه ==================== */
-.price-label {
-  font-size: 1em;
-  font-weight: bold;
-  color: var(--text-color-dark);
-  margin: 12px 0 4px;
+/* فروشگاه: نمایش کارت‌ها افقی و اسکرول‌پذیر */
+.products-grid {
+  display: flex;
+  flex-direction: row;
+  gap: 18px;
+  overflow-x: auto;
+  padding: 20px 0 30px 0;
+  scrollbar-color: #bbb #f1f1f1;
+  scrollbar-width: thin;
+  -webkit-overflow-scrolling: touch;
+}
+.book-item {
+  flex: 0 0 130px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  background: var(--bg-color-white);
+  border-radius: 10px;
+  box-shadow: 0 3px 12px rgba(0,0,0,.09);
+  padding: 14px 8px 14px 8px;
+  margin: 0 4px;
   text-align: center;
+  transition: transform .18s, box-shadow .18s;
+  min-width: 130px;
+  max-width: 170px;
+}
+.book-item:hover, .book-item:focus-within {
+  transform: scale(1.07);
+  box-shadow: 0 8px 32px rgba(0,0,0,.14);
+}
+.book-item img {
+  width: 72px;
+  height: 100px;
+  object-fit: cover;
+  border-radius: 6px;
+  margin-bottom: 6px;
+  background: #f5f5f9;
+}
+.book-item h3 {
+  font-size: 1em;
+  margin: 7px 0 5px;
+  color: var(--text-color-dark);
+  font-weight: bold;
+}
+.book-item p {
+  font-size: .92em;
+  color: var(--text-color-light);
+  margin-bottom: 9px;
+}
+.book-meta {
+  margin-top: auto;
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 4px;
+  margin-bottom: 3px;
 }
 .book-price {
-  font-size: 1.1em;
-  font-weight: bold;
   color: var(--secondary-color);
-  margin: 0 0 12px;
-  text-align: center;
+  font-weight: bold;
+  font-size: .99em;
 }
-.featured-books {
-    padding: 60px 0;
-    background-color: var(--bg-color-light);
+.add-to-cart {
+  background: var(--primary-color, #007bff);
+  color: #fff;
+  border: none;
+  border-radius: 6px;
+  cursor: pointer;
+  font-size: .89em;
+  padding: 6px 13px;
+  font-weight: bold;
+  transition: background .15s;
 }
-.featured-books h2, .categories h2, .special-offers h2, footer h3, .about-author-section h2 {
-    text-align: center;
-    margin-bottom: 35px;
-    color: var(--text-color-dark);
-    font-size: 2.2em;
+.add-to-cart:hover, .add-to-cart:focus {
+  background: var(--primary-dark-color, #0056b3);
 }
-.books-grid {
-    display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
-    gap: 35px;
+@media (max-width: 600px) {
+  .products-grid { gap:7px; }
+  .book-item { min-width: 92px; max-width: 120px; padding:7px 3px; }
+  .book-item img { width: 52px; height: 68px; }
 }
-.book-item, .product-card {
-  text-align: center;
-  padding: 25px;
-  background-color: var(--bg-color-white);
-  border-radius: 10px;
-  box-shadow: 0 3px 7px rgba(0, 0, 0, 0.08);
-  transition: transform 0.3s ease, box-shadow 0.3s ease;
-}
-.book-item:hover, .product-card:hover,
-.book-item:focus-within, .product-card:focus-within {
-  transform: scale(1.05);
-  box-shadow: 0 5px 15px rgba(0,0,0,0.15);
-}
+
 /* shop.html */
 .product-card img { max-width: 150px; height: auto; }
 .product-card button {
