@@ -5,41 +5,29 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>سبد خرید | AWE خانه باور</title>
   <link rel="stylesheet" href="style.css">
-  <style>
-  .menu-toggle {display:none;background:none;border:none;font-size:24px;cursor:pointer;color:#333;padding:5px;}
-  @media (max-width: 991px) {
-    .mobile-menu { width: 100%; }
-    .mobile-menu.active { display: block; }
-    .mobile-menu ul { flex-direction: column; align-items: center;}
-    .mobile-menu li { margin: 10px 0; width: 100%; text-align: center;}
-  }
-  </style>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css"/>
 </head>
 <body>
-  <!-- ==== Header ==== -->
   <header>
     <div class="container">
       <div class="logo">
         <a href="index.html">
-          <img src="logo.png" alt="AWE خانه باور">
+          <img src="LOGO.png.png" alt="AWE خانه باور">
         </a>
       </div>
       <nav class="navigation">
         <ul>
           <li><a href="index.html">خانه</a></li>
           <li><a href="shop.html">فروشگاه</a></li>
-          <li><a href="index.html#categories">دسته‌بندی‌ها</a></li>
-          <li><a href="#">مقالات</a></li>
-          <li><a href="index.html#about-us">درباره ما</a></li>
-          <li><a href="index.html#contact-us">تماس با ما</a></li>
-          <!-- پیشنهاد ویژه حذف شد -->
+          <li><a href="#categories">دسته‌بندی‌ها</a></li>
+          <li><a href="#articles">مقالات</a></li>
+          <li><a href="#about-us">درباره ما</a></li>
+          <li><a href="#contact-us">تماس با ما</a></li>
         </ul>
       </nav>
       <div class="user-icons">
-        <a href="cart.html" class="cart-icon">
-          <i class="fa fa-shopping-cart"></i>
-          <span id="cart-count">0</span>
-        </a>
+        <a href="#"><i class="fa fa-search"></i></a>
+        <a href="cart.html"><i class="fa fa-shopping-cart"></i><span id="cart-count">0</span></a>
         <a href="#"><i class="fa fa-user"></i></a>
       </div>
     </div>
@@ -47,10 +35,8 @@
   <main class="cart-page">
     <div class="container">
       <h2>سبد خرید شما</h2>
-      <div id="cart-items">
-        <!-- آیتم‌ها توسط JS اینجا رندر می‌شوند -->
-      </div>
-      <div id="cart-total"></div>
+      <div id="cart-items"></div>
+      <div id="cart-summary"></div>
       <div class="cart-actions">
         <a href="shop.html" class="btn btn-secondary">ادامه خرید</a>
         <a href="#checkout" class="btn btn-primary">تکمیل خرید</a>
@@ -59,23 +45,23 @@
   </main>
   <footer>
     <div class="container">
-      <div class="footer-links">
+      <div class="footer-widget">
         <h3>دسترسی سریع</h3>
         <ul>
           <li><a href="index.html">خانه</a></li>
           <li><a href="shop.html">فروشگاه</a></li>
-          <li><a href="index.html#categories">دسته‌بندی‌ها</a></li>
-          <li><a href="#">مقالات</a></li>
-          <li><a href="index.html#about-us">درباره ما</a></li>
-          <li><a href="index.html#contact-us">تماس با ما</a></li>
+          <li><a href="#categories">دسته‌بندی‌ها</a></li>
+          <li><a href="#articles">مقالات</a></li>
+          <li><a href="#about-us">درباره ما</a></li>
+          <li><a href="#contact-us">تماس با ما</a></li>
         </ul>
       </div>
-      <div class="about-us">
+      <div class="footer-widget">
         <h3>درباره ما</h3>
-        <p>خانه باور، مرکزی برای رشد و توسعه فردی از طریق آموزش‌ها و محصولات کاربردی است. ما به شما کمک می‌کنیم تا باورهای محدودکننده را شناسایی و اصلاح کنید.</p>
+        <p>...خانه باور مرکزی برای رشد و توسعه...</p>
       </div>
-      <div id="contact-us">
-        <h3>تماس با ما</h3>
+      <div class="footer-widget">
+        <h3>ارتباط با ما</h3>
         <p>ایمیل: <a href="mailto:awebavar@gmail.com">awebavar@gmail.com</a></p>
       </div>
     </div>
