@@ -6,11 +6,17 @@
   <title>سبد خرید | AWE خانه باور</title>
   <link rel="stylesheet" href="style.css">
   <style>
-    .menu-toggle { /* ...همان استایل... */ }
-    /* بهبود موبایل حذف نشد */
+  .menu-toggle {display:none;background:none;border:none;font-size:24px;cursor:pointer;color:#333;padding:5px;}
+  @media (max-width: 991px) {
+    .mobile-menu { width: 100%; }
+    .mobile-menu.active { display: block; }
+    .mobile-menu ul { flex-direction: column; align-items: center;}
+    .mobile-menu li { margin: 10px 0; width: 100%; text-align: center;}
+  }
   </style>
 </head>
 <body>
+  <!-- ==== Header ==== -->
   <header>
     <div class="container">
       <div class="logo">
@@ -23,9 +29,10 @@
           <li><a href="index.html">خانه</a></li>
           <li><a href="shop.html">فروشگاه</a></li>
           <li><a href="index.html#categories">دسته‌بندی‌ها</a></li>
-          <li><a href="#articles">مقالات</a></li>
-          <li><a href="#about">درباره ما</a></li>
-          <li><a href="#contact">تماس با ما</a></li>
+          <li><a href="#">مقالات</a></li>
+          <li><a href="index.html#about-us">درباره ما</a></li>
+          <li><a href="index.html#contact-us">تماس با ما</a></li>
+          <!-- پیشنهاد ویژه حذف شد -->
         </ul>
       </nav>
       <div class="user-icons">
@@ -33,16 +40,15 @@
           <i class="fa fa-shopping-cart"></i>
           <span id="cart-count">0</span>
         </a>
-        <a href="#account"><img src="user-icon.png" alt="حساب کاربری"></a>
+        <a href="#"><i class="fa fa-user"></i></a>
       </div>
     </div>
   </header>
-
   <main class="cart-page">
     <div class="container">
       <h2>سبد خرید شما</h2>
       <div id="cart-items">
-        <!-- نمایش محصولات سبد خرید -->
+        <!-- آیتم‌ها توسط JS اینجا رندر می‌شوند -->
       </div>
       <div id="cart-total"></div>
       <div class="cart-actions">
@@ -59,19 +65,17 @@
           <li><a href="index.html">خانه</a></li>
           <li><a href="shop.html">فروشگاه</a></li>
           <li><a href="index.html#categories">دسته‌بندی‌ها</a></li>
-          <li><a href="#articles">مقالات</a></li>
-          <li><a href="#about">درباره ما</a></li>
-          <li><a href="#contact">تماس با ما</a></li>
+          <li><a href="#">مقالات</a></li>
+          <li><a href="index.html#about-us">درباره ما</a></li>
+          <li><a href="index.html#contact-us">تماس با ما</a></li>
         </ul>
       </div>
       <div class="about-us">
         <h3>درباره ما</h3>
-        <p>خانه باور، مرکزی برای رشد و توسعه فردی...</p>
+        <p>خانه باور، مرکزی برای رشد و توسعه فردی از طریق آموزش‌ها و محصولات کاربردی است. ما به شما کمک می‌کنیم تا باورهای محدودکننده را شناسایی و اصلاح کنید.</p>
       </div>
       <div id="contact-us">
         <h3>تماس با ما</h3>
-        <p>آدرس:</p>
-        <p>تلفن:-</p>
         <p>ایمیل: <a href="mailto:awebavar@gmail.com">awebavar@gmail.com</a></p>
       </div>
     </div>
