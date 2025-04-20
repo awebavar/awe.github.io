@@ -5,8 +5,8 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>سبد خرید | AWE خانه باور</title>
   <link rel="stylesheet" href="style.css">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" crossorigin="anonymous" />
   <style>
-    /* استایل دکمه منوی موبایل */
     .menu-toggle {
       display: none;
       background: none;
@@ -16,7 +16,6 @@
       color: #333;
       padding: 5px;
     }
-    
     @media (max-width: 991px) {
       .mobile-menu {
         width: 100%;
@@ -34,109 +33,47 @@
         text-align: center;
       }
     }
-    
-    /* بهبود استایل سبد خرید برای موبایل */
-    @media (max-width: 767px) {
-      .cart-item {
-        grid-template-columns: 80px 1fr;
-        grid-template-areas: 
-          "image title"
-          "image price"
-          "image quantity"
-          "image subtotal"
-          "remove remove";
-        padding: 15px 0;
-        row-gap: 10px;
-      }
-      
-      .cart-item img {
-        grid-area: image;
-      }
-      
-      .cart-item-title {
-        grid-area: title;
-      }
-      
-      .cart-item-price {
-        grid-area: price;
-        text-align: left;
-      }
-      
-      .qty-controls {
-        grid-area: quantity;
-        justify-content: flex-start;
-      }
-      
-      .cart-item-subtotal {
-        grid-area: subtotal;
-        text-align: left;
-      }
-      
-      .remove-btn {
-        grid-area: remove;
-        justify-self: end;
-      }
-      
-      #cart-summary {
-        text-align: center;
-      }
-    }
   </style>
 </head>
 <body>
-  <!-- ==== Header ==== -->
   <header>
     <div class="container">
       <div class="logo">
-        <a href="index.html">
-          <img src="logo.png" alt="AWE خانه باور">
-        </a>
+        <a href="index.html"><img src="logo.png" alt="AWE خانه باور"></a>
       </div>
-      
       <nav class="navigation">
         <ul>
           <li><a href="index.html">خانه</a></li>
           <li><a href="shop.html">فروشگاه</a></li>
           <li><a href="#categories">دسته‌بندی‌ها</a></li>
           <li><a href="#articles">مقالات</a></li>
-          <li><a href="#about">درباره ما</a></li>
-          <li><a href="#contact">تماس با ما</a></li>
-          <li><a href="#special" class="special-link">پیشنهاد ویژه</a></li>
+          <li><a href="#about-us">درباره ما</a></li>
+          <li><a href="#contact-us">تماس با ما</a></li>
+          <li><a href="#special-offers">پیشنهادات ویژه</a></li>
         </ul>
       </nav>
-      
       <div class="user-icons">
         <a href="cart.html">
+          <i class="fa fa-shopping-cart"></i>
           <span id="cart-count">0</span>
-          <img src="cart-icon.png" alt="سبد خرید">
         </a>
-        <a href="#account">
-          <img src="user-icon.png" alt="حساب کاربری">
-        </a>
+        <a href="#"><i class="fa fa-user"></i></a>
       </div>
     </div>
   </header>
 
-  <!-- ==== Main: نمایش سبد خرید ==== -->
   <main class="cart-page">
     <div class="container">
       <h2>سبد خرید شما</h2>
-      <div id="cart-items">
-        <!-- آیتم‌ها توسط JS اینجا رندر می‌شوند -->
-      </div>
-      <div id="cart-total">
-        <!-- مجموع قیمت اینجا نشان داده می‌شود -->
-      </div>
-      
-      <!-- دکمه‌های اقدام -->
-      <div class="cart-actions">
+      <div id="cart-items"></div>
+      <div id="cart-total"></div>
+      <div class="cart-actions" style="display:none;">
         <a href="shop.html" class="btn btn-secondary">ادامه خرید</a>
-        <a href="#checkout" class="btn btn-primary">تکمیل خرید</a>
+        <a href="#" class="btn btn-primary">تکمیل خرید</a>
       </div>
     </div>
   </main>
 
-  <!-- ==== Footer ==== -->
   <footer>
     <div class="container">
       <div class="footer-links">
@@ -146,16 +83,15 @@
           <li><a href="shop.html">فروشگاه</a></li>
           <li><a href="#categories">دسته‌بندی‌ها</a></li>
           <li><a href="#articles">مقالات</a></li>
-          <li><a href="#about">درباره ما</a></li>
-          <li><a href="#contact">تماس با ما</a></li>
+          <li><a href="#about-us">درباره ما</a></li>
+          <li><a href="#contact-us">تماس با ما</a></li>
+          <li><a href="#special-offers">پیشنهادات ویژه</a></li>
         </ul>
       </div>
-      
       <div class="about-us">
         <h3>درباره ما</h3>
         <p>خانه باور، مرکزی برای رشد و توسعه فردی از طریق آموزش‌ها و محصولات کاربردی است. ما به شما کمک می‌کنیم تا باورهای محدودکننده را شناسایی و اصلاح کنید.</p>
       </div>
-      
       <div id="contact-us">
         <h3>تماس با ما</h3>
         <p>آدرس:</p>
@@ -163,178 +99,10 @@
         <p>ایمیل: <a href="mailto:awebavar@gmail.com">awebavar@gmail.com</a></p>
       </div>
     </div>
-    
     <div class="copyright">
-      <p>تمامی حقوق برای خانه باور محفوظ است. &copy; ۱۴۰۳</p>
+      <p>&copy; ۱۴۰۳ تمامی حقوق برای خانه باور محفوظ است.</p>
     </div>
   </footer>
-
-  <!-- ==== اسکریپت‌های لازم ==== -->
   <script src="main.js"></script>
-  <script>
-    // تابع render و دکمه‌ها
-    function renderCart() {
-      const cart = JSON.parse(localStorage.getItem('cart')) || [];
-      const container = document.getElementById('cart-items');
-      const totalDiv = document.getElementById('cart-total');
-      container.innerHTML = '';
-      let total = 0;
-
-      if (cart.length === 0) {
-        container.innerHTML = '<p class="empty-cart-message">سبد خرید شما خالی است.</p>';
-        totalDiv.innerHTML = '';
-        document.querySelector('.cart-actions').style.display = 'none';
-        updateCartCount();
-        return;
-      }
-
-      document.querySelector('.cart-actions').style.display = 'flex';
-      
-      cart.forEach(item => {
-        const subtotal = item.price * item.qty;
-        total += subtotal;
-
-        // markup با دکمه‌های qty و حذف
-        const itemHTML = `
-          <div class="cart-item">
-            <img src="${item.image || 'placeholder.png'}" alt="${item.title}">
-            <div class="cart-item-title">${item.title}</div>
-            <div class="cart-item-price">${item.price.toLocaleString()} تومان</div>
-            <div class="qty-controls">
-              <button class="decrease" data-id="${item.id}">−</button>
-              <span>${item.qty}</span>
-              <button class="increase" data-id="${item.id}">+</button>
-            </div>
-            <div class="cart-item-subtotal">${subtotal.toLocaleString()} تومان</div>
-            <button class="remove-btn" data-id="${item.id}">&times;</button>
-          </div>`;
-        container.insertAdjacentHTML('beforeend', itemHTML);
-      });
-
-      totalDiv.innerHTML = `<h3 id="cart-summary">مبلغ کل: ${total.toLocaleString()} تومان</h3>`;
-
-      // اضافه کردن event listener برای دکمه‌ها
-      document.querySelectorAll('.increase').forEach(btn =>
-        btn.addEventListener('click', () => changeQty(btn.dataset.id, +1))
-      );
-      document.querySelectorAll('.decrease').forEach(btn =>
-        btn.addEventListener('click', () => changeQty(btn.dataset.id, -1))
-      );
-      document.querySelectorAll('.remove-btn').forEach(btn =>
-        btn.addEventListener('click', () => changeQty(btn.dataset.id, 'remove'))
-      );
-
-      updateCartCount();
-    }
-
-    // تغییر تعداد یا حذف آیتم
-    function changeQty(id, delta) {
-      let cart = JSON.parse(localStorage.getItem('cart')) || [];
-      cart = cart.map(item => {
-        if (item.id == id) {
-          if (delta === 'remove') return null;
-          item.qty += delta;
-          if (item.qty < 1) return null;
-        }
-        return item;
-      }).filter(Boolean);
-      localStorage.setItem('cart', JSON.stringify(cart));
-      renderCart();
-    }
-
-    document.addEventListener('DOMContentLoaded', function() {
-      renderCart();
-      
-      // ایجاد دکمه منو برای حالت موبایل
-      const header = document.querySelector('header .container');
-      const navigation = document.querySelector('.navigation');
-      
-      // ساخت دکمه منو
-      const menuToggle = document.createElement('button');
-      menuToggle.className = 'menu-toggle';
-      menuToggle.innerHTML = '&#9776;'; // نماد همبرگر
-      menuToggle.style.display = 'none'; // در ابتدا مخفی
-      
-      // اضافه کردن به هدر، قبل از navigation
-      header.insertBefore(menuToggle, navigation);
-      
-      // تنظیم نمایش دکمه منو در موبایل
-      function adjustMenuVisibility() {
-        if (window.innerWidth <= 991) {
-          menuToggle.style.display = 'block';
-          navigation.classList.add('mobile-menu');
-          if (!navigation.classList.contains('active')) {
-            navigation.style.display = 'none';
-          }
-        } else {
-          menuToggle.style.display = 'none';
-          navigation.style.display = 'block';
-          navigation.classList.remove('mobile-menu');
-        }
-      }
-      
-      // اجرا در بارگذاری و تغییر سایز
-      adjustMenuVisibility();
-      window.addEventListener('resize', adjustMenuVisibility);
-      
-      // کلیک روی دکمه منو
-      menuToggle.addEventListener('click', function() {
-        if (navigation.style.display === 'none' || navigation.style.display === '') {
-          navigation.style.display = 'block';
-          navigation.classList.add('active');
-        } else {
-          navigation.style.display = 'none';
-          navigation.classList.remove('active');
-        }
-      });
-    });
-  </script>
-  <script>
-    document.addEventListener('DOMContentLoaded', function() {
-      // ایجاد دکمه منو برای حالت موبایل
-      const header = document.querySelector('header .container');
-      const navigation = document.querySelector('.navigation');
-      
-      // ساخت دکمه منو
-      const menuToggle = document.createElement('button');
-      menuToggle.className = 'menu-toggle';
-      menuToggle.innerHTML = '&#9776;'; // نماد همبرگر
-      menuToggle.style.display = 'none'; // در ابتدا مخفی
-      
-      // اضافه کردن به هدر، قبل از navigation
-      header.insertBefore(menuToggle, navigation);
-      
-      // تنظیم نمایش دکمه منو در موبایل
-      function adjustMenuVisibility() {
-        if (window.innerWidth <= 991) {
-          menuToggle.style.display = 'block';
-          navigation.classList.add('mobile-menu');
-          if (!navigation.classList.contains('active')) {
-            navigation.style.display = 'none';
-          }
-        } else {
-          menuToggle.style.display = 'none';
-          navigation.style.display = 'block';
-          navigation.classList.remove('mobile-menu');
-        }
-      }
-      
-      // اجرا در بارگذاری و تغییر سایز
-      adjustMenuVisibility();
-      window.addEventListener('resize', adjustMenuVisibility);
-      
-      // کلیک روی دکمه منو
-      menuToggle.addEventListener('click', function() {
-        if (navigation.style.display === 'none' || navigation.style.display === '') {
-          navigation.style.display = 'block';
-          navigation.classList.add('active');
-        } else {
-          navigation.style.display = 'none';
-          navigation.classList.remove('active');
-        }
-      });
-    });
-  </script>
-
 </body>
 </html>
