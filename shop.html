@@ -4,27 +4,40 @@
   <meta charset="UTF-8">
   <title>فروشگاه AWE خانه باور</title>
   <link rel="stylesheet" href="style.css">
-  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css"/>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" crossorigin="anonymous" referrerpolicy="no-referrer" />
+  <style>
+    .menu-toggle {
+      display: none; background: none; border: none;
+      font-size: 24px; cursor: pointer; color: #333; padding: 5px;
+    }
+    @media (max-width: 991px) {
+      .mobile-menu { width: 100%; }
+      .mobile-menu.active { display: block; }
+      .mobile-menu ul { flex-direction: column; align-items: center; }
+      .mobile-menu li { margin: 10px 0; width: 100%; text-align: center;}
+    }
+  </style>
 </head>
 <body>
   <header>
     <div class="container">
       <div class="logo">
-        <a href="index.html"><img src="LOGO.png.png" alt="لوگوی AWE خانه باور"></a>
+        <a href="#"><img src="LOGO.png.png" alt="لوگوی AWE خانه باور"></a>
       </div>
       <nav class="navigation">
         <ul>
-          <li><a href="index.html">خانه</a></li>
+          <li><a href="index.html">صفحه اصلی</a></li>
           <li><a href="shop.html">فروشگاه</a></li>
-          <li><a href="#categories">دسته‌بندی‌ها</a></li>
-          <li><a href="#articles">مقالات</a></li>
-          <li><a href="#about-us">درباره ما</a></li>
-          <li><a href="#contact-us">تماس با ما</a></li>
+          <li><a href="index.html#categories">دسته‌بندی‌ها</a></li>
+          <li><a href="#">مقالات</a></li>
+          <li><a href="index.html#about-us">درباره ما</a></li>
+          <li><a href="index.html#contact-us">تماس با ما</a></li>
+          <li><a href="index.html#special-offers">پیشنهادات ویژه</a></li>
         </ul>
       </nav>
       <div class="user-icons">
         <a href="#"><i class="fa fa-search"></i></a>
-        <a href="cart.html"><i class="fa fa-shopping-cart"></i><span id="cart-count">0</span></a>
+        <a href="cart.html" class="cart-icon"><i class="fa fa-shopping-cart"></i><span id="cart-count">0</span></a>
         <a href="#"><i class="fa fa-user"></i></a>
       </div>
     </div>
@@ -36,25 +49,24 @@
     </div>
   </section>
   <main class="shop-page">
-    <div class="container">
-      <div id="products-grid"></div>
+    <div class="container" id="products-grid">
+      <!-- آیتم‌ها توسط main.js رندر می‌شود -->
     </div>
   </main>
   <footer>
     <div class="container">
       <div class="footer-widget">
         <h3>درباره ما</h3>
-        <p>AWE خانه باور، مرجع تخصصی ارائه راهکارهای رهایی ...</p>
+        <p>AWE خانه باور، مرجع تخصصی ارائه راهکارهای رهایی از باورهای محدود کننده و دستیابی به موفقیت و خودباوری.</p>
       </div>
       <div class="footer-widget">
         <h3>دسترسی سریع</h3>
         <ul>
-          <li><a href="index.html">خانه</a></li>
+          <li><a href="index.html">صفحه اصلی</a></li>
           <li><a href="shop.html">فروشگاه</a></li>
-          <li><a href="#categories">دسته‌بندی‌ها</a></li>
-          <li><a href="#articles">مقالات</a></li>
-          <li><a href="#about-us">درباره ما</a></li>
-          <li><a href="#contact-us">تماس با ما</a></li>
+          <li><a href="index.html#categories">دسته‌بندی‌ها</a></li>
+          <li><a href="index.html#special-offers">پیشنهادات ویژه</a></li>
+          <li><a href="index.html#contact-us">تماس با ما</a></li>
         </ul>
       </div>
       <div class="footer-widget">
