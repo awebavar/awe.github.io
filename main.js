@@ -137,10 +137,11 @@ function renderCartItems() {
   container.innerHTML = '';
   if (cart.length === 0) {
     container.innerHTML = '<p>سبد شما خالی است.</p>';
-    if (summary) summary.style.display = 'none';
+    // دکمه‌های اقدام به خرید را در صورت خالی بودن پنهان کن
+    const actions = document.querySelector('.cart-actions');
+    if (actions) actions.style.display = 'none';
     return;
   }
-  if (summary) summary.style.display = '';
 
   cart.forEach(item => {
     const div = document.createElement('div');
@@ -160,7 +161,7 @@ function renderCartItems() {
     container.appendChild(div);
   });
 
-  // دکمه‌های افزایش/کاهش/حذف
+  // رویداد دکمه‌ها:
   container.querySelectorAll('.inc-btn').forEach(b =>
     b.addEventListener('click', () => changeQty(b.dataset.id, +1)));
   container.querySelectorAll('.dec-btn').forEach(b =>
