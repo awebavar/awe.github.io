@@ -1,588 +1,228 @@
-/* فایل style.css - به‌روزرسانی شده */
-
-/* ======================================
-   تنظیمات کلی و متغیرها
-   ====================================== */
 :root {
-    --primary-color: #007bff;        /* رنگ اصلی (آبی) */
-    --primary-dark-color: #0056b3;   /* رنگ اصلی تیره */
-    --secondary-color: #ffc107;      /* رنگ ثانویه (زرد) */
-    --secondary-dark-color: #ffb300; /* رنگ ثانویه تیره */
-    --text-color-dark: #333;         /* رنگ متن تیره */
-    --text-color-light: #555;        /* رنگ متن روشن‌تر */
-    --bg-color-light: #f9f9f9;       /* رنگ پس‌زمینه روشن */
-    --bg-color-lighter: #f0f0f0;      /* رنگ پس‌زمینه خیلی روشن */
-    --bg-color-white: #fff;          /* رنگ سفید */
-    --footer-bg-color: #333;        /* رنگ پس‌زمینه فوتر */
-    --footer-text-color: #ccc;       /* رنگ متن فوتر */
-    --font-main: 'Tahoma', sans-serif; /* فونت اصلی */
+  --main-color: #254083;
+  --accent-color: #e7ad47;
+  --light: #f3f3f9;
+  --dark: #333;
+  --font-vazir: 'Vazir', Tahoma, Arial, sans-serif;
 }
 
 body {
-    font-family: var(--font-main);
-    direction: rtl;
-    background-color: var(--bg-color-lighter);
-    color: var(--text-color-dark);
-    margin: 0;
-    padding: 0;
-    line-height: 1.7; /* افزایش ارتفاع خط برای خوانایی بهتر */
-    font-size: 16px; /* اندازه فونت پیش‌فرض */
+  font-family: var(--font-vazir);
+  background: var(--light);
+  color: var(--dark);
+  margin: 0;
+  direction: rtl;
 }
 
-.container {
-    max-width: 1200px;
-    margin: 0 auto;
-    padding: 20px;
-}
-
-/* ======================================
-   هدر
-   ====================================== */
 header {
-    background-color: var(--bg-color-white);  /* پس‌زمینه‌ی شفاف تا بن‌مایه‌ی سفید پاک شود */
-    padding: 3px 0; /* کاهش padding هدر به 3px 0 */
-    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
-    position: sticky; /* هدر چسبنده */
-    top: 0;
-    z-index: 100; /* اطمینان از نمایش روی سایر محتوا */
+  background: white;
+  box-shadow: 0 1px 3px rgb(0 0 0 / 5%);
+  position: sticky;
+  top: 0;
+  z-index: 10;
 }
-
-header .container {
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    background-color: var(--bg-color-white); /* پس‌زمینه‌ی سفید */
-    max-width: 1200px;       /* عرض دلخواه */
-    margin:4px auto -20;   /* ۱۰px به بالا، خودکار چپ/راست برای وسط‌چین */
-    padding: 5px 15px;      /* فاصله‌ی داخلی بالایی/پایینی و کناری */
-    border-radius: 0 0 8px 8px; /* (اختیاری) گرد کردن گوشه‌های پایین */
-}
-/* ==== AI-HEADER-START ==== */
-/* ==== AI-HEADER-END   ==== */
-
 .logo img {
-    max-width: 180px; /* کمی بزرگتر کردن لوگو */
-    height: auto;
+  height: 60px;
 }
-
 .navigation ul {
-    list-style: none;
-    padding: 0;
-    margin: 0;
-    display: flex;
+  display: flex;
+  gap: 30px;
+  list-style: none;
+  padding: 0;
+  margin: 0;
 }
-
-.navigation li {
-    margin-right: 25px; /* افزایش فاصله آیتم‌های منو */
+.navigation li a {
+  color: var(--main-color);
+  text-decoration: none;
+  font-size: 17px;
+  font-weight: 700;
 }
-
-.navigation li:last-child {
-    margin-right: 0;
+.navigation li a:hover {
+  color: var(--accent-color);
 }
-
-.navigation a {
-    text-decoration: none;
-    color: var(--text-color-dark);
-    font-weight: bold;
-    transition: color 0.3s ease;
-    padding: 8px 12px; /* اضافه کردن padding به لینک‌های منو برای لمس‌پذیری بهتر */
-    border-radius: 5px;
+.user-icons {
+  display: flex;
+  gap: 17px;
+  align-items: center;
 }
-
-.navigation a:hover,
-.navigation a:focus { /* اضافه کردن focus برای دسترسی‌پذیری با کیبورد */
-    color: var(--primary-color);
-    background-color: var(--bg-color-lighter); /* پس‌زمینه هاور */
+.user-icons i {
+  font-size: 22px;
+  color: var(--main-color);
 }
-
-.user-icons a {
-    margin-left: 15px;
-    text-decoration: none;
-    color: var(--text-color-light);
-    font-size: 1.2em; /* بزرگتر کردن آیکون‌ها */
-    transition: color 0.3s ease;
+@media (max-width: 991px) {
+  .user-icons { gap: 12px; }
 }
-
-.user-icons a:hover,
-.user-icons a:focus {
-    color: var(--primary-color);
-}
-/* ===== استایل برای cart-icon و badge ===== */
-.cart-icon {
-  position: relative;
-  display: inline-block;
-}
-#cart-count {
-  position: absolute;
-  top: -5px;
-  right: -8px;
-  width: 18px;
-  height: 18px;
-  background: red;
-  color: #fff;
-  font-size: 12px;
-  line-height: 18px;
-  text-align: center;
-  border-radius: 50%;
-  pointer-events: none;
-}
-
-/* ======================================
-   بنر اصلی
-   ====================================== */
 .hero-banner {
-    background-color: #e0f7fa;
-    padding: 120px 0; /* افزایش padding بنر */
-    text-align: center;
-    /* background-image: url('image_0.png'); /* تصویر زمینه بنر */
-    /* background-size: cover; */
-    /* background-position: center; */
-    /* color: var(--bg-color-white); /* رنگ متن بنر در صورت استفاده از تصویر زمینه تیره */ */
-}
-
-.hero-banner .banner-content {
-    max-width: 900px; /* پهن‌تر کردن محتوای بنر */
-    margin: 0 auto;
-}
-
-.hero-banner h1 {
-    font-size: 3em; /* بزرگتر کردن عنوان بنر */
-    margin-bottom: 25px;
-    color: var(--text-color-dark);
-    line-height: 1.3;
-}
-
-.hero-banner p {
-    font-size: 1.3em; /* بزرگتر کردن توضیحات بنر */
-    color: var(--text-color-light);
-    margin-bottom: 40px;
-}
-
-.cta-button {
-    display: inline-block;
-    padding: 15px 35px; /* بزرگتر کردن دکمه */
-    background-color: var(--primary-color);
-    color: var(--bg-color-white);
-    text-decoration: none;
-    border-radius: 8px; /* گردتر کردن گوشه‌های دکمه */
-    font-weight: bold;
-    font-size: 1.1em;
-    transition: background-color 0.3s ease;
-    box-shadow: 0 3px 7px rgba(0, 0, 0, 0.2); /* سایه دکمه */
-}
-
-.cta-button:hover,
-.cta-button:focus {
-    background-color: var(--primary-dark-color);
-}
-
-
-/* ======================================
-   بخش درباره نویسنده
-   ====================================== */
-.about-author-section {
-    padding: 60px 0;
-    background-color: var(--bg-color-light);
-}
-
-.about-author-section h2 {
-    text-align: center;
-    margin-bottom: 35px;
-    color: var(--text-color-dark);
-    font-size: 2.2em;
-}
-
-.author-description {
-    max-width: 900px;
-    margin: 0 auto;
-    padding: 0 20px;
-    font-size: 1.1em;
-    color: var(--text-color-light);
-    line-height: 1.8;
-}
-/* ======================================
-   ویدیوی معرفی محصول: شروع سفر من
-   ====================================== */
-.video-intro {
-    padding: 60px 0;                       /* فاصله عمودی بالا/پایین */
-    background-color: var(--bg-color-lighter); /* پس‌زمینه روشن */
-}
-
-.video-intro .video-wrapper {
-    width: 33.33%;     /* یک‌سوم عرض والد */
-    max-width: none;   /* غیرفعال‌سازی محدودیت قبلی */
-    margin: 0 auto;    /* قرارگیری افقی در مرکز */
-}
-
-.video-intro video {
-    width: 100%;       /* پرکردن تمام عرض .video-wrapper */
-    height: auto;      /* حفظ نسبت ابعاد ویدیو */
-    border-radius: 8px;/* گوشه‌های نرم */
-}
-
-/* ======================================
-   بخش کتاب‌های ویژه
-   ====================================== */
-/* ========== نمایش عنوان و مبلغ هر کتاب ========== */
-.price-label {
-  font-size: 1em;                   /* اندازه‌ی متوسط برای تیتر */
-  font-weight: bold;                /* پررنگ */
-  color: var(--text-color-dark);    /* رنگ تیره متن */
-  margin: 12px 0 4px;               /* فاصله از بالا و از پایین */
-  text-align: center;               /* وسط‌چین */
-}
-
-.book-price {
-  font-size: 1.1em;                 /* کمی بزرگ‌تر برای مبلغ */
-  font-weight: bold;                
-  color: var(--secondary-color);    /* رنگ زرد ثانویه */
-  margin: 0 0 12px;                 /* فاصله از پایین */
+  background: linear-gradient(85deg, #254083 80%, #e7ad47 100%);
+  color: white;
   text-align: center;
+  padding: 44px 22px 60px 22px;
 }
-
-.featured-books {
-    padding: 60px 0;
-    background-color: var(--bg-color-light);
+.banner-content h1 {
+  font-size: 2.3rem;
+  margin-bottom: .5em;
 }
-
-.featured-books h2, .categories h2, .special-offers h2, footer h3, .about-author-section h2 {
-    text-align: center;
-    margin-bottom: 35px;
-    color: var(--text-color-dark);
-    font-size: 2.2em; /* بزرگتر کردن عناوین بخش‌ها */
-}
-
-.books-grid {
-    display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); /* پهن‌تر کردن آیتم‌های گرید */
-    gap: 35px; /* افزایش فاصله بین کتاب‌ها */
-}
-
-.book-item,
-.product-card {
-  text-align: center;
-  padding: 25px;
-  background-color: var(--bg-color-white);
-  border-radius: 10px;
-  box-shadow: 0 3px 7px rgba(0, 0, 0, 0.08);
-  transition: transform 0.3s ease, box-shadow 0.3s ease;
-}
-.book-item:hover,
-.product-card:hover,
-.book-item:focus-within,
-.product-card:focus-within {
-  transform: scale(1.05);
-  box-shadow: 0 5px 15px rgba(0, 0, 0, 0.15);
-}
-
-/* ==== استایل برای بخش shop.html ==== */
-.product-card img {
-  max-width: 150px;
-  height: auto;
-}
-.product-card button {
-  background: var(--primary-color);
+.banner-content .cta-button {
+  padding: 11px 28px;
+  background: var(--accent-color);
   color: #fff;
+  border-radius: 30px;
+  font-weight: 700;
+  font-size: 1.1em;
   border: none;
-  padding: 8px 12px;
-  cursor: pointer;
+  margin-top: 22px;
+  text-decoration: none;
+  transition: background 0.2s;
 }
-
-/* ======================================
-   بخش ویدیوی کنار دسته‌بندی‌ها
-   ====================================== */
-.categories-section {
-    padding: 60px 0;   /* فاصله عمودی برای کل بخش */
+.banner-content .cta-button:hover {
+  background: #fff; color: var(--accent-color); border: 1.3px solid var(--accent-color);
 }
-
-.categories-section .categories-content {
-    display: flex;     /* کنار هم قرار دادن دو ستون */
-    gap: 30px;         /* فاصله بین ستون‌ها */
-    align-items: flex-start; /* تراز از بالا */
+.video-intro {
+  margin: 40px 0 0 0;
 }
-
-/* ستون ویدیو */
-.video-section {
-    flex: 1;           /* به نسبت ستون دسته‌بندی‌ها کم‌عرض‌تر */
+.video-intro h2 {
+  text-align: center;
 }
-
-.video-section h3 {
-    font-size: 1.3em;  /* اندازه عنوان ویدیو */
-    margin-bottom: 12px;
-    text-align: center;
+.video-wrapper {
+  display: flex;
+  justify-content: center;
+  margin: 15px 0;
 }
-
-.video-section .video-wrapper {
-    width: 33.33%;     /* یک‌سوم عرض ستون ویدیو */
+.video-wrapper video {
+  width: 388px;
+  max-width: 98vw;
+  border-radius: 1rem;
+  box-shadow: 0 2px 13px rgba(39,46,85,0.18);
 }
-
-.video-section video {
-    width: 100%;       /* پرکردن تمام عرض wrapper */
-    height: auto;      /* حفظ نسبت ابعاد */
-    border-radius: 8px;
+.about-author-section {
+  padding: 25px 0 30px 0;
+  background: #fff;
 }
-
-/* ستون دسته‌بندی */
-.categories-section .categories-grid {
-    flex: 2;           /* عرض دو برابر ستون ویدیو */
-    display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
-    gap: 20px;
+.about-author-section h2 {
+  text-align: center;
+  color: var(--main-color);
+  font-size: 1.3rem;
 }
-
-.book-item img {
-    max-width: 100%;
-    height: auto;
-    margin-bottom: 20px;
-    border-radius: 8px;
+.author-description {
+  max-width: 600px;
+  margin: 0 auto;
+  line-height: 2.1;
+  color: #343267;
+  text-align: justify;
+  font-size: 1em;
 }
-
-.book-item h3 {
-    font-size: 1.3em;
-    margin-bottom: 12px;
-    color: var(--text-color-dark);
-}
-
-.book-item p {
-    color: var(--text-color-light);
-    margin-bottom: 20px;
-}
-
-.view-button {
-    display: inline-block;
-    padding: 12px 25px;
-    background-color: var(--primary-color);
-    color: var(--bg-color-white);
-    text-decoration: none;
-    border-radius: 8px;
-    font-size: 1em;
-    font-weight: bold;
-    transition: background-color 0.3s ease;
-}
-
-.view-button:hover,
-.view-button:focus {
-    background-color: var(--primary-dark-color);
-}
-
-
-/* ======================================
-   بخش دسته‌بندی‌ها
-   ====================================== */
-.categories {
-    padding: 60px 0;
-    background-color: var(--bg-color-white);
-}
-
-.categories-grid {
-    display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(180px, 1fr)); /* پهن‌تر کردن دسته‌بندی‌ها */
-    gap: 25px;
-    text-align: center;
-    direction: rtl; /* راست‌چین کردن محتوای دسته‌بندی‌ها */
-}
-
-.category-list li {
-    text-align: right; /* راست‌چین کردن متن هر مورد در لیست */
-    padding-right: 15px; /* کمی فاصله از سمت راست برای زیبایی */
-}
-
-.category-list li::marker { /*  استایل دهی به نشانگر لیست (عدد) */
-    float: right; /*  شناور کردن نشانگر به راست */
-    margin-right: 5px; /*  فاصله بین نشانگر و متن */
-}
-
-
-/* ======================================
-   بخش پیشنهادات ویژه
-   ====================================== */
-.special-offers {
-    padding: 60px 0;
-    background-color: var(--bg-color-light);
-}
-
-.offers-slider {
-    display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(320px, 1fr)); /* پهن‌تر کردن پیشنهادات ویژه */
-    gap: 35px;
-}
-
-.offer-item {
-    background-color: var(--bg-color-white);
-    border-radius: 10px;
-    overflow: hidden;
-    box-shadow: 0 3px 7px rgba(0, 0, 0, 0.08);
-    transition: transform 0.3s ease, box-shadow 0.3s ease; /* انیمیشن هاور */
-}
-
-.offer-item:hover,
-.offer-item:focus-within { /* focus-within برای وقتی که دکمه داخل offer-item فوکوس شود */
-    transform: scale(1.03); /* بزرگنمایی هنگام هاور */
-    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.15); /* سایه قوی‌تر هنگام هاور */
-}
-
-
-.offer-item img {
-    width: 100%;
-    height: auto;
-    display: block;
-}
-
-.offer-item-content {
-    padding: 25px;
-    text-align: center;
-}
-
-.offer-item h3 {
-    font-size: 1.2em;
-    margin-bottom: 15px;
-    color: var(--text-color-dark);
-}
-
-.offer-item p {
-    color: var(--text-color-light);
-    margin-bottom: 20px;
-}
-
-.offer-button {
-    display: inline-block;
-    padding: 12px 25px;
-    background-color: var(--secondary-color);
-    color: var(--text-color-dark);
-    text-decoration: none;
-    border-radius: 8px;
-    font-size: 1em;
-    font-weight: bold;
-    transition: background-color 0.3s ease;
-    box-shadow: 0 3px 7px rgba(0, 0, 0, 0.2); /* سایه دکمه */
-}
-
-.offer-button:hover,
-.offer-button:focus {
-    background-color: var(--secondary-dark-color);
-}
-
-
-/* ======================================
-   فوتر
-   ====================================== */
 footer {
-    background-color: var(--footer-bg-color);
-    color: var(--footer-text-color);
-    padding: 60px 0;
+  background: #253059;
+  color: #fff;
+  padding: 35px 0 0 0;
 }
-
 footer .container {
-    display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); /* پهن‌تر کردن ویجت‌های فوتر */
-    gap: 40px; /* افزایش فاصله ویجت‌ها */
+  display: flex;
+  justify-content: space-between;
+  flex-wrap: wrap;
 }
-
+footer .footer-links ul {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+footer .footer-links li a {
+  color: #ffe8bb;
+  text-decoration: none;
+  display: block;
+  font-size: 1em;
+  margin-bottom: 7px;
+}
+footer .footer-links li a:hover { color: var(--accent-color);}
+footer .about-us {
+  max-width: 320px;
+  color: #FFEBBB;
+  margin-top: 14px;
+}
+footer #contact-us {
+  margin-top: 10px;
+  color: #FCE;
+  font-size: 1em;
+}
 footer h3 {
-    color: var(--bg-color-white);
-    border-bottom: 2px solid var(--text-color-light); /* خط ضخیم‌تر زیر عنوان ویجت */
-    padding-bottom: 12px;
-    margin-bottom: 25px;
-    text-align: left;
-    font-size: 1.5em; /* بزرگتر کردن عنوان ویجت‌های فوتر */
+  font-size: 1rem;
+  margin-bottom: .8em;
+  color: var(--accent-color);
 }
-
-footer p, footer ul {
-    color: var(--footer-text-color);
-    line-height: 1.9;
-}
-
-footer ul {
-    list-style: none;
-    padding: 0;
-    margin: 0;
-}
-
-footer li {
-    margin-bottom: 12px;
-}
-
-footer a {
-    color: var(--footer-text-color);
-    text-decoration: none;
-    transition: color 0.3s ease;
-}
-
-footer a:hover,
-footer a:focus {
-    color: var(--bg-color-white);
-}
-
 .copyright {
-    text-align: center;
-    margin-top: 40px;
-    padding-top: 25px;
-    border-top: 1px solid var(--text-color-light);
-    font-size: 0.95em;
-    color: var(--footer-text-color);
+  background: #232845;
+  color: #d6d6d6;
+  text-align: center;
+  padding: 13px 0 13px 0;
+  font-size: .93em;
+  margin-top: 32px;
 }
 
-.social-icons {
-    text-align: center;
-    margin-top: 25px;
+.product-card, .book-item {
+  background: #fff;
+  border-radius: 12px;
+  box-shadow: 0 2px 10px rgba(66,112,137,.1);
+  padding: 24px;
+  margin: 30px 1.1% 10px 1.1%;
+  display: inline-block;
+  width: calc(33% - 2.2%);
+  box-sizing: border-box;
+  vertical-align: top;
+  text-align: center;
+}
+.product-card img, .book-item img {
+  width: 120px;
+  border-radius: 9px;
+  margin-bottom: 11px;
+}
+.product-card h3, .book-item h3 { font-size: 1.1rem; margin: 7px 0;}
+.product-card p, .book-item p { font-size: .96rem; color: #333267; margin: 5px 0;}
+.product-card .product-price {
+  font-weight: 700;
+  color: var(--accent-color);
+  font-size: 1.15em;
+}
+.product-card button, .btn {
+  padding: 9px 19px;
+  border-radius: 22px;
+  border: none;
+  background: var(--main-color);
+  color: #fff;
+  cursor: pointer;
+  font-size: 1em;
+  font-weight: 600;
+  margin-top: 13px;
+  transition: background 0.15s;
+}
+.product-card button:hover, .btn:hover { background: var(--accent-color);}
+.shop-page #products-grid {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  margin-top: 29px;
 }
 
-.social-icons a {
-    display: inline-flex; /* استفاده از فلکس برای آیکون‌های شبکه‌های اجتماعی */
-    justify-content: center;
-    align-items: center;
-    width: 40px; /* اندازه آیکون‌ها */
-    height: 40px;
-    border-radius: 50%; /* دایره‌ای شدن آیکون‌ها */
-    background-color: rgba(255, 255, 255, 0.1); /* پس‌زمینه نیمه‌شفاف */
-    color: var(--bg-color-white);
-    font-size: 1.2em;
-    margin: 0 8px;
-    text-decoration: none;
-    transition: background-color 0.3s ease, color 0.3s ease;
-}
-
-.social-icons a:hover,
-.social-icons a:focus {
-    background-color: rgba(255, 255, 255, 0.3); /* پس‌زمینه شفاف‌تر هنگام هاور */
-    color: var(--secondary-color);
-}
-
-
-/* ======================================
-   استایل‌های واکنش‌گرا (Responsive)
-   ====================================== */
-@media (max-width: 992px) {
-    .container {
-        max-width: 960px;
-    }
-    .hero-banner {
-        padding: 100px 0;
-    }
-    .hero-banner h1 {
-        font-size: 2.8em;
-    }
-    .hero-banner p {
-        font-size: 1.2em;
-    }
-.navigation {
-        display: block;
-    }    
-}
-/* ===== استایل صفحه سبد خرید (cart-page) ===== */
+.cart-page .container { max-width: 710px }
 .cart-item {
   display: grid;
-  grid-template-columns: 80px 1fr 100px 120px 100px;
+  grid-template-columns: 90px 3fr 1fr 2fr 2fr 65px;
   align-items: center;
   gap: 10px;
-  padding: 15px 0;
-  border-bottom: 1px solid #ddd;
+  background: #f3f3fa;
+  border-radius: 10px;
+  margin-bottom: 10px;
+  padding: 13px 10px;
 }
 .cart-item img {
-  width: 80px;
-  object-fit: cover;
+  width: 70px;
+  border-radius: 6px;
+  background:#fff;
+  border:1px solid #eee;
 }
-.cart-item-title { font-weight: bold; }
+.cart-item-title {
+  font-weight: 600;
+  font-size: 1.03em;
+}
 .cart-item-price,
 .cart-item-subtotal {
   text-align: center;
@@ -612,17 +252,15 @@ footer a:focus {
   font-size: 18px;
   cursor: pointer;
 }
-/* جمع کل */
 #cart-summary,
 #cart-total h3 {
   margin-top: 20px;
   text-align: right;
 }
-/* بهبود استایل سبد خرید برای موبایل */
 @media (max-width: 767px) {
   .cart-item {
     grid-template-columns: 80px 1fr;
-    grid-template-areas: 
+    grid-template-areas:
       "image title"
       "image price"
       "image quantity"
@@ -637,7 +275,5 @@ footer a:focus {
   .qty-controls { grid-area: quantity; justify-content: flex-start; }
   .cart-item-subtotal { grid-area: subtotal; text-align: left; }
   .remove-btn { grid-area: remove; justify-self: end; }
-  #cart-summary {
-    text-align: center;
-  }
+  #cart-summary { text-align: center; }
 }
