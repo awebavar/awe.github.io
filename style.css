@@ -1,6 +1,5 @@
 /* فایل style.css - کاملا نهایی و یکپارچه */
 
-/* ================= تنظیمات کلی و متغیرها ================= */
 :root {
     --primary-color: #007bff;
     --primary-dark-color: #0056b3;
@@ -30,8 +29,6 @@ body {
     margin: 0 auto;
     padding: 20px;
 }
-
-/* ==================== هدر ==================== */
 header {
     background-color: var(--bg-color-white);
     padding: 3px 0;
@@ -97,14 +94,10 @@ header .container {
     border-radius: 50%;
     pointer-events: none;
 }
-
-/* ==================== بنر اصلی ==================== */
 .hero-banner {
     background-color: #e0f7fa;
     padding: 120px 0;
     text-align: center;
-    /* background-image: url('image_0.png'); */
-    /* background-size: cover; */
 }
 .hero-banner .banner-content {
     max-width: 900px;
@@ -136,8 +129,6 @@ header .container {
 .cta-button:hover, .cta-button:focus {
     background-color: var(--primary-dark-color);
 }
-
-/* ==================== بخش درباره نویسنده ==================== */
 .about-author-section {
     padding: 60px 0;
     background-color: var(--bg-color-light);
@@ -156,8 +147,6 @@ header .container {
     color: var(--text-color-light);
     line-height: 1.8;
 }
-
-/* ==================== ویدئوی معرفی ==================== */
 .video-intro {
     padding: 60px 0;
     background-color: var(--bg-color-lighter);
@@ -172,8 +161,6 @@ header .container {
     height: auto;
     border-radius: 8px;
 }
-
-/* ==================== بخش کتاب‌های ویژه ==================== */
 .price-label {
   font-size: 1em;
   font-weight: bold;
@@ -216,7 +203,6 @@ header .container {
   transform: scale(1.05);
   box-shadow: 0 5px 15px rgba(0,0,0,0.15);
 }
-/* shop.html */
 .product-card img { max-width: 150px; height: auto; }
 .product-card button {
   background: var(--primary-color);
@@ -225,7 +211,6 @@ header .container {
   padding: 8px 12px;
   cursor: pointer;
 }
-
 /* ==================== بخش ویدیوی کنار دسته‌بندی ==================== */
 .categories-section {
     padding: 60px 0;
@@ -251,7 +236,6 @@ header .container {
     grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
     gap: 20px;
 }
-
 /* ==================== کتاب/دسته‌بندی ==================== */
 .book-item img {
     max-width: 100%;
@@ -274,8 +258,6 @@ header .container {
 }
 .view-button:hover,
 .view-button:focus { background-color: var(--primary-dark-color); }
-
-/* ==================== دسته‌بندی‌ها ==================== */
 .categories {
     padding: 60px 0;
     background-color: var(--bg-color-white);
@@ -295,8 +277,6 @@ header .container {
     float: right;
     margin-right: 5px;
 }
-
-/* ==================== پیشنهادات ویژه ==================== */
 .special-offers {
     padding: 60px 0;
     background-color: var(--bg-color-light);
@@ -336,8 +316,6 @@ header .container {
 .offer-button:hover, .offer-button:focus {
     background-color: var(--secondary-dark-color);
 }
-
-/* ==================== فوتر ==================== */
 footer {
     background-color: var(--footer-bg-color);
     color: var(--footer-text-color);
@@ -395,7 +373,6 @@ footer a:hover, footer a:focus { color: var(--bg-color-white); }
     background-color: rgba(255,255,255,0.3);
     color: var(--secondary-color);
 }
-
 /* ==================== استایل سبد خرید (cart) ==================== */
 .cart-item {
   display: grid;
@@ -468,7 +445,6 @@ footer a:hover, footer a:focus { color: var(--bg-color-white); }
   .remove-btn { grid-area: remove; justify-self: end; }
   #cart-summary { text-align: center; }
 }
-
 /* ==================== واکنش‌گرایی کلی ==================== */
 @media (max-width: 992px) {
     .container { max-width: 960px; }
