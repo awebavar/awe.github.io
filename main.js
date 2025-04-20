@@ -193,8 +193,20 @@ function calculateCartTotal() {
   const cart = JSON.parse(localStorage.getItem('cart')) || [];
   const total = cart.reduce((sum, i) => sum + i.price * i.qty, 0);
   const el = document.getElementById('cart-total');
-  + if (el) el.textContent = `جمع کل سبد: ${total.toLocaleString()} تومان`;
+  if (el) el.textContent = total.toLocaleString() + ' تومان';
+  
+  // نمایش یا مخفی کردن دکمه های اقدام به خرید
+  const actions = document.querySelector('.cart-actions');
+  if (actions) {
+    // فقط اگر تنها یک آیتم و آنهم id=1 باشد
+    if (cart.length === 1 && cart[0].id == 1) {
+      actions.style.display = 'block';
+    } else {
+      actions.style.display = 'none';
+    }
+  }
 }
+
 
 // ----------------- اجرای توابع cart فقط در cart.html ----------------------
 document.addEventListener('DOMContentLoaded', function () {
