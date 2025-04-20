@@ -567,3 +567,14 @@ footer a:hover, footer a:focus { color: var(--bg-color-white); }
     text-align: center;
   }
 }
+.cart-summary-bar {
+  margin: 18px 0 35px;
+  padding: 14px 28px;
+  background: #f3f3fb;
+  border-radius: 10px;
+  font-size: 1.13em;
+  font-weight: bold;
+  color: var(--primary-dark-color);
+  text-align: center;
+  box-shadow: 0 2px 6px rgba(0,0,0,0.06);
+}
