@@ -33,6 +33,7 @@
         text-align: center;
       }
     }
+    /* استایل کارت محصول */
     .products-grid {
       display: grid;
       grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
@@ -97,6 +98,7 @@
   </style>
 </head>
 <body>
+  <!-- ==== Header ==== -->
   <header>
     <div class="container">
       <div class="logo">
@@ -106,13 +108,15 @@
       </div>
       <nav class="navigation">
         <ul>
-          <li><a href="index.html">خانه</a></li>
+          <li><a href="index.html">صفحه اصلی</a></li>
           <li><a href="shop.html">فروشگاه</a></li>
           <li><a href="#categories">دسته‌بندی‌ها</a></li>
-          <li><a href="#articles">مقالات</a></li>
+          <li><a href="#">مقالات</a></li>
           <li><a href="index.html#about-us">درباره ما</a></li>
           <li><a href="index.html#contact-us">تماس با ما</a></li>
-          <li><a href="#special-offers">پیشنهادات ویژه</a></li>
+          <!-- ==== AI-HTML-START ==== -->
+          <li><a href="special.html">ویژه</a></li>
+          <!-- ==== AI-HTML-END   ==== -->
         </ul>
       </nav>
       <div class="user-icons">
@@ -125,18 +129,25 @@
       </div>
     </div>
   </header>
+
+  <!-- ==== بنر فروشگاه ==== -->
   <section class="hero-banner">
     <div class="banner-content">
       <h1>به فروشگاه AWE خانه باور خوش آمدید</h1>
       <p>محصولات و دوره‌های آموزشی برای رهایی از باورهای محدودکننده و شکوفایی فردی</p>
     </div>
   </section>
+
+  <!-- ==== لیست محصولات پویا ==== -->
   <main class="shop-page">
     <div class="container">
       <div id="products-grid" class="products-grid">
+        <!-- محصولات با جاوااسکریپت از main.js رندر می‌شوند -->
       </div>
     </div>
   </main>
+
+  <!-- ==== Footer ==== -->
   <footer>
     <div class="container">
       <div class="footer-widget">
@@ -146,11 +157,11 @@
       <div class="footer-widget">
         <h3>دسترسی سریع</h3>
         <ul>
-          <li><a href="index.html">خانه</a></li>
+          <li><a href="index.html">صفحه اصلی</a></li>
           <li><a href="shop.html">فروشگاه</a></li>
-          <li><a href="#categories">دسته‌بندی‌ها</a></li>
-          <li><a href="#special-offers">پیشنهادات ویژه</a></li>
-          <li><a href="#contact-us">تماس با ما</a></li>
+          <li><a href="#">دسته‌بندی‌ها</a></li>
+          <li><a href="#">پیشنهادات ویژه</a></li>
+          <li><a href="#">تماس با ما</a></li>
         </ul>
       </div>
       <div class="footer-widget">
@@ -162,10 +173,13 @@
       <p>&copy; 1403 کلیه حقوق این سایت متعلق به AWE خانه باور می‌باشد.</p>
     </div>
   </footer>
+
   <div class="footer-note">
     این فایل فقط برای استفاده شخصی شماست و با ایمیل شما قفل شده.<br>
     ارتباط با نویسنده: <strong>@AWEBAVAR</strong> | <strong>awebavar@gmail.com</strong>
   </div>
+
+  <!-- ==== اسکریپت اصلی ==== -->
   <script src="main.js"></script>
 </body>
 </html>
