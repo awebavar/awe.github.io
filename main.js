@@ -3,7 +3,9 @@
 
 // --------------------- بروزرسانی عدد badge سبد خرید ----------------------
 function updateCartCount() {
-  const cart = JSON.parse(localStorage.getItem('cart')) || [];
+  const cart = JSON.parse(localStorage.getItem('cart'))
+  renderShopProducts();
+  updateCartCount();
   const count = cart.reduce((sum, item) => sum + item.qty, 0);
   document.querySelectorAll('#cart-count').forEach(b => b.textContent = count);
 }
