@@ -132,7 +132,6 @@ document.addEventListener('DOMContentLoaded', function () {
 // --------------------- رندر آیتم‌های سبد خرید (cart.html) -----------------
 function renderCartItems() {
   const container = document.getElementById('cart-items');
-  const summary = document.getElementById('cart-summary');
   if (!container) return;
   let cart = JSON.parse(localStorage.getItem('cart')) || [];
   container.innerHTML = '';
