@@ -3,85 +3,126 @@
 <head>
   <meta charset="UTF-8">
   <title>فروشگاه AWE خانه باور</title>
-  <meta name="viewport" content="width=device-width,initial-scale=1.0">
   <link rel="stylesheet" href="style.css">
-  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css"/>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" crossorigin="anonymous" referrerpolicy="no-referrer" />
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+  <style>
+    .menu-toggle { /* همان استایل index.html */ }
+    @media (max-width: 991px) {
+      .mobile-menu { width: 100%; }
+      .mobile-menu.active { display: block; }
+      .mobile-menu ul { flex-direction: column; align-items: center; }
+      .mobile-menu li { margin: 10px 0; width: 100%; text-align: center; }
+    }
+  </style>
 </head>
 <body>
-<header>
-  <div class="container">
-    <div class="logo">
-      <a href="index.html"><img src="LOGO.png.png" alt="لوگوی خانه باور"></a>
+  <header>
+    <div class="container">
+      <div class="logo">
+        <a href="#"><img src="LOGO.png.png" alt="لوگوی AWE خانه باور"></a>
+      </div>
+      <button class="menu-toggle" aria-label="باز کردن منو">&#9776;</button>
+      <nav class="navigation">
+        <ul>
+          <li><a href="index.html">صفحه اصلی</a></li>
+          <li><a href="shop.html">فروشگاه</a></li>
+          <li><a href="#categories">دسته‌بندی‌ها</a></li>
+          <li><a href="#">مقالات</a></li>
+          <li><a href="index.html#about-us">درباره ما</a></li>
+          <li><a href="index.html#contact-us">تماس با ما</a></li>
+          <li><a href="special.html">ویژه</a></li>
+        </ul>
+      </nav>
+      <div class="user-icons">
+        <a href="#"><i class="fa fa-search"></i></a>
+        <a href="cart.html" class="cart-icon">
+          <i class="fa fa-shopping-cart"></i>
+          <span id="cart-count">0</span>
+        </a>
+        <a href="#"><i class="fa fa-user"></i></a>
+      </div>
     </div>
-    <button class="menu-toggle">&#9776;</button>
-    <nav class="navigation">
-      <ul>
-        <li><a href="index.html">خانه</a></li>
-        <li><a href="shop.html">فروشگاه</a></li>
-        <li><a href="#categories">دسته‌بندی‌ها</a></li>
-        <li><a href="#about-author">درباره نویسنده</a></li>
-        <li><a href="index.html#special-offers">پیشنهادات ویژه</a></li>
-        <li><a href="#contact-us">تماس با ما</a></li>
-      </ul>
-    </nav>
-    <div class="user-icons">
-      <a href="#"><i class="fa fa-search"></i></a>
-      <a href="cart.html" class="cart-icon">
-        <i class="fa fa-shopping-cart"></i><span id="cart-count">0</span>
-      </a>
-      <a href="#"><i class="fa fa-user"></i></a>
+  </header>
+
+  <section class="hero-banner">
+    <div class="banner-content">
+      <h1>به فروشگاه AWE خانه باور خوش آمدید</h1>
+      <p>محصولات و دوره‌های آموزشی برای رهایی از باورهای محدود کننده</p>
     </div>
-  </div>
-</header>
-<section class="hero-banner">
-  <div class="banner-content">
-    <h1>به فروشگاه AWE خانه باور خوش آمدید</h1>
-    <p>محصولات و دوره‌های آموزشی برای رهایی از باورهای محدود کننده</p>
-  </div>
-</section>
-<main class="shop-page">
-  <div class="container products-grid">
-    <!-- کالاها با دست یا داینامیک [main.js] اینجا ایجکت می‌شوند -->
-    <div class="product-card">
-      <img src="image_0.png" alt="سفر به اعماق رازهای نهان باورها">
-      <h3>سفر به اعماق رازهای نهان باورها</h3>
-      <p>نویسنده : AWE </p>
-      <p>قیمت: <span class="product-price">998000</span> تومان</p>
-      <button class="add-to-cart"
-        data-id="book1"
-        data-title="سفر به اعماق رازهای نهان باورها"
-        data-price="998000">
-        افزودن به سبد
-      </button>
+  </section>
+
+  <!-- ==== آغاز دسته‌بندی کتاب در shop ==== -->
+  <section id="categories" class="categories-section">
+    <div class="container">
+      <h2>دسته‌بندی کتاب‌ها</h2>
+      <div class="categories-grid">
+        <div class="category-item">
+          <a href="#"><h3>باورهای رشد فردی</h3></a>
+          <p>برای تحول شخصی و کشف توانایی‌های درونی</p>
+        </div>
+        <div class="category-item">
+          <a href="#"><h3>موفقیت و مدیریت ذهن</h3></a>
+          <p>گام‌های عملی برای دستیابی به موفقیت واقعی در زندگی</p>
+        </div>
+        <div class="category-item">
+          <a href="#"><h3>معنویت و آرامش</h3></a>
+          <p>یافتن آرامش ذهنی و معنای عمیق‌تر زندگی</p>
+        </div>
+      </div>
     </div>
-    <!-- سایر محصولات را به همان سبک اضافه کنید... -->
-  </div>
-</main>
-<footer>
-  <div class="container">
-    <div class="footer-widget">
-      <h3>درباره ما</h3>
-      <p>خانه باور، مرجع تخصصی ارائه راهکارهای رهایی از باورهای محدود کننده و موفقیت.</p>
+  </section>
+  <!-- ==== پایان دسته‌بندی کتاب در shop ==== -->
+
+  <main class="shop-page">
+    <div class="container">
+      <div class="product-card">
+        <img src="image_0.png" alt="سفر به اعماق رازهای نهان باورها">
+        <h3>سفر به اعماق رازهای نهان باورها</h3>
+        <p>نویسنده: AWE</p>
+        <p>قیمت: <span class="product-price">998000</span> تومان</p>
+        <button class="add-to-cart" data-id="book1" data-title="سفر به اعماق رازهای نهان باورها" data-price="998000">
+          افزودن به سبد
+        </button>
+      </div>
+      <!-- سایر محصولات ... -->
+
+      <!-- ==== چکیده کتاب در صفحه shop ==== -->
+      <div class="book-summary" style="max-width:800px;margin:30px auto 0 auto;font-size:1.09em;line-height:1.8;color:#555;background:#fff;padding:18px 15px;border-radius:9px;box-shadow:0 3px 12px #eee;">
+        <h4 style="color:#333;margin-bottom:7px;">چکیده‌ای از کتاب «سفر به اعماق رازهای نهان باورها»:</h4>
+        <p>
+          این کتاب به شما کمک می‌کند ریشه باورها و محدودیت‌های ذهنی خود را کشف و اصلاح کنید و با برداشتن موانع ذهنی، قدم در مسیر موفقیت و عشق به خود بگذارید. نویسنده با ترکیبی از تجربه شخصی و پژوهش علمی، مسیری واقعی برای خودشناسی پیشنهاد می‌دهد.
+        </p>
+      </div>
+      <!-- ===== پایان چکیده ===== -->
     </div>
-    <div class="footer-widget">
-      <h3>دسترسی سریع</h3>
-      <ul>
-        <li><a href="index.html">خانه</a></li>
-        <li><a href="shop.html">فروشگاه</a></li>
-        <li><a href="#categories">دسته‌بندی‌ها</a></li>
-        <li><a href="index.html#special-offers">پیشنهادات ویژه</a></li>
-        <li><a href="#contact-us">تماس با ما</a></li>
-      </ul>
+  </main>
+
+  <footer>
+    <div class="container">
+      <div class="footer-widget">
+        <h3>درباره ما</h3>
+        <p>AWE خانه باور، مرجع تخصصی ارائه راهکارهای رهایی از باورهای محدود کننده و دستیابی به موفقیت و خودباوری.</p>
+      </div>
+      <div class="footer-widget">
+        <h3>دسترسی سریع</h3>
+        <ul>
+          <li><a href="index.html">صفحه اصلی</a></li>
+          <li><a href="shop.html">فروشگاه</a></li>
+          <li><a href="#categories">دسته‌بندی‌ها</a></li>
+          <li><a href="#">پیشنهادات ویژه</a></li>
+          <li><a href="#">تماس با ما</a></li>
+        </ul>
+      </div>
+      <div class="footer-widget">
+        <h3>ارتباط با ما</h3>
+        <p>ایمیل: <a href="mailto:awebavar@gmail.com">awebavar@gmail.com</a></p>
+      </div>
     </div>
-    <div class="footer-widget" id="contact-us">
-      <h3>ارتباط با ما</h3>
-      <p>ایمیل: <a href="mailto:awebavar@gmail.com">awebavar@gmail.com</a></p>
+    <div class="copyright">
+      <p>&copy; 1403 کلیه حقوق این سایت متعلق به AWE خانه باور می‌باشد.</p>
     </div>
-  </div>
-  <div class="copyright">
-    <p>&copy; 1403 کلیه حقوق این سایت متعلق به AWE خانه باور می‌باشد.</p>
-  </div>
-</footer>
-<script src="main.js"></script>
+  </footer>
+  <script src="main.js"></script>
 </body>
 </html>
