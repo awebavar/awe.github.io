@@ -111,6 +111,8 @@ calculateCartTotal();
 
   // event delegation برای افزودن به سبد خرید
   document.body.addEventListener('click', function (e) {
+     renderShopProducts();
+  updateCartCount();
     if (e.target.classList.contains('add-to-cart')) {
       const btn = e.target;
       const id = btn.dataset.id;
