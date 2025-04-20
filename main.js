@@ -193,7 +193,7 @@ function calculateCartTotal() {
   const cart = JSON.parse(localStorage.getItem('cart')) || [];
   const total = cart.reduce((sum, i) => sum + i.price * i.qty, 0);
   const el = document.getElementById('cart-total');
-  if (el) el.textContent = total.toLocaleString();
+  + if (el) el.textContent = `جمع کل سبد: ${total.toLocaleString()} تومان`;
 }
 
 // ----------------- اجرای توابع cart فقط در cart.html ----------------------
