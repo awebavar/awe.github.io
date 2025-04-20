@@ -160,7 +160,7 @@
         <h3>تماس با ما</h3>
         <p>آدرس:</p>
         <p>تلفن:-</p>
-        <p>ایمیل: <a href="mailto:info@awebeliefs.com">awebavar@gmail.com</a></p>
+        <p>ایمیل: <a href="mailto:awebavar@gmail.com">awebavar@gmail.com</a></p>
       </div>
     </div>
     
@@ -211,39 +211,130 @@
         container.insertAdjacentHTML('beforeend', itemHTML);
       });
 
-      totalDiv.innerHTML = `<h3>جمع کل: ${total.toLocaleString()} تومان</h3>`;
-      bindCartButtons();
-    }
+      totalDiv.innerHTML = `<h3 id="cart-summary">مبلغ کل: ${total.toLocaleString()} تومان</h3>`;
 
-    function bindCartButtons() {
+      // اضافه کردن event listener برای دکمه‌ها
       document.querySelectorAll('.increase').forEach(btn =>
-        btn.addEventListener('click', () => changeQty(btn.dataset.id, 1)));
+        btn.addEventListener('click', () => changeQty(btn.dataset.id, +1))
+      );
       document.querySelectorAll('.decrease').forEach(btn =>
-        btn.addEventListener('click', () => changeQty(btn.dataset.id, -1)));
+        btn.addEventListener('click', () => changeQty(btn.dataset.id, -1))
+      );
       document.querySelectorAll('.remove-btn').forEach(btn =>
-        btn.addEventListener('click', () => removeItem(btn.dataset.id)));
+        btn.addEventListener('click', () => changeQty(btn.dataset.id, 'remove'))
+      );
+
+      updateCartCount();
     }
 
-    function changeQty(id, diff) {
+    // تغییر تعداد یا حذف آیتم
+    function changeQty(id, delta) {
       let cart = JSON.parse(localStorage.getItem('cart')) || [];
       cart = cart.map(item => {
-        if(item.id == id){
-          item.qty = Math.max(1, item.qty + diff);
+        if (item.id == id) {
+          if (delta === 'remove') return null;
+          item.qty += delta;
+          if (item.qty < 1) return null;
         }
         return item;
+      }).filter(Boolean);
+      localStorage.setItem('cart', JSON.stringify(cart));
+      renderCart();
+    }
+
+    document.addEventListener('DOMContentLoaded', function() {
+      renderCart();
+      
+      // ایجاد دکمه منو برای حالت موبایل
+      const header = document.querySelector('header .container');
+      const navigation = document.querySelector('.navigation');
+      
+      // ساخت دکمه منو
+      const menuToggle = document.createElement('button');
+      menuToggle.className = 'menu-toggle';
+      menuToggle.innerHTML = '&#9776;'; // نماد همبرگر
+      menuToggle.style.display = 'none'; // در ابتدا مخفی
+      
+      // اضافه کردن به هدر، قبل از navigation
+      header.insertBefore(menuToggle, navigation);
+      
+      // تنظیم نمایش دکمه منو در موبایل
+      function adjustMenuVisibility() {
+        if (window.innerWidth <= 991) {
+          menuToggle.style.display = 'block';
+          navigation.classList.add('mobile-menu');
+          if (!navigation.classList.contains('active')) {
+            navigation.style.display = 'none';
+          }
+        } else {
+          menuToggle.style.display = 'none';
+          navigation.style.display = 'block';
+          navigation.classList.remove('mobile-menu');
+        }
+      }
+      
+      // اجرا در بارگذاری و تغییر سایز
+      adjustMenuVisibility();
+      window.addEventListener('resize', adjustMenuVisibility);
+      
+      // کلیک روی دکمه منو
+      menuToggle.addEventListener('click', function() {
+        if (navigation.style.display === 'none' || navigation.style.display === '') {
+          navigation.style.display = 'block';
+          navigation.classList.add('active');
+        } else {
+          navigation.style.display = 'none';
+          navigation.classList.remove('active');
+        }
       });
-      localStorage.setItem('cart', JSON.stringify(cart));
-      renderCart();
-      updateCartCount();
-    }
+    });
+  </script>
+  <script>
+    document.addEventListener('DOMContentLoaded', function() {
+      // ایجاد دکمه منو برای حالت موبایل
+      const header = document.querySelector('header .container');
+      const navigation = document.querySelector('.navigation');
+      
+      // ساخت دکمه منو
+      const menuToggle = document.createElement('button');
+      menuToggle.className = 'menu-toggle';
+      menuToggle.innerHTML = '&#9776;'; // نماد همبرگر
+      menuToggle.style.display = 'none'; // در ابتدا مخفی
+      
+      // اضافه کردن به هدر، قبل از navigation
+      header.insertBefore(menuToggle, navigation);
+      
+      // تنظیم نمایش دکمه منو در موبایل
+      function adjustMenuVisibility() {
+        if (window.innerWidth <= 991) {
+          menuToggle.style.display = 'block';
+          navigation.classList.add('mobile-menu');
+          if (!navigation.classList.contains('active')) {
+            navigation.style.display = 'none';
+          }
+        } else {
+          menuToggle.style.display = 'none';
+          navigation.style.display = 'block';
+          navigation.classList.remove('mobile-menu');
+        }
+      }
+      
+      // اجرا در بارگذاری و تغییر سایز
+      adjustMenuVisibility();
+      window.addEventListener('resize', adjustMenuVisibility);
+      
+      // کلیک روی دکمه منو
+      menuToggle.addEventListener('click', function() {
+        if (navigation.style.display === 'none' || navigation.style.display === '') {
+          navigation.style.display = 'block';
+          navigation.classList.add('active');
+        } else {
+          navigation.style.display = 'none';
+          navigation.classList.remove('active');
+        }
+      });
+    });
+  </script>
 
-    function removeItem(id) {
-      let cart = JSON.parse(localStorage.getItem('cart')) || [];
-      cart = cart.filter(item => item.id != id);
-      localStorage.setItem('cart', JSON.stringify(cart));
-      renderCart();
-      updateCartCount();
-    }
-
-    function updateCartCount() {
-      const
+</body>
+</html>
