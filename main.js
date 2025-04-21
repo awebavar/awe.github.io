@@ -114,6 +114,7 @@ document.addEventListener('DOMContentLoaded', function () {
   document.body.addEventListener('click', function (e) {
      renderShopProducts();
   updateCartCount();
+    calculateCartTotal();
     if (e.target.classList.contains('add-to-cart')) {
       const btn = e.target;
       const id = btn.dataset.id;
@@ -194,6 +195,8 @@ function changeQty(id, delta) {
   localStorage.setItem('cart', JSON.stringify(cart));
   updateCartCount();
   renderCartItems();
+        calculateCartTotal();
+
 }
 
 // ------------- جمع کل سبد خرید (cart.html) ---------------------------------
