@@ -621,9 +621,9 @@ footer a:hover, footer a:focus { color: var(--bg-color-white); }
 }
 /* استایل افقی و کوچک محصولات فروشگاه */
 .products-grid {
-  display: flex;
+  display: flex !important;
   flex-direction: row;
-  gap: 15px;
+  gap: 18px;
   overflow-x: auto;
   padding: 20px 0 30px 0;
   scrollbar-color: #bbb #f1f1f1;
@@ -631,43 +631,42 @@ footer a:hover, footer a:focus { color: var(--bg-color-white); }
   -webkit-overflow-scrolling: touch;
 }
 .book-item {
-  flex: 0 0 135px;
+  flex: 0 0 130px;
   display: flex;
   flex-direction: column;
   align-items: center;
-  background: var(--bg-color-white);
+  background: #fff;
   border-radius: 10px;
   box-shadow: 0 3px 12px rgba(0,0,0,.09);
-  padding: 15px 7px 15px 7px;
+  padding: 14px 8px 14px 8px;
   margin: 0 4px;
   text-align: center;
-  transition: transform .14s, box-shadow .14s;
-  min-width: 135px;
-  max-width: 150px;
+  transition: transform .18s, box-shadow .18s;
+  min-width: 130px;
+  max-width: 170px;
 }
 .book-item:hover, .book-item:focus-within {
-  transform: scale(1.04);
+  transform: scale(1.07);
   box-shadow: 0 8px 32px rgba(0,0,0,.14);
 }
 .book-item img {
-  width: 70px;   /* کوچک */
-  height: 98px;  /* کوچک */
+  width: 72px;
+  height: 100px;
   object-fit: cover;
   border-radius: 6px;
-  margin-bottom: 7px;
+  margin-bottom: 6px;
   background: #f5f5f9;
 }
 .book-item h3 {
   font-size: 1em;
-  margin: 8px 0 5px;
-  color: var(--text-color-dark);
+  margin: 7px 0 5px;
+  color: #222;
   font-weight: bold;
-  line-height: 1.45;
 }
 .book-item p {
-  font-size: .89em;
-  color: var(--text-color-light);
-  margin-bottom: 6px;
+  font-size: .92em;
+  color: #666;
+  margin-bottom: 9px;
 }
 .book-meta {
   margin-top: auto;
@@ -679,26 +678,26 @@ footer a:hover, footer a:focus { color: var(--bg-color-white); }
   margin-bottom: 3px;
 }
 .book-price {
-  color: var(--secondary-color);
+  color: #0a77be;
   font-weight: bold;
-  font-size: .97em;
+  font-size: .99em;
 }
 .add-to-cart {
-  background: var(--primary-color, #007bff);
+  background: #007bff;
   color: #fff;
   border: none;
   border-radius: 6px;
   cursor: pointer;
   font-size: .89em;
-  padding: 6px 10px;
+  padding: 6px 13px;
   font-weight: bold;
-  transition: background .12s;
+  transition: background .15s;
 }
 .add-to-cart:hover, .add-to-cart:focus {
-  background: var(--primary-dark-color, #0056b3);
+  background: #0056b3;
 }
 @media (max-width: 600px) {
-  .products-grid { gap:6px; }
-  .book-item { min-width: 92px; max-width: 110px; padding:6px 2px; }
-  .book-item img { width: 45px; height: 58px; }
+  .products-grid { gap:7px; }
+  .book-item { min-width: 92px; max-width: 120px; padding:7px 3px; }
+  .book-item img { width: 52px; height: 68px; }
 }
