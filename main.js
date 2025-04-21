@@ -1,14 +1,13 @@
-// main.js
-// نسخه اصلاح‌شده و بدون اشتباهات بی‌نهایت بازگشت و تکرار
+// main.js - نسخه اصلاحی (رفع حلقه های بینهایت و ایرادات عملکردی)
 
-// --------------------- بروزرسانی عدد badge سبد خرید ----------------------
+//----------------- بروزرسانی عدد badge سبد خرید ------------------
 function updateCartCount() {
   const cart = JSON.parse(localStorage.getItem('cart')) || [];
   const count = cart.reduce((sum, item) => sum + item.qty, 0);
   document.querySelectorAll('#cart-count').forEach(b => b.textContent = count);
 }
 
-// ----------------- ساخت دکمه منوی موبایل (responsive) --------------------
+//--------------- منوی موبایل ----------------------
 document.addEventListener('DOMContentLoaded', function () {
   const header = document.querySelector('header .container');
   const navigation = document.querySelector('.navigation');
@@ -45,7 +44,7 @@ document.addEventListener('DOMContentLoaded', function () {
   }
 });
 
-// ---------------------- رندر محصولات shop.html ---------------------------
+//--------------- رندر محصولات فروشگاه -----------------
 function renderShopProducts() {
   const grid = document.getElementById('products-grid');
   if (!grid) return;
@@ -99,13 +98,13 @@ function renderShopProducts() {
   });
 }
 
-// ----------------- افزودن به سبد خرید (shop.html) -----------------------
+//----------- افزودن به سبد خرید (shop.html) ------------
 document.addEventListener('DOMContentLoaded', function () {
   renderShopProducts();
   updateCartCount();
   calculateCartTotal();
 
-  // event delegation
+  // فقط روی دکمه افزودن سبد خرید اتفاق بیافتد
   document.body.addEventListener('click', function (e) {
     if (e.target.classList.contains('add-to-cart')) {
       const btn = e.target;
@@ -129,7 +128,7 @@ document.addEventListener('DOMContentLoaded', function () {
   });
 });
 
-// --------------------- رندر آیتم‌های سبد خرید (cart.html) -----------------
+//-------------------- رندر آیتم‌ سبد خرید (cart.html) -----------------
 function renderCartItems() {
   const container = document.getElementById('cart-items');
   if (!container) return;
@@ -137,6 +136,7 @@ function renderCartItems() {
   container.innerHTML = '';
   if (cart.length === 0) {
     container.innerHTML = '<p class="empty-cart-message">سبد شما خالی است.</p>';
+    // دکمه‌های اقدام به خرید را در صورت خالی بودن پنهان کن
     const actions = document.querySelector('.cart-actions');
     if (actions) actions.style.display = 'none';
     document.getElementById('cart-total').textContent = '۰ تومان';
@@ -161,7 +161,7 @@ function renderCartItems() {
     container.appendChild(div);
   });
 
-  // رویداد دکمه‌ها
+  // رویداد دکمه‌ها:
   container.querySelectorAll('.inc-btn').forEach(b =>
     b.addEventListener('click', () => changeQty(b.dataset.id, +1)));
   container.querySelectorAll('.dec-btn').forEach(b =>
@@ -172,41 +172,38 @@ function renderCartItems() {
   calculateCartTotal();
 }
 
-// ----------------- حذف/تغییر تعداد آیتم سبد خرید (cart.html) ----------------
+//------------ حذف/تغییر تعداد آیتم سبد خرید (cart.html) --------------
 function changeQty(id, delta) {
   let cart = JSON.parse(localStorage.getItem('cart')) || [];
-  let changed = false;
-  cart = cart.map(item => {
-    if (item.id == id) {
-      if (delta === 0) return null; // حذف کلی
-      item.qty = Math.max(1, item.qty + delta);
-      changed = true;
-    }
-    return item;
-  }).filter(Boolean);
+  if (delta === 0) {
+    cart = cart.filter(item => item.id != id);
+  } else {
+    cart = cart.map(item => {
+      if (item.id == id) {
+        item.qty = Math.max(1, item.qty + delta);
+      }
+      return item;
+    });
+  }
   localStorage.setItem('cart', JSON.stringify(cart));
   updateCartCount();
   renderCartItems();
 }
 
-// ------------- جمع کل سبد خرید (cart.html, shop.html) ----------------------
+//------------- جمع کل سبد خرید --------------
 function calculateCartTotal() {
   const cart = JSON.parse(localStorage.getItem('cart')) || [];
   const total = cart.reduce((sum, i) => sum + i.price * i.qty, 0);
-
-  // در چند مکان ممکن است نمایش داشته باشد
   document.querySelectorAll('#cart-total').forEach(el => {
-    if (el) el.textContent = total.toLocaleString() + ' تومان';
+    el.textContent = total.toLocaleString() + ' تومان';
   });
-
-  // مخفی/نمایش دکمه‌های اقدام به خرید
   const actions = document.querySelector('.cart-actions');
   if (actions) {
     actions.style.display = cart.length > 0 ? 'block' : 'none';
   }
 }
 
-// ----------------- اجرای توابع cart فقط در cart.html ----------------------
+//----------------- مخصوص cart.html -------------------
 document.addEventListener('DOMContentLoaded', function () {
   if (document.getElementById('cart-items')) {
     renderCartItems();
