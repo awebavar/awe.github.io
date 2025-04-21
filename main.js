@@ -62,7 +62,7 @@ function renderShopProducts() {
       id: 2,
       title: 'عنوان محصول دوم',
       description: 'خلاصه‌ای از این محصول دوم؛ توضیحی کوتاه.',
-      price: 520000,
+      price: 000000,
       image: 'image_0 (1).png',
       link: '#'
     },
@@ -70,7 +70,7 @@ function renderShopProducts() {
       id: 3,
       title: 'عنوان محصول سوم',
       description: 'نکتهٔ کلیدی دربارهٔ این محصول.',
-      price: 370000,
+      price: 000000,
       image: 'image_0 (2).png',
       link: '#'
     }
