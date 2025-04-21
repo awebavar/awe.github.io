@@ -1,27 +1,19 @@
 // main.js
-// ماژول اصلی برای صفحات index, shop و cart
+// نسخه اصلاح‌شده و بدون اشتباهات بی‌نهایت بازگشت و تکرار
 
 // --------------------- بروزرسانی عدد badge سبد خرید ----------------------
 function updateCartCount() {
-  const cart = JSON.parse(localStorage.getItem('cart'))
-  renderShopProducts();
-  updateCartCount();
-  calculateCartTotal
+  const cart = JSON.parse(localStorage.getItem('cart')) || [];
   const count = cart.reduce((sum, item) => sum + item.qty, 0);
   document.querySelectorAll('#cart-count').forEach(b => b.textContent = count);
 }
 
 // ----------------- ساخت دکمه منوی موبایل (responsive) --------------------
 document.addEventListener('DOMContentLoaded', function () {
-
-
-
-  
   const header = document.querySelector('header .container');
   const navigation = document.querySelector('.navigation');
   if (!header || !navigation) return;
 
-  // دکمه فقط یک بار ساخته شود
   if (!header.querySelector('.menu-toggle')) {
     const menuToggle = document.createElement('button');
     menuToggle.className = 'menu-toggle';
@@ -58,7 +50,6 @@ function renderShopProducts() {
   const grid = document.getElementById('products-grid');
   if (!grid) return;
 
-  // نمونه داده محصولات (می‌توانید این بخش را داینامیک‌تر کنید)
   const products = [
     {
       id: 1,
@@ -114,11 +105,8 @@ document.addEventListener('DOMContentLoaded', function () {
   updateCartCount();
   calculateCartTotal();
 
-  // event delegation برای افزودن به سبد خرید
+  // event delegation
   document.body.addEventListener('click', function (e) {
-     renderShopProducts();
-  updateCartCount();
-    calculateCartTotal();
     if (e.target.classList.contains('add-to-cart')) {
       const btn = e.target;
       const id = btn.dataset.id;
@@ -133,7 +121,7 @@ document.addEventListener('DOMContentLoaded', function () {
       } else {
         cart.push({ id, title, price, image, qty: 1 });
       }
-            localStorage.setItem('cart', JSON.stringify(cart));
+      localStorage.setItem('cart', JSON.stringify(cart));
       updateCartCount();
       calculateCartTotal();
       alert('محصول به سبد اضافه شد!');
@@ -148,10 +136,10 @@ function renderCartItems() {
   let cart = JSON.parse(localStorage.getItem('cart')) || [];
   container.innerHTML = '';
   if (cart.length === 0) {
-    container.innerHTML = '<p>سبد شما خالی است.</p>';
-    // دکمه‌های اقدام به خرید را در صورت خالی بودن پنهان کن
+    container.innerHTML = '<p class="empty-cart-message">سبد شما خالی است.</p>';
     const actions = document.querySelector('.cart-actions');
     if (actions) actions.style.display = 'none';
+    document.getElementById('cart-total').textContent = '۰ تومان';
     return;
   }
 
@@ -173,7 +161,7 @@ function renderCartItems() {
     container.appendChild(div);
   });
 
-  // رویداد دکمه‌ها:
+  // رویداد دکمه‌ها
   container.querySelectorAll('.inc-btn').forEach(b =>
     b.addEventListener('click', () => changeQty(b.dataset.id, +1)));
   container.querySelectorAll('.dec-btn').forEach(b =>
@@ -199,29 +187,24 @@ function changeQty(id, delta) {
   localStorage.setItem('cart', JSON.stringify(cart));
   updateCartCount();
   renderCartItems();
-        calculateCartTotal();
-
 }
 
-// ------------- جمع کل سبد خرید (cart.html) ---------------------------------
+// ------------- جمع کل سبد خرید (cart.html, shop.html) ----------------------
 function calculateCartTotal() {
   const cart = JSON.parse(localStorage.getItem('cart')) || [];
   const total = cart.reduce((sum, i) => sum + i.price * i.qty, 0);
-  const el = document.getElementById('cart-total');
-  if (el) el.textContent = total.toLocaleString() + ' تومان';
-  
-  // نمایش یا مخفی کردن دکمه های اقدام به خرید
+
+  // در چند مکان ممکن است نمایش داشته باشد
+  document.querySelectorAll('#cart-total').forEach(el => {
+    if (el) el.textContent = total.toLocaleString() + ' تومان';
+  });
+
+  // مخفی/نمایش دکمه‌های اقدام به خرید
   const actions = document.querySelector('.cart-actions');
   if (actions) {
-    // فقط اگر تنها یک آیتم و آنهم id=1 باشد
-    if (cart.length === 1 && cart[0].id == 1) {
-      actions.style.display = 'block';
-    } else {
-      actions.style.display = 'none';
-    }
+    actions.style.display = cart.length > 0 ? 'block' : 'none';
   }
 }
-
 
 // ----------------- اجرای توابع cart فقط در cart.html ----------------------
 document.addEventListener('DOMContentLoaded', function () {
