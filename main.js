@@ -13,6 +13,10 @@ function updateCartCount() {
 
 // ----------------- ساخت دکمه منوی موبایل (responsive) --------------------
 document.addEventListener('DOMContentLoaded', function () {
+
+
+
+  
   const header = document.querySelector('header .container');
   const navigation = document.querySelector('.navigation');
   if (!header || !navigation) return;
