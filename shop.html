@@ -4,16 +4,16 @@
   <meta charset="UTF-8">
   <title>فروشگاه | AWE خانه باور</title>
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <link rel="stylesheet" href="style.css">  
+  <link rel="stylesheet" href="style.css">
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" crossorigin="anonymous">
 </head>
 <body>
-  <!-- ==== Header ==== -->
+  <!-- ===== Header ===== -->
   <header>
     <div class="container">
       <div class="logo">
         <a href="index.html">
-          <img src="LOGO.png" alt="لوگوی AWE خانه باور">
+          <img src="logo.png" alt="لوگوی AWE خانه باور">
         </a>
       </div>
       <nav class="navigation">
@@ -24,7 +24,7 @@
           <li><a href="#">مقالات</a></li>
           <li><a href="index.html#about-us">درباره ما</a></li>
           <li><a href="index.html#contact-us">تماس با ما</a></li>
-           </ul>
+        </ul>
       </nav>
       <div class="user-icons">
         <a href="#"><i class="fa fa-search"></i></a>
@@ -51,36 +51,30 @@
       <div id="products-grid" class="products-grid">
         <!-- محصولات با جاوااسکریپت از main.js رندر می‌شوند -->
       </div>
-      <div style="margin: 21px 0 28px; text-align:center; font-size:1.07em; font-weight: bold;">
+      <div class="cart-summary-bar">
         مجموع خرید شما: <span id="cart-total">۰</span> تومان
       </div>
-    </div>
-
-  <div class="cart-summary-bar">
-   مجموع خرید شما: <span id="cart-total">۰ تومان</span>
-</div> 
     </div>
   </main>
 
   <!-- ==== Footer ==== -->
- <footer>
+  <footer>
     <div class="container">
       <div id="about-us" class="footer-widget">
         <h3>درباره ما</h3>
-        <p>ماموریت من در AWE خانه باور، توانمندسازی انسان‌ها برای رهایی از زنجیرهای باورهای محدودکننده و دستیابی به پتانسیل‌های بی‌کرانشان است. من عمیقاً باور دارم که هر فردی، صرف نظر از گذشته و شرایط فعلی‌اش، لایق یک زندگی سرشار از شادی، موفقیت و رضایت است. فلسفه من بر این اصل استوار است که باورهای ما، واقعیت ما را شکل می‌دهند. با شناسایی و تغییر باورهای محدودکننده به باورهای قدرتمند و سازنده، می‌توانیم زندگی خود را در تمام ابعاد متحول کنیم . هدف من، ارائه دانش، ابزارها و راهکارهایی به شماست که خودم تا بتوانید:
+        <p>ماموریت من در AWE خانه باور، توانمندسازی انسان‌ها برای رهایی از زنجیرهای باورهای محدودکننده و دستیابی به پتانسیل‌های بی‌کرانشان است...</p>
       </div>
       <div class="footer-widget">
         <h3>دسترسی سریع</h3>
         <ul>
           <li><a href="index.html">صفحه اصلی</a></li>
           <li><a href="shop.html">فروشگاه</a></li>
-          <li><a href="#">دسته‌بندی‌ها</a></li>
-          <li><a href="index.html#special-offers">پیشنهادات ویژه</a></li>
-
-<li><a href="#">تماس با ما</a></li>
+          <li><a href="#categories">دسته‌بندی‌ها</a></li>
+          <li><a href="#special-offers">پیشنهادات ویژه</a></li>
+          <li><a href="#contact-us">تماس با ما</a></li>
         </ul>
       </div>
-      <div class="footer-widget">
+      <div class="footer-widget" id="contact-us">
         <h3>ارتباط با ما</h3>
         <p>ایمیل: <a href="mailto:awebavar@gmail.com">awebavar@gmail.com</a></p>
       </div>
@@ -89,13 +83,10 @@
       <p>&copy; 1403 کلیه حقوق این سایت متعلق به AWE خانه باور می‌باشد.</p>
     </div>
   </footer>
-
   <div class="footer-note">
     این فایل فقط برای استفاده شخصی شماست و با ایمیل شما قفل شده.<br>
     ارتباط با نویسنده: <strong>@AWEBAVAR</strong> | <strong>awebavar@gmail.com</strong>
   </div>
-
-  <!-- ==== اسکریپت اصلی ==== -->
   <script src="main.js"></script>
 </body>
 </html>
