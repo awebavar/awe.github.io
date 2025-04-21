@@ -108,7 +108,7 @@ function renderShopProducts() {
 document.addEventListener('DOMContentLoaded', function () {
   renderShopProducts();
   updateCartCount();
-calculateCartTotal();
+  calculateCartTotal();
 
   // event delegation برای افزودن به سبد خرید
   document.body.addEventListener('click', function (e) {
@@ -128,8 +128,9 @@ calculateCartTotal();
       } else {
         cart.push({ id, title, price, image, qty: 1 });
       }
-      localStorage.setItem('cart', JSON.stringify(cart));
+            localStorage.setItem('cart', JSON.stringify(cart));
       updateCartCount();
+      calculateCartTotal();
       alert('محصول به سبد اضافه شد!');
     }
   });
